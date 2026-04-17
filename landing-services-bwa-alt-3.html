@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BWA | Вариант 3 — Премиальный отбор</title>
+  <meta name="description" content="Лендинг-версия с более дорогим, отборочным позиционированием и акцентом на глубину работы.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=EB+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #efe3d3;
+      --ink: #1b1714;
+      --muted: #64584d;
+      --line: rgba(27, 23, 20, 0.12);
+      --accent: #7a3f24;
+      --deep: #221d1a;
+      --gold: #b8834f;
+      --paper: rgba(255, 252, 247, 0.72);
+      --max: 1220px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: var(--ink); font-family: "Sora", sans-serif;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(184, 131, 79, 0.14), transparent 0 24%),
+        linear-gradient(180deg, #f8efe5 0%, #efe3d3 46%, #e6d6c4 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(var(--max), calc(100% - 30px)); margin: 0 auto; }
+    .brand, h1, h2, h3 { font-family: "EB Garamond", serif; }
+    .site-header { padding: 20px 0; }
+    .header-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid var(--line);
+    }
+    .brand { font-size: 1.8rem; letter-spacing: .08em; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 52px; padding: 12px 24px; border-radius: 999px; font-weight: 700;
+    }
+    .button-dark { background: var(--deep); color: #f7f2eb; }
+    .button-light { border: 1px solid var(--line); background: rgba(255,255,255,0.45); }
+    .hero { padding: 30px 0 74px; }
+    .hero-frame {
+      padding: 34px; border-radius: 36px; background:
+      linear-gradient(135deg, rgba(255,255,255,0.58), rgba(255,248,239,0.34));
+      border: 1px solid var(--line);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 26px; align-items: stretch; }
+    .kicker, .label {
+      color: var(--accent); text-transform: uppercase; letter-spacing: .14em;
+      font-size: .8rem; font-weight: 700;
+    }
+    h1 {
+      margin: 12px 0 0; font-size: clamp(3.8rem, 7vw, 6.6rem);
+      line-height: .9; letter-spacing: -.05em; max-width: 10ch;
+    }
+    .lead { max-width: 58ch; margin: 20px 0 0; color: var(--muted); line-height: 1.72; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .hero-note {
+      margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line);
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .hero-note strong { display: block; margin-bottom: 6px; }
+    .hero-note span { color: var(--muted); font-size: .92rem; }
+    .hero-aside {
+      padding: 28px; border-radius: 28px; background: var(--deep); color: #f7f0e7;
+      display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+    }
+    .hero-aside p { color: rgba(247, 240, 231, 0.74); }
+    .hero-aside h2, .section-head h2, .cta-copy h2 {
+      margin: 10px 0 0; font-size: clamp(2.2rem, 4vw, 4.1rem); line-height: .92; letter-spacing: -.04em;
+    }
+    section { padding: 0 0 74px; }
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 { max-width: 12ch; }
+    .qualifier {
+      display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: start;
+    }
+    .qualifier-list { display: grid; gap: 16px; }
+    .qualifier-item, .pricing-card, .split-card, .cta {
+      border: 1px solid var(--line); border-radius: 28px; background: var(--paper);
+    }
+    .qualifier-item { padding: 22px; }
+    .qualifier-item h3, .split-card h3, .pricing-main h3 {
+      margin: 10px 0 0; font-size: clamp(1.8rem, 2.6vw, 2.5rem); line-height: .98; letter-spacing: -.04em;
+    }
+    .qualifier-item p, .split-card p, .pricing-main p, .cta-copy p { color: var(--muted); }
+    .pricing-card { padding: 30px; }
+    .pricing-grid { display: grid; gap: 14px; }
+    .pricing-row {
+      display: grid; grid-template-columns: 170px 1fr 150px; gap: 20px;
+      padding: 22px 0; border-top: 1px solid var(--line);
+    }
+    .pricing-row:first-child { border-top: 0; padding-top: 0; }
+    .pricing-type { color: var(--accent); text-transform: uppercase; letter-spacing: .1em; font-size: .8rem; font-weight: 700; }
+    .pricing-side {
+      padding-left: 14px; border-left: 1px solid var(--line);
+      display: flex; flex-direction: column; justify-content: end;
+    }
+    .pricing-side span { color: var(--muted); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+    .pricing-side strong { font-size: 1.35rem; }
+    .split {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+    }
+    .split-card { padding: 24px; }
+    .cta {
+      display: grid; grid-template-columns: 1.15fr 340px; gap: 24px; padding: 30px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.5), rgba(184,131,79,0.12));
+    }
+    .cta-side {
+      padding: 24px; border-radius: 24px; background: #fffaf3; border: 1px solid var(--line);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    }
+    .cta-side strong { font-size: 1.18rem; line-height: 1.5; }
+    @media (max-width: 980px) {
+      .hero-grid, .qualifier, .split, .cta, .pricing-row { grid-template-columns: 1fr; }
+      .pricing-side { border-left: 0; border-top: 1px solid var(--line); padding: 16px 0 0; }
+    }
+    @media (max-width: 720px) {
+      .hero-note { grid-template-columns: 1fr; }
+      .header-row { flex-direction: column; align-items: flex-start; }
+      .hero-frame, .pricing-card, .cta { padding: 22px; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="#top">BWA</a>
+      <a class="button button-light" href="#contact">Описать ситуацию</a>
+    </div>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="hero">
+      <div class="hero-frame">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">Вариант 3 · премиальный отбор</p>
+            <h1>Не каждая ситуация требует глубокого сопровождения. Но когда требует, это видно сразу.</h1>
+            <p class="lead">Эта версия делает страницу более взрослой и дорогой по ощущению. Здесь меньше “объяснений”, больше отбора, ясности и ощущения, что человек приходит не за общими словами, а за точной работой по сути запроса.</p>
+            <div class="hero-actions">
+              <a class="button button-dark" href="#pricing">Смотреть форматы</a>
+              <a class="button button-light" href="#compare">Сравнить варианты</a>
+            </div>
+            <div class="hero-note">
+              <div><strong>Подход</strong><span>не размывать проблему, а находить корень</span></div>
+              <div><strong>Формат</strong><span>от короткого входа до глубокой работы</span></div>
+              <div><strong>Задача</strong><span>дать ясность и рабочий следующий шаг</span></div>
+            </div>
+          </div>
+          <aside class="hero-aside">
+            <div>
+              <p class="label">С чего разумно начинать</p>
+              <h2>Блиц-анализ</h2>
+              <p>Если вы не уверены, нужен ли вам большой формат, сначала имеет смысл взять короткий и точный вход. Он быстро показывает, где причина, и стоит ли идти глубже.</p>
+            </div>
+            <div>
+              <p class="label">Формат</p>
+              <strong>текстовый ответ · donation</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="qualifier">
+        <div class="section-head">
+          <p class="label">Кому подойдёт</p>
+          <h2>Тем, кому нужен не просто разговор, а точная работа по узкому месту.</h2>
+        </div>
+        <div class="qualifier-list">
+          <article class="qualifier-item"><p class="label">01</p><h3>Когда проблема повторяется</h3><p>Ситуация уже не новая, но обычные способы не дали устойчивого сдвига.</p></article>
+          <article class="qualifier-item"><p class="label">02</p><h3>Когда ресурс утекает</h3><p>Внутреннее напряжение съедает силы, и вы не можете собрать ясный маршрут.</p></article>
+          <article class="qualifier-item"><p class="label">03</p><h3>Когда нужен точный выбор</h3><p>Важно не перепрыгнуть сразу в большой формат, если можно начать короче и точнее.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="pricing-card">
+        <div class="section-head">
+          <p class="label">Форматы работы</p>
+          <h2>Линейка услуг без перегруза и без путаницы.</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-row">
+            <div class="pricing-type">Быстрый вход</div>
+            <div class="pricing-main"><h3>Блиц-анализ</h3><p>Короткий точный разбор, если нужно быстро понять, что происходит и куда двигаться.</p></div>
+            <div class="pricing-side"><span>Текстовый формат</span><strong>donation</strong></div>
+          </article>
+          <article class="pricing-row">
+            <div class="pricing-type">Основной формат</div>
+            <div class="pricing-main"><h3>Сопровождение</h3><p>Месячная работа для тех, кому нужен устойчивый результат и более глубокая корректировка ситуации.</p></div>
+            <div class="pricing-side"><span>4 недели</span><strong>200€/мес</strong></div>
+          </article>
+          <article class="pricing-row">
+            <div class="pricing-type">Усиленный формат</div>
+            <div class="pricing-main"><h3>Интенсив</h3><p>Более плотное включение, если важно ускорить сдвиг и работать глубже обычного.</p></div>
+            <div class="pricing-side"><span>Глубже и быстрее</span><strong>300€/мес</strong></div>
+          </article>
+          <article class="pricing-row">
+            <div class="pricing-type">Точечная сессия</div>
+            <div class="pricing-main"><h3>Личная сессия</h3><p>Разовый прицельный формат под один запрос: личный, эмоциональный или бизнесовый.</p></div>
+            <div class="pricing-side"><span>Разовая работа</span><strong>100€/час</strong></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare">
+      <div class="split">
+        <article class="split-card">
+          <p class="label">Если коротко</p>
+          <h3>Как выбирать без лишних сомнений</h3>
+          <p>Нет ясности — блиц-анализ. Нужен устойчивый результат — сопровождение. Нужно ускорение — интенсив. Есть один конкретный запрос — личная сессия.</p>
+        </article>
+        <article class="split-card">
+          <p class="label">Логика старта</p>
+          <h3>Не покупайте глубину, если сначала нужна диагностика</h3>
+          <p>Эта версия лендинга специально продаёт не максимальный чек, а более разумный вход. Это повышает доверие и делает переход в большой формат сильнее.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta">
+        <div class="cta-copy">
+          <p class="label">Начать</p>
+          <h2>Опишите ситуацию в нескольких предложениях. Дальше станет видно, какой формат действительно вам нужен.</h2>
+          <p>Если запрос пока сырой, это нормально. На первом шаге важна не идеальная формулировка, а сам контекст, в котором вы сейчас находитесь.</p>
+        </div>
+        <div class="cta-side">
+          <p class="label">Практика показывает</p>
+          <strong>Для новых клиентов чаще всего самый сильный вход — блиц-анализ. Он даёт ясность и не заставляет сразу заходить в лишнюю глубину.</strong>
+          <a class="button button-dark" href="#top">Вернуться наверх</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

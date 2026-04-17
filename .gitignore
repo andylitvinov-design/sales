@@ -1,0 +1,7 @@
+node_modules/
+reports/
+*.swp
+*.tmp
+*.tmp2
+*.tmp3
+.DS_Store

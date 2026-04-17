@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дашборд эффективности лендингов | Sales</title>
+  <meta name="description" content="Единый дашборд эффективности лендингов: сравнение двух страниц, итоговые баллы, слабые метрики и приоритетные зоны исправления.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f6b66'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-size='28' font-family='Georgia' fill='white'%3EL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing-metric-dashboard.css?v=1">
+  <script type="module" src="landing-metric-dashboard.js?v=1"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <section class="panel compare-panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Сравнение</p>
+          <h2>Сравните два лендинга и выберите лучший</h2>
+        </div>
+        <p class="panel-note">
+          Введите два адреса и получите сравнение по единой шкале `/100` до просмотра деталей ниже.
+        </p>
+      </div>
+      <form class="compare-form" id="compareForm">
+        <label class="scanner-field" for="compareUrlA">Лендинг A</label>
+        <input
+          id="compareUrlA"
+          name="compareUrlA"
+          class="scanner-input"
+          type="url"
+          inputmode="url"
+          placeholder="https://example.com/landing-a"
+          required
+        >
+        <label class="scanner-field" for="compareUrlB">Лендинг B</label>
+        <input
+          id="compareUrlB"
+          name="compareUrlB"
+          class="scanner-input"
+          type="url"
+          inputmode="url"
+          placeholder="https://example.com/landing-b"
+          required
+        >
+        <button class="scanner-button" type="submit">Сравнить</button>
+      </form>
+      <div id="compareResult" class="scan-result">
+        <p class="meta-note">Введите два адреса лендингов, чтобы сравнить их по одной и той же модели оценки.</p>
+      </div>
+    </section>
+
+    <header class="topbar">
+      <div>
+        <p class="kicker">Система оценки лендингов</p>
+        <h1>Единая метрика эффективности лендинга</h1>
+      </div>
+      <p class="subtitle">
+        Оценка строится по ясности оффера, качеству CTA, доверию, глубине оффера, сканируемости, фокусу и техническому состоянию.
+        Это не заменяет реальные данные конверсии, но быстро показывает слабые страницы и слабые категории до того, как на них будет потрачен трафик.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="panel summary-panel">
+        <div class="panel-head">
+        <div>
+          <p class="eyebrow">Сводка</p>
+          <h2>Главные метрики и приоритет исправлений</h2>
+        </div>
+        <div>
+          <p class="panel-note" id="generatedAt">Загрузка актуального снимка…</p>
+          <p class="panel-note" id="freshnessNote">Проверка актуальности…</p>
+          <p class="panel-note" id="refreshHint">Обновление: `npm run dashboard:build`</p>
+        </div>
+      </div>
+        <div class="summary-grid" id="summaryGrid"></div>
+        <div class="priority-strip" id="priorityStrip"></div>
+      </section>
+
+      <section class="panel roster-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Страницы</p>
+            <h2>Где находятся проблемы</h2>
+          </div>
+          <p class="panel-note">Список отсортирован по худшему итоговому баллу.</p>
+        </div>
+        <div class="page-list" id="pageList"></div>
+      </section>
+
+      <section class="panel detail-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Выбранная страница</p>
+            <h2>Разбор и проблемные места</h2>
+          </div>
+          <p class="panel-note">Нажмите на любую строку, чтобы увидеть оценки по категориям и основания для них.</p>
+        </div>
+        <div id="pageDetail"></div>
+      </section>
+
+      <section class="panel model-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Модель оценки</p>
+            <h2>Что именно повышает итоговый балл</h2>
+          </div>
+          <p class="panel-note">Вес категорий отражает принципы оценки лендингов, принятые в этом проекте.</p>
+        </div>
+        <div class="metric-model" id="metricModel"></div>
+      </section>
+
+      <section class="panel heatmap-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Сравнение</p>
+            <h2>Тепловая карта категорий</h2>
+          </div>
+          <p class="panel-note">Низкие значения показывают повторяющиеся структурные слабости в разных вариантах страниц.</p>
+        </div>
+        <div class="heatmap" id="problemMap"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

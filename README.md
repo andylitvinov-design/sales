@@ -1,0 +1,30 @@
+# Sales Pages
+
+Набор маркетинговых лендингов и связанных quality-check инструментов для быстрых промо-страниц и офферов.
+
+## Cloud-Ready Summary
+
+- status: `active/cloud-ready`
+- purpose: хранить и улучшать продающие HTML-лендинги, которые можно быстро открыть, проверить и править из браузера
+- current status: есть набор готовых и экспериментальных лендингов, quality scripts и публичный Cloudflare Pages deploy
+- next steps:
+  - подключить папку или монорепо к GitHub как основной browser-edit слой
+  - выбрать 1 канонический лендинг и 1 канонический deploy
+  - держать `STATE.md` обновлённым перед новой итерацией
+
+## Main Files
+
+- `landing-services-bwa-photo.html` — текущий канонический публичный лендинг
+- `docs/DEPLOY.md` — краткая памятка по деплою
+- `reports/` — результаты локальных quality-проверок
+- `package.json` — скрипты для аудита и генерации новых страниц
+
+## Live Link
+
+- `https://sales-bwa-photo.pages.dev/`
+
+## Resume From Phone
+
+- открыть live link для просмотра
+- открыть GitHub-репозиторий/монорепо для базовых правок текста и структуры
+- читать `STATE.md` первым файлом перед новой сессией

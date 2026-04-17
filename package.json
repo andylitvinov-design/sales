@@ -1,0 +1,30 @@
+{
+  "name": "sales-quality-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local quality checks for sales landing pages",
+  "scripts": {
+    "lint:html": "html-validate \"landing-services-bwa-v2.html\"",
+    "lint:css": "stylelint \"landing-services-bwa-v2.css\"",
+    "audit:a11y": "pa11y http://127.0.0.1:8877/sales/landing-services-bwa-v2.html",
+    "audit:lighthouse": "lighthouse http://127.0.0.1:8877/sales/landing-services-bwa-v2.html --only-categories=accessibility,best-practices,seo --output=json --output-path=./reports/lighthouse-bwa-v2.json --chrome-flags='--headless=new --no-sandbox'",
+    "audit:links": "linkinator http://127.0.0.1:8877/sales/landing-services-bwa-v2.html --recurse=false --skip 'mailto:.*,tel:.*'",
+    "audit:playwright": "node scripts/web-quality.mjs landing-services-bwa-v2.html",
+    "check": "npm run lint:html && npm run lint:css",
+    "page:new": "node scripts/create-web-page.mjs",
+    "page:audit": "node scripts/web-quality.mjs",
+    "assets:optimize": "node scripts/optimize-assets.mjs",
+    "dashboard:build": "node scripts/build-landing-metric-dashboard.mjs"
+  },
+  "devDependencies": {
+    "html-validate": "^9.7.1",
+    "lighthouse": "^12.6.0",
+    "linkinator": "^6.1.2",
+    "pa11y": "^9.0.1",
+    "playwright": "^1.54.2",
+    "sharp": "^0.34.5",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard": "^39.0.1",
+    "svgo": "^4.0.1"
+  }
+}

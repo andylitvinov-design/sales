@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BWA | Вариант 2 — Диагностический маршрут</title>
+  <meta name="description" content="Лендинг-версия с диагностическим подходом: симптомы, маршрут, выбор формата и ясный CTA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --paper: #fbf8f2;
+      --text: #171411;
+      --muted: #655b53;
+      --line: rgba(23, 20, 17, 0.12);
+      --accent: #a65a2e;
+      --accent-soft: #f0ddcf;
+      --olive: #526257;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: var(--text); font-family: "IBM Plex Sans", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(166, 90, 46, 0.08), transparent 0 22%),
+        linear-gradient(180deg, #f9f5ef 0%, #f4efe7 46%, #eee6da 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    .brand, h1, h2, h3 { font-family: "Fraunces", serif; }
+    .site-header { padding: 18px 0; }
+    .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-size: 1.7rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 52px;
+      padding: 12px 22px; border-radius: 999px; font-weight: 700;
+    }
+    .button-solid { background: var(--text); color: #fff; }
+    .button-outline { border: 1px solid var(--line); background: rgba(255,255,255,0.55); }
+    .hero { padding: 36px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items: stretch; }
+    .hero-copy, .route-panel, .formats, .decision, .cta {
+      border: 1px solid var(--line); border-radius: 30px; background: rgba(255,255,255,0.58);
+    }
+    .hero-copy { padding: 34px; }
+    .eyebrow, .label {
+      display: inline-block; padding: 8px 12px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent); text-transform: uppercase;
+      letter-spacing: .08em; font-size: .78rem; font-weight: 700;
+    }
+    h1 { margin: 18px 0 0; font-size: clamp(3.2rem, 6vw, 5.8rem); line-height: .92; letter-spacing: -.05em; max-width: 11ch; }
+    .lead { margin: 18px 0 0; max-width: 56ch; color: var(--muted); line-height: 1.72; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+    .hero-stats div { padding: 16px; border-radius: 20px; background: var(--paper); }
+    .hero-stats strong { display: block; margin-bottom: 6px; }
+    .hero-stats span { color: var(--muted); font-size: .93rem; }
+    .route-panel { padding: 30px; background: linear-gradient(180deg, #f7f0e6, #fdfbf7); }
+    .route-panel h2, .section-head h2, .cta-copy h2 { margin: 16px 0 0; font-size: clamp(2rem, 4vw, 3.8rem); line-height: .94; letter-spacing: -.04em; }
+    .route-panel p, .route-step p, .card p, .cta-copy p, .decision p { color: var(--muted); }
+    .route-steps { display: grid; gap: 14px; margin-top: 20px; }
+    .route-step { padding-top: 16px; border-top: 1px solid var(--line); }
+    .route-step strong { display: block; margin-bottom: 8px; }
+    section { padding: 0 0 72px; }
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 { max-width: 12ch; }
+    .formats { padding: 30px; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .card { padding: 22px; border-radius: 24px; background: var(--paper); border: 1px solid rgba(23,20,17,0.08); }
+    .card.featured { background: linear-gradient(180deg, #fff4ea, #fbf8f2); }
+    .card h3 { margin: 14px 0 0; font-size: 2rem; line-height: .98; letter-spacing: -.04em; }
+    .price { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .price span { display: block; color: var(--muted); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+    .price strong { font-size: 1.35rem; }
+    .decision { padding: 30px; }
+    .decision-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .decision-grid article { padding: 20px; border-radius: 22px; background: var(--paper); }
+    .decision-grid h3 { margin: 12px 0 0; font-size: 1.55rem; line-height: 1.02; }
+    .cta { display: grid; grid-template-columns: 1.1fr 320px; gap: 24px; padding: 30px; background: linear-gradient(145deg, #fffaf4, #f1e7d9); }
+    .cta-side {
+      padding: 22px; border-radius: 24px; background: #fff; border: 1px solid var(--line);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    }
+    .cta-side strong { font-size: 1.15rem; line-height: 1.5; }
+    @media (max-width: 980px) {
+      .hero-grid, .cta, .decision-grid, .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .header-row { flex-direction: column; align-items: flex-start; }
+      .hero-copy, .route-panel, .formats, .decision, .cta { padding: 22px; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="#top">BWA</a>
+      <a class="button button-outline" href="#contact">Написать мне</a>
+    </div>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Вариант 2 · диагностический</span>
+          <h1>Не выбирайте формат вслепую. Сначала разберите, что на самом деле происходит.</h1>
+          <p class="lead">Эта версия страницы продаёт не “магическое решение”, а ясный маршрут: увидеть причину, не переплатить за лишнее и зайти в тот формат, который действительно подходит вашей ситуации.</p>
+          <div class="hero-actions">
+            <a class="button button-solid" href="#formats">Посмотреть форматы</a>
+            <a class="button button-outline" href="#decision">Быстро выбрать</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>Шаг 1</strong><span>понять, где узкое место</span></div>
+            <div><strong>Шаг 2</strong><span>выбрать формат без хаоса</span></div>
+            <div><strong>Шаг 3</strong><span>получить конкретный вектор</span></div>
+          </div>
+        </div>
+        <aside class="route-panel">
+          <span class="label">Маршрут работы</span>
+          <h2>От симптома к решению</h2>
+          <p>Вместо длинных обещаний здесь всё строится через логику выбора. Это удобно тем, кто хочет быстро понять, что брать: блиц, сопровождение, интенсив или личную сессию.</p>
+          <div class="route-steps">
+            <div class="route-step"><strong>Если вы не понимаете причину</strong><p>Начните с блиц-анализа.</p></div>
+            <div class="route-step"><strong>Если нужен устойчивый результат</strong><p>Берите сопровождение.</p></div>
+            <div class="route-step"><strong>Если нужен быстрый сильный сдвиг</strong><p>Смотрите интенсив.</p></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="formats">
+      <div class="formats">
+        <div class="section-head">
+          <span class="label">Форматы</span>
+          <h2>Четыре формата, собранные как понятная линейка решений.</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="label">Быстрый вход</span>
+            <h3>Блиц-анализ</h3>
+            <p>Чтобы быстро понять, в чём корень проблемы, где уходит ресурс и какой шаг имеет смысл делать первым.</p>
+            <div class="price"><span>Текстовый формат</span><strong>donation</strong></div>
+          </article>
+          <article class="card featured">
+            <span class="label">Основной формат</span>
+            <h3>Сопровождение</h3>
+            <p>Для тех, кому нужен не разовый ответ, а системная работа с поддержкой и более устойчивым результатом.</p>
+            <div class="price"><span>4 недели</span><strong>200€/мес</strong></div>
+          </article>
+          <article class="card">
+            <span class="label">Ускорение</span>
+            <h3>Интенсив</h3>
+            <p>Если ситуация требует большего включения, большего внимания и более быстрого продвижения.</p>
+            <div class="price"><span>Усиленный формат</span><strong>300€/мес</strong></div>
+          </article>
+          <article class="card">
+            <span class="label">Точечная работа</span>
+            <h3>Личная сессия</h3>
+            <p>Если у вас конкретный запрос и нужен прямой прицельный разбор личной, эмоциональной или бизнес-ситуации.</p>
+            <div class="price"><span>Разовая работа</span><strong>100€/час</strong></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="decision">
+      <div class="decision">
+        <div class="section-head">
+          <span class="label">Как выбрать</span>
+          <h2>Ориентир для тех, кто хочет принять решение за минуту.</h2>
+        </div>
+        <div class="decision-grid">
+          <article><span class="label">01</span><h3>Нужна ясность</h3><p>Идите в блиц-анализ.</p></article>
+          <article><span class="label">02</span><h3>Нужен результат</h3><p>Берите сопровождение.</p></article>
+          <article><span class="label">03</span><h3>Нужно ускорение</h3><p>Выбирайте интенсив.</p></article>
+          <article><span class="label">04</span><h3>Есть один запрос</h3><p>Подойдёт личная сессия.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta">
+        <div class="cta-copy">
+          <span class="label">Начать</span>
+          <h2>Напишите мне коротко, что вас больше всего держит сейчас.</h2>
+          <p>Этого достаточно, чтобы понять, какой формат нужен: быстрый вход, месячное сопровождение, усиленный интенсив или точечная сессия.</p>
+        </div>
+        <div class="cta-side">
+          <span class="label">Логика старта</span>
+          <strong>В большинстве случаев разумнее начать с блиц-анализа, а уже потом решать, нужна ли более глубокая работа.</strong>
+          <a class="button button-solid" href="#top">К началу страницы</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

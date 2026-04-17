@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Sales Landing
+  short_description: Project-specific landing page workflow for the sales repo
+  default_prompt: Use $sales-landing to build or refine a static landing page in `/Users/andriilitvinov/projects/MYPROJECTS/sales` with one strong CTA, HTTP-only browser review, and the full local audit workflow. The legacy `/Users/andriilitvinov/projects/sales` path is compatibility-only.
