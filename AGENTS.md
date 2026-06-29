@@ -68,3 +68,30 @@ Every page should be checked with:
 - Prefer one primary CTA per page.
 - Use versioned CSS links like `page.css?v=1` to avoid stale browser cache during review.
 - Keep each section focused on one job: explain, prove, deepen, or convert.
+---
+
+## Agent Command Registry
+
+### /delivery
+
+`/delivery` is sufficient by itself. No extra delegation language is required.
+
+When the user invokes `/delivery`, read and follow `.claude/commands/delivery.md`.
+
+Stop only with `STATUS: SUCCESS` or `STATUS: BLOCKED`.
+
+**Project adapter:**
+
+- Repository: `andylitvinov-design/sales`
+- Default branch: `codex/bootstrap-sales`
+- Target branch: `codex/bootstrap-sales`
+- Package manager: `npm`
+- Framework: static HTML landing pages
+- Build: `npm run dashboard:build`
+- Check: `npm run check` (html-validate + stylelint + pa11y + lighthouse + linkinator)
+- CI: none confirmed
+- Deployment: **needs verification** — no vercel.json found
+- Primary live URL: **needs verification** — SUCCESS cannot be claimed without confirmed URL
+
+**Live URL blocker:** Before any /delivery run can reach SUCCESS, confirm the deployment
+provider and live URL, then update this file.
