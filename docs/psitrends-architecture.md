@@ -17,7 +17,7 @@ flowchart LR
   Joomla --> Backup[Private Akeeba export]
 ```
 
-Origin label`ubuntu-16gb-fsn1-1`, document root`/var/www/html`. Container/compose definitions, OS patch level, volume mounts, cron and TLS automation require recovered host access. Do not infer an operating system version from the server label. Redis is a configuration finding; server topology and persistence not yet inspected.
+Origin label`ubuntu-16gb-fsn1-1`, document root`/var/www/html`. Authorized console/SSH are now verified. The host is shared; PsiTrends compose source is `/opt/docker/sites/psitrends`, with no existing Git worktree found. PHP binds `public_html` read/write and nginx binds it read-only. MySQL uses the project's separate host data directory; Redis is a separate container. Private compose/environment/PHP/nginx exports and image identities were captured. Ubuntu24.04.4 was observed in the console; patch maintenance and TLS automation still require separate verification.
 
 ## Application inventory
 
@@ -27,8 +27,8 @@ The private archive contains104 database tables; the sanitized [CMS inventory](.
 -10 template styles. tx_valley17 is English default,21 Russian default;15 fallback. Core administrator style10 Atum. Other installed styles include Cassiopeia, Atom and esitemplate; installation does not prove use.
 -English`en-GB`, Russian`ru-RU`. Homepage menu202→Quix4; Russian menu204→Quix141. All-language home101→Quix2. Multiple published old/demo homepages are candidates for review, not automatic deletion.
 -109 template override DB records; filesystem paths separately inventoried. Dashboard reports50 override update notices. Compare each against updated core before migration.
--Joomla scheduler0 tasks. Host cron and Akeeba automation not known. Previous backup dates do not establish a working schedule.
--Two administrator accounts are Super Users;0 MFA enrollments in the baseline. Usernames/emails excluded. Registration disabled. Session lifetime6400minutes is excessive for administrator exposure; change only after recovery and supported config writes.
+-Joomla scheduler0 tasks; root crontab0 active entries. Other host schedulers and Akeeba automation remain unverified. Previous backup dates do not establish a working schedule.
+-Two administrator accounts are Super Users;0 MFA enrollments in the baseline. Usernames/emails excluded. Registration disabled. Session lifetime6400minutes remains a hardening item; recovery and supported configuration writes are now verified prerequisites.
 -Cache: Joomla caching1/Redis plus JCH Optimize8.1.1, LiteSpeed Cache1.5.1 and ImageRecycle2.1.2. Do not enable more cache layers; test redundant plugins on staging first.
 
 ## Customization and integrations
@@ -44,4 +44,4 @@ The private archive contains104 database tables; the sanitized [CMS inventory](.
 
 Keep sanitized operations docs and integration source in`sales`. Private full archive, exports, original configuration and restore clone stay under the private operations directory. The actual production source includes files AND database state; a static mirror is not a recoverable Joomla source.
 
-After hosting recovery, inventory the live compose/image/volume configuration and locate any existing private origin repository. If none exists, establish a private `psitrends-ops` repository for sanitized infrastructure definitions and migration scripts, link it here, and keep encrypted data backups outside Git. Do not create it speculatively before the real deploy contract is known.
+The live compose/image/volume layout is now inspected and no production Git worktree was found. Establish a private `psitrends-ops` repository for sanitized infrastructure definitions and migration scripts, link it here, and keep private data backups outside Git. Until that repository exists, these safe records remain the operational reference; do not upload the live environment or database to Git.

@@ -20,7 +20,7 @@ Previous default output was unwritable and old backups obsolete. Before changing
 3. Manage Backups→Download→confirm browser-download warning. Chrome download worked; the in-app download did not produce a file. Do not scrape cookies or bypass the supported browser session.
 4. Immediately chmod0600 and move from Downloads to the private operations directory.
 5. Validate ZIP CRC, size and SHA256, check configuration/installer/database presence. Never run SQL against production while validating.
-6. Keep one baseline and one pre-release copy; remove server spool only after verified off-server retention. No automatic backup schedule is claimed: Joomla scheduler has0 tasks, host cron unknown. Establish encrypted independent storage and scheduled retention after hosting access is recovered.
+6. Keep one baseline and one pre-release copy; remove server spool only after verified off-server retention. No automatic backup schedule is claimed: Joomla scheduler and root crontab have0 active tasks; other host schedulers remain unverified. Establish encrypted independent storage and scheduled retention through the recovered host access.
 
 ## Local restore drill performed
 
@@ -32,16 +32,24 @@ Isolation: internal Docker network, no database publication, production accounts
 
 Installed Homebrew Lima lacked the VZ driver. An official Lima2.1.1 archive was checksum-verified and unpacked privately; Colima was started with that runtime on PATH. No system Lima replacement was made.
 
-## Production disaster restore procedure — owner host access required
+## Production disaster restore procedure — host access recovered, full drill pending
 
-1. Recover authorized Hetzner console/SSH; inspect actual container/volume/compose layout before selecting a target. Snapshot current disk/database and record image versions and volume mounts.
+1. Use the verified dedicated `psitrends-production` SSH alias. The host is shared: select only the inspected PsiTrends compose project and its database/files. Snapshot current state and record image versions and mounts before any cutover.
 2. Create an isolated staging directory/database on a protected host. Verify backup hash. Extract with supported Akeeba Kickstart/ANGIE or the verified SQL/file procedure. Never expose installer/SQL/configuration publicly.
 3. Restore database to a new name and configuration to the correct credentials/paths. Keep mail, scheduled jobs, analytics and external integrations disabled during validation.
 4. Test administrator login, Quix/Helix rendering and editing, EN/RU, menus, modules, media, contacts, redirect/SEO behavior and consent. Compare content counts/representative pages.
 5. Only after staging passes, stop writes for the brief cutover, restore/switch volumes and DB together, verify production, then remove installer and temporary archives from web-accessible locations. Keep pre-cutover snapshot for rollback.
 6. If verification fails, restore old application volume AND corresponding DB snapshot; changing only files is unsafe after a schema migration. Preserve logs privately.
 
-Akeeba Core does not supply an integrated one-click restoration interface. Host-level writes are currently unavailable; do not call this an unattended disaster-recovery system.
+Akeeba Core does not supply an integrated one-click restoration interface. Host-level access is recovered, but a complete infrastructure restoration has not been drilled; do not call this an unattended disaster-recovery system.
+
+## Additional private exports after host recovery
+
+The original baseline ZIP remains immutable. A fresh production SQL export used the existing MySQL container credential in memory with `--single-transaction --no-tablespaces --routines --events --triggers`; no credential was printed or stored in Git. The private gzip validates, contains104 CREATE TABLE statements and expands to130,740,910 bytes. Compressed size13,251,533 bytes; SHA256 `51b74aa70425deb8a5da22a9e43c53f8e84ed051475c17b64d6f3bea7027bbdf`. This fresh dump has not yet had a separate restore drill.
+
+A private1994-byte host configuration archive contains only the PsiTrends compose file, environment, Dockerfile, PHP and nginx configuration. SHA256 `198d2c9b5fefc6523a133e8a3b2f6496cbcd3b3a59f81c34ff4d6aceab3932fa`. It contains secrets and must stay outside Git with mode0600. Do not copy the running MySQL data directory as a substitute for a consistent database backup.
+
+Private pre-change configuration copies and the original filesystem-root ACL support the narrow host/configuration repairs. Reverting configuration write access means restoring its prior deployment group and mode0644, without reverting unrelated content or database changes. Do not restore displayed PHP errors or publicly exposed archives automatically. See the [host checkpoint](../.codex/reports/2026-09-22/psitrends-host-recovery.md).
 
 ## Verified object rollback
 
