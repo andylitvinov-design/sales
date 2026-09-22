@@ -3,7 +3,7 @@ import path from 'node:path';
 const out = path.resolve('output/toronto-public');
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
-const files = ['landing-services-bwa-photo.html', 'landing-services-bwa-photo.css', 'hypnotherapy-toronto.html', 'systemic-constellations-toronto.html', 'toronto-acquisition.css', 'toronto-acquisition.js', 'toronto-analytics.js'];
+const files = ['landing-services-bwa-photo.html', 'landing-services-bwa-photo.css', 'hypnotherapy-toronto.html', 'systemic-constellations-toronto.html', 'toronto-acquisition.css', 'toronto-acquisition.js', 'toronto-analytics.js', 'toronto-ga4.js'];
 for (const file of files) await copyFile(file, path.join(out, file));
 await copyFile('landing-services-bwa-photo.html', path.join(out, 'index.html'));
 await writeFile(path.join(out, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://sales-bwa-photo.pages.dev/sitemap.xml\n');

@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-09-22T12:17:11.697Z",
+  "synthetic": true,
+  "noMessageSent": true,
+  "receipts": [
+    {
+      "status": 204,
+      "measurement": "G-Z4BGV9GP4N",
+      "event": "page_view",
+      "page": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto",
+      "referrer": "",
+      "landing": null,
+      "method": null,
+      "source": null
+    },
+    {
+      "status": 204,
+      "measurement": "G-Z4BGV9GP4N",
+      "event": "scroll",
+      "page": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto",
+      "referrer": "",
+      "landing": null,
+      "method": null,
+      "source": null
+    },
+    {
+      "status": 204,
+      "measurement": "G-Z4BGV9GP4N",
+      "event": "contact_click",
+      "page": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto",
+      "referrer": "",
+      "landing": "hypnotherapy-toronto",
+      "method": "whatsapp",
+      "source": "unattributed"
+    }
+  ],
+  "passed": true
+}
