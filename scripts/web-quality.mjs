@@ -78,7 +78,7 @@ async function resolvePage(input) {
 
   return {
     htmlPath,
-    pageUrl: new URL(relativeToProjects.replace(/\\/g, "/"), URL_ROOT).toString(),
+    pageUrl: new URL((relativeToProjects.startsWith("MYPROJECTS/sales/") ? relativeToProjects.slice("MYPROJECTS/".length) : relativeToProjects).replace(/\\/g, "/"), URL_ROOT).toString(),
     slug: path.basename(htmlPath, ".html"),
     cssPaths
   };
@@ -176,7 +176,10 @@ async function main() {
   }
 
   summary.checks.push(
-    runCommand(localBin("pa11y"), [page.pageUrl], "pa11y"),
+    runCommand(localBin("pa11y"), [page.pageUrl], "pa11y", {
+      env: { ...process.env, ...(process.platform === "darwin" && !process.env.PUPPETEER_EXECUTABLE_PATH
+        ? { PUPPETEER_EXECUTABLE_PATH: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" } : {}) }
+    }),
     runCommand(
       localBin("linkinator"),
       [page.pageUrl, "--recurse=false", "--skip", "mailto:.*,tel:.*"],

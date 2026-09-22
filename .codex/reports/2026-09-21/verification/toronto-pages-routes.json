@@ -1,0 +1,32 @@
+[
+  {
+    "route": "/hypnotherapy-toronto",
+    "status": 200,
+    "location": null
+  },
+  {
+    "route": "/hypnotherapy-toronto.html",
+    "status": 308,
+    "location": "/hypnotherapy-toronto"
+  },
+  {
+    "route": "/systemic-constellations-toronto",
+    "status": 200,
+    "location": null
+  },
+  {
+    "route": "/sitemap.xml",
+    "status": 200,
+    "location": null
+  },
+  {
+    "route": "/robots.txt",
+    "status": 200,
+    "location": null
+  },
+  {
+    "route": "/not-a-real-route",
+    "status": 404,
+    "location": null
+  }
+]

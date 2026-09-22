@@ -1,0 +1,43 @@
+{
+  "page": "hypnotherapy-toronto",
+  "url": "http://127.0.0.1:8877/sales/hypnotherapy-toronto.html",
+  "ok": true,
+  "checks": [
+    {
+      "label": "html-validate",
+      "status": 0
+    },
+    {
+      "label": "stylelint:toronto-acquisition.css",
+      "status": 0
+    },
+    {
+      "label": "pa11y",
+      "status": 0
+    },
+    {
+      "label": "linkinator",
+      "status": 0
+    },
+    {
+      "label": "lighthouse",
+      "status": 0
+    },
+    {
+      "label": "playwright",
+      "status": 0
+    }
+  ],
+  "lighthouse": {
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "viewport": "mobile",
+      "message": "Mobile hero is taller than the viewport."
+    }
+  ]
+}
