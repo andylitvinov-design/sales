@@ -11,7 +11,8 @@ if (!$this->item->params->get('access-view')) {
 $key = (string) Factory::getApplication()->getTemplate(true)->params->get('page_key', '');
 $expectedAlias = 'psitrends-client-' . str_replace(':', '-', $key);
 if (!$key || $this->item->alias !== $expectedAlias) {
-    throw new \RuntimeException('Client article assignment mismatch.', 404);
+    require_once dirname(__DIR__, 3) . '/legacy-route.php';
+    psitrendsUseLegacyRoute();
 }
 // No prepared-content plugin wrappers, article chrome, or extra H1/main.
 echo $this->item->introtext;

@@ -32,6 +32,13 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
   const split=splitPage(html),article=replaceAssets(split.article),route=routeFor(name,locale);
   const schema=html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
   const bodyFile=`articles/${locale}-${name}.html`;
+  // Joomla's remembered RU homepage selection otherwise redirects / back to RU.
+  // Force only the language switch through /en; native routing removes the prefix.
+  if(locale==='ru'){
+   const original=`class="language" href="${routeFor(name,'en')}"`;
+   if(!split.before.includes(original))throw new Error('Expected English language switch');
+   split.before=split.before.replace(original,`class="language" href="/en${routeFor(name,'en')}"`);
+  }
   await fs.writeFile(path.join(destination,bodyFile),article);
   entries[key]={locale,page:name,title:page.title,description:page.description,canonical:`https://psitrends.com${route}`,alternates:{'en-GB':`https://psitrends.com${routeFor(name,'en')}`,'ru-RU':`https://psitrends.com${routeFor(name,'ru')}`},schema:schema?JSON.parse(schema):null,before:replaceAssets(split.before),after:replaceAssets(split.after)};
   plan.pages.push({key,route,canonical:entries[key].canonical,language:locale==='en'?'en-GB':'ru-RU',article:{action:'create-unpublished',title:page.title,alias:`psitrends-client-${locale}-${name}`,state:0,access:1,bodyFile,sha256:digest(article),metadesc:page.description,catid:'REQUIRE_REVIEWED_NATIVE_CATEGORY_ID'},style:{action:'create-from-installed-template',title:`PsiTrends Client ${key}`,params:{page_key:key,release_mode:'preview'},makeDefault:false},menu:{action:name==='home'?'update-existing-after-private-snapshot':'create-after-collision-check',reuseId:name==='home'?(locale==='en'?202:204):null,type:'component',link:'index.php?option=com_content&view=article&id=NEW_ARTICLE_ID',alias:name==='home'?'PRESERVE_EXISTING':route.split('/').filter(Boolean).at(-1),menutype:'PRESERVE_HOME_LANGUAGE_MENUTYPE',parent_id:name==='home'?'PRESERVE_EXISTING':1,home:name==='home'?'PRESERVE_EXISTING':0,template_style_id:'NEW_PAGE_STYLE_ID'}});
@@ -42,7 +49,7 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
  await fs.writeFile(path.join(template,'templateDetails.xml'),`<?xml version="1.0" encoding="utf-8"?>
 <extension type="template" client="site" method="upgrade">
 <name>psitrends_client</name><version>1.0.0</version><creationDate>2026-09-22</creationDate><author>PsiTrends</author><description>Native client article template; assign per menu only, preview by default.</description>
-<files><filename>index.php</filename><filename>templateDetails.xml</filename><filename>pages.json</filename><folder>html</folder></files>
+<files><filename>index.php</filename><filename>legacy-route.php</filename><filename>templateDetails.xml</filename><filename>pages.json</filename><folder>html</folder></files>
 <media destination="templates/site/psitrends_client" folder="media"><folder>assets</folder></media>
 <config><fields name="params"><fieldset name="client" label="Client page"><field name="page_key" type="list" label="Page content key" default="" required="true"><option value="">Select reviewed page</option>${options}</field><field name="release_mode" type="list" label="Release mode" default="preview"><option value="preview">Preview: noindex, analytics off</option><option value="production">Production: verified hostname and consent required</option></field></fieldset></fields></config>
 </extension>\n`);

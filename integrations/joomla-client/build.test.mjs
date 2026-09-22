@@ -39,6 +39,10 @@ test('adapter emits twelve native article bodies and preserves home assignments'
     assert.match(routes['en:home'].before,/<header/);
     assert.match(routes['en:home'].after,/analytics-choice/);
     assert.match(routes['en:home'].before,/href="\/ru\/"/);
+    assert.match(routes['ru:home'].before,/class="language" href="\/en\/"/);
+    assert.match(routes['ru:about'].before,/class="language" href="\/en\/about"/);
+    assert.equal(routes['en:home'].canonical,'https://psitrends.com/');
+    assert.match(routes['ru:home'].before,/class="brand" href="\/ru\/"/);
     assert.doesNotMatch(routes['en:home'].before,/<main/);
     assert.match(await fs.readFile(path.join(directory,'template/media/assets/psitrends-client.js'),'utf8'),/contact_click/);
   } finally {await fs.rm(directory,{recursive:true,force:true});}

@@ -9,7 +9,8 @@ $key = (string) $this->params->get('page_key', '');
 $pages = json_decode(file_get_contents(__DIR__ . '/pages.json'), true, 512, JSON_THROW_ON_ERROR);
 if (!isset($pages[$key]) || $app->input->getCmd('option') !== 'com_content'
     || $app->input->getCmd('view') !== 'article' || $app->input->getCmd('layout') === 'edit') {
-    throw new \RuntimeException('Client template assignment is not an article view.', 404);
+    require_once __DIR__ . '/legacy-route.php';
+    psitrendsUseLegacyRoute();
 }
 $page = $pages[$key];
 $uri = Uri::getInstance();
