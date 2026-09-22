@@ -13,7 +13,7 @@ Source of truth: [Issue6](https://github.com/andylitvinov-design/sales/issues/6)
 
 ## Permission matrix
 
-Labels describe demonstrated operations, not the mere presence of a toolbar. Super Users grants broad CMS ACL but does not override read-only container files. Untested destructive operations remain unverified.
+Labels describe demonstrated operations, not the mere presence of a toolbar. Super Users grants broad CMS ACL but does not override filesystem ownership or container mount restrictions. Untested destructive operations remain unverified.
 
 | Surface | Verified status | Evidence / limit |
 |---|---|---|
@@ -23,19 +23,19 @@ Labels describe demonstrated operations, not the mere presence of a toolbar. Sup
 | Menu management | READ ONLY | 216 records exported,183 site records; writes not exercised |
 | Module management | WRITE | Prior module129 live; module130 unpublished/restricted edit→restore→trash test verified |
 | Helix style settings | WRITE | Styles17/21 saved and live attribution verified in Issue4 |
-| Quix pages | READ ONLY | 141 records exported; editor stalls with PHP deprecation output; page writes not proven |
+| Quix pages | READ ONLY | 141 records exported; existing editor now renders its content iframe and Save control without the PHP warning. One MutationObserver browser error remains; page writes not proven |
 | Media management | READ ONLY | Files backed up and media inventory; upload/delete not exercised |
-| Extension install/update/remove | NOT VERIFIED | Inventory readable; core files read-only; no production install/update attempted |
+| Extension install/update/remove | NOT VERIFIED | Inventory readable; filesystem ownership limits CMS writes; no production install/update attempted |
 | User management | READ ONLY | Roles and account count verified; no accounts changed |
-| Global configuration | READ ONLY | Error-reporting save explicitly failed: unable to write configuration file |
+| Global configuration | WRITE | Supported Joomla UI Save confirmed success after scoped configuration permission repair; parsed configuration values unchanged by verification Save |
 | Cache management | READ ONLY | Settings and manager available; destructive purge not needed/tested |
-| Database | READ ONLY | Full104-table export; no direct administration credential tested |
+| Database | READ ONLY | Fresh consistent 104-table dump through the existing container credential verified privately; no production database write exercised |
 | File manager | NOT VERIFIED | No working independent file manager established |
-| SFTP/SSH | NO ACCESS | Available authorized key/default connection and original issued password rejected |
-| Hetzner console | NO ACCESS | Login screen; no authenticated owner session |
+| SFTP/SSH | WRITE (SSH) | Dedicated restricted-key SSH login verified, operational UID 1001 and privileged sudo verified; SFTP not separately tested. Root SSH remains prohibited |
+| Hetzner console | WRITE (PsiTrends scope) | Owner session authenticated; fresh privileged console login succeeded; scoped archive quarantine verified |
 | DNS control | NOT VERIFIED | Public NS known; provider mutation credentials not verified |
 | SSL control | NOT VERIFIED | Public HTTPS works; renewal/deploy control not verified |
-| Scheduled tasks | READ ONLY | Joomla scheduler has0 records; host cron unknown |
+| Scheduled tasks | READ ONLY | Joomla scheduler has0 records; root crontab has0 active entries; other host schedulers not yet audited |
 | Backup | WRITE | Akeeba profile repaired, full backup12 completed and downloaded privately |
 | Restore | WRITE (CMS objects/local clone) | Object rollback and full104-table local restore verified; host disaster recovery NOT VERIFIED |
 | GA4 / GTM | READ ONLY | Existing property/stream and tag configuration read; prior live event readback; GTM publish not tested |
@@ -44,10 +44,26 @@ Labels describe demonstrated operations, not the mere presence of a toolbar. Sup
 | Cloudflare Pages | WRITE | Existing authenticated Direct Upload deployment verified in Issue4 |
 | Cloudflare Web Analytics | READ ONLY | Existing site/receipt readback in prior report; not a CTA event warehouse |
 
-## Hosting boundary and owner recovery
+## Hosting boundary and recovered console access
 
-Origin178.105.78.179, server label`ubuntu-16gb-fsn1-1`, nginx/PHP/Joomla document root`/var/www/html`. Exact server-creation correspondence confirms origin; it does not establish present credentials. The issued initial root password no longer authenticates. Do not retry it or publish it.
+The Hetzner owner authentication gate is cleared. Privileged host credential recovery used the guest agent without reboot; a fresh root console login succeeded. The recovered credential is stored under Keychain service alias `psitrends-production-host`; see the [secret manifest](psitrends-secret-manifest.md). Do not retry the obsolete initially issued credential.
 
-Owner-only next step: sign in to the existing Hetzner account and complete its recovery/2FA, then expose the authorized server console or provision a dedicated SSH public key. Do not reset/reboot production casually. Once available: inspect container/compose mounts, locate the real source/config repository, snapshot volumes, verify cron/TLS/DNS ownership, and install a least-privilege operational key. Record only aliases/fingerprints and access method.
+A dedicated operations key exists in protected local SSH storage, fingerprint `SHA256:Cs42O9nvE0hJJhLGq2+b3DMKYxJ69nM3hWeuDKMd+5M`. Dedicated restricted-key SSH authentication is verified with operational UID 1001 and privileged sudo capability. This is a privileged stewardship account, not a least-privilege claim. Root SSH remains prohibited. Key restrictions and SSH configuration apply to the operational account; key storage is in a root-owned directory readable for public-key authentication.
 
-No verified production Git repository or server-level recovery has been invented. Keep safe records here until a private production repository is actually established; migrate with an explicit pointer rather than creating competing sources of truth.
+The host runs other applications. Authorization and changes are limited to PsiTrends. The PHP container's `/var/www/html` bind source is `/opt/docker/sites/psitrends/public_html` with write capability; nginx mounts it read-only. Deployment configuration lives alongside that directory; no production Git worktree was found.
+
+After private backup and isolated testing, only `configuration.php` gained runtime-group write access: deployment owner UID 1000, group GID 33, mode 0664. PHP UID 33 still cannot write the document-root directory or core entry point. Joomla's supported `com_config` Save confirmed success, retained the permissions and changed no parsed configuration property values. Error reporting was separately changed from `maximum` to `none`; PHP syntax and EN/RU HTTP checks passed.
+
+The existing Quix editor now displays its content iframe and Save control without the earlier PHP warning. A MutationObserver browser error remains unattributed. No production Quix page was saved during this inspection, so full editor/save compatibility remains unverified.
+
+Two exposed old archives were moved to private host quarantine. Both sampled public paths changed from HTTP 200 to 404; English and Russian homepages remained HTTP 200. Exact archive names/paths, content and checksums remain private. Quarantine is containment, not deletion or proof that every exposure has been eliminated. Do not blindly reverse the move and re-expose the archives.
+
+Read the [host recovery checkpoint](../.codex/reports/2026-09-22/psitrends-host-recovery.md) before continuing. SSH and a safe host inventory are now verified. Remaining work includes full Quix editor/save verification, source ownership and tested host disaster recovery, followed by the existing staged program. No platform modernization or complete program delivery is claimed. Keep the original verified local backup and restore as the baseline.
+
+No verified production Git repository or fully tested host disaster recovery has been established. Keep safe records here until a private production repository is actually established; migrate with an explicit pointer rather than creating competing sources of truth.
+
+## SSH traversal repair
+
+The verified login failure cause was mode 0700 on filesystem root `/`, which blocked non-root path traversal. Default permissions were preserved; a named ACL grants only traversal (`--x`) on `/` to the operational account. The previous ACL was saved privately on the host. No broader filesystem permission change is implied. Fresh host inventory confirmed a shared application host; no other applications were changed.
+
+Temporary SSH DEBUG3 diagnostics were removed. Configuration validation and reload passed, log level is INFO, root login remains disabled and fresh login through the SSH alias succeeded. Only root key entries added by this task were removed; the original root RSA key was preserved.

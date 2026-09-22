@@ -5,13 +5,13 @@ Owner: PsiTrends business owner; implementation: authorized maintainer. Date2026
 | Priority / work | Status | Impact and evidence | Dependency / acceptance |
 |---|---|---|---|
 | P0 Recoverable CMS access | COMPLETED | Keychain replaces plaintext credential note; fresh-login recovery passed | Preserve unlocked owner Keychain; no secrets in Git |
-| P0 Full backup + rollback | COMPLETED for off-server export/local restore; PARTIAL for host recovery |1.03GB verified archive,104-table restore, EN/RU200, object rollback | Recover host access, prove exact production restore, automate independent retention |
+| P0 Full backup + rollback | COMPLETED for off-server export/local restore; PARTIAL for host disaster recovery |1.03GB verified archive,104-table restore, EN/RU200, object rollback | Complete the host disaster-recovery drill and independent retention |
 | P0 Search Console ownership | COMPLETED; metrics pending | URL-prefix ownership verified using existing GTM | Read reports after Google finishes processing; unavailable is not zero |
 | P0 Broken enquiry route | COMPLETED | `/express-ru`404→301→existing Russian page200; stage tested | Redirect1/plugin177 rollback documented; collection disabled |
-| P0 Hosting/operator recovery | BLOCKED | CMS cannot write configuration; authorized initial SSH credential rejected | Owner Hetzner sign-in/recovery/2FA, dedicated SSH key, inspect actual source/mounts |
-| P0 Error disclosure | BLOCKED on host | Maximum reporting; Quix deprecation exposes path; CMS save denied | Patch real config to none with logs preserved; reload editor and pages |
+| P0 Hosting/operator recovery | VERIFIED | Owner console and dedicated SSH recovered; actual mounts inspected; supported CMS configuration Save passes | Preserve private key/Keychain and ACL rollback; complete host disaster-recovery drill |
+| P0 Error disclosure | FIXED for observed warning | Staging A/B reproduced warning; production reporting none, syntax/EN/RU checks and config Save pass | Editor content now renders; full editor/save compatibility still requires testing |
 | P0 Supported platform | DEFERRED BY RISK | Joomla4.4.0/PHP8.1.34 EOL; Helix before5 compatibility release | Follow staged upgrade plan, licensed extensions,5.4/PHP8.3 regression and rollback |
-| P0 Claims/title cleanup | PARTIAL | Literal EN/RU audit and safe replacement guidance produced | Verify Ontario status/training evidence; Quix editor currently fails; apply exact source edits after recovery |
+| P0 Claims/title cleanup | PARTIAL | Literal EN/RU audit and safe replacement guidance produced | Verify Ontario status/training evidence; editor renders but complete editing/saving remains unverified; apply exact source edits after testing |
 | P0 First-party consent/privacy | PARTIAL | One GTM loader, no static consent call; sales consent does not prove Joomla consent | Container/runtime audit on protected staging, consent-before-collection, minimal data |
 | P0 Admin hardening | PARTIAL | Two Super Users,0MFA enrollments,6400-minute session lifetime | Preserve recovery path, enroll owner-approved factor, reduce lifetime, no account deletion blindly |
 | P1 First-party client layer | SPECIFIED, NOT RELEASED | Current homepage mixes practice/library; unclear CTA | IA/copy in content-map, actual fees/availability/credentials, working editor and staging |
@@ -39,4 +39,4 @@ Owner: PsiTrends business owner; implementation: authorized maintainer. Date2026
 
 Each production batch requires private snapshot, exact diff, preview, mobile/desktop QA, links/forms, canonical/robots/sitemap/schema, analytics/consent, EN/RU, claims regression, live readback and rollback. No copied credential/export bytes in Git. No major content rewrite combined with platform migration.
 
-Issue6 is not closed while hosting recovery, blocked config/editor fixes and legally material credential facts remain unresolved. Google report processing is an external data delay; do not fabricate its baseline. Follow-up implementation work stays linked to Issue6 and its delivery PR rather than disappearing in chat.
+Issue6 remains open for full editor/save compatibility, staged modernization, client-layer implementation and migration, remaining P0/SEO/analytics work, and any legally material credential facts. The owner hosting and configuration-write gates are cleared; do not request those actions again. Google report processing is an external data delay; do not fabricate its baseline. Follow-up implementation work stays linked to Issue6 and its delivery PR rather than disappearing in chat.

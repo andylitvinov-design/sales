@@ -2,10 +2,10 @@
 
 2026-09-22 — [Issue6: PsiTrends stewardship](https://github.com/andylitvinov-design/sales/issues/6).
 
-PARTIAL; owner hosting recovery is the remaining production gate. CMS access now recovers from macOS Keychain; fresh login tested. Full private1.03GB Akeeba backup CRC/hash verified;104-table local restore and EN/RU/service pages passed. CMS object rollback verified. Search Console URL-prefix ownership established through existing GTM; reports processing. One broken enquiry route repaired live (`/express-ru`→`/ru/express-ru`), URL collection disabled. Existing Toronto pages/GBP UTM preserved; category unchanged.
+IN PROGRESS. Owner hosting recovery is cleared: fresh console and dedicated restricted-key SSH are verified. Two exposed archives were quarantined (404; EN/RU200). Production error display is disabled and Joomla configuration Save now works through a narrowly scoped, staging-tested permission repair. Quix renders its editor content, but complete editing/saving remains unverified. See the [host recovery checkpoint](reports/2026-09-22/psitrends-host-recovery.md).
 
 [Full audit](reports/2026-09-22/psitrends-full-audit.md), [resume access](../docs/psitrends-production-access.md), [backup/rollback](../docs/psitrends-backup-restore.md), [roadmap](../docs/psitrends-development-roadmap.md).
 
-Branch`codex/psitrends-stewardship`. No production upgrade/redesign. Joomla configuration save fails on read-only file; Quix editor stalls with deprecation output. Owner must recover the existing Hetzner account/2FA and grant authorized host access. Do not close Issue6 or call broader production modernization complete. Private local restore runtime is stopped; archive and clone retained outsideGit.
+Branch `codex/psitrends-host-recovery`. No production upgrade/redesign. The original private backup and verified 104-table clone remain the baseline; a fresh 104-table SQL dump and host configuration export are also retained privately. Isolated modernization testing is in progress. Do not close Issue6 or claim the client-layer migration or full stewardship program complete.
 
-Delivery: [PR #8](https://github.com/andylitvinov-design/sales/pull/8), implementation `6ede3c0`. Target `codex/bootstrap-sales`; no required branch protection/checks reported. This PR publishes operations/audit records; no unchanged Cloudflare package redeployment is needed. Issue #6 remains open for the owner hosting gate.
+Host repair delivery: [PR #9](https://github.com/andylitvinov-design/sales/pull/9). Previous audit/restore delivery: [PR #8](https://github.com/andylitvinov-design/sales/pull/8), merged `3226c64`. Target `codex/bootstrap-sales`. The unchanged Cloudflare package needs no redeployment. Issue #6 remains open for the ordered implementation work.
