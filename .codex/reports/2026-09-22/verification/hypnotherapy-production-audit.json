@@ -1,0 +1,34 @@
+{
+  "target": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto",
+  "checks": [
+    {
+      "label": "pa11y",
+      "status": 0
+    },
+    {
+      "label": "linkinator",
+      "status": 0
+    },
+    {
+      "label": "lighthouse",
+      "status": 0
+    },
+    {
+      "label": "playwright",
+      "status": 0
+    }
+  ],
+  "lighthouse": {
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "viewport": "mobile",
+      "message": "Mobile hero is taller than the viewport."
+    }
+  ],
+  "ok": true
+}

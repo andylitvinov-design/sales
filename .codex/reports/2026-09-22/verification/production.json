@@ -1,0 +1,128 @@
+{
+  "origin": "https://sales-bwa-photo.pages.dev",
+  "preview": false,
+  "checkedAt": "2026-09-22T12:12:27.836Z",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/landing-services-bwa-photo.css?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-analytics.js?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/hypnotherapy-toronto",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-acquisition.css?v=2",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-ga4.js?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-acquisition.js?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-analytics.js?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/hypnotherapy-toronto.html?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 308,
+      "location": "/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "robots": null
+    },
+    {
+      "path": "/systemic-constellations-toronto",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-acquisition.css?v=2",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-ga4.js?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-acquisition.js?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/toronto-analytics.js?v=1",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/systemic-constellations-toronto.html?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 308,
+      "location": "/systemic-constellations-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "robots": null
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/not-a-real-acquisition-page",
+      "status": 404,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/.codex/LATEST.md",
+      "status": 404,
+      "location": null,
+      "robots": null
+    },
+    {
+      "path": "/STATE.md",
+      "status": 404,
+      "location": null,
+      "robots": null
+    }
+  ],
+  "passed": true
+}

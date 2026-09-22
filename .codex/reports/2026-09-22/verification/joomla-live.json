@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-22T12:14:35.574Z",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "results": [
+    {
+      "url": "/",
+      "links": [
+        "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+        "https://sales-bwa-photo.pages.dev/systemic-constellations-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp"
+      ],
+      "overflow": false
+    },
+    {
+      "url": "/ru/",
+      "links": [
+        "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+        "https://sales-bwa-photo.pages.dev/systemic-constellations-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp"
+      ],
+      "overflow": false
+    }
+  ],
+  "passed": true
+}
