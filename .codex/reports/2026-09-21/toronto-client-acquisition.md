@@ -35,3 +35,5 @@ See [verification summary](verification.md) and committed compact evidence under
 4. Connect an authorized analytics/booking source if automatic reporting is wanted. Until then use the private aggregate scorecard; click ≠ qualified lead ≠ booking ≠ paid client.
 
 Next action: review this PR and restore Cloudflare authorization for preview publication. Do not change GBP category as part of that deployment.
+
+GitHub delivery: [PR #3](https://github.com/andylitvinov-design/sales/pull/3), implementation commit `6c84d53`. PR is open against `codex/bootstrap-sales`; no hosted CI checks are configured/reported. No merge or production deployment performed.

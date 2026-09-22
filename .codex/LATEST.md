@@ -7,3 +7,5 @@ Status: implemented and verified locally; remote deployment/GBP edits need authe
 Two service pages, 68-query research, Top 16, public GBP baseline, exact manual change sheet, safe attribution, public build package and checks. Production psitrends.com is Joomla; Git source remains unresolved.
 
 [Full report](reports/2026-09-21/toronto-client-acquisition.md). Next: review PR and renew Cloudflare login for preview. GBP category/name preserved.
+
+GitHub delivery: [PR #3](https://github.com/andylitvinov-design/sales/pull/3), implementation commit `6c84d53`. PR is open against `codex/bootstrap-sales`; no hosted CI checks are configured/reported. No merge or production deployment performed.
