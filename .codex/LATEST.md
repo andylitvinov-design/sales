@@ -1,5 +1,13 @@
 # Latest task
 
+2026-09-22 — Issue #6: execution blocked at owner Keychain authentication; not complete.
+
+Branch `codex/psitrends-operations` adds safe recovery diagnostics, secret protections and specific access/backup/staging runbooks. Joomla session works; fresh credential recovery does not yet pass. Existing Akeeba backup 12 is listed OK (980.21 MB), but download/restore/staging are unverified. No production changes in this run. Owner must unlock/approve local Keychain access for `psitrends.production.joomla` / `cms-administrator`; never send the password in chat.
+
+[Execution checkpoint](reports/2026-09-22/psitrends-execution-checkpoint.md) · [Ordered contract](../docs/psitrends-execution-contract.md) · [Access recovery](../docs/psitrends-production-access.md). Resume at access recovery, then verified backup/staging, then remaining phases. Eight synthetic recovery-check tests pass; this does not prove Joomla login.
+
+## Previous completed release
+
 2026-09-22 — Issue #4: Joomla production routing and existing analytics.
 
 Production changes released: Joomla module129 links both language homepages to the two existing Toronto pages; styles17/21 preserve the approved GBP UTM. Working CMS access recovered from private project context; no owner login needed. Production is Joomla at `/var/www/html` on a Hetzner origin, not Cloudflare's static snapshot.
