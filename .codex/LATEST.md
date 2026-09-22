@@ -1,11 +1,11 @@
 # Latest task
 
-2026-09-22 — [Issue6: PsiTrends stewardship](https://github.com/andylitvinov-design/sales/issues/6).
+2026-09-22 — [Issue6: PsiTrends stewardship](https://github.com/andylitvinov-design/sales/issues/6). IN PROGRESS.
 
-IN PROGRESS. Owner hosting recovery is cleared: fresh console and dedicated restricted-key SSH are verified. Two exposed archives were quarantined (404; EN/RU200). Production error display is disabled and Joomla configuration Save now works through a narrowly scoped, staging-tested permission repair. Quix renders its editor content, but complete editing/saving remains unverified. See the [host recovery checkpoint](reports/2026-09-22/psitrends-host-recovery.md).
+Host access is persistently recovered. PHP error display and configuration Save are repaired. Nginx sensitive-path guards and backup-spool containment are verified live. A bounded daily private backup job completed under systemd before scheduling was enabled; its fresh104-table backup was restored against production PHP/nginx/MySQL images on an isolated SSH-only clone.
 
-[Full audit](reports/2026-09-22/psitrends-full-audit.md), [resume access](../docs/psitrends-production-access.md), [backup/rollback](../docs/psitrends-backup-restore.md), [roadmap](../docs/psitrends-development-roadmap.md).
+Actual isolated Joomla4.4.0→4.4.14→5.4.8 migration with Helix2.2.10/Akeeba10.4.0 and complete paired rollback passed. PHP8.3 and interactive editor acceptance continue; no production modernization is claimed.
 
-Branch `codex/psitrends-host-recovery`. No production upgrade/redesign. The original private backup and verified 104-table clone remain the baseline; a fresh 104-table SQL dump and host configuration export are also retained privately. Isolated modernization testing is in progress. Do not close Issue6 or claim the client-layer migration or full stewardship program complete.
+Twelve bilingual client previews passed full audits and36 viewport checks. [Draft PR10](https://github.com/andylitvinov-design/sales/pull/10) adds the shared source, native Joomla adapter and preservation-first route map. Native install/routes/save/rollback are being tested on the host clone. No first-party client release or Cloudflare migration yet.
 
-Host repair delivery: [PR #9](https://github.com/andylitvinov-design/sales/pull/9). Previous audit/restore delivery: [PR #8](https://github.com/andylitvinov-design/sales/pull/8), merged `3226c64`. Target `codex/bootstrap-sales`. The unchanged Cloudflare package needs no redeployment. Issue #6 remains open for the ordered implementation work.
+[Operations verification](reports/2026-09-22/psitrends-operations-verification.md), [private operations source](https://github.com/andylitvinov-design/psitrends-ops), [access](../docs/psitrends-production-access.md), [backup](../docs/psitrends-backup-restore.md), [upgrade plan](../docs/psitrends-upgrade-plan.md). PR8 audit and PR9 access recovery are merged; PR7 is superseded/closed. Keep Issue6 open until the remaining program and release verification are complete.

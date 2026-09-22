@@ -1,6 +1,6 @@
 # Staged platform modernization
 
-Status: baseline restore verified; upgrade not yet tested or authorized for production by these results. Hosting writes remain blocked. Keep platform work separate from the content redesign.
+Status: host access recovered; actual supported Joomla4.4.0→4.4.14→5.4.8 update and paired rollback passed on the isolated clone, with Helix2.2.10 and Akeeba Core10.4.0. No production upgrade has been released. PHP8.3 and interactive editor/save acceptance remain separate gates. Keep platform work separate from the content redesign.
 
 ## Official evidence checked2026-09-22
 
@@ -43,7 +43,13 @@ The full278-record matrix is`psitrends-evidence/extension-compatibility.csv`. �
 
 ## P0 host patch prepared
 
-`configuration.php`: `error_reporting` maximum→none, with server-side error logging preserved. Supported CMS save was attempted after backup and explicitly failed because the file is read-only; production unchanged. Hosting operator should edit the real mounted source or environment definition, not make an ephemeral container-only edit. Verify frontend/admin no path disclosures and Quix editor load; preserve exact original for rollback. Also review6400-minute administrator session lifetime and MFA enrollment without locking out the sole recovered access path.
+`configuration.php` error reporting is now `none`; the original is privately retained. After a scoped group/mode repair, supported Global Configuration Save passed and changed no parsed values. The Quix iframe and Save control render; one MutationObserver error and a complete production save round trip remain unverified. Nginx path guards and backup-spool containment are also released. Review6400-minute administrator session lifetime and MFA without locking out recovered access.
+
+## Actual isolated modernization evidence
+
+The supported upload/update/finalization path reached Joomla5.4.8 (schema5.4.0-2025-08-02,107 tables) after Joomla4.4.14 and free vendor Helix2.2.10/Akeeba10.4.0 updates. Core database checker reported no issues. EN/RU, authenticated admin and Quix editor HTML returned200. All50 articles,56 modules,2 language rows and141 Quix content records were preserved; incidental hit/edit-lock fields, administrative Akeeba menus, nested-set bookkeeping and one template colorScheme parameter changed as documented.
+
+A complete paired rollback restored Joomla4.4.0/schema4.4.0-2023-09-13/104 tables, verified17,747 files byte-for-byte and removed3,831 updater-added files. Six content-table hashes matched before smoke requests. Temporary users/upload settings were removed and repeat HTTP checks passed. These results prove a feasible core migration and rollback; they do not certify exact Quix/Valley vendor support, browser editing or PHP8.3. Those tests continue separately.
 
 ## Keep-versus-migrate decision
 

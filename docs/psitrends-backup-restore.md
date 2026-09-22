@@ -62,3 +62,13 @@ For Issue6 production changes see the dated audit's exact change log. Never rest
 ## Resume the stopped local drill
 
 The private clone and database are retained; containers and VM were stopped after checks to release memory. Start only the dedicated profile with the private Lima runtime on PATH; preserve the user's default Docker context and use explicit `--context colima-psitrends-staging`. Start only `psitrends-staging-db` and `psitrends-staging-web`. The internal network deliberately does not expose a web port; the verified HTTP tests ran inside the web container. Do not attach a public network merely to obtain a convenient preview.
+
+## Verified host job and fresh image-parity restore
+
+The private [operations repository](https://github.com/andylitvinov-design/psitrends-ops) contains the reviewed bounded backup script and systemd units.22 synthetic tests and independent review passed. A real direct backup and a subsequent run through the actual systemd sandbox completed successfully. Only then was the daily06:15UTC timer enabled (up to15 minutes jitter). Check service result and latest manifest; an active timer is not proof of future success.
+
+The second bundle completed2026-09-22 18:43:01UTC:104 tables; SQL gzip13,254,854 bytes/SHA256`ac3ae01fa3edae8fcef3abeaebb301a6bd887b1435c9bcf713f8314f92378684`; project archive593,542,815 bytes/SHA256`0df5bf9c2ddf27280ad63262d7d3d65c49d73e1375cf681e046bb069b24b67ed`. Both were independently verified before restoring into a separate host directory/network using production PHP8.1.34/nginx1.29.8/MySQL8.0.46 images.104 tables restored; EN/RU/admin200 with noindex/CSP and no fatal diagnostics.
+
+The clone blocks restored production users, clears session/remember/MFA state, uses fresh application/database secrets, disables mail/jobs and blocks external requests. There are no effective Docker published ports; access is through the narrowly scoped SSH forward. File cache/database sessions replace Redis for isolation. Full host disaster recovery and future nightly runs remain unverified; the original off-server baseline stays retained.
+
+The job preserves10 GiB free, caps raw SQL at1 GiB, allows8 GiB cumulative writes and prevents overlap. It never prunes backups. Review manifests/capacity weekly and investigate a failed service or completed backup older than36 hours. No notification channel or independent encrypted cloud destination is configured. Stop scheduling with`systemctl disable --now psitrends-backup.timer`; do not delete retained bundles when rolling back the job.
