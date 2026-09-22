@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-22",
+  "method": "Private isolated Docker network; restored files and SQL from baseline.zip",
+  "db_tables": 104,
+  "quix_rows": 141,
+  "menu_rows": 216,
+  "en_http": 200,
+  "ru_http": 200,
+  "en_title": "\u0410cademy of archetypal consulting",
+  "runtime": "Joomla4.4.0 image PHP8.1.26, MySQL8.0; not identical production PHP8.1.34/nginx",
+  "limitations": [
+    "No production host restore tested",
+    "Optional PHP extensions emit startup warnings",
+    "No upgrade compatibility claim",
+    "Browser preview pending; internal network does not publish port"
+  ],
+  "isolation": [
+    "Internal Docker network",
+    "No exposed database port",
+    "SMTP disabled",
+    "Existing user accounts blocked and sessions removed",
+    "CSP blocks third-party analytics and forms",
+    "X-Robots-Tag noindex"
+  ],
+  "sql_import_note": "Legacy zero dates required session sql_mode=NO_AUTO_VALUE_ON_ZERO in disposable local DB only",
+  "redirect_preview": {
+    "from": "/express-ru",
+    "to": "/ru/express-ru",
+    "status": 301,
+    "collection_enabled": false
+  },
+  "service_http": 200,
+  "runtime_state": "stopped; private files/database retained"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://psitrends.com/",
+    "gtm_ids": [
+      "GTM-K2KKDZD"
+    ],
+    "ga4_ids": [],
+    "consent_calls": 0,
+    "jsonld_blocks": 1,
+    "http_assets": [],
+    "inline_gtm_loaders": 1
+  },
+  {
+    "url": "https://psitrends.com/ru/",
+    "gtm_ids": [
+      "GTM-K2KKDZD"
+    ],
+    "ga4_ids": [],
+    "consent_calls": 0,
+    "jsonld_blocks": 1,
+    "http_assets": [],
+    "inline_gtm_loaders": 1
+  },
+  {
+    "url": "https://psitrends.com/therapy/image-psychotherapy",
+    "gtm_ids": [
+      "GTM-K2KKDZD"
+    ],
+    "ga4_ids": [],
+    "consent_calls": 0,
+    "jsonld_blocks": 1,
+    "http_assets": [],
+    "inline_gtm_loaders": 1
+  }
+]

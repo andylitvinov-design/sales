@@ -1,0 +1,22 @@
+{
+  "offline": "false",
+  "debug": "false",
+  "error_reporting": "'maximum'",
+  "caching": "1",
+  "cache_handler": "'redis'",
+  "lifetime": "6400",
+  "force_ssl": "2",
+  "sef": "true",
+  "sef_rewrite": "true",
+  "sef_suffix": "false",
+  "unicodeslugs": "false",
+  "gzip": "false",
+  "captcha": "'0'",
+  "MetaDesc": "'PsiTrends'",
+  "mailonline": "true",
+  "session_handler": "'database'",
+  "registration_enabled": "0",
+  "core_admin_acl": {
+    "8": 1
+  }
+}

@@ -9,3 +9,24 @@ reports/
 output/toronto-public/
 
 .wrangler/
+
+# PsiTrends operations: secrets and full exports belong outside this repository
+.private/
+private/
+backups/
+*.sql
+*.sql.gz
+*.jpa
+*.jps
+site-psitrends*.zip
+*.keychain-db
+*.env
+.env.*
+
+__pycache__/
+*.pyc
+configuration.php
+database-private.json
+baseline.zip
+restore.sql
+staging-db.env

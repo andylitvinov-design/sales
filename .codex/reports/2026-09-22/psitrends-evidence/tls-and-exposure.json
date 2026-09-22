@@ -1,0 +1,28 @@
+{
+  "tls": {
+    "protocol": "TLSv1.3",
+    "notBefore": "Aug 29 18:13:28 2026 GMT",
+    "notAfter": "Nov 27 18:13:27 2026 GMT",
+    "verified": true
+  },
+  "exposure_checks": [
+    {
+      "path": "/configuration.php",
+      "status": 200,
+      "empty_response": true,
+      "obvious_source_disclosure": false
+    },
+    {
+      "path": "/.git/HEAD",
+      "status": 403
+    },
+    {
+      "path": "/.env",
+      "status": 403
+    },
+    {
+      "path": "/installation/",
+      "status": 404
+    }
+  ]
+}
