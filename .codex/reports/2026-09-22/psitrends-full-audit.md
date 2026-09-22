@@ -119,3 +119,5 @@ No GBP category, name/address, canonical migration, production upgrade, client m
 Sign in to the existing Hetzner owner account, completing its recovery/2FA, then grant authorized console/SSH access to the identified origin. That unlocks the real mounted configuration/source, error-reporting fix, editor recovery, production rollback and supported-platform release. Do not send passwords in Git/chat. Current credentials and a browser-only session cannot bypass a read-only production mount.
 
 Continue from the roadmap once host access is available. Keep Issue6 open and link the delivery PR; the broader staged work is not silently marked complete.
+
+Delivery: [PR #8](https://github.com/andylitvinov-design/sales/pull/8), implementation `6ede3c0`. Target `codex/bootstrap-sales`; no required branch protection/checks reported. This PR publishes operations/audit records; no unchanged Cloudflare package redeployment is needed. Issue #6 remains open for the owner hosting gate.

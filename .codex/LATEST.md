@@ -7,3 +7,5 @@ PARTIAL; owner hosting recovery is the remaining production gate. CMS access now
 [Full audit](reports/2026-09-22/psitrends-full-audit.md), [resume access](../docs/psitrends-production-access.md), [backup/rollback](../docs/psitrends-backup-restore.md), [roadmap](../docs/psitrends-development-roadmap.md).
 
 Branch`codex/psitrends-stewardship`. No production upgrade/redesign. Joomla configuration save fails on read-only file; Quix editor stalls with deprecation output. Owner must recover the existing Hetzner account/2FA and grant authorized host access. Do not close Issue6 or call broader production modernization complete. Private local restore runtime is stopped; archive and clone retained outsideGit.
+
+Delivery: [PR #8](https://github.com/andylitvinov-design/sales/pull/8), implementation `6ede3c0`. Target `codex/bootstrap-sales`; no required branch protection/checks reported. This PR publishes operations/audit records; no unchanged Cloudflare package redeployment is needed. Issue #6 remains open for the owner hosting gate.
