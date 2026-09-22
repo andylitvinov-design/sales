@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "hypnotherapy-toronto",
+    "source": "google",
+    "events": [
+      "landing_view",
+      "contact_click",
+      "contact_click",
+      "contact_click"
+    ],
+    "passed": true
+  },
+  {
+    "slug": "hypnotherapy-toronto",
+    "source": "unattributed",
+    "events": [
+      "landing_view",
+      "contact_click",
+      "contact_click",
+      "contact_click"
+    ],
+    "passed": true
+  },
+  {
+    "slug": "systemic-constellations-toronto",
+    "source": "google",
+    "events": [
+      "landing_view",
+      "contact_click",
+      "contact_click",
+      "contact_click"
+    ],
+    "passed": true
+  },
+  {
+    "slug": "systemic-constellations-toronto",
+    "source": "unattributed",
+    "events": [
+      "landing_view",
+      "contact_click",
+      "contact_click",
+      "contact_click"
+    ],
+    "passed": true
+  }
+]

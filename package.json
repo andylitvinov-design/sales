@@ -14,7 +14,8 @@
     "page:new": "node scripts/create-web-page.mjs",
     "page:audit": "node scripts/web-quality.mjs",
     "assets:optimize": "node scripts/optimize-assets.mjs",
-    "dashboard:build": "node scripts/build-landing-metric-dashboard.mjs"
+    "dashboard:build": "node scripts/build-landing-metric-dashboard.mjs",
+    "acquisition:build": "node scripts/build-toronto-public.mjs"
   },
   "devDependencies": {
     "html-validate": "^9.7.1",

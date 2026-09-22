@@ -40,3 +40,10 @@
 - открыть live link для просмотра
 - открыть GitHub-репозиторий/монорепо для базовых правок текста и структуры
 - читать `STATE.md` первым файлом перед новой сессией
+
+## Toronto acquisition
+
+- `hypnotherapy-toronto.html` — English individual-session enquiry page.
+- `systemic-constellations-toronto.html` — family/systemic work and business-decision section.
+- `npm run acquisition:build` — explicit public-only Cloudflare Pages bundle.
+- [.codex report](.codex/reports/2026-09-21/toronto-client-acquisition.md) — research, GBP baseline/change sheet, verification and publication blockers.

@@ -1,0 +1,84 @@
+
+  - button "Ask AI":
+    - generic: Ask AI
+  - link "Support":
+    - /url: /?to=/:account/support
+    - generic: Support
+  - button "User menu":
+- main:
+  - generic: Soft Navigations Update
+  - text: We're currently rolling out accuracy improvements to client-side soft navigations. This change may alter the volume of reported pageviews, visits and aggregate Core Web Vital values in the dashboard and GraphQL API. For more information, see
+  - link "the changelog":
+    - /url: https://developers.cloudflare.com/changelog/post/2026-08-21-improved-soft-navigation-measurement-for-single-page-applications/
+    - text: the changelog
+  - text: .
+  - button "Core Web Vitals LCP INP CLS":
+    - generic: Core Web Vitals
+    - generic: LCP
+    - generic: INP
+    - generic: CLS
+  - link "Page load time":
+    - /url: /2632954c462f8f8de6f61dd857c678e0/web-analytics/overview/performance?siteTag~in=fd9ec9d76a324b89b0099a7d5b88e8b4&excludeBots=Yes
+  - generic: 0ms
+  - link "Visits":
+    - /url: /2632954c462f8f8de6f61dd857c678e0/web-analytics/overview/visits?siteTag~in=fd9ec9d76a324b89b0099a7d5b88e8b4&excludeBots=Yes
+  - generic: "1"
+  - link "Page views":
+    - /url: /2632954c462f8f8de6f61dd857c678e0/web-analytics/overview/page-views?siteTag~in=fd9ec9d76a324b89b0099a7d5b88e8b4&excludeBots=Yes
+  - generic: "1"
+  - heading "Quick Actions" [level=4]
+  - link "View Web Analytics sites":
+    - /url: /2632954c462f8f8de6f61dd857c678e0/web-analytics/sites
+    - generic: View Web Analytics sites
+  - link "Manage Notifications":
+    - /url: /2632954c462f8f8de6f61dd857c678e0/notifications
+    - generic: Manage Notifications
+  - heading "Resources" [level=4]
+  - link "Documentation":
+    - /url: https://developers.cloudflare.com/web-analytics/
+  - heading "Web Analytics for sales-bwa-photo.pages.dev" [level=1]:
+    - generic: Web Analytics for sales-bwa-photo.pages.dev
+    - link:
+      - /url: https://sales-bwa-photo.pages.dev
+  - button "printer Print report":
+    - img "printer"
+    - generic: Print report
+  - button "Add filter":
+    - generic: Add filter
+  - generic "Site is in sales-bwa-photo.pages.dev":
+    - generic: Site
+    - generic: is in
+    - generic: sales-bwa-photo.pages.dev
+    - button "remove":
+  - generic "Exclude bots equals Yes":
+    - generic: Exclude bots
+    - generic: equals
+    - generic: "Yes"
+    - button "remove":
+  - button "Last 24 hours (GMT-4) Open calendar":
+    - paragraph: Last 24 hours
+    - generic: (GMT-4)
+    - img "Open calendar"
+  - paragraph:
+    - text: There is not enough data for Web Analytics right now. Check back after more visitors have visited your website.
+    - link "Learn more":
+      - /url: /2632954c462f8f8de6f61dd857c678e0/web-analytics/overview
+- contentinfo:
+  - list:
+    - link "Support":
+      - /url: https://support.cloudflare.com
+    - link "System status":
+      - /url: https://www.cloudflarestatus.com
+    - link "Careers":
+      - /url: https://www.cloudflare.com/careers/
+    - link "Terms of Use":
+      - /url: https://www.cloudflare.com/website-terms/
+    - link "Report Security Issues":
+      - /url: https://www.cloudflare.com/disclosure/
+    - link "Privacy Policy":
+      - /url: https://www.cloudflare.com/privacypolicy/
+    - button "A blue and white pill with a checkmark and an x, representing privacy choices Cookie Preferences":
+      - img "A blue and white pill with a checkmark and an x, representing privacy choices"
+      - text: Cookie Preferences
+    - generic: © 2026 Cloudflare, Inc.
+- region "Notifications"

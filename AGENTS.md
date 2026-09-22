@@ -90,8 +90,7 @@ Stop only with `STATUS: SUCCESS` or `STATUS: BLOCKED`.
 - Build: `npm run dashboard:build`
 - Check: `npm run check` (html-validate + stylelint + pa11y + lighthouse + linkinator)
 - CI: none confirmed
-- Deployment: **needs verification** — no vercel.json found
-- Primary live URL: **needs verification** — SUCCESS cannot be claimed without confirmed URL
+- Deployment: Cloudflare Pages Direct Upload, project `sales-bwa-photo`; deploy only `output/toronto-public` from `npm run acquisition:build`. Pages production branch is `main` (distinct from GitHub default).
+- Primary live URL: `https://sales-bwa-photo.pages.dev/` (production verified 2026-09-22 UTC).
 
-**Live URL blocker:** Before any /delivery run can reach SUCCESS, confirm the deployment
-provider and live URL, then update this file.
+**Release verification:** Require a passing preview and repo checks before production; verify live routes and indexing before claiming release success. Never upload the repository root.
