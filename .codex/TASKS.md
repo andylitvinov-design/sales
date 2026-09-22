@@ -8,4 +8,4 @@ Delivery: [PR #3](https://github.com/andylitvinov-design/sales/pull/3), implemen
 
 Release: code `a08d7b9`, Cloudflare deployment `8b44c078`; [execution report](reports/2026-09-21/release-and-gbp-execution.md).
 
-| 2026-09-22 | Joomla production routing #4 and existing GA4 CTA measurement | Production released; final readback/PR in report | codex/psitrends-joomla-routing | [Report](reports/2026-09-22/joomla-routing-and-analytics.md) |
+| 2026-09-22 | Joomla production routing #4 and existing GA4 CTA measurement | Completed; live GA4 readback verified; PR #5 | codex/psitrends-joomla-routing | [Report](reports/2026-09-22/joomla-routing-and-analytics.md) |

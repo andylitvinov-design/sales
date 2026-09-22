@@ -34,3 +34,8 @@ Use contact clicks as an enquiry-intent diagnostic; record actual qualified/paid
 Production Pages deployment `fdd17542` serves the final preview-tested allowlist. Live routes, assets, canonical/schema, indexability, sitemap/robots, HTML redirects with UTM and private-path404 checks passed. Synthetic CTA receipt in `verification/ga4-receipt.json` confirms a single contact_click HTTP204 to G-Z4BGV9GP4N, with expected page/contact fields and empty referrer. No external message was sent. Dashboard build completed across24 existing pages.
 
 Final production full audit passed with Lighthouse accessibility/best-practices/SEO100/100/100. Public Joomla EN/RU mobile checks at390×844 passed navigation, exact UTM allowlist and no horizontal overflow. Captured navigation screenshots are in ignored `reports/`; sanitized JSON evidence is versioned alongside this report.
+
+## GA4 readback and PR
+Authenticated realtime readback in property361648075 showed `contact_click` count2 and the Toronto hypnotherapy page view. These were synthetic QA interactions, not leads. Sanitized evidence: `verification/ga4-readback.json`. One extra attempt to open Telegram was blocked by browser security; it was not retried. The separate isolated test prevented navigation and sent no message.
+
+[PR #5](https://github.com/andylitvinov-design/sales/pull/5), implementation commit195b1df. No GitHub required checks or protected-branch approval gate is configured; local/preview/live evidence supplies verification. All scoped Issue #4 acceptance criteria passed.

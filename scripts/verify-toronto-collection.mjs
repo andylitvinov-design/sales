@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { writeFile } from 'node:fs/promises';
-const browser = await chromium.launch({channel:'chrome',headless:true});
+const browser = await chromium.launch({channel:'chrome',headless:process.env.HEADED !== '1'});
 try {
  const context = await browser.newContext();
  const page = await context.newPage();
