@@ -60,10 +60,14 @@ Two exposed old archives were moved to private host quarantine. Both sampled pub
 
 Read the [host recovery checkpoint](../.codex/reports/2026-09-22/psitrends-host-recovery.md) before continuing. SSH and a safe host inventory are now verified. Remaining work includes full Quix editor/save verification, source ownership and tested host disaster recovery, followed by the existing staged program. No platform modernization or complete program delivery is claimed. Keep the original verified local backup and restore as the baseline.
 
-No verified production Git repository or fully tested host disaster recovery has been established. Keep safe records here until a private production repository is actually established; migrate with an explicit pointer rather than creating competing sources of truth.
+The private [psitrends-ops repository](https://github.com/andylitvinov-design/psitrends-ops) now holds sanitized infrastructure, backup tooling and release evidence. Live secrets/data remain outside Git. A fresh paired backup has been restored against the production image stack on an isolated host clone; complete host disaster recovery remains untested. The source split is deliberate: sales owns client content/integrations; psitrends-ops owns infrastructure and migration tooling.
 
 ## SSH traversal repair
 
 The verified login failure cause was mode 0700 on filesystem root `/`, which blocked non-root path traversal. Default permissions were preserved; a named ACL grants only traversal (`--x`) on `/` to the operational account. The previous ACL was saved privately on the host. No broader filesystem permission change is implied. Fresh host inventory confirmed a shared application host; no other applications were changed.
 
 Temporary SSH DEBUG3 diagnostics were removed. Configuration validation and reload passed, log level is INFO, root login remains disabled and fresh login through the SSH alias succeeded. Only root key entries added by this task were removed; the original root RSA key was preserved.
+
+## Subsequent verified operations
+
+Nginx sensitive-path guards now precede PHP/static handlers, and the Akeeba backup spool is explicitly denied. Two further spool files were quarantined intact; no ordinary content was deleted. The private scheduled backup service completed successfully before its daily timer was enabled. The restored host clone uses production PHP/nginx/MySQL images with fresh secrets, disabled production users/mail/jobs, noindex and blocked third-party requests. No Docker ports are effectively published; browser access is a scoped SSH local forward to the isolated nginx container. The operational key permits only that destination for local forwarding; agent forwarding, X11, PTY and root SSH remain restricted. Remove this forwarding exception when decommissioning the clone. See [operations verification](../.codex/reports/2026-09-22/psitrends-operations-verification.md).
