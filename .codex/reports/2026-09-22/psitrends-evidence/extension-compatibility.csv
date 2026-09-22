@@ -1,0 +1,279 @@
+id,name,type,installed_version,core,joomla54_php83,action,status
+227,Administrator Quix Info,Модуль,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+226,Administrator Quix Menu,Модуль,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+249,Akeeba Backup for Joomla!™,Компонент,9.8.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+251,Akeeba Backup for Joomla! package,Пакет,9.8.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+237,Atom,Шаблон,1.0.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+218,Atum,Шаблон,1.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+93,CAPTCHA - reCAPTCHA,Плагин,3.4.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+94,CAPTCHA - Невидимая reCAPTCHA,Плагин,3.8,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+219,Cassiopeia,Шаблон,1.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+277,Console - JCH Optimize,Плагин,8.1.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+287,Content - imagerecycle,Плагин,2.0.16,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+230,Content - Quix Content Plugin,Плагин,4.3.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+233,Editors Button - Quix editors-xtd Plugin,Плагин,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+222,English (en-GB),Язык,4.4.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+223,English (en-GB),Язык,4.4.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+224,English (en-GB),Язык,4.4.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+221,English (en-GB) Language Pack,Пакет,4.4.0.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+285,esitemplate,Шаблон,1.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+43,HTML-код,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+60,HTML-код,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+286,ImageRecycle,Компонент,2.1.2,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+288,ImageRecycle Statistics,Модуль,2.0.16,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+273,JCH Optimize,Компонент,8.1.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+278,JCH Optimize Mode Switcher,Модуль,8.1.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+238,JMedia,Компонент,##JMEDIA_VERSION##,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+243,JMedia,Пакет,1.4.4,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+242,JMedia - Admin Icons,Модуль,1.0.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+296,JMedia - PHP Library,Библиотека,1.0.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+240,JMedia - System Plugin,Плагин,1.0.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+241,JMedia Gallery,Модуль,1.0.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+220,Joomla! CMS,Файл,4.4.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+36,Joomla! Platform,Библиотека,13.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+281,LiteSpeed Cache,Компонент,1.5.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+282,LiteSpeed Cache Plugin,Плагин,1.5.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+284,LiteSpeed LSCache Package,Пакет,1.5.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+283,mod_lscache_purge,Модуль,1.0.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+228,Module - Quix,Модуль,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+37,PHPass,Библиотека,0.3,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+280,pkg_jchoptimize,Пакет,8.1.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+234,plg_quickicon_quix,Плагин,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+250,Quick Icon - Akeeba Backup Notification,Плагин,9.8.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+225,Quix,Компонент,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+236,Quix - Builder Elements,Плагин,4.3.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+254,Quix Installer,Компонент,1.7.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+295,Quix Next Library,Библиотека,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+244,Quix Package,Пакет,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+269,Russian (ru-RU),Язык,4.4.5,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+270,Russian (ru-RU),Язык,4.4.5,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+271,Russian (ru-RU),Язык,4.4.5,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+272,Russian (ru-RU) Language Pack,Пакет,4.4.5.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+232,Smart Search - Quix,Плагин,4.3.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+246,System - Helix Ultimate Framework,Плагин,2.0.15,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+274,System - JCH Optimize,Плагин,8.1.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+275,System - JCH Optimize Page Cache,Плагин,8.1.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+231,System - Quix System Plugin,Плагин,4.4.3,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+235,System - SEO Site Attributes for Joomla,Плагин,4.3.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+253,tx_valley,Шаблон,2.0,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+276,User - JCH Optimize User State,Плагин,8.1.1,False,NOT VERIFIED for installed version,"Verify vendor version/license, upgrade on clone, test pages and editor before production",DEFERRED BY RISK
+63,Авторизованные пользователи,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+88,Аутентификация - Cookie,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+89,Аутентификация - Joomla,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+90,Аутентификация - LDAP,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+86,Аутентификация API - Базовая аутентификация,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+87,Аутентификация API - Токен Joomla,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+3,Баннеры,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+41,Баннеры,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+198,Веб-служба - Баннеры,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+200,Веб-служба - Контакты,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+201,Веб-служба - Контент,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+208,Веб-служба - Ленты новостей,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+206,Веб-служба - Личные сообщения,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+204,Веб-служба - Медиа,Плагин,4.1.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+205,Веб-служба - Меню,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+207,Веб-служба - Модули,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+199,Веб-служба - Настройки,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+211,Веб-служба - Перенаправления,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+210,Веб-служба - Персональные данные,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+209,Веб-служба - Плагины,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+214,Веб-служба - Пользователи,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+212,Веб-служба - Теги,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+202,Веб-служба - Установщики,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+213,Веб-служба - Шаблоны,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+203,Веб-служба - Языки,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+76,Версия Joomla,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+11,Вход в панель управления,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+64,Вход в панель управления,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+46,Вход на сайт,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+80,Демо-данные,Модуль,3.8.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+161,Демо-данные - Блог,Плагин,3.8.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+162,Демо-данные - Многоязычный сайт,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+73,Заголовок компонента,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+188,Задача - Демонстрация,Плагин,4.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+189,Задача - Запросы GET,Плагин,4.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+187,Задача - Проверка файлов,Плагин,4.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+190,Задача - Состояние сайта,Плагин,4.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+27,Интерфейс Ajax,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+65,Информация о поддержке,Модуль,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+51,Информация о сайте,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+77,Информация о сайте,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+2,Информация о системе,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+26,История версий,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+5,Категории,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+106,Кнопка - Контакт,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+105,Кнопка - Материал,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+108,Кнопка - Медиа,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+109,Кнопка - Меню,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+110,Кнопка - Модуль,Плагин,3.5.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+112,Кнопка - Подробнее,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+107,Кнопка - Поля,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+111,Кнопка - Разрыв страницы,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+7,Контакты,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+100,Контент - Joomla,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+101,Контент - Загрузка модулей,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+96,Контент - Контакт,Плагин,3.2.2,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+103,Контент - Навигация по страницам,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+95,Контент - Подтверждение согласия,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+98,Контент - Поля,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+102,Контент - Разрыв страницы,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+104,Контент - Рейтинг,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+97,Контент - Скрытие электронной почты,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+99,Контент - Умный поиск,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+45,Копирайты,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+54,Кто на сайте,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+52,Лента новостей,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+44,Лента новостей (RSS),Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+61,Лента новостей (RSS),Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+16,Ленты новостей,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+14,Личные сообщения,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+70,Личные сообщения,Модуль,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+85,Лог действий - Joomla,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+32,Лог действий пользователей,Компонент,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+81,Лог последних действий,Модуль,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+19,Материалы,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+38,Материалы в архиве,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+147,Медиа - Изменение размеров,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+146,Медиа - Кадрирование,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+148,Медиа - Поворот,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+12,Медиа-менеджер,Компонент,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+4,Менеджер кэша,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+13,Меню,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+47,Меню,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+66,Меню панели управления,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+72,Меню пользователя,Модуль,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+259,Многофакторная аутентификация - WebAuthn,Плагин,4.2.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+258,Многофакторная аутентификация - YubiKey,Плагин,3.2.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+257,Многофакторная аутентификация - Код подтверждения,Плагин,3.2.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+260,Многофакторная аутентификация - Код подтверждения по почте,Плагин,4.2.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+261,Многофакторная аутентификация - Фиксированный код,Плагин,4.2.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+30,Многоязычные связи,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+15,Модули,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+42,Навигатор сайта,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+48,Новости,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+53,Новые пользователи,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+1,Обертка (Wrapper),Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+55,Обертка (Wrapper),Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+24,Обновление Joomla,Компонент,4.0.3,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+290,Обучающие туры,Компонент,4.3.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+291,Обучающие туры,Модуль,4.3.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+20,Общие настройки,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+68,Панель быстрого доступа,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+82,Панель запросов персональных данных,Модуль,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+160,Панель иконок - Проверка версии PHP,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+159,Панель иконок - Проверка запросов персональных данных,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+158,Панель иконок - Проверка наличия ключей доступа,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+155,Панель иконок - Проверка наличия обновлений Joomla,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+157,Панель иконок - Проверка наличия обновлений переопределений,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+156,Панель иконок - Проверка наличия обновлений расширений,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+293,Панель иконок - Проверка состояния поддержки Joomla 4,Плагин,4.4.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+74,Панель инструментов,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+8,Панель управления,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+58,Переключение языков,Модуль,3.5.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+21,Перенаправления,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+31,Персональные данные,Компонент,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+151,Персональные данные - Контакты,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+153,Персональные данные - Личные сообщения,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+149,Персональные данные - Лог действий,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+152,Персональные данные - Материалы,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+154,Персональные данные - Пользователи,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+150,Персональные данные - Согласия,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+17,Плагины,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+35,Планировщик задач,Компонент,4.1.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+92,Поведение - Версионность,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+294,Поведение - Обратная совместимость,Плагин,4.4.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+91,Поведение - Тегирование,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+83,Подменю панели управления,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+22,Пользователи,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+194,Пользователь - Joomla,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+195,Пользователь - Профиль,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+193,Пользователь - Создание контакта,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+197,Пользователь - Токен API Joomla,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+196,Пользователь - Условия использования,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+29,Поля,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+128,Поля - SQL,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+132,Поля - URL,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+129,Поля - Дочерняя форма,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+119,Поля - Календарь,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+126,Поля - Медиа,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+127,Поля - Переключатель,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+133,Поля - Пользователь,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+122,Поля - Редактор,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+125,Поля - Список,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+134,Поля - Список групп пользователей,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+123,Поля - Список изображений,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+130,Поля - Текст,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+131,Поля - Текстовая область,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+120,Поля - Флажки,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+121,Поля - Цвет,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+124,Поля - Целое число,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+40,Популярные материалы,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+67,Популярные материалы,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+78,Популярные теги,Модуль,3.1.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+39,Последние материалы,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+62,Последние материалы,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+79,Похожие теги,Модуль,3.1.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+33,Процессы,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+215,Процессы - Избранное,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+217,Процессы - Публикация,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+216,Процессы - Уведомление о переходе на новый этап,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+117,Расширение - Joomla,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+118,Расширение - Пространство имен,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+116,Расширение - Умный поиск,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+9,Расширения,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+113,Редактор - CodeMirror,Плагин,5.65.15,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+115,Редактор - TinyMCE,Плагин,5.10.7,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+114,Редактор - Без редактора,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+50,Связанные материалы,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+169,Система - HTTP Headers,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+180,Система - SEF,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+186,Система - WebAuthn,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+174,Система - Выход,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+262,Система - Горячие клавиши,Плагин,4.2.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+178,Система - Запомнить меня,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+165,Система - Кэш страниц,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+164,Система - Лог действий пользователя,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+173,Система - Лог пользователя,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+182,Система - Навигационное меню,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+292,Система - Обучающие туры,Плагин,4.3.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+166,Система - Отладка,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+181,Система - Очистка данных сессии,Плагин,3.8.6,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+163,Система - Панель доступности,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+177,Система - Перенаправления,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+176,Система - Персональные данные,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+179,Система - Планировщик задач,Плагин,4.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+171,Система - Подмена кода языка,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+168,Система - Подсветка,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+167,Система - Поля,Плагин,3.7.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+170,Система - Проверка доступности,Плагин,4.2.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+175,Система - Ротация логов,Плагин,3.9.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+183,Система - Статистика Joomla,Плагин,3.5.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+184,Система - Уведомление о состоянии задачи,Плагин,4.1,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+185,Система - Уведомление об обновлении Joomla,Плагин,3.5.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+172,Система - Фильтр языка,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+49,Случайное изображение,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+6,Снятие блокировок,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+28,Сообщения после установки,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+71,Сообщения после установки,Модуль,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+75,Состояние многоязычности,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+84,Состояние политики персональных данных,Модуль,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+57,Список категорий,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+56,Список материалов,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+69,Ссылка на главную,Модуль,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+25,Теги,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+23,Умный поиск,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+59,Умный поиск,Модуль,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+136,Умный поиск - Категории,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+137,Умный поиск - Контакты,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+139,Умный поиск - Ленты новостей,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+138,Умный поиск - Материалы,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+140,Умный поиск - Теги,Плагин,3.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+142,Установщик - Переопределения,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+145,Установщик - Установка из JED,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+141,Установщик - Установка из каталога,Плагин,3.6.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+144,Установщик - Установка по URL,Плагин,3.6.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+143,Установщик - Установка с загрузкой,Плагин,3.6.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+135,Файловая система - Локальный каталог,Плагин,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+18,Шаблоны,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+34,Шаблоны писем,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK
+10,Языки,Компонент,4.0.0,True,Core migration regression required,Upgrade with Joomla core in isolated staging,DEFERRED BY RISK

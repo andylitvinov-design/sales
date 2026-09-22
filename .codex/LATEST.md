@@ -1,11 +1,9 @@
 # Latest task
 
-2026-09-22 — Issue #4: Joomla production routing and existing analytics.
+2026-09-22 — [Issue6: PsiTrends stewardship](https://github.com/andylitvinov-design/sales/issues/6).
 
-Production changes released: Joomla module129 links both language homepages to the two existing Toronto pages; styles17/21 preserve the approved GBP UTM. Working CMS access recovered from private project context; no owner login needed. Production is Joomla at `/var/www/html` on a Hetzner origin, not Cloudflare's static snapshot.
+PARTIAL; owner hosting recovery is the remaining production gate. CMS access now recovers from macOS Keychain; fresh login tested. Full private1.03GB Akeeba backup CRC/hash verified;104-table local restore and EN/RU/service pages passed. CMS object rollback verified. Search Console URL-prefix ownership established through existing GTM; reports processing. One broken enquiry route repaired live (`/express-ru`→`/ru/express-ru`), URL collection disabled. Existing Toronto pages/GBP UTM preserved; category unchanged.
 
-Existing PsiTrends GA4 G-Z4BGV9GP4N connected behind optional consent. Live synthetic contact_click receipt HTTP204 and authenticated GA4 realtime readback verified; no message sent. No new pages/property/infrastructure or GBP category changes. Pages production deployment `fdd17542`; branch `codex/psitrends-joomla-routing`.
+[Full audit](reports/2026-09-22/psitrends-full-audit.md), [resume access](../docs/psitrends-production-access.md), [backup/rollback](../docs/psitrends-backup-restore.md), [roadmap](../docs/psitrends-development-roadmap.md).
 
-[Report and rollback](reports/2026-09-22/joomla-routing-and-analytics.md). Blockers: none for this scoped release. Next: compare consented contact intent with actual qualified/paid outcomes in the existing scorecard. PR/merge and GA4 readback recorded in the report.
-
-[PR #5](https://github.com/andylitvinov-design/sales/pull/5), implementation `195b1df`. Issue #4 acceptance passed; merge closes it.
+Branch`codex/psitrends-stewardship`. No production upgrade/redesign. Joomla configuration save fails on read-only file; Quix editor stalls with deprecation output. Owner must recover the existing Hetzner account/2FA and grant authorized host access. Do not close Issue6 or call broader production modernization complete. Private local restore runtime is stopped; archive and clone retained outsideGit.

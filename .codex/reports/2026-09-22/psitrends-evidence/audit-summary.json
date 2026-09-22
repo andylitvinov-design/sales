@@ -1,0 +1,21 @@
+{
+  "crawled_urls": 178,
+  "successful_responses": 145,
+  "unique_final_200_urls": 124,
+  "failed_requests": {
+    "HTTP Error 500: Internal Server Error": 4,
+    "HTTP Error 403: Forbidden": 5,
+    "HTTP Error 404: Not Found": 24
+  },
+  "missing_description_unique": 67,
+  "missing_canonical_unique": 124,
+  "missing_hreflang_unique": 119,
+  "claim_occurrences": 1052,
+  "pages_with_literal_claim_matches": 93,
+  "notes": [
+    "CMS-seeded crawl plus navigation; queue exhausted,178 URLs. Does not prove search index coverage.",
+    "Archive/demo/auth-only routes retained for review.",
+    "Literal claim matches are review candidates, not legal conclusions.",
+    "No query-bearing preview URLs included; CMS content inventory is complementary."
+  ]
+}

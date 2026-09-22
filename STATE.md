@@ -30,3 +30,15 @@
 - deployment: Cloudflare Pages `fdd17542`; production route checks passed
 - report: `.codex/reports/2026-09-22/joomla-routing-and-analytics.md`
 - rollback: unpublish Joomla module129; restore empty Custom Javascript in styles17/21; revert sales changes and redeploy the allowlist
+
+## PsiTrends stewardship —2026-09-22
+
+- issue: https://github.com/andylitvinov-design/sales/issues/6
+- branch: `codex/psitrends-stewardship`
+- access: Joomla credential in macOS Keychain; fresh-session recovery verified; no secrets inGit
+- backup: private full Akeeba ZIP, CRC/SHA256 verified;104-table isolated local restore and EN/RU/serviceHTTP200; production host restore unverified
+- shipped safe change: redirect1 `/express-ru`→`/ru/express-ru`,301; plugin177 enabled with URL collection disabled
+- Search Console: URL-prefix ownership verified via existingGTM; reports processing; domainproperty not accessible
+- report: `.codex/reports/2026-09-22/psitrends-full-audit.md`; durable runbooks `docs/psitrends-*.md`
+- gate: Hetzner owner recovery/2FA and authorized host access; configuration read-only, Quix editor fails; no production upgrade/redesign
+- preserve: module129/styles17/21, exactGBP UTM, both existingToronto acquisition pages, unchangedGBP primary category

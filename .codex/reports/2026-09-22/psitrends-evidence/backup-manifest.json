@@ -1,0 +1,13 @@
+{
+  "bytes": 1027828507,
+  "sha256": "0224cd608546f8ae0e1c977a3d4b904f01d5a7910c0343d9d97ea344054fe857",
+  "zip_crc_failure": null,
+  "entries": 19028,
+  "configuration_present": true,
+  "sql_files": 163,
+  "installer_present": true,
+  "database_chunks": 213,
+  "database_tables": 104,
+  "sql_files_note": "163 .sql paths includes extension installer schemas; actual full database spans site.sql and 212 split chunks",
+  "rollback_test": "Unpublished Super Users-only module130: baseline-A to changed-B to baseline-A, readback verified, then trashed. No public placement."
+}
