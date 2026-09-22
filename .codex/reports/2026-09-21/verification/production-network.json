@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-09-22T03:36:31.347Z",
+  "responses": [
+    {
+      "method": "Network.responseReceived",
+      "url": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "https://psitrends.com/images/photo_2024-08-04_22-52-52.jpg",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "https://sales-bwa-photo.pages.dev/toronto-acquisition.js?v=1",
+      "status": 304
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "https://sales-bwa-photo.pages.dev/toronto-acquisition.css?v=2",
+      "status": 304
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "https://sales-bwa-photo.pages.dev/toronto-analytics.js?v=1",
+      "status": 304
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "https://static.cloudflareinsights.com/beacon.min.js",
+      "status": 200
+    },
+    {
+      "method": "Network.responseReceived",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "status": 204
+    }
+  ],
+  "consoleErrors": []
+}

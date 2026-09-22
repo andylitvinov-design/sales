@@ -1,0 +1,108 @@
+{
+  "target": "landing-services-bwa-photo.html",
+  "pageUrl": "http://127.0.0.1:8877/sales/landing-services-bwa-photo.html",
+  "slug": "landing-services-bwa-photo",
+  "checks": [
+    {
+      "label": "html-validate",
+      "command": "/Users/andriilitvinov/projects/MYPROJECTS/sales/node_modules/.bin/html-validate /Users/andriilitvinov/projects/MYPROJECTS/sales/landing-services-bwa-photo.html",
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "stylelint:landing-services-bwa-photo.css",
+      "command": "/Users/andriilitvinov/projects/MYPROJECTS/sales/node_modules/.bin/stylelint /Users/andriilitvinov/projects/MYPROJECTS/sales/landing-services-bwa-photo.css",
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "pa11y",
+      "command": "/Users/andriilitvinov/projects/MYPROJECTS/sales/node_modules/.bin/pa11y http://127.0.0.1:8877/sales/landing-services-bwa-photo.html",
+      "status": 0,
+      "stdout": "Welcome to Pa11y\n\n > Running Pa11y on URL http://127.0.0.1:8877/sales/landing-services-bwa-photo.html\n\nNo issues found!",
+      "stderr": ""
+    },
+    {
+      "label": "linkinator",
+      "command": "/Users/andriilitvinov/projects/MYPROJECTS/sales/node_modules/.bin/linkinator http://127.0.0.1:8877/sales/landing-services-bwa-photo.html --recurse=false --skip mailto:.*,tel:.*",
+      "status": 0,
+      "stdout": "[200] http://127.0.0.1:8877/sales/landing-services-bwa-photo.html\n[200] http://127.0.0.1:8877/sales/toronto-analytics.js?v=1\n[200] http://127.0.0.1:8877/sales/landing-services-bwa-photo.css?v=1\n[200] http://127.0.0.1:8877/sales/hypnotherapy-toronto.html\n[200] https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80\n[200] https://sales-bwa-photo.pages.dev/\n[200] https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap\n[200] https://wa.me/%2B14376066502?text=Hi.+I+want+to+book+a+free+introductory+session.\n[200] https://t.me/AndyTherapist\n[200] https://psitrends.com/images/photo_2024-08-04_22-52-52.jpg\n  [200] http://127.0.0.1:8877/sales/landing-services-bwa-photo.html\n  [200] http://127.0.0.1:8877/sales/toronto-analytics.js?v=1\n  [200] http://127.0.0.1:8877/sales/landing-services-bwa-photo.css?v=1\n  [200] http://127.0.0.1:8877/sales/hypnotherapy-toronto.html\n  [200] https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80\n  [200] https://sales-bwa-photo.pages.dev/\n  [200] https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap\n  [200] https://wa.me/%2B14376066502?text=Hi.+I+want+to+book+a+free+introductory+session.\n  [200] https://t.me/AndyTherapist\n  [200] https://psitrends.com/images/photo_2024-08-04_22-52-52.jpg",
+      "stderr": "🏊‍♂️ crawling http://127.0.0.1:8877/sales/landing-services-bwa-photo.html\n\nhttp://127.0.0.1:8877/sales/landing-services-bwa-photo.html\n🤖 Successfully scanned 10 links in 0.621 seconds."
+    },
+    {
+      "label": "lighthouse",
+      "command": "/Users/andriilitvinov/projects/MYPROJECTS/sales/node_modules/.bin/lighthouse http://127.0.0.1:8877/sales/landing-services-bwa-photo.html --only-categories=accessibility,best-practices,seo --output=json --output-path /Users/andriilitvinov/projects/MYPROJECTS/sales/reports/landing-services-bwa-photo-lighthouse.json --chrome-flags=--headless=new --no-sandbox",
+      "status": 0,
+      "stdout": "",
+      "stderr": "2026-09-22T03:33:29.645Z LH:ChromeLauncher Waiting for browser.\n2026-09-22T03:33:29.663Z LH:ChromeLauncher Waiting for browser...\n2026-09-22T03:33:30.204Z LH:ChromeLauncher Waiting for browser.....\n2026-09-22T03:33:30.707Z LH:ChromeLauncher Waiting for browser.......\n2026-09-22T03:33:31.210Z LH:ChromeLauncher Waiting for browser.........\n2026-09-22T03:33:31.714Z LH:ChromeLauncher Waiting for browser...........\n2026-09-22T03:33:32.221Z LH:ChromeLauncher Waiting for browser.............\n2026-09-22T03:33:32.229Z LH:ChromeLauncher Waiting for browser.............\u001b[32m✓\u001b[0m\n2026-09-22T03:33:37.040Z LH:status Connecting to browser\n2026-09-22T03:33:37.124Z LH:status Navigating to about:blank\n2026-09-22T03:33:37.145Z LH:status Benchmarking machine\n2026-09-22T03:33:38.185Z LH:status Host device pixel ratio\n2026-09-22T03:33:38.192Z LH:status Preparing target for navigation mode\n2026-09-22T03:33:38.268Z LH:status Cleaning origin data\n2026-09-22T03:33:38.418Z LH:status Cleaning browser cache\n2026-09-22T03:33:38.519Z LH:status Preparing network conditions\n2026-09-22T03:33:38.560Z LH:status Navigating to http://127.0.0.1:8877/sales/landing-services-bwa-photo.html\n2026-09-22T03:33:49.727Z LH:status Getting artifact: DevtoolsLog\n2026-09-22T03:33:49.732Z LH:status Getting artifact: Accessibility\n2026-09-22T03:33:50.778Z LH:status Getting artifact: AnchorElements\n2026-09-22T03:33:53.267Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.276Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.291Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.320Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.368Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.383Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.419Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.422Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.426Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.454Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.485Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.504Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.534Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.551Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.570Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.581Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.591Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.635Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.652Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.661Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:53.668Z LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend \n2026-09-22T03:33:54.233Z LH:status Getting artifact: ConsoleMessages\n2026-09-22T03:33:54.234Z LH:status Getting artifact: Doctype\n2026-09-22T03:33:54.244Z LH:status Getting artifact: FontSize\n2026-09-22T03:33:54.386Z LH:status Getting artifact: Inputs\n2026-09-22T03:33:54.405Z LH:status Getting artifact: ImageElements\n2026-09-22T03:33:54.574Z LH:status Getting artifact: InspectorIssues\n2026-09-22T03:33:54.576Z LH:status Getting artifact: LinkElements\n2026-09-22T03:33:54.607Z LH:status Getting artifact: MainDocumentContent\n2026-09-22T03:33:54.627Z LH:status Getting artifact: MetaElements\n2026-09-22T03:33:54.640Z LH:status Getting artifact: NetworkUserAgent\n2026-09-22T03:33:54.640Z LH:status Getting artifact: RobotsTxt\n2026-09-22T03:33:54.760Z LH:status Getting artifact: Scripts\n2026-09-22T03:33:54.760Z LH:status Getting artifact: SourceMaps\n2026-09-22T03:33:54.761Z LH:status Getting artifact: Stacks\n2026-09-22T03:33:54.766Z LH:status Collect stacks\n2026-09-22T03:33:54.843Z LH:status Getting artifact: ViewportDimensions\n2026-09-22T03:33:54.846Z LH:status Getting artifact: FullPageScreenshot\n2026-09-22T03:34:00.607Z LH:status Analyzing and running audits...\n2026-09-22T03:34:00.610Z LH:status Auditing: Uses HTTPS\n2026-09-22T03:34:00.612Z LH:status Auditing: Redirects HTTP traffic to HTTPS\n2026-09-22T03:34:00.613Z LH:status Auditing: Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`\n2026-09-22T03:34:00.616Z LH:status Auditing: No browser errors logged to the console\n2026-09-22T03:34:00.618Z LH:status Auditing: Displays images with correct aspect ratio\n2026-09-22T03:34:00.622Z LH:status Auditing: Serves images with appropriate resolution\n2026-09-22T03:34:00.627Z LH:status Auditing: Avoids deprecated APIs\n2026-09-22T03:34:00.629Z LH:status Auditing: Avoids third-party cookies\n2026-09-22T03:34:00.630Z LH:status Auditing: Page has valid source maps\n2026-09-22T03:34:00.640Z LH:status Auditing: Ensure CSP is effective against XSS attacks\n2026-09-22T03:34:00.642Z LH:status Auditing: Use a strong HSTS policy\n2026-09-22T03:34:00.649Z LH:status Auditing: Ensure proper origin isolation with COOP\n2026-09-22T03:34:00.651Z LH:status Auditing: Mitigate clickjacking with XFO or CSP\n2026-09-22T03:34:00.652Z LH:status Auditing: Mitigate DOM-based XSS with Trusted Types\n2026-09-22T03:34:00.654Z LH:status Auditing: `[accesskey]` values are unique\n2026-09-22T03:34:00.655Z LH:status Auditing: `[aria-*]` attributes match their roles\n2026-09-22T03:34:00.661Z LH:status Auditing: Uses ARIA roles only on compatible elements\n2026-09-22T03:34:00.663Z LH:status Auditing: `button`, `link`, and `menuitem` elements have accessible names\n2026-09-22T03:34:00.664Z LH:status Auditing: ARIA attributes are used as specified for the element's role\n2026-09-22T03:34:00.668Z LH:status Auditing: Deprecated ARIA roles were not used\n2026-09-22T03:34:00.670Z LH:status Auditing: Elements with `role=\"dialog\"` or `role=\"alertdialog\"` have accessible names.\n2026-09-22T03:34:00.672Z LH:status Auditing: `[aria-hidden=\"true\"]` is not present on the document `<body>`\n2026-09-22T03:34:00.678Z LH:status Auditing: `[aria-hidden=\"true\"]` elements do not contain focusable descendents\n2026-09-22T03:34:00.685Z LH:status Auditing: ARIA input fields have accessible names\n2026-09-22T03:34:00.688Z LH:status Auditing: ARIA `meter` elements have accessible names\n2026-09-22T03:34:00.693Z LH:status Auditing: ARIA `progressbar` elements have accessible names\n2026-09-22T03:34:00.695Z LH:status Auditing: Elements use only permitted ARIA attributes\n2026-09-22T03:34:00.698Z LH:status Auditing: `[role]`s have all required `[aria-*]` attributes\n2026-09-22T03:34:00.699Z LH:status Auditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.\n2026-09-22T03:34:00.701Z LH:status Auditing: `[role]`s are contained by their required parent element\n2026-09-22T03:34:00.702Z LH:status Auditing: `[role]` values are valid\n2026-09-22T03:34:00.705Z LH:status Auditing: Elements with the `role=text` attribute do not have focusable descendents.\n2026-09-22T03:34:00.711Z LH:status Auditing: ARIA toggle fields have accessible names\n2026-09-22T03:34:00.713Z LH:status Auditing: ARIA `tooltip` elements have accessible names\n2026-09-22T03:34:00.715Z LH:status Auditing: ARIA `treeitem` elements have accessible names\n2026-09-22T03:34:00.717Z LH:status Auditing: `[aria-*]` attributes have valid values\n2026-09-22T03:34:00.724Z LH:status Auditing: `[aria-*]` attributes are valid and not misspelled\n2026-09-22T03:34:00.728Z LH:status Auditing: Buttons have an accessible name\n2026-09-22T03:34:00.730Z LH:status Auditing: The page contains a heading, skip link, or landmark region\n2026-09-22T03:34:00.739Z LH:status Auditing: Background and foreground colors have a sufficient contrast ratio\n2026-09-22T03:34:00.745Z LH:status Auditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements.\n2026-09-22T03:34:00.748Z LH:status Auditing: Definition list items are wrapped in `<dl>` elements\n2026-09-22T03:34:00.750Z LH:status Auditing: Document has a `<title>` element\n2026-09-22T03:34:00.756Z LH:status Auditing: ARIA IDs are unique\n2026-09-22T03:34:00.758Z LH:status Auditing: All heading elements contain content.\n2026-09-22T03:34:00.763Z LH:status Auditing: No form fields have multiple labels\n2026-09-22T03:34:00.766Z LH:status Auditing: `<frame>` or `<iframe>` elements have a title\n2026-09-22T03:34:00.770Z LH:status Auditing: Heading elements appear in a sequentially-descending order\n2026-09-22T03:34:00.776Z LH:status Auditing: `<html>` element has a `[lang]` attribute\n2026-09-22T03:34:00.791Z LH:status Auditing: `<html>` element has a valid value for its `[lang]` attribute\n2026-09-22T03:34:00.796Z LH:status Auditing: `<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.\n2026-09-22T03:34:00.800Z LH:status Auditing: Identical links have the same purpose.\n2026-09-22T03:34:00.807Z LH:status Auditing: Image elements have `[alt]` attributes\n2026-09-22T03:34:00.813Z LH:status Auditing: Image elements do not have `[alt]` attributes that are redundant text.\n2026-09-22T03:34:00.821Z LH:status Auditing: Input buttons have discernible text.\n2026-09-22T03:34:00.825Z LH:status Auditing: `<input type=\"image\">` elements have `[alt]` text\n2026-09-22T03:34:00.830Z LH:status Auditing: Elements with visible text labels have matching accessible names.\n2026-09-22T03:34:00.846Z LH:status Auditing: Form elements have associated labels\n2026-09-22T03:34:00.851Z LH:status Auditing: Document has a main landmark.\n2026-09-22T03:34:00.858Z LH:status Auditing: Links have a discernible name\n2026-09-22T03:34:00.864Z LH:status Auditing: Links are distinguishable without relying on color.\n2026-09-22T03:34:00.869Z LH:status Auditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).\n2026-09-22T03:34:00.876Z LH:status Auditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements\n2026-09-22T03:34:00.882Z LH:status Auditing: The document does not use `<meta http-equiv=\"refresh\">`\n2026-09-22T03:34:00.896Z LH:status Auditing: `[user-scalable=\"no\"]` is not used in the `<meta name=\"viewport\">` element and the `[maximum-scale]` attribute is not less than 5.\n2026-09-22T03:34:00.912Z LH:status Auditing: `<object>` elements have alternate text\n2026-09-22T03:34:00.921Z LH:status Auditing: Select elements have associated label elements.\n2026-09-22T03:34:00.925Z LH:status Auditing: Skip links are focusable.\n2026-09-22T03:34:00.930Z LH:status Auditing: No element has a `[tabindex]` value greater than 0\n2026-09-22T03:34:00.935Z LH:status Auditing: Tables have different content in the summary attribute and `<caption>`.\n2026-09-22T03:34:00.942Z LH:status Auditing: Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.\n2026-09-22T03:34:00.947Z LH:status Auditing: Touch targets have sufficient size and spacing.\n2026-09-22T03:34:00.953Z LH:status Auditing: `<td>` elements in a large `<table>` have one or more table headers.\n2026-09-22T03:34:00.984Z LH:status Auditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.\n2026-09-22T03:34:00.992Z LH:status Auditing: `<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` have data cells they describe.\n2026-09-22T03:34:00.998Z LH:status Auditing: `[lang]` attributes have a valid value\n2026-09-22T03:34:01.005Z LH:status Auditing: `<video>` elements contain a `<track>` element with `[kind=\"captions\"]`\n2026-09-22T03:34:01.011Z LH:status Auditing: Custom controls have associated labels\n2026-09-22T03:34:01.011Z LH:status Auditing: Custom controls have ARIA roles\n2026-09-22T03:34:01.011Z LH:status Auditing: User focus is not accidentally trapped in a region\n2026-09-22T03:34:01.011Z LH:status Auditing: Interactive controls are keyboard focusable\n2026-09-22T03:34:01.012Z LH:status Auditing: Interactive elements indicate their purpose and state\n2026-09-22T03:34:01.012Z LH:status Auditing: The page has a logical tab order\n2026-09-22T03:34:01.012Z LH:status Auditing: The user's focus is directed to new content added to the page\n2026-09-22T03:34:01.012Z LH:status Auditing: Offscreen content is hidden from assistive technology\n2026-09-22T03:34:01.012Z LH:status Auditing: HTML5 landmark elements are used to improve navigation\n2026-09-22T03:34:01.012Z LH:status Auditing: Visual order on the page follows DOM order\n2026-09-22T03:34:01.013Z LH:status Auditing: Page has the HTML doctype\n2026-09-22T03:34:01.017Z LH:status Auditing: Properly defines charset\n2026-09-22T03:34:01.022Z LH:status Auditing: Avoids requesting the geolocation permission on page load\n2026-09-22T03:34:01.025Z LH:status Auditing: No issues in the `Issues` panel in Chrome Devtools\n2026-09-22T03:34:01.028Z LH:status Auditing: Detected JavaScript libraries\n2026-09-22T03:34:01.029Z LH:status Auditing: Avoids requesting the notification permission on page load\n2026-09-22T03:34:01.032Z LH:status Auditing: Allows users to paste into input fields\n2026-09-22T03:34:01.034Z LH:status Auditing: Document has a meta description\n2026-09-22T03:34:01.039Z LH:status Auditing: Page has successful HTTP status code\n2026-09-22T03:34:01.042Z LH:status Auditing: Document uses legible font sizes\n2026-09-22T03:34:01.080Z LH:status Auditing: Links have descriptive text\n2026-09-22T03:34:01.095Z LH:status Auditing: Links are crawlable\n2026-09-22T03:34:01.097Z LH:status Auditing: Page isn’t blocked from indexing\n2026-09-22T03:34:01.100Z LH:status Auditing: robots.txt is valid\n2026-09-22T03:34:01.102Z LH:status Auditing: Document has a valid `hreflang`\n2026-09-22T03:34:01.104Z LH:status Auditing: Document has a valid `rel=canonical`\n2026-09-22T03:34:01.107Z LH:status Auditing: Structured data is valid\n2026-09-22T03:34:01.108Z LH:status Generating results...\n2026-09-22T03:34:01.159Z LH:Printer json output written to /Users/andriilitvinov/projects/MYPROJECTS/sales/reports/landing-services-bwa-photo-lighthouse.json\n2026-09-22T03:34:01.159Z LH:ChromeLauncher Killing Chrome instance 51210"
+    },
+    {
+      "label": "playwright",
+      "status": 0,
+      "outputPath": "/Users/andriilitvinov/projects/MYPROJECTS/sales/reports/landing-services-bwa-photo-playwright.json",
+      "results": [
+        {
+          "name": "desktop",
+          "screenshot": "/Users/andriilitvinov/projects/MYPROJECTS/sales/reports/landing-services-bwa-photo-desktop.png",
+          "title": "Услуги | Ясный разбор и сопровождение",
+          "viewport": {
+            "width": 1440,
+            "height": 1024
+          },
+          "heroHeight": 757.953125,
+          "heroFitsViewport": true,
+          "headerHeight": 83,
+          "horizontalOverflow": false,
+          "heroButtons": [
+            {
+              "text": "Выбрать формат",
+              "width": 290
+            },
+            {
+              "text": "Понять, что подойдёт",
+              "width": 290
+            }
+          ]
+        },
+        {
+          "name": "mobile",
+          "screenshot": "/Users/andriilitvinov/projects/MYPROJECTS/sales/reports/landing-services-bwa-photo-mobile.png",
+          "title": "Услуги | Ясный разбор и сопровождение",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "heroHeight": 1756.09375,
+          "heroFitsViewport": false,
+          "headerHeight": 205,
+          "horizontalOverflow": false,
+          "heroButtons": [
+            {
+              "text": "Выбрать формат",
+              "width": 358
+            },
+            {
+              "text": "Понять, что подойдёт",
+              "width": 358
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "warning",
+      "viewport": "mobile",
+      "message": "Mobile hero is taller than the viewport."
+    }
+  ],
+  "lighthouse": {
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1
+  },
+  "ok": true
+}

@@ -16,7 +16,10 @@
 - added English entry: `hypnotherapy-toronto.html`; related `systemic-constellations-toronto.html` includes family/business intent
 - canonical Russian root preserved; new Toronto link added
 - public package: `npm run acquisition:build` → `output/toronto-public` (allowlist only)
-- delivery state: local implementation; Cloudflare saved auth expired; no live publication or GBP edits
+- delivery state: production live on Cloudflare Pages; deployment `8b44c078`, code `a08d7b9`; owner GBP P1 changes submitted, website publicly verified
 - report: `.codex/reports/2026-09-21/toronto-client-acquisition.md`
-- next: review PR, renew Cloudflare login, verify preview; follow GBP manual sheet only after owner baseline
+- next: Google services moderation/publication check; Joomla production routing in issue #4; record actual qualified/paid outcomes in scorecard
 - psitrends.com boundary: live Joomla/PHP; real production source/branch not established; see routing report
+
+- release evidence: `.codex/reports/2026-09-21/release-and-gbp-execution.md`
+- measurement: Cloudflare page visits/performance active and receipt/readback verified; CTA adapter is in-memory, not a persisted conversion report

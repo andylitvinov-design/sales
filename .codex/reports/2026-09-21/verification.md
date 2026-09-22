@@ -1,3 +1,5 @@
+> **Release update, September 22 UTC:** Auth restored; production deployed and verified; GBP P1 edits executed. Earlier no-auth/no-deploy statements below describe the initial baseline. Current state: [release-and-gbp-execution.md](release-and-gbp-execution.md).
+
 # Verification — 2026-09-21 Toronto / 2026-09-22 UTC
 
 | Target | html-validate, stylelint, pa11y, linkinator, Lighthouse, Playwright | Lighthouse accessibility / best practices / SEO |

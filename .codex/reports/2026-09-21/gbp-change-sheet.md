@@ -1,3 +1,5 @@
+> **Release update, September 22 UTC:** Auth restored; production deployed and verified; GBP P1 edits executed. Earlier no-auth/no-deploy statements below describe the initial baseline. Current state: [release-and-gbp-execution.md](release-and-gbp-execution.md).
+
 # Google Business Profile baseline and exact change sheet
 
 Observed 2026-09-21 Toronto / 2026-09-22 UTC. No GBP changes executed.

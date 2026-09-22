@@ -1,3 +1,5 @@
+> **Release update, September 22 UTC:** Auth restored; production deployed and verified; GBP P1 edits executed. Earlier no-auth/no-deploy statements below describe the initial baseline. Current state: [release-and-gbp-execution.md](release-and-gbp-execution.md).
+
 # Routing, measurement and claims
 
 ## Production source boundary
