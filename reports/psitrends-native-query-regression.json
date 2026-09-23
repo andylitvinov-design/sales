@@ -1,0 +1,1882 @@
+{
+  "requests": 265,
+  "regressions": [
+    {
+      "url": "https://psitrends.com/index.php?id=74&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?id=74&option=com_quix&view=page&Itemid=101"
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=267&id=74&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=267&id=74&option=com_quix&view=page"
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=75&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?id=75&option=com_quix&view=page&Itemid=101"
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=268&id=75&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=268&id=75&option=com_quix&view=page"
+    }
+  ],
+  "results": [
+    {
+      "url": "https://psitrends.com/index.php?id=2&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=2&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=3&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=3&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=4&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=4&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=10&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=10&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=12&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=12&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=13&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=13&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=14&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=14&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=16&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=16&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=18&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=18&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=20&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=20&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=23&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=23&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=24&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=24&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=28&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=28&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=29&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=29&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=30&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=30&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=31&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=31&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=32&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=32&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=33&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=33&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=34&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=34&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=36&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=36&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=37&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=37&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=38&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=38&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=39&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=39&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=40&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=40&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=41&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=41&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=42&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=42&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=43&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=43&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=44&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=44&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=50&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=50&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=52&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=52&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=53&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=53&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=54&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=54&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=55&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=55&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=56&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=56&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=57&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=57&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=58&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=58&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=59&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=59&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=60&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=60&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=61&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=61&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=62&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=62&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=65&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=65&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=66&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=66&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=67&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=67&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=68&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=68&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=70&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=70&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=71&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=71&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=72&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=72&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=73&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=73&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=76&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=76&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=77&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=77&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=80&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=80&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=81&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=81&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=82&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=82&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=83&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=83&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=84&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=84&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=85&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=85&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=86&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=86&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=87&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=87&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=88&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=88&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=89&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=89&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=91&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=91&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=93&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=93&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=94&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=94&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=95&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=95&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=97&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=97&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=98&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=98&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=99&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=99&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=100&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=100&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=101&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=101&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=102&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=102&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=103&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=103&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=104&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=104&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=105&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=105&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=107&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=107&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=108&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=108&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=109&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=109&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=110&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=110&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=111&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=111&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=112&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=112&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=113&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=113&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=114&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=114&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=115&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=115&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=116&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=116&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=117&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=117&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=119&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=119&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=120&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=120&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=121&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=121&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=122&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=122&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=123&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=123&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=124&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=124&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=125&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=125&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=126&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=126&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=127&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=127&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=128&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=128&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=129&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=129&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=130&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=130&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=131&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=131&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=132&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=132&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=133&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=133&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=134&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=134&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=135&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=135&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=136&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=136&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=137&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=137&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=138&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=138&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=139&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=139&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=140&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=140&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=141&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=141&option=com_quix&view=page&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=1&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=1&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=2&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=2&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=3&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=3&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=4&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=4&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=5&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=5&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=6&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=6&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=7&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=7&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=8&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=8&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=9&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=9&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=10&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=10&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=11&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=11&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=12&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=12&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=13&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=13&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=14&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=14&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=16&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=16&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=17&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=17&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=18&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=18&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=19&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=19&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=20&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=20&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=21&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=21&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=22&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=22&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=23&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=23&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=24&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=24&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=25&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=25&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=26&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=26&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=27&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=27&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=28&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=28&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=29&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=29&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=30&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=30&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=31&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=31&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=32&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=32&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=33&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=33&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=34&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=34&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=35&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=35&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=36&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=36&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=37&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=37&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=38&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=38&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=39&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=39&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=40&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=40&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=41&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=41&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=42&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=42&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=43&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=43&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=44&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=44&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=45&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=45&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=46&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=46&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=47&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=47&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=48&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=48&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=50&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?id=50&option=com_content&view=article&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=101&id=2&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=101&id=2&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=106&id=14&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=106&id=14&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=107&id=48&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=107&id=48&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=108&id=46&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=108&id=46&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=109&id=47&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=109&id=47&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=110&id=8&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=110&id=8&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=111&id=7&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=111&id=7&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=112&id=6&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=112&id=6&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=120&id=1&option=com_content&view=article",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=120&id=1&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=121&id=41&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=121&id=41&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=122&id=44&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=122&id=44&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=123&id=43&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=123&id=43&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=124&id=38&option=com_content&view=article",
+      "before_status": 500,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=124&id=38&option=com_content&view=article",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=199&id=14&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=199&id=14&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=200&id=24&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=200&id=24&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=202&id=4&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=101&id=4&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=203&id=16&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=203&id=16&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=204&id=141&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=101&id=141&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=205&id=20&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=205&id=20&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=206&id=77&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=206&id=77&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=207&id=23&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=207&id=23&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=208&id=117&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=208&id=117&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=209&id=116&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=209&id=116&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=210&id=83&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=210&id=83&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=211&id=29&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=211&id=29&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=212&id=29&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=212&id=29&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=213&id=30&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=213&id=30&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=214&id=31&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=214&id=31&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=217&id=34&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=217&id=34&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=219&id=37&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=219&id=37&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=220&id=38&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=220&id=38&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=221&id=39&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=221&id=39&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=222&id=40&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=222&id=40&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=223&id=41&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=223&id=41&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=225&id=42&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=225&id=42&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=227&id=44&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=227&id=44&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=228&id=50&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=228&id=50&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=229&id=52&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=229&id=52&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=231&id=54&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=231&id=54&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=252&id=60&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=252&id=60&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=253&id=62&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=253&id=62&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=254&id=61&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=254&id=61&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=256&id=65&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=256&id=65&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=257&id=66&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=257&id=66&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=258&id=67&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=258&id=67&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=260&id=70&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=260&id=70&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=262&id=71&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=262&id=71&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?option=com_wrapper&view=wrapper",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?option=com_wrapper&view=wrapper&id=51&Itemid=101",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=263&lang=ru&option=com_wrapper&view=wrapper",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=263&lang=ru&option=com_wrapper&view=wrapper",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=264&id=72&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=264&id=72&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=265&id=73&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=265&id=73&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=74&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?id=74&option=com_quix&view=page&Itemid=101"
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=267&id=74&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=267&id=74&option=com_quix&view=page"
+    },
+    {
+      "url": "https://psitrends.com/index.php?id=75&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?id=75&option=com_quix&view=page&Itemid=101"
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=268&id=75&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 403,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=268&id=75&option=com_quix&view=page"
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=269&id=76&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=269&id=76&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=272&id=80&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=272&id=80&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=273&id=81&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=273&id=81&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=275&id=84&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=275&id=84&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=277&id=86&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=277&id=86&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=278&id=87&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=278&id=87&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=279&id=82&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=279&id=82&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=283&id=91&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=283&id=91&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=284&id=93&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=284&id=93&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=285&id=94&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=285&id=94&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=288&id=98&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=288&id=98&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=292&id=99&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=292&id=99&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=293&id=100&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=293&id=100&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=294&id=101&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=294&id=101&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=295&id=102&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=295&id=102&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=296&id=103&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=296&id=103&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=297&id=104&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=297&id=104&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=302&id=73&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=302&id=73&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=303&id=88&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=303&id=88&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=307&id=108&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=307&id=108&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=308&id=109&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=308&id=109&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=312&id=56&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=312&id=56&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=314&id=112&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=314&id=112&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=315&id=113&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=315&id=113&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=317&id=111&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=317&id=111&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=318&id=85&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=318&id=85&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=320&id=33&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=320&id=33&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=323&id=89&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=323&id=89&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=324&id=28&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=324&id=28&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=325&id=53&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=325&id=53&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=326&id=57&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=326&id=57&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=327&id=121&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=327&id=121&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=330&id=120&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=330&id=120&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=332&id=122&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=332&id=122&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=333&id=32&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=333&id=32&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=334&id=123&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=334&id=123&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=335&id=124&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=335&id=124&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=336&id=125&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=336&id=125&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=337&id=126&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=337&id=126&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=338&id=127&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=338&id=127&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=339&id=128&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=339&id=128&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=340&id=129&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=340&id=129&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=341&id=130&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=341&id=130&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=342&id=131&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=342&id=131&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=343&id=132&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=343&id=132&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=344&id=133&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=344&id=133&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=345&id=134&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=345&id=134&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=346&id=135&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=346&id=135&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=347&id=136&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=347&id=136&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=348&id=137&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=348&id=137&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=349&id=138&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=349&id=138&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=350&id=140&lang=ru&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=350&id=140&lang=ru&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/index.php?Itemid=351&id=139&lang=en&option=com_quix&view=page",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/index.php?Itemid=351&id=139&lang=en&option=com_quix&view=page",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/",
+      "fatal_error": false
+    },
+    {
+      "url": "https://psitrends.com/ru/",
+      "before_status": 200,
+      "status": 200,
+      "final_url": "http://127.0.0.1:18877/ru/",
+      "fatal_error": false
+    }
+  ]
+}

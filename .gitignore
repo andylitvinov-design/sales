@@ -8,6 +8,7 @@ reports/
 
 output/toronto-public/
 output/psitrends-client/
+output/psitrends-seo/
 
 .wrangler/
 
