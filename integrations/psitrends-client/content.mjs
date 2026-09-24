@@ -46,3 +46,74 @@ export const pages = {
  academy:{title:'Академия PsiTrends | Методы, книги и библиотека',h1:'Академия PsiTrends.',lead:'Библиотека для углублённого изучения: системная работа, архетипы, традиции и символические методы.',description:'Библиотека PsiTrends: системная работа, архетипы, традиции, символические методы, книги, видео и исторические программы.',introTitle:'Следуйте своему интересу.',intro:'Библиотека объединяет учебные материалы и исторические программы. Страница в архиве не означает, что программа доступна сейчас. Уточняйте актуальность перед тем, как строить планы.',libraryTitle:'Откройте существующую библиотеку.',detailTitle:'Ищете индивидуальную сессию?',detail:'Можно сразу обратиться к индивидуальной практике. Для этого не нужно сначала изучать материалы библиотеки.',links:[['Видеоматериалы','Библиотека видео и учебных программ.','/ru/video-kursy'],['Мандалы и артефакты','Символические методы и материалы.','/ru/mandaly-i-artefakty'],['Архетипы майя','Материалы существующей видеобиблиотеки.','/ru/video-kursy/arkhetipy-majya'],['История Академии','Историческая страница об Академии.','/ru/cat-train-ru/about-us-ru'],['Книги · English','Раздел книг на английском языке.','/studies/books'],['Традиции · English','Архив материалов на английском языке.','/mysteries']]}
  }
 };
+
+export const authorProfiles = {
+ en: {
+  hero:{h1:'Let me introduce myself.',intro:['I’m Andy, a Jungian-oriented specialist and facilitator of archetypal practices.','Raised in Ukraine but living for 20 years worldwide.']},
+  experienceTitle:'Experience',
+  experience:[
+   '24 years of facilitating group and personal growth programs, since 2002.',
+   '22 years of experience facilitating transpersonal temple-based practices since 2004. Master Teacher of Tantra Reiki, Kundalini Reiki, and Runic Reiki.',
+   '15 years of experience facilitating Family and Business Constellations, since 2011.'
+  ],
+  studiesTitle:'Specializations / studies',
+  studies:[
+   ['Dreams Alive Psychotherapy','Healing tensions, Inner child traumas through unconscious imagery.'],
+   ['Body-oriented Psychotherapy','Healing early Inner child traumas through conscious touch.'],
+   ['Temple Therapy','Activating business and personal goals through system constellations and temple archetypes.'],
+   ['Taoist Alchemy','Working with psychosomatics, hard complex symptoms through remedies, Psychic Homeopathy.']
+  ],
+  tantricTitle:'Tantric workshops',
+  tantricIntro:'I did tantric workshops since 2004 in different schools and traditions worldwide, for 20 years. But the most fascinating and transformative for me, I would say, was the ISTA school approach.',
+  psychotherapy:[
+   'Though my primary interest is psychotherapy.',
+   'My principal education in this field lies in Guided Affective Imagery (Hanscarl Leuner).',
+   'The method that creates a bridge between Jungian depth psychology and Freudian psychoanalysis.'
+  ],
+  bodywork:{intro:'As for the bodywork, my education was based in',schools:['European School of Body psychotherapy','Bodynamic Analysis approach']},
+  narrative:[
+   'These schools beautifully connect the traumas of childhood with the body areas.',
+   'But I would say one of the biggest influences for me was the Temple Studies. Initiations into the Greek Temple Mysteries. Mysteries of Dionysus, Demeter, etc. Egyptian Temple magic and mysteries.',
+   'That is the experience that not only gives you the knowledge, but the sense of the field, archetypes, transpersonal flow.',
+   'That I was studying and teaching worldwide for 20 years.',
+   'And a starting point to start feeling the flow for me were the series of Reiki Initiations and among them Tantra Reiki School, that is said to be coming from the Osho’s Tradition.'
+  ],
+  reviewsTitle:'Testimonials', reviewsNote:'Public review images already shared on the PsiTrends home page.',
+  exploreTitle:'Explore my work', explore:{sessions:'Individual Sessions',workshops:'Workshops',academy:'Studies / Academy',contact:'Contact'},
+  reviews:['IMG_20241121_193918_816.jpg','IMG_20241121_193919_060.jpg','IMG_20241121_193919_048.jpg','IMG_20241121_193919_103.jpg']
+ },
+ ru: {
+  hero:{h1:'Позвольте представиться.',intro:['Я Энди, джунгиански ориентированный специалист и ведущий архетипических практик.','Я вырос в Украине, но уже 20 лет живу в разных странах мира.']},
+  experienceTitle:'Опыт',
+  experience:[
+   '24 года веду групповые и программы личностного роста — с 2002 года.',
+   '22 года веду трансперсональные храмовые практики — с 2004 года. Master Teacher Tantra Reiki, Kundalini Reiki и Runic Reiki.',
+   '15 лет веду семейные и бизнес-расстановки — с 2011 года.'
+  ],
+  studiesTitle:'Специализации / обучение',
+  studies:[
+   ['Психотерапия Dreams Alive','Работа с напряжениями и травмами внутреннего ребёнка через бессознательные образы.'],
+   ['Телесно-ориентированная психотерапия','Работа с ранними травмами внутреннего ребёнка через осознанное прикосновение.'],
+   ['Храмовая терапия','Активация бизнес- и личных целей через системные расстановки и храмовые архетипы.'],
+   ['Даосская алхимия','Работа с психосоматикой и сложными симптомами через средства, Psychic Homeopathy.']
+  ],
+  tantricTitle:'Тантрические семинары',
+  tantricIntro:'С 2004 года я веду тантрические семинары в разных школах и традициях по всему миру — уже 20 лет. Но самым увлекательным и трансформирующим для меня, я бы сказал, стал подход школы ISTA.',
+  psychotherapy:[
+   'При этом мой главный интерес — психотерапия.',
+   'Моё основное образование в этой области — Guided Affective Imagery (Hanscarl Leuner).',
+   'Это метод, создающий мост между глубинной психологией Юнга и фрейдистским психоанализом.'
+  ],
+  bodywork:{intro:'Что касается телесной работы, моё образование основывалось на',schools:['European School of Body Psychotherapy','подходе Bodynamic Analysis']},
+  narrative:[
+   'Эти школы красиво связывают травмы детства с зонами тела.',
+   'Но одним из самых больших влияний для меня стали Temple Studies. Посвящения в греческие храмовые мистерии. Мистерии Диониса, Деметры и другие. Египетская храмовая магия и мистерии.',
+   'Этот опыт даёт не только знание, но и ощущение поля, архетипов, трансперсонального потока.',
+   'Его я изучал и преподавал по всему миру 20 лет.',
+   'А началом, позволившим мне почувствовать поток, стали серии посвящений Рейки, среди которых Tantra Reiki School, о которой говорят, что она восходит к традиции Ошо.'
+  ],
+  reviewsTitle:'Отзывы', reviewsNote:'Публичные изображения отзывов, уже размещённые на главной странице PsiTrends.',
+  exploreTitle:'Исследуйте мою работу', explore:{sessions:'Индивидуальные сессии',workshops:'Воркшопы',academy:'Обучение / Академия',contact:'Связаться'},
+  reviews:['IMG_20241121_193918_816.jpg','IMG_20241121_193919_060.jpg','IMG_20241121_193919_048.jpg','IMG_20241121_193919_103.jpg']
+ }
+};

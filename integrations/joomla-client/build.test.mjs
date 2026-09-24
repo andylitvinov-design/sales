@@ -23,7 +23,11 @@ test('adapter emits twelve native article bodies and preserves home assignments'
     for(const page of plan.pages){
       const body=await fs.readFile(path.join(directory,page.article.bodyFile),'utf8');
       assert.match(body,/<h1>/);
-      if(page.key==='en:home')assert.match(body,/src="\/media\/templates\/site\/psitrends_client\/assets\/andrey\.jpg"/);
+      if(['en:home','ru:home','en:about','ru:about'].includes(page.key))assert.match(body,/src="\/media\/templates\/site\/psitrends_client\/assets\/andy-library-desk\.png"/);
+      if(['en:about','ru:about'].includes(page.key)){
+        assert.match(body,/Let me introduce myself\.|Позвольте представиться\./);
+        assert.match(body,/Testimonials|Отзывы/);
+      }
       assert.doesNotMatch(body,/<(?:html|head|header|footer|script)\b/i);
       assert.match(page.canonical,/^https:\/\/psitrends\.com\//);
       assert.equal(page.article.state,0);

@@ -6,31 +6,40 @@
       "name": "psitrends-client-home",
       "width": 320,
       "overflow": false,
-      "heroBottom": 1019.984375,
+      "heroBottom": 964.265625,
       "ctaBottom": 548.34375,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-home",
       "width": 390,
       "overflow": false,
-      "heroBottom": 977.9375,
+      "heroBottom": 990.796875,
       "ctaBottom": 506.296875,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-home",
       "width": 1440,
       "overflow": false,
-      "heroBottom": 649.796875,
-      "ctaBottom": 517.375,
+      "heroBottom": 670.53125,
+      "ctaBottom": 527.75,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-hypnotherapy",
@@ -40,7 +49,10 @@
       "ctaBottom": 481.25,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-hypnotherapy",
@@ -50,7 +62,10 @@
       "ctaBottom": 464.96875,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-hypnotherapy",
@@ -60,7 +75,10 @@
       "ctaBottom": 484.5625,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-constellations",
@@ -70,7 +88,10 @@
       "ctaBottom": 548.34375,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-constellations",
@@ -80,7 +101,10 @@
       "ctaBottom": 506.296875,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-constellations",
@@ -90,37 +114,49 @@
       "ctaBottom": 517.375,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-about",
       "width": 320,
       "overflow": false,
-      "heroBottom": 938.578125,
-      "ctaBottom": 466.9375,
+      "heroBottom": -4431.421875,
+      "ctaBottom": null,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": true,
+      "readingWidth": 280,
+      "reviewsAfterProfile": true
     },
     {
       "name": "psitrends-client-about",
       "width": 390,
       "overflow": false,
-      "heroBottom": 895.28125,
-      "ctaBottom": 423.640625,
+      "heroBottom": -4180.59375,
+      "ctaBottom": null,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": true,
+      "readingWidth": 350,
+      "reviewsAfterProfile": true
     },
     {
       "name": "psitrends-client-about",
       "width": 1440,
       "overflow": false,
-      "heroBottom": 649.796875,
-      "ctaBottom": 484.5625,
+      "heroBottom": -2466.46875,
+      "ctaBottom": null,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": true,
+      "readingWidth": 768,
+      "reviewsAfterProfile": true
     },
     {
       "name": "psitrends-client-contact",
@@ -130,7 +166,10 @@
       "ctaBottom": 507.640625,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-contact",
@@ -140,7 +179,10 @@
       "ctaBottom": 423.640625,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-contact",
@@ -150,7 +192,10 @@
       "ctaBottom": 484.5625,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-academy",
@@ -160,7 +205,10 @@
       "ctaBottom": 490.109375,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-academy",
@@ -170,7 +218,10 @@
       "ctaBottom": 423.640625,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-academy",
@@ -180,27 +231,36 @@
       "ctaBottom": 484.5625,
       "headingCount": 1,
       "language": "en",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-home-ru",
       "width": 320,
       "overflow": false,
-      "heroBottom": 1159.71875,
+      "heroBottom": 1104,
       "ctaBottom": 650.4375,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-home-ru",
       "width": 390,
       "overflow": false,
-      "heroBottom": 1004.328125,
+      "heroBottom": 1017.1875,
       "ctaBottom": 532.6875,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-home-ru",
@@ -210,7 +270,10 @@
       "ctaBottom": 576.4375,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-hypnotherapy-ru",
@@ -220,7 +283,10 @@
       "ctaBottom": 583.34375,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-hypnotherapy-ru",
@@ -230,7 +296,10 @@
       "ctaBottom": 506.296875,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-hypnotherapy-ru",
@@ -240,7 +309,10 @@
       "ctaBottom": 517.375,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-constellations-ru",
@@ -250,7 +322,10 @@
       "ctaBottom": 556.953125,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-constellations-ru",
@@ -260,7 +335,10 @@
       "ctaBottom": 506.296875,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-constellations-ru",
@@ -270,37 +348,49 @@
       "ctaBottom": 502.875,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-about-ru",
       "width": 320,
       "overflow": false,
-      "heroBottom": 1051.921875,
-      "ctaBottom": 542.640625,
+      "heroBottom": -4568.234375,
+      "ctaBottom": null,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": true,
+      "readingWidth": 280,
+      "reviewsAfterProfile": true
     },
     {
       "name": "psitrends-client-about-ru",
       "width": 390,
       "overflow": false,
-      "heroBottom": 921.671875,
-      "ctaBottom": 450.03125,
+      "heroBottom": -4370.203125,
+      "ctaBottom": null,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": true,
+      "readingWidth": 350,
+      "reviewsAfterProfile": true
     },
     {
       "name": "psitrends-client-about-ru",
       "width": 1440,
       "overflow": false,
-      "heroBottom": 649.796875,
-      "ctaBottom": 484.5625,
+      "heroBottom": -2628.46875,
+      "ctaBottom": null,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": true,
+      "readingWidth": 768,
+      "reviewsAfterProfile": true
     },
     {
       "name": "psitrends-client-contact-ru",
@@ -310,7 +400,10 @@
       "ctaBottom": 583.34375,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-contact-ru",
@@ -320,7 +413,10 @@
       "ctaBottom": 506.296875,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-contact-ru",
@@ -330,7 +426,10 @@
       "ctaBottom": 517.375,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-academy-ru",
@@ -340,7 +439,10 @@
       "ctaBottom": 551.5,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-academy-ru",
@@ -350,7 +452,10 @@
       "ctaBottom": 450.03125,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     },
     {
       "name": "psitrends-client-academy-ru",
@@ -360,7 +465,10 @@
       "ctaBottom": 484.5625,
       "headingCount": 1,
       "language": "ru",
-      "images": true
+      "images": true,
+      "authorProfile": false,
+      "readingWidth": 0,
+      "reviewsAfterProfile": false
     }
   ],
   "productionNetworkIntercepted": true

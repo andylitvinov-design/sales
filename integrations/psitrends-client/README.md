@@ -21,6 +21,8 @@ Preview output never enables analytics, even after clicking Allow, and does not 
 
 The artifact's sitemap contains only its 12 client routes. It is an input to a combined first-party sitemap, not a replacement for the legacy sitemap. Preserve existing legacy robots/routing and content. Academy links point to the existing knowledge library. No redirects or legacy deletion are implemented here.
 
-Portrait: exact public source already used by the approved Toronto pages, `https://psitrends.com/images/photo_2024-08-04_22-52-52.jpg`; reused from existing local copy and processed by the project asset optimizer. No generated portrait or invented visual evidence.
+Portrait: the user-supplied library/desk photograph is stored as `andy-library-desk.png`, processed by the project asset optimizer, and used only on Home and About. The previous local portrait remains on the other client pages. No generated portrait or invented visual evidence is used.
+
+Reviews: the four local review images under `reviews/` are optimized copies of public media already shown on the PsiTrends home page. They are rendered only after the complete author biography and retain their original review-image destinations in the packaged media tree.
 
 No dependency install or image generation is needed. Browser QA uses installed Chrome; js_repl is unavailable in this session, so equivalent reusable Playwright contexts and the repository audit were used.

@@ -230,6 +230,17 @@ h3 {
 
 }
 
+/* Page-specific source images preserve their full environmental composition. */
+/* stylelint-disable no-descending-specificity */
+body[data-page="home"] .portrait img,
+body[data-page="about"] .portrait img {
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+
+}
+/* stylelint-enable no-descending-specificity */
+
 .portrait figcaption {
   font-size: 0.7rem;
   line-height: 1.5;
@@ -375,6 +386,168 @@ summary {
 
 }
 
+.author-profile {
+  padding: 96px 0 72px;
+
+}
+
+.reading-column {
+  width: min(100%, 48rem);
+  margin: 0 auto;
+
+}
+
+.profile-chapter + .profile-chapter {
+  margin-top: 64px;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+
+}
+
+.profile-chapter h2 {
+  margin-bottom: 28px;
+
+}
+
+.profile-chapter p,
+.profile-list {
+  font-size: clamp(1.04rem, 1.35vw, 1.18rem);
+  line-height: 1.8;
+
+}
+
+.profile-chapter p {
+  margin: 0 0 1.45rem;
+
+}
+
+.profile-list {
+  margin: 0;
+  padding-left: 1.5rem;
+
+}
+
+.profile-list li + li {
+  margin-top: 1.3rem;
+
+}
+
+/* The author-profile component has no library-list ancestor. */
+/* stylelint-disable-next-line no-descending-specificity */
+.profile-studies h3 {
+  margin: 0 0 6px;
+  font-size: 1.22rem;
+
+}
+
+.profile-studies p {
+  margin-bottom: 0;
+
+}
+
+.profile-bodywork {
+  margin: 0 0 1.45rem;
+  padding-left: 1.25rem;
+
+}
+
+.profile-bodywork li + li {
+  margin-top: 0.35rem;
+
+}
+
+.author-reviews {
+  padding: 72px 0;
+  border-top: 1px solid var(--line);
+
+}
+
+.author-reviews-heading {
+  width: min(100%, 48rem);
+  margin-bottom: 34px;
+
+}
+
+/* The review heading is outside the contact component. */
+/* stylelint-disable-next-line no-descending-specificity */
+.author-reviews-heading p:last-child {
+  max-width: 38rem;
+  color: var(--muted);
+
+}
+
+.author-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+
+}
+
+.author-review {
+  display: grid;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 0.82rem;
+  text-decoration: none;
+
+}
+
+/* Page portraits intentionally override generic image fitting on Home and About. */
+/* stylelint-disable-next-line no-descending-specificity */
+.author-review img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--line);
+
+}
+
+/* Review labels do not occur in the footer brand. */
+/* stylelint-disable-next-line no-descending-specificity */
+.author-review:hover span {
+  text-decoration: underline;
+
+}
+
+.author-explore {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 42px 80px;
+  align-items: end;
+  padding: 76px 0;
+  border-top: 1px solid var(--line);
+
+}
+
+.author-explore > .button {
+  width: fit-content;
+
+}
+
+.author-explore-links {
+  display: grid;
+  border-top: 1px solid var(--ink);
+
+}
+
+.author-explore-links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+  font: 1.15rem/1.3 Georgia, 'Times New Roman', serif;
+  text-decoration: none;
+
+}
+
+.author-explore-links a:hover {
+  text-decoration: underline;
+
+}
+
 .contact-band {
   background: var(--soft);
   padding: 74px 0;
@@ -389,6 +562,8 @@ summary {
 
 }
 
+/* Contact content and author-review headings are separate component trees. */
+/* stylelint-disable-next-line no-descending-specificity */
 .contact-layout p {
   max-width: 38rem;
 
@@ -410,6 +585,8 @@ summary {
 
 }
 
+/* Footer branding and review labels are separate component trees. */
+/* stylelint-disable-next-line no-descending-specificity */
 .footer-brand span {
   font-size: 1rem;
 
@@ -490,6 +667,16 @@ summary {
 
   .nav {
   gap: 16px;
+
+}
+
+  .author-reviews-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+
+  .author-explore {
+  gap: 32px;
 
 }
 }
@@ -595,6 +782,44 @@ summary {
 }
 
   .button {
+  width: 100%;
+
+}
+
+  .author-profile, .author-reviews, .author-explore {
+  padding: 50px 0;
+
+}
+
+  .profile-chapter + .profile-chapter {
+  margin-top: 48px;
+  padding-top: 42px;
+
+}
+
+  .profile-chapter h2 {
+  margin-bottom: 20px;
+
+}
+
+  .author-reviews-grid {
+  grid-template-columns: 1fr;
+
+}
+
+  .author-review img {
+  height: auto;
+  max-height: 460px;
+
+}
+
+  .author-explore {
+  grid-template-columns: 1fr;
+  gap: 26px;
+
+}
+
+  .author-explore > .button {
   width: 100%;
 
 }
