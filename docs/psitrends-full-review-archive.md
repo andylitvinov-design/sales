@@ -20,3 +20,11 @@ The focused change uses the existing guarded article/asset updater; no legacy Qu
 Production uses `/var/lib/psitrends-releases/all-reviews-production-20260924`. Rollback: run the established `update-client.php rollback` container command with this directory mounted at `/update`, then run `clear-client-cache.php` in `psitrends_php`. Preserve the private package/snapshot and optimistic concurrent-edit guards. Never flush Redis or remove legacy media.
 
 Regression tests require 37 photos, 42 video cards, three native videos, both languages' originals and no collapsed review sections. HTML/CSS and 11 source/build tests pass. Staging browser confirms the same totals and the restored source images.
+
+## Released and verified
+
+Fresh full checkpoint completed successfully: `/var/backups/psitrends/scheduled/20260924T121221Z-86e8cc8849c64ba294b0eab038d096ae`. This fresh archive was not independently restored; the targeted staging rollback was tested above.
+
+Production snapshot SHA256: `19c340f5794f32ff4dbc54f6e3e91c006548133fff8e65138ee1df665b686b5f`. Exact staged package applied successfully; 32 scoped desktop/mobile cache entries purged. Anonymous public regression passed 24 desktop/mobile EN/RU routes, six UTM redirects, sitemap and robots checks. Public RU homepage full audit passed accessibility/link/viewport checks with no findings; Lighthouse accessibility, best practices and SEO each scored 100. Mobile 390px and desktop 1440px have no horizontal overflow.
+
+Actual public-browser checks confirmed 37 unique photos, 42 video cards, no collapsed collections, three native players with preload none, and click-to-load/close of a newly restored no-cookie YouTube player. All original MP4/photo links pass public link checking. These are source/embedding checks, not a claim that every third-party video was watched in full or has transcripts.
