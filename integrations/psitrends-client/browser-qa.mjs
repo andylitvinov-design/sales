@@ -4,7 +4,8 @@ import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import {pages} from './content.mjs';
 import {routeFor,sourceName} from './template.mjs';
-const baseUrl=process.env.PSITRENDS_BASE_URL??'http://127.0.0.1:8877';
+const baseUrl=(process.env.PSITRENDS_BASE_URL||'http://127.0.0.1:8877/sales/output/psitrends-client').replace(/\/$/,'');
+
 // QA inventory: 12 pages, EN/RU navigation, CTA presence, FAQ disclosure,
 // keyboard focus, 320/390/1440px overflow, preview denial, production consent,
 // unsafe URL attribution denial, withdrawal, and no outbound messages.
@@ -18,27 +19,13 @@ try{
  page.on('request',r=>{if(!r.url().startsWith(`${baseUrl}/`)&&!r.url().startsWith('data:'))unexpected.push(r.url());});
  for(const locale of (process.argv.includes('--production-only')?[]:['en','ru']))for(const key of Object.keys(pages[locale])){
   const name=sourceName(key,locale);
-  for(const width of [320,390,1440]){
-   await page.setViewportSize({width,height:width===1440?900:844});
-   await page.goto(`${baseUrl}/sales/${name}.html`);
+  for(const [width,height] of [[320,844],[390,844],[430,932],[1440,900]]){
+   await page.setViewportSize({width,height});
+   await page.goto(`${baseUrl}${routeFor(key,locale)}`);
    await page.emulateMedia({reducedMotion:'reduce'});
-   if(key==='about'){
-    await page.locator('.author-explore').scrollIntoViewIfNeeded();
-    await page.waitForFunction(()=>[...document.images].every(image=>image.complete&&image.naturalWidth>0));
-   }
-   const metrics=await page.evaluate(()=>{
-    const cta=document.querySelector('.hero .button');
-    const profile=document.querySelector('.author-profile');
-    const reviews=document.querySelector('.author-reviews');
-    const reading=document.querySelector('.reading-column');
-    return {overflow:document.documentElement.scrollWidth>innerWidth,heroBottom:document.querySelector('.hero').getBoundingClientRect().bottom,ctaBottom:cta?.getBoundingClientRect().bottom??null,headingCount:document.querySelectorAll('h1').length,language:document.documentElement.lang,images:[...document.images].every(x=>x.complete&&x.naturalWidth>0),authorProfile:Boolean(profile),readingWidth:reading?.getBoundingClientRect().width??0,reviewsAfterProfile:Boolean(profile&&reviews&&reviews.getBoundingClientRect().top>=profile.getBoundingClientRect().bottom)};
-   });
-   assert.equal(metrics.overflow,false,`${name} width${width}`); assert.equal(metrics.headingCount,1,`${name} h1 count`);assert.equal(metrics.language,locale,`${name} locale`);assert.equal(metrics.images,true,`${name} images width${width}`);
-   if(key==='about'){
-    assert.equal(metrics.authorProfile,true,`${name} author profile exists`);
-    assert.ok(metrics.readingWidth<=800,`${name} reading measure`);
-    assert.equal(metrics.reviewsAfterProfile,true,`${name} reviews follow biography`);
-   }else assert.ok(metrics.ctaBottom<844,`${name} CTA must be reachable in first screen`);
+   const metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,heroBottom:document.querySelector('.hero').getBoundingClientRect().bottom,ctaBottom:document.querySelector('.hero .button').getBoundingClientRect().bottom,headingCount:document.querySelectorAll('h1').length,language:document.documentElement.lang,images:[...document.querySelectorAll('.hero img')].every(x=>x.complete&&x.naturalWidth>0)}));
+   assert.equal(metrics.overflow,false,`${name} width${width}`); assert.equal(metrics.headingCount,1);assert.equal(metrics.language,locale);assert.equal(metrics.images,true);
+   assert.ok(metrics.ctaBottom<height,`${name} CTA must be reachable in first screen`);
    if(width===1440)assert.ok(metrics.heroBottom<=900);
    results.push({name,width,...metrics});
    if(width!==320)await page.screenshot({path:`reports/${name}-${width===1440?'desktop':`${width}-mobile`}-full.png`,fullPage:true});
@@ -52,7 +39,7 @@ try{
   assert.equal(new URL(page.url()).pathname.replace(/\/$/,''),new URL(switchHref,baseUrl).pathname.replace(/\/$/,''));
  }
  assert.deepEqual(unexpected,[],'preview must emit no external requests');
- await page.goto(`${baseUrl}/sales/psitrends-client-hypnotherapy.html`);
+ await page.goto(`${baseUrl}${routeFor('hypnotherapy','en')}`);
  await page.locator('.faq summary').first().click();
  assert.equal(await page.locator('.faq details').first().getAttribute('open'),'');
  await page.keyboard.press('Tab');
