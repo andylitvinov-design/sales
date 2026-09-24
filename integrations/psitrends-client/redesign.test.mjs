@@ -28,3 +28,24 @@ for (const locale of ['en','ru']) {
   }
  });
 }
+
+for (const locale of ['en','ru']) {
+ test(`${locale} top navigation opens real sections instead of homepage-only anchors`,()=>{
+  const html=render('home',locale);
+  const academy=locale==='en'?'/academy':'/ru/academy';
+  const events=locale==='en'?'/events':'/ru/events';
+  assert.match(html,new RegExp(`class="nav-root" href="${academy.replaceAll('/','\\/')}[^"]*"`));
+  assert.match(html,new RegExp(`class="nav-root" href="${events.replaceAll('/','\\/')}[^"]*"`));
+  assert.match(html,/class="nav-submenu"/);
+  assert.match(html,/Reiki Yggdrasil/);
+  assert.match(html,locale==='en'?/Projects/:/Проекты/);
+  assert.doesNotMatch(html,/class="nav-root" href="#training"/);
+  assert.doesNotMatch(html,/class="nav-root" href="#workshops"/);
+ });
+ test(`${locale} Academy exposes courses and preserved project roots`,()=>{
+  const html=render('academy',locale);
+  for(const id of ['reiki','mysteries','runes','video-courses','library','projects']) assert.match(html,new RegExp(`id="${id}"`));
+  assert.match(html,locale==='en'?/https:\/\/psitrends\.com\/business/:/https:\/\/psitrends\.com\/ru\/biznes/);
+  assert.match(html,locale==='en'?/https:\/\/psitrends\.com\/studies/:/https:\/\/psitrends\.com\/ru\/cat-train-ru/);
+ });
+}
