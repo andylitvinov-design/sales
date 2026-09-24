@@ -1,13 +1,17 @@
 import {pages,shared,routes} from './content.mjs';
+import {home,renderHome} from './home.mjs';
 export const sourceName=(key,locale)=>`psitrends-client-${key}${locale==='ru'?'-ru':''}`;
 export const routeFor=(key,locale)=>locale==='ru'?`/ru${routes[key]}`:routes[key];
 const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 export function render(key,locale,{source=false,production=false}={}){
- const c=pages[locale][key],s=shared[locale],other=locale==='en'?'ru':'en';
+ const c=key==='home'?{...pages[locale][key],...home[locale]}:pages[locale][key],s={...shared[locale],...{final:home[locale].final,finalText:home[locale].finalText}},other=locale==='en'?'ru':'en';
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
  const asset=source?'integrations/psitrends-client/andrey.jpg':'/psitrends-client-assets/andrey.jpg';
- const css=source?`${sourceName(key,locale)}.css?v=1`:'/psitrends-client-assets/psitrends-client.css?v=1';
- const js=source?'psitrends-client.js?v=1':'/psitrends-client-assets/psitrends-client.js?v=1';
+ const css=source?`${sourceName(key,locale)}.css?v=2`:'/psitrends-client-assets/psitrends-client.css?v=2';
+ const js=source?'psitrends-client.js?v=2':'/psitrends-client-assets/psitrends-client.js?v=2';
+ const atmosphere=source?'integrations/psitrends-client/archway.webp':'/psitrends-client-assets/archway.webp';
+ const homeAnchor=id=>`${key==='home'?'':link('home')}#${id}`;
+ const navItems=[['consultations',locale==='en'?'Consultations':'Консультации'],['training',locale==='en'?'Training':'Обучение'],['workshops',locale==='en'?'Workshops':'Семинары']];
  const canonical=`https://psitrends.com${routeFor(key,locale)}`;
  const message=locale==='ru'?'Здравствуйте, Андрей! Хочу обсудить индивидуальную сессию.':'Hi Andrey, I would like to ask about an individual session.';
  const cta=()=>`<a class="button" data-contact="whatsapp" href="https://wa.me/14376066502?text=${encodeURIComponent(message)}">${esc(s.cta)} <span aria-hidden="true">↗</span></a>`;
@@ -25,6 +29,7 @@ export function render(key,locale,{source=false,production=false}={}){
  if(key!=='academy')body+=section(s.expectationsTitle,s.expectations);
  if(key==='home')body+=`<section class="academy-band"><div class="shell"><p class="eyebrow">PsiTrends Academy</p><h2>${esc(c.academyTitle)}</h2><p>${esc(c.academyText)}</p><a class="text-link" href="${link('academy')}">${esc(s.labels.academy)} <span aria-hidden="true">↗</span></a></div></section>`;
  if(key==='academy'||key==='about')body+=`<section class="shell related"><h2>${locale==='en'?'Explore individual sessions.':'Индивидуальные сессии.'}</h2>${services()}</section>`;
+ if(key==='home')body=renderHome(locale,{link,cta,asset,escape:esc,services});
  return `<!DOCTYPE html>
 <html lang="${locale}">
 <head>
@@ -48,13 +53,13 @@ ${production?`<script type="application/ld+json">${JSON.stringify({'@context':'h
 </head>
 <body data-analytics-mode="${production?'consent':'off'}" data-page="${key}" data-locale="${locale}">
 <a class="skip-link" href="#main">${esc(s.skip)}</a>
-<header class="site-header"><div class="shell header-top"><a class="brand" href="${link('home')}">PsiTrends<span>${esc(s.brand)}</span></a><a class="language" href="${link(key,other)}" lang="${other}" hreflang="${other}">${esc(s.switch)} <span aria-hidden="true">↗</span></a></div><nav class="shell nav" aria-label="${esc(s.nav)}">${Object.keys(routes).map(k=>`<a href="${link(k)}"${k===key?' aria-current="page"':''}>${esc(s.labels[k])}</a>`).join('')}</nav></header>
+<header class="site-header"><div class="shell header-top"><a class="brand" href="${link('home')}">PsiTrends<span>Holistic House</span></a><nav class="nav" id="primary-nav" aria-label="${esc(s.nav)}">${navItems.map(([id,label])=>`<a href="${homeAnchor(id)}">${label}</a>`).join('')}${['about','contact'].map(k=>`<a href="${link(k)}"${k===key?' aria-current="page"':''}>${locale==='en'&&k==='about'?'About':esc(s.labels[k])}</a>`).join('')}</nav><div class="header-controls"><span class="current-language" title="${locale==='en'?'Current language: English':'Текущий язык: русский'}">${locale.toUpperCase()}</span><a class="language" href="${link(key,other)}" lang="${other}" hreflang="${other}" aria-label="${esc(s.switch)}">${other.toUpperCase()}</a><button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="${locale==='en'?'Open menu':'Открыть меню'}"><span></span><span></span></button></div></div></header>
 <main id="main">
-<section class="hero"><div class="shell hero-layout"><div class="hero-copy"><p class="eyebrow">${esc(key==='academy'?(locale==='en'?'Methods · Books · Traditions':'Методы · Книги · Традиции'):s.eyebrow)}</p><h1>${esc(c.h1)}</h1><p class="lead">${esc(c.lead)}</p><div class="hero-actions">${cta()}</div><p class="small">${esc(s.note)}</p><a class="text-link hero-more" href="#explore">${locale==='en'?'Explore the approach':'Узнать о подходе'} <span aria-hidden="true">↓</span></a></div><figure class="portrait"><img src="${asset}" width="1075" height="1265" alt="${esc(s.portrait)}" fetchpriority="high"><figcaption>${esc(s.caption)}</figcaption></figure></div></section>
+<section class="hero"><div class="shell hero-layout"><div class="hero-copy"><p class="eyebrow">${esc(key==='academy'?(locale==='en'?'Methods · Books · Traditions':'Методы · Книги · Традиции'):s.eyebrow)}</p><h1>${esc(c.h1)}</h1><p class="lead">${esc(c.lead)}</p><p class="byline">${esc(home[locale].byline)}</p><div class="hero-actions">${cta()}</div><p class="small">${esc(s.note)}</p><a class="text-link hero-more" href="#explore">${locale==='en'?'Explore the approach':'Узнать о подходе'} <span aria-hidden="true">↓</span></a></div><figure class="portrait ${key==='about'?'':'atmosphere'}"><img src="${key==='about'?asset:atmosphere}" width="${key==='about'?1075:1536}" height="${key==='about'?1265:1024}" alt="${key==='about'?esc(s.portrait):''}" fetchpriority="high">${key==='about'?`<figcaption>${esc(s.caption)}</figcaption>`:''}</figure></div></section>
 ${body}
 <section class="contact-band" id="contact"><div class="shell contact-layout"><div><p class="eyebrow">${esc(s.labels.contact)}</p><h2>${esc(s.final)}</h2><p>${esc(s.finalText)}</p></div><div class="contact-actions">${cta()}<p>${esc(s.fallback)} <a data-contact="telegram" href="https://t.me/AndyTherapist">${esc(s.telegram)}</a></p><p><a data-contact="call" href="tel:+14376066502">${esc(s.phone)}&nbsp;+1&nbsp;437&nbsp;606&nbsp;6502</a></p></div></div></section>
 </main>
-<footer class="shell footer"><p class="footer-brand">PsiTrends <span>· Holistic House</span></p><p>${esc(s.footer)}</p><details id="privacy"><summary>${esc(s.privacy)}</summary><p>${esc(s.privacyText)}</p></details><details id="analytics-choice"><summary>${esc(s.analytics)}</summary><p>${esc(s.analyticsText)}</p><div class="consent-buttons"><button type="button" data-analytics="allow">${esc(s.allow)}</button><button type="button" data-analytics="deny">${esc(s.deny)}</button></div><p id="analytics-status" role="status">${esc(s.off)}</p></details></footer>
+<footer class="shell footer"><p class="footer-brand">PsiTrends <span>· Holistic House</span></p><p>${esc(s.footer)}</p><a class="text-link" href="${link('academy')}">${esc(home[locale].resources)}</a><details id="privacy"><summary>${esc(s.privacy)}</summary><p>${esc(s.privacyText)}</p></details><details id="analytics-choice"><summary>${esc(s.analytics)}</summary><p>${esc(s.analyticsText)}</p><div class="consent-buttons"><button type="button" data-analytics="allow">${esc(s.allow)}</button><button type="button" data-analytics="deny">${esc(s.deny)}</button></div><p id="analytics-status" role="status">${esc(s.off)}</p></details></footer>
 </body>
 </html>
 `;

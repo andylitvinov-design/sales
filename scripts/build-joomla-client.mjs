@@ -5,6 +5,7 @@ import {createHash} from 'node:crypto';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {pages} from '../integrations/psitrends-client/content.mjs';
+import {home} from '../integrations/psitrends-client/home.mjs';
 import {render,routeFor} from '../integrations/psitrends-client/template.mjs';
 const root=path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const owned=path.join(root,'integrations/joomla-client');
@@ -28,7 +29,7 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
  const entries={},plan={mode:'plan-only',template:'psitrends_client',defaultReleaseMode:'preview',preserveMenuIds:[101],preserveLegacyTemplates:['tx_valley'],preserveQuixRecords:true,pages:[]};
  const replaceAssets=html=>html.replace(/\/(?:psitrends-client-assets|assets)\//g,'/media/templates/site/psitrends_client/assets/');
  for(const locale of ['en','ru'])for(const name of Object.keys(pages[locale])){
-  const key=`${locale}:${name}`,page=pages[locale][name],html=render(name,locale,{production:true});
+  const key=`${locale}:${name}`,page=name==='home'?home[locale]:pages[locale][name],html=render(name,locale,{production:true});
   const split=splitPage(html),article=replaceAssets(split.article),route=routeFor(name,locale);
   const schema=html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
   const bodyFile=`articles/${locale}-${name}.html`;
@@ -53,7 +54,7 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
 <media destination="templates/site/psitrends_client" folder="media"><folder>assets</folder></media>
 <config><fields name="params"><fieldset name="client" label="Client page"><field name="page_key" type="list" label="Page content key" default="" required="true"><option value="">Select reviewed page</option>${options}</field><field name="release_mode" type="list" label="Release mode" default="preview"><option value="preview">Preview: noindex, analytics off</option><option value="production">Production: verified hostname and consent required</option></field></fieldset></fields></config>
 </extension>\n`);
- for(const [source,name] of [['psitrends-client.css','psitrends-client.css'],['psitrends-client.js','psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','andrey.jpg']])await fs.copyFile(path.join(root,source),path.join(template,'media/assets',name));
+ for(const [source,name] of [['psitrends-client.css','psitrends-client.css'],['psitrends-client.js','psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','andrey.jpg'],['integrations/psitrends-client/archway.webp','archway.webp']])await fs.copyFile(path.join(root,source),path.join(template,'media/assets',name));
  await fs.writeFile(path.join(destination,'migration-plan.json'),JSON.stringify(plan,null,2)+'\n');
  if(zip){const archive=path.join(destination,'psitrends_client.zip');await fs.rm(archive,{force:true});await promisify(execFile)('/usr/bin/zip',['-q','-r',archive,'.'],{cwd:template});}
  return {pages:plan.pages.length,mode:'plan-only',package:zip?'psitrends_client.zip':'template/'};

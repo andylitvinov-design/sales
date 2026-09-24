@@ -1,3 +1,20 @@
+/* One responsive menu; the navigation remains usable without JavaScript. */
+(() => {
+  const button=document.querySelector('.menu-toggle');
+  const nav=document.getElementById('primary-nav');
+  if(!button||!nav)return;
+  document.documentElement.classList.add('menu-ready');
+  const setOpen=open=>{
+    button.setAttribute('aria-expanded',String(open));
+    button.setAttribute('aria-label',document.documentElement.lang==='ru'?(open?'Закрыть меню':'Открыть меню'):(open?'Close menu':'Open menu'));
+    nav.classList.toggle('is-open',open);
+  };
+  button.addEventListener('click',()=>setOpen(button.getAttribute('aria-expanded')!=='true'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&button.getAttribute('aria-expanded')==='true'){setOpen(false);button.focus();}});
+  document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))setOpen(false);});
+})();
+
 /* Adapted from toronto-ga4.js: one optional GA4 collector, default denied.
    Static client shell replaces template instrumentation; never embed beside GTM. */
 (() => {

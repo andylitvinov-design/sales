@@ -14,13 +14,13 @@ const manifest={mode:production?'production':'preview',analytics:production?'con
 for(const locale of ['en','ru'])for(const key of Object.keys(pages[locale])){
  const name=sourceName(key,locale);
  await fs.writeFile(path.join(root,`${name}.html`),render(key,locale,{source:true}));
- await fs.writeFile(path.join(root,`${name}.css`),'@import url("psitrends-client.css?v=1");\n');
+ await fs.writeFile(path.join(root,`${name}.css`),'@import url("psitrends-client.css?v=2");\n');
  const route=routeFor(key,locale),file=route==='/'?'index.html':`${route.replace(/^\//,'').replace(/\/$/,'')}/index.html`;
  await fs.mkdir(path.dirname(path.join(output,file)),{recursive:true});
  await fs.writeFile(path.join(output,file),render(key,locale,{production}));
  manifest.routes.push({route,file,locale,source:`${name}.html`});
 }
-for(const [from,to] of [['psitrends-client.css','psitrends-client-assets/psitrends-client.css'],['psitrends-client.js','psitrends-client-assets/psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','psitrends-client-assets/andrey.jpg']])await fs.copyFile(path.join(root,from),path.join(output,to));
+for(const [from,to] of [['psitrends-client.css','psitrends-client-assets/psitrends-client.css'],['psitrends-client.js','psitrends-client-assets/psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','psitrends-client-assets/andrey.jpg'],['integrations/psitrends-client/archway.webp','psitrends-client-assets/archway.webp']])await fs.copyFile(path.join(root,from),path.join(output,to));
 await fs.writeFile(path.join(output,'robots.txt'),production?'User-agent: *\nAllow: /\nSitemap: https://psitrends.com/sitemap.xml\n':'User-agent: *\nDisallow: /\n');
 await fs.writeFile(path.join(output,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${production?manifest.routes.map(x=>`<url><loc>https://psitrends.com${x.route}</loc></url>`).join(''):''}</urlset>\n`);
 await fs.writeFile(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
