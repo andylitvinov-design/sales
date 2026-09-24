@@ -7,6 +7,8 @@ reports/
 .DS_Store
 
 output/toronto-public/
+output/psitrends-client/
+output/psitrends-seo/
 
 .wrangler/
 

@@ -1,0 +1,450 @@
+{
+  "status": "LOCAL_PREVIEW_READY",
+  "pages": 12,
+  "fullAuditsPassed": 12,
+  "viewportChecks": 36,
+  "previewExternalRequests": 0,
+  "outputMode": "preview",
+  "noProductionDeployment": true,
+  "productionAnalyticsTest": "intercepted locally; opt-in, withdrawal, unsafe query and contact-click payload passed",
+  "limitations": [
+    "Preview deliberately noindex; Lighthouse SEO is not a production SEO score.",
+    "First-party deployment and canonical route verification remain parent release work.",
+    "No verified testimonials, credentials or fees were invented.",
+    "Native Joomla integration requires its own staged QA."
+  ],
+  "auditResults": [
+    {
+      "source": "psitrends-client-about.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-about.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-about-ru.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-about-ru.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-academy.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-academy.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-academy-ru.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-academy-ru.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-constellations.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-constellations.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-constellations-ru.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-constellations-ru.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-contact.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-contact.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-contact-ru.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-contact-ru.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-home.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-home.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-home-ru.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-home-ru.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-hypnotherapy.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-hypnotherapy.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    },
+    {
+      "source": "psitrends-client-hypnotherapy-ru.html",
+      "ok": true,
+      "checks": [
+        {
+          "check": "html-validate",
+          "status": 0
+        },
+        {
+          "check": "stylelint:psitrends-client-hypnotherapy-ru.css",
+          "status": 0
+        },
+        {
+          "check": "pa11y",
+          "status": 0
+        },
+        {
+          "check": "linkinator",
+          "status": 0
+        },
+        {
+          "check": "lighthouse",
+          "status": 0
+        },
+        {
+          "check": "playwright",
+          "status": 0
+        }
+      ],
+      "lighthouse": {
+        "accessibility": 1,
+        "bestPractices": 1,
+        "seo": 0.63
+      },
+      "findings": []
+    }
+  ]
+}

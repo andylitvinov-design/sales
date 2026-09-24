@@ -13,7 +13,7 @@ Verified2026-09-22. Keep acquisition intent separate from actual business outcom
 | Domain GSC property | `sc-domain:psitrends.com` | Not accessible; URL-prefix property is verified and usable without DNS access |
 | GBP | Existing Holistic House profile | Owner controls previously verified; primary category remains Education center |
 
-Do not remove the GTM container without replacing Search Console ownership verification. Future Google authentication can require owner2FA; no Google cookies/passwords were exported.
+Search Console ownership is now independently verified by a static Google HTML file on the production origin (2026-09-22). The exact body returned HTTP200 and Search Console explicitly reported successful HTML-file verification, alongside the existing GTM method. Preserve that existing `google*.html` file through deployments and restores; its exact token stays outside Git. The new client template may therefore omit the old GTM loader without depending on consent to retain ownership. Future Google authentication can require owner2FA; no Google cookies/passwords were exported.
 
 ## Instrumentation and consent
 
