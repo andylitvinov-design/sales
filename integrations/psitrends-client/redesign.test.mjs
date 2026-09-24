@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {render} from './template.mjs';
+import {render,routeFor} from './template.mjs';
+
+test('English is the canonical default homepage route',()=>{
+ assert.equal(routeFor('home','en'),'/');
+ assert.equal(routeFor('home','ru'),'/ru/');
+});
 
 for (const locale of ['en','ru']) {
  test(`${locale} homepage is an editorial, human-led journey without emoji arrows`,()=>{
@@ -23,7 +28,13 @@ for (const locale of ['en','ru']) {
    const html=render(key,locale);
    assert.equal((html.match(/class="menu-toggle"/g)||[]).length,1);
    assert.match(html,/aria-controls="primary-nav" aria-expanded="false"/);
-   assert.match(html,/class="language"[^>]*>[ER][NU]</);
+   const controls=html.match(/<div class="header-controls">([\s\S]*?)<button class="menu-toggle"/)?.[1]||'';
+   assert.ok(controls.indexOf('>RU<')<controls.indexOf('>EN<'),'language order is always RU then EN');
+   if(locale==='en'){
+    assert.match(controls,/<a class="language"[^>]*>RU<\/a><span class="language current-language"[^>]*aria-current="page"[^>]*>EN<\/span>/);
+   }else{
+    assert.match(controls,/<span class="language current-language"[^>]*aria-current="page"[^>]*>RU<\/span><a class="language"[^>]*>EN<\/a>/);
+   }
    assert.match(html,/id="primary-nav"/);
   }
  });
