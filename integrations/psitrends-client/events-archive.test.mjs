@@ -1,6 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {existsSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
 import {render, routeFor} from './template.mjs';
+
+const eventAssetRoot = fileURLToPath(new URL('./events-assets/events/', import.meta.url));
+const photoSets = {
+  '2006-trainers': 3, '2007-trainers': 3, '2008-trainers': 3, '2009-trainers': 3,
+  '2011-magic-workshop': 3, '2012-magic-workshop': 3, '2013-magic-workshop-crimea': 3,
+  '2014-magic-workshop': 7, '2016-odessa': 3, '2016-carpathians': 3, '2017-carpathians': 3,
+};
 
 const documentedMarkers = [
   'Trainer Workshop &amp; School of Trainers',
@@ -34,6 +43,30 @@ test('Russian events archive is a real counterpart with event navigation across 
   assert.match(html, />События<\/a>/);
   assert.match(render('about', 'ru'), /Архив мастерских и групповой практики/);
   assert.match(html, /Радомышль, Украина/);
+});
+
+test('events timeline is newest-first and every published photo set exists locally', () => {
+  const html = render('events', 'en', {production: true});
+  const order = [
+    'Magic Workshop Altair', 'Money Mystery — Egyptian Mysteries',
+    'Magic Workshop</h2><p>A documented continuation of the Carpathian workshop series',
+    'Journey through the Worlds of Yggdrasil', 'Third Summer International Magic Workshop',
+    'Aiterra Parapsychology Workshop', 'Trainer Workshop &amp; School of Trainers',
+  ];
+  for (let index = 1; index < order.length; index += 1) {
+    assert.ok(html.indexOf(order[index - 1]) < html.indexOf(order[index]), `${order[index - 1]} should precede ${order[index]}`);
+  }
+  assert.match(html, /<p class="eyebrow">2018 → 2006<\/p>/);
+  let photoTotal = 0;
+  for (const [folder, count] of Object.entries(photoSets)) {
+    for (let index = 1; index <= count; index += 1) {
+      const file = `${folder}/${String(index).padStart(2, '0')}.jpg`;
+      assert.ok(existsSync(`${eventAssetRoot}${file}`), `missing archival photo ${file}`);
+      assert.match(html, new RegExp(`events/${folder}/${String(index).padStart(2, '0')}\\.jpg`));
+      photoTotal += 1;
+    }
+  }
+  assert.equal(photoTotal, 37);
 });
 
 test('all client-first pages expose the locale-matched Events link and archive integrations', () => {
