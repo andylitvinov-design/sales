@@ -28,3 +28,9 @@ Final stage directory `/var/lib/psitrends-releases/academy-reviews-final-stage-2
 Use the established guarded runner, swapping only the release-directory bind mount in [the prior recovery commands](psitrends-three-pillars-release.md). Explicit `rollback` restores this batch's previous article fields and files. The private package must remain unchanged. Run the paired `clear-client-cache.php` after every apply/rollback; it clears this site's desktop AND mobile presentation caches only. Never flush Redis sessions or other sites. No core, extension, ACL, menu or legacy-content writes.
 
 Production acceptance is `node scripts/verify-psitrends-public.mjs` plus anonymous browser checks on the actual domain. It now asserts 8/5 photos, seven original review entries per home, 49 Academy links and three course videos, in addition to 24 desktop/mobile route and six UTM redirect checks.
+
+## Production verification
+
+The final staged package was applied to production on 2026-09-24. The public regression command passed all 24 EN/RU desktop/mobile route checks, all six UTM-preserving redirects, sitemap and robots checks, including the restored media/catalog assertions. A fresh full audit of `https://psitrends.com/ru/` passed pa11y, linkinator and viewport checks with no findings; Lighthouse accessibility, best practices and SEO each scored 100. Desktop and mobile hero fit checks passed with no horizontal overflow.
+
+An actual public-browser session confirmed the RU gallery, click-to-load no-cookie video frame and removal on close, plus 49 Academy source links with no mobile overflow. These checks do not claim every third-party video remains playable: 16 source oEmbed responses passed and the known restricted video remains an external original link. Original customer-media screenshots are kept locally, not committed to Git.
