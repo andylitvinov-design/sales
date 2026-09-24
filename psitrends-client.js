@@ -15,6 +15,28 @@
   document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))setOpen(false);});
 })();
 
+/* Previously published videos: no player or third-party thumbnail before a click. */
+document.querySelectorAll('[data-video]').forEach(link=>{
+  link.addEventListener('click',event=>{
+    const id=link.dataset.video;
+    if(!/^[A-Za-z0-9_-]{11}$/.test(id)||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    const stage=link.closest('.video-stage');
+    if(stage.querySelector('iframe'))return;
+    const frame=document.createElement('iframe');
+    frame.src=`https://www.youtube-nocookie.com/embed/${id}`;
+    frame.title=link.textContent.trim();
+    frame.allow='encrypted-media; picture-in-picture; fullscreen';
+    frame.allowFullscreen=true;
+    frame.referrerPolicy='strict-origin-when-cross-origin';
+    const close=document.createElement('button');
+    close.type='button';close.className='video-close';
+    close.textContent=document.documentElement.lang==='ru'?'Закрыть видео':'Close video';
+    close.addEventListener('click',()=>{frame.remove();close.remove();link.hidden=false;link.focus();});
+    link.hidden=true;stage.append(frame,close);frame.focus();
+  });
+});
+
 /* Adapted from toronto-ga4.js: one optional GA4 collector, default denied.
    Static client shell replaces template instrumentation; never embed beside GTM. */
 (() => {
