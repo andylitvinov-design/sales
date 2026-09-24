@@ -12,7 +12,7 @@ for(const [platform,agent] of Object.entries(agents)){
   const response=await fetch(origin+route,{headers:{'user-agent':agent,'accept-language':lang}});
   const html=await response.text();
   assert.equal(response.status,200,route);
-  assert.match(html,/psitrends-client\.css\?v=2/);
+  assert.match(html,/psitrends-client\.css\?v=3/);
   assert.doesNotMatch(html,/templates\/tx_valley|GTM-K2KKDZD/);
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1,route);
   assert.equal((html.match(/class="menu-toggle"/g)||[]).length,1,route);
@@ -20,6 +20,15 @@ for(const [platform,agent] of Object.entries(agents)){
   assert.ok((html.match(/hreflang=/g)||[]).length>=2,`hreflang ${route}`);
   assert.doesNotMatch(html,/<meta[^>]+name="robots"[^>]+noindex/);
   if(path==='/')assert.match(html,lang==='ru'?/Алхимия души/:/Alchemy of the Soul/);
+  if(path==='/'){
+   assert.equal((html.match(/class="review-photo"/g)||[]).length,lang==='ru'?5:8);
+   assert.equal((html.match(/class="review-video"/g)||[]).length,7);
+   assert.doesNotMatch(html,/<iframe/);
+  }
+  if(path==='/academy'){
+   assert.equal((html.match(/class="course-link"/g)||[]).length,49);
+   assert.equal((html.match(/class="review-video"/g)||[]).length,3);
+  }
   results.push({platform,route,status:response.status,canonical:origin+route,h1:html.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1]});
  }
 }

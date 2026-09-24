@@ -1,5 +1,8 @@
 import {pages,shared,routes} from './content.mjs';
 import {home,renderHome} from './home.mjs';
+import {renderReviews} from './reviews.mjs';
+import {renderAcademy} from './academy.mjs';
+import catalog from './academy-catalog.json' with {type:'json'};
 export const sourceName=(key,locale)=>`psitrends-client-${key}${locale==='ru'?'-ru':''}`;
 export const routeFor=(key,locale)=>locale==='ru'?`/ru${routes[key]}`:routes[key];
 const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -7,8 +10,8 @@ export function render(key,locale,{source=false,production=false}={}){
  const c=key==='home'?{...pages[locale][key],...home[locale]}:pages[locale][key],s={...shared[locale],...{final:home[locale].final,finalText:home[locale].finalText}},other=locale==='en'?'ru':'en';
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
  const asset=source?'integrations/psitrends-client/andrey.jpg':'/psitrends-client-assets/andrey.jpg';
- const css=source?`${sourceName(key,locale)}.css?v=2`:'/psitrends-client-assets/psitrends-client.css?v=2';
- const js=source?'psitrends-client.js?v=2':'/psitrends-client-assets/psitrends-client.js?v=2';
+ const css=source?`${sourceName(key,locale)}.css?v=3`:'/psitrends-client-assets/psitrends-client.css?v=3';
+ const js=source?'psitrends-client.js?v=3':'/psitrends-client-assets/psitrends-client.js?v=3';
  const atmosphere=source?'integrations/psitrends-client/archway.webp':'/psitrends-client-assets/archway.webp';
  const homeAnchor=id=>`${key==='home'?'':link('home')}#${id}`;
  const navItems=[['consultations',locale==='en'?'Consultations':'Консультации'],['training',locale==='en'?'Training':'Обучение'],['workshops',locale==='en'?'Workshops':'Семинары']];
@@ -30,6 +33,8 @@ export function render(key,locale,{source=false,production=false}={}){
  if(key==='home')body+=`<section class="academy-band"><div class="shell"><p class="eyebrow">PsiTrends Academy</p><h2>${esc(c.academyTitle)}</h2><p>${esc(c.academyText)}</p><a class="text-link" href="${link('academy')}">${esc(s.labels.academy)} <span aria-hidden="true">↗</span></a></div></section>`;
  if(key==='academy'||key==='about')body+=`<section class="shell related"><h2>${locale==='en'?'Explore individual sessions.':'Индивидуальные сессии.'}</h2>${services()}</section>`;
  if(key==='home')body=renderHome(locale,{link,cta,asset,escape:esc,services});
+ if(key==='home')body+=renderReviews(locale,{source});
+ if(key==='academy')body=renderAcademy(locale,catalog,esc)+body;
  return `<!DOCTYPE html>
 <html lang="${locale}">
 <head>
