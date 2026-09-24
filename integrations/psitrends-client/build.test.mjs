@@ -37,10 +37,10 @@ test('author profile keeps the supplied biography, portrait and reviews in readi
   for(const fragment of [
     'Let me introduce myself.', 'I’m Andy, a Jungian-oriented specialist and facilitator of archetypal practices.', 'Raised in Ukraine but living for 20 years worldwide.', '24 years of facilitating group and personal growth programs',
     '22 years of experience facilitating transpersonal temple-based practices', '15 years of experience facilitating Family and Business Constellations',
-    'Dreams Alive Psychotherapy', 'Healing tensions, Inner child traumas through unconscious imagery.', 'Body-oriented Psychotherapy', 'Healing early Inner child traumas through conscious touch.', 'Temple Therapy', 'Taoist Alchemy',
-    'I did tantric workshops since 2004', 'Though my primary interest is psychotherapy.', 'My principal education in this field lies in Guided Affective Imagery (Hanscarl Leuner).', 'The method that creates a bridge between Jungian depth psychology and Freudian psychoanalysis.',
-    'As for the bodywork, my education was based in', 'European School of Body psychotherapy', 'Bodynamic Analysis approach', 'These schools beautifully connect the traumas of childhood with the body areas.',
-    'Temple Studies. Initiations into the Greek Temple Mysteries. Mysteries of Dionysus, Demeter, etc. Egyptian Temple magic and mysteries.', 'That is the experience that not only gives you the knowledge, but the sense of the field, archetypes, transpersonal flow.', 'That I was studying and teaching worldwide for 20 years.', 'Tantra Reiki School, that is said to be coming from the Osho’s Tradition.'
+    'Dreams Alive / Guided Imagery Work', 'Exploring tensions and Inner Child experiences through imagery and unconscious material.', 'Body-oriented Work', 'Exploring early developmental and Inner Child patterns through body awareness and conscious, consent-based touch.', 'Archetypal Temple Work', 'Taoist Alchemy',
+    'I did tantric workshops since 2004', 'Though my primary interest is depth-oriented personal work.', 'A central part of my studies has been Guided Affective Imagery (Hanscarl Leuner).', 'This approach creates a bridge between Jungian depth traditions and Freudian psychoanalytic approaches.',
+    'As for bodywork, my studies were influenced by', 'European body-oriented approaches', 'the Bodynamic Analysis approach', 'These approaches explore connections between early developmental experiences and patterns held in the body.',
+    'Temple Studies. Initiations into the Greek Temple Mysteries. Mysteries of Dionysus, Demeter, etc. Egyptian Temple magic and mysteries.', 'That is the experience that not only gives you the knowledge, but the sense of the field, archetypes, transpersonal flow.', 'That I was studying and teaching worldwide for 20 years.', 'Tantra Reiki, a lineage described within its tradition as connected to Osho-inspired teachings.'
   ])assert.ok(english.includes(fragment),`missing English biography fragment: ${fragment}`);
   assert.match(english,/andy-library-desk\.png/);
   assert.match(home,/andy-library-desk\.png/);
@@ -48,5 +48,5 @@ test('author profile keeps the supplied biography, portrait and reviews in readi
   const testimonialsIndex=english.indexOf('Testimonials');
   assert.notEqual(tantricIndex,-1,'Tantric workshops heading must be present');
   assert.ok(testimonialsIndex>tantricIndex,'reviews must appear after the full biography');
-  for(const fragment of ['Позвольте представиться.', '24 года веду групповые', 'Психотерапия Dreams Alive', 'Телесно-ориентированная психотерапия', 'Храмовая терапия', 'Даосская алхимия', 'Тантрические семинары', 'Guided Affective Imagery', 'Bodynamic Analysis', 'Temple Studies', 'Tantra Reiki School'])assert.ok(russian.includes(fragment),`missing Russian biography fragment: ${fragment}`);
+  for(const fragment of ['Позвольте представиться.', '24 года веду групповые', 'Dreams Alive / работа с направленными образами', 'Телесно-ориентированная работа', 'Архетипическая храмовая работа', 'Даосская алхимия', 'Тантрические семинары', 'Guided Affective Imagery', 'Bodynamic Analysis', 'Temple Studies', 'Tantra Reiki'])assert.ok(russian.includes(fragment),`missing Russian biography fragment: ${fragment}`);
 });
