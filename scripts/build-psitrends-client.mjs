@@ -14,7 +14,7 @@ const manifest={mode:production?'production':'preview',analytics:production?'con
 for(const locale of ['en','ru'])for(const key of Object.keys(pages[locale])){
  const name=sourceName(key,locale);
  await fs.writeFile(path.join(root,`${name}.html`),render(key,locale,{source:true}));
- await fs.writeFile(path.join(root,`${name}.css`),'@import url("psitrends-client.css?v=2");\n');
+ await fs.writeFile(path.join(root,`${name}.css`),'@import url("psitrends-client.css?v=4");\n');
  const route=routeFor(key,locale),file=route==='/'?'index.html':`${route.replace(/^\//,'').replace(/\/$/,'')}/index.html`;
  await fs.mkdir(path.dirname(path.join(output,file)),{recursive:true});
  await fs.writeFile(path.join(output,file),render(key,locale,{production}));

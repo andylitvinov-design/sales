@@ -10,8 +10,8 @@ export function render(key,locale,{source=false,production=false}={}){
  const c=key==='home'?{...pages[locale][key],...home[locale]}:pages[locale][key],s={...shared[locale],...{final:home[locale].final,finalText:home[locale].finalText}},other=locale==='en'?'ru':'en';
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
  const asset=source?'integrations/psitrends-client/andrey.jpg':'/psitrends-client-assets/andrey.jpg';
- const css=source?`${sourceName(key,locale)}.css?v=3`:'/psitrends-client-assets/psitrends-client.css?v=3';
- const js=source?'psitrends-client.js?v=3':'/psitrends-client-assets/psitrends-client.js?v=3';
+ const css=source?`${sourceName(key,locale)}.css?v=4`:'/psitrends-client-assets/psitrends-client.css?v=4';
+ const js=source?'psitrends-client.js?v=4':'/psitrends-client-assets/psitrends-client.js?v=4';
  const atmosphere=source?'integrations/psitrends-client/archway.webp':'/psitrends-client-assets/archway.webp';
  const homeAnchor=id=>`${key==='home'?'':link('home')}#${id}`;
  const navItems=[['consultations',locale==='en'?'Consultations':'Консультации'],['training',locale==='en'?'Training':'Обучение'],['workshops',locale==='en'?'Workshops':'Семинары']];
