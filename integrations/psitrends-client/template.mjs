@@ -10,10 +10,10 @@ const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll
 export function render(key,locale,{source=false,production=false}={}){
  const c=key==='home'?{...pages[locale][key],...home[locale]}:pages[locale][key],s={...shared[locale],...{final:home[locale].final,finalText:home[locale].finalText}},other=locale==='en'?'ru':'en';
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
- const asset=path=>source?`integrations/psitrends-client/${path}`:`/psitrends-client-assets/${path}`;
+ const asset=path=>source?`integrations/psitrends-client/${path.startsWith('events/')?'events-assets/':''}${path}`:`/psitrends-client-assets/${path}`;
  const portrait=asset(['home','about'].includes(key)?'andy-library-desk.png':'andrey.jpg');
- const css=source?`${sourceName(key,locale)}.css?v=5`:'/psitrends-client-assets/psitrends-client.css?v=5';
- const js=source?'psitrends-client.js?v=5':'/psitrends-client-assets/psitrends-client.js?v=5';
+ const css=source?`${sourceName(key,locale)}.css?v=6`:'/psitrends-client-assets/psitrends-client.css?v=6';
+ const js=source?'psitrends-client.js?v=6':'/psitrends-client-assets/psitrends-client.js?v=6';
  const atmosphere=asset('archway.webp');
  const heritage=source?'output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg':'/images/photo_2023-01-27_06-22-45.jpg';
  const arrow='<span class="link-arrow" aria-hidden="true"></span>';

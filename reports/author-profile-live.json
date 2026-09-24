@@ -1,0 +1,454 @@
+{
+  "ok": true,
+  "checks": 56,
+  "results": [
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "hypnotherapy",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "constellations",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "contact",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "academy",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "events",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "hypnotherapy",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "constellations",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "contact",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "academy",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "events",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "hypnotherapy",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "constellations",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "contact",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "academy",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "events",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "hypnotherapy",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "constellations",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "contact",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "academy",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "events",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "hypnotherapy",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "constellations",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "contact",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "academy",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "events",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "hypnotherapy",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "constellations",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "contact",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "academy",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "events",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "hypnotherapy",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "constellations",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "contact",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "academy",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "events",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "hypnotherapy",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "constellations",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "contact",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "academy",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "events",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    }
+  ]
+}

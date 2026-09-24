@@ -1,0 +1,134 @@
+{
+  "ok": true,
+  "checks": 16,
+  "results": [
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "home",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "en",
+      "key": "about",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "home",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    },
+    {
+      "locale": "ru",
+      "key": "about",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "nav": 6
+    }
+  ]
+}

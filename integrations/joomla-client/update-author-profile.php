@@ -27,6 +27,7 @@ try {
  $manifest['pages']=array_values(array_filter($manifest['pages'],fn($p)=>in_array($p['key'],['en:home','ru:home','en:about','ru:about'],true)));
  demand(count($manifest['pages'])===4,'author_page_count');
  $files=[
+  'templates/psitrends_client/index.php'=>'template/index.php',
   'media/templates/site/psitrends_client/assets/psitrends-client.css'=>'template/media/assets/psitrends-client.css',
   'media/templates/site/psitrends_client/assets/andy-library-desk.png'=>'template/media/assets/andy-library-desk.png'
  ];
