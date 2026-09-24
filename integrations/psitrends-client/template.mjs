@@ -18,7 +18,51 @@ export function render(key,locale,{source=false,production=false}={}){
  const heritage=source?'output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg':'/images/photo_2023-01-27_06-22-45.jpg';
  const arrow='<span class="link-arrow" aria-hidden="true"></span>';
  const homeAnchor=id=>`${key==='home'?'':link('home')}#${id}`;
- const navItems=[['consultations',locale==='en'?'Consultations':'Консультации'],['training',locale==='en'?'Training':'Обучение'],['workshops',locale==='en'?'Workshops':'Семинары']];
+ const legacy=locale==='en'?{
+  diagnostics:'https://psitrends.com/express',
+  business:'https://psitrends.com/business',
+  therapy:'https://psitrends.com/therapy',
+  mysteries:'https://psitrends.com/mysteries',
+  artifacts:'https://psitrends.com/mandalas-and-artifacts',
+  studies:'https://psitrends.com/studies'
+ }:{
+  diagnostics:'https://psitrends.com/ru/express-ru',
+  business:'https://psitrends.com/ru/biznes',
+  therapy:'https://psitrends.com/ru/thrpy-ru',
+  mysteries:'https://psitrends.com/ru/misterii',
+  artifacts:'https://psitrends.com/ru/mandaly-i-artefakty',
+  studies:'https://psitrends.com/ru/cat-train-ru'
+ };
+ const navItems=[
+  {id:'consultations',label:locale==='en'?'Consultations':'Консультации',href:homeAnchor('consultations'),children:[
+   [locale==='en'?'Alchemy of the Soul':'Алхимия души',homeAnchor('consultations')],
+   [s.labels.hypnotherapy,link('hypnotherapy')],
+   [s.labels.constellations,link('constellations')]
+  ]},
+  {id:'training',label:locale==='en'?'Training':'Обучение',href:link('academy'),children:[
+   [locale==='en'?'All courses & programs':'Все курсы и программы',`${link('academy')}#programs`],
+   ['Reiki Yggdrasil',`${link('academy')}#reiki`],
+   [locale==='en'?'Mysteries & Initiations':'Мистерии и посвящения',`${link('academy')}#mysteries`],
+   [locale==='en'?'Runes, elements & artifacts':'Руны, стихии и артефакты',`${link('academy')}#runes`],
+   [locale==='en'?'Video courses & meditations':'Видеокурсы и медитации',`${link('academy')}#video-courses`],
+   [locale==='en'?'Books & program archive':'Книги и архив программ',`${link('academy')}#library`]
+  ]},
+  {id:'workshops',label:locale==='en'?'Workshops':'Семинары',href:link('events'),children:[
+   [locale==='en'?'Workshops & events archive':'Архив семинаров и мероприятий',link('events')],
+   [locale==='en'?'Systemic / Family Constellations':'Системные / семейные расстановки',link('constellations')],
+   [locale==='en'?'Mysteries workshops':'Семинары по Мистериям',`${link('academy')}#mysteries`]
+  ]},
+  {id:'projects',label:locale==='en'?'Projects':'Проекты',href:`${link('academy')}#projects`,children:[
+   [locale==='en'?'Business & consulting archive':'Бизнес и консалтинг',legacy.business],
+   [locale==='en'?'Alchemy / personal development archive':'Алхимия души / развитие человека',legacy.therapy],
+   [locale==='en'?'Mysteries':'Мистерии',legacy.mysteries],
+   [locale==='en'?'Mandalas & Artifacts':'Мандалы и артефакты',legacy.artifacts],
+   [locale==='en'?'Original studies catalogue':'Архив обучения',legacy.studies],
+   [locale==='en'?'Diagnostics archive':'Диагностика',legacy.diagnostics]
+  ]}
+ ];
+ const navCurrent=id=>id==='training'?key==='academy':id==='workshops'?key==='events':id==='consultations'?['home','hypnotherapy','constellations'].includes(key):false;
+ const navHtml=navItems.map(item=>`<div class="nav-group"><a class="nav-root" href="${item.href}"${navCurrent(item.id)?' aria-current="page"':''}>${esc(item.label)}</a><div class="nav-submenu" role="group" aria-label="${esc(item.label)}">${item.children.map(([label,href])=>`<a href="${href}">${esc(label)}</a>`).join('')}</div></div>`).join('');
  const canonical=`https://psitrends.com${routeFor(key,locale)}`;
  const message=locale==='ru'?'Здравствуйте, Андрей! Хочу обсудить индивидуальную сессию.':'Hi Andrey, I would like to ask about an individual session.';
  const cta=()=>`<a class="button" data-contact="whatsapp" href="https://wa.me/14376066502?text=${encodeURIComponent(message)}">${esc(s.cta)} ${arrow}</a>`;
@@ -67,7 +111,7 @@ ${production?`<script type="application/ld+json">${JSON.stringify({'@context':'h
 </head>
 <body data-analytics-mode="${production?'consent':'off'}" data-page="${key}" data-locale="${locale}">
 <a class="skip-link" href="#main">${esc(s.skip)}</a>
-<header class="site-header"><div class="shell header-top"><a class="brand" href="${link('home')}">PsiTrends<span>Holistic House</span></a><nav class="nav" id="primary-nav" aria-label="${esc(s.nav)}">${navItems.map(([id,label])=>`<a href="${homeAnchor(id)}">${label}</a>`).join('')}${['about','events','contact'].map(k=>`<a href="${link(k)}"${k===key?' aria-current="page"':''}>${locale==='en'&&k==='about'?'About':esc(s.labels[k])}</a>`).join('')}</nav><div class="header-controls"><span class="current-language" title="${locale==='en'?'Current language: English':'Текущий язык: русский'}">${locale.toUpperCase()}</span><a class="language" href="${link(key,other)}" lang="${other}" hreflang="${other}" aria-label="${esc(s.switch)}">${other.toUpperCase()}</a><button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="${locale==='en'?'Open menu':'Открыть меню'}"><span></span><span></span></button></div></div></header>
+<header class="site-header"><div class="shell header-top"><a class="brand" href="${link('home')}">PsiTrends<span>Holistic House</span></a><nav class="nav" id="primary-nav" aria-label="${esc(s.nav)}">${navHtml}${['about','contact'].map(k=>`<a href="${link(k)}"${k===key?' aria-current="page"':''}>${locale==='en'&&k==='about'?'About':esc(s.labels[k])}</a>`).join('')}</nav><div class="header-controls"><span class="current-language" title="${locale==='en'?'Current language: English':'Текущий язык: русский'}">${locale.toUpperCase()}</span><a class="language" href="${link(key,other)}" lang="${other}" hreflang="${other}" aria-label="${esc(s.switch)}">${other.toUpperCase()}</a><button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="${locale==='en'?'Open menu':'Открыть меню'}"><span></span><span></span></button></div></div></header>
 <main id="main">
 ${key==='events'?'':`<section class="hero${key==='home'?' hero--home':''}"><div class="shell hero-layout"><div class="hero-copy"><p class="eyebrow">${esc(key==='academy'?(locale==='en'?'Methods · Books · Traditions':'Методы · Книги · Традиции'):s.eyebrow)}</p><h1>${esc(hero.h1)}</h1>${key==='about'?hero.intro.map(p=>`<p class="lead">${esc(p)}</p>`).join(''):`<p class="lead">${esc(c.lead)}</p><p class="byline">${esc(home[locale].byline)}</p><div class="hero-actions">${cta()}</div><p class="small">${esc(s.note)}</p>`}<a class="text-link hero-more" href="#explore">${locale==='en'?'Explore the approach':'Узнать о подходе'} <span class="link-arrow link-arrow--down" aria-hidden="true"></span></a></div>${key==='home'?`<div class="hero-visual"><figure class="hero-portrait"><img src="${portrait}" width="1079" height="1057" alt="${esc(s.portrait)}" fetchpriority="high"></figure><figure class="hero-atmosphere"><img src="${atmosphere}" width="1200" height="800" alt="" loading="lazy"></figure></div>`:`<figure class="portrait ${key==='about'?'':'atmosphere'}"><img src="${key==='about'?portrait:atmosphere}" width="${key==='about'?1079:1536}" height="${key==='about'?1057:1024}" alt="${key==='about'?esc(s.portrait):''}" fetchpriority="high">${key==='about'?`<figcaption>${esc(s.caption)}</figcaption>`:''}</figure>`}</div></section>`}
 ${body}
