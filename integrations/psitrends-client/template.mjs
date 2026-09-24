@@ -10,8 +10,8 @@ export function render(key,locale,{source=false,production=false}={}){
  const c=key==='home'?{...pages[locale][key],...home[locale]}:pages[locale][key],s={...shared[locale],...{final:home[locale].final,finalText:home[locale].finalText}},other=locale==='en'?'ru':'en';
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
  const asset=source?'integrations/psitrends-client/andrey.jpg':'/psitrends-client-assets/andrey.jpg';
- const css=source?`${sourceName(key,locale)}.css?v=3`:'/psitrends-client-assets/psitrends-client.css?v=3';
- const js=source?'psitrends-client.js?v=3':'/psitrends-client-assets/psitrends-client.js?v=3';
+ const css=source?`${sourceName(key,locale)}.css?v=4`:'/psitrends-client-assets/psitrends-client.css?v=4';
+ const js=source?'psitrends-client.js?v=4':'/psitrends-client-assets/psitrends-client.js?v=4';
  const atmosphere=source?'integrations/psitrends-client/archway.webp':'/psitrends-client-assets/archway.webp';
  const heritage=source?'output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg':'/images/photo_2023-01-27_06-22-45.jpg';
  const arrow='<span class="link-arrow" aria-hidden="true"></span>';

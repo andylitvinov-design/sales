@@ -43,8 +43,8 @@ $assets = rtrim(Uri::root(true), '/') . '/media/templates/site/psitrends_client/
 <meta property="og:description" content="<?= $escape($page['description']) ?>">
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?= $escape($page['canonical']) ?>">
-<link rel="stylesheet" href="<?= $escape($assets) ?>psitrends-client.css?v=3">
-<script src="<?= $escape($assets) ?>psitrends-client.js?v=3" defer></script>
+<link rel="stylesheet" href="<?= $escape($assets) ?>psitrends-client.css?v=4">
+<script src="<?= $escape($assets) ?>psitrends-client.js?v=4" defer></script>
 <?php if ($production && $page['schema']) : ?>
 <script type="application/ld+json"><?= json_encode($page['schema'], JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?></script>
 <?php endif; ?>
