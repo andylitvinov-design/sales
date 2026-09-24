@@ -843,6 +843,20 @@ summary {
   margin: 28px 0;
 }
 
+.review-group {
+  padding-top: 36px;
+  margin-top: 36px;
+  border-top: 1px solid #d7d1c5;
+  scroll-margin-top: 100px;
+}
+
+.review-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background: #2c3e36;
+}
+
 .review-photo {
   display: block;
   text-decoration: none;
