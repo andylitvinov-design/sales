@@ -31,18 +31,18 @@ const thumbnailUrl=(id,source)=>`${source?'integrations/psitrends-client':'/psit
 
 export function videoCard(id,label,ru,source=false){
  const title=label||titles[id]||id,play=ru?'Воспроизвести видео':'Play video';
- return `<article class="review-video"><div class="video-stage"><a class="video-load video-poster" data-video="${id}" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer" aria-label="${escape(play)}: ${escape(title)}"><img class="video-thumbnail" src="${thumbnailUrl(id,source)}" loading="lazy" width="480" height="360" alt=""><span class="play-button" aria-hidden="true">▶</span></a></div><h4>${escape(title)}</h4><a class="video-original" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">${ru?'Открыть на YouTube':'Open on YouTube'} <span aria-hidden="true">↗</span></a></article>`;
+ return `<article class="review-video"><div class="video-stage"><a class="video-load video-poster" data-video="${id}" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer" aria-label="${escape(play)}: ${escape(title)}"><img class="video-thumbnail" src="${thumbnailUrl(id,source)}" loading="lazy" width="480" height="360" alt=""><span class="play-button" aria-hidden="true">▶</span></a></div><h4>${escape(title)}</h4><a class="video-original" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">${ru?'Открыть на YouTube':'Open on YouTube'} <span class="link-arrow" aria-hidden="true"></span></a></article>`;
 }
 
 function nativeCard(video,ru,source){
  const url=imageUrl(video.file,source),poster=imageUrl(video.poster,source);
- return `<article class="review-video"><video controls preload="none" playsinline poster="${poster}" aria-label="${escape(video.title)}"><source src="${url}" type="video/mp4"><a href="${url}">${ru?'Открыть видео':'Open video'}</a></video><h4>${escape(video.title)}</h4><a class="video-original" href="${url}" target="_blank" rel="noopener noreferrer">${ru?'Оригинальное видео с сайта':'Original website video'} ↗</a></article>`;
+ return `<article class="review-video"><video controls preload="none" playsinline poster="${poster}" aria-label="${escape(video.title)}"><source src="${url}" type="video/mp4"><a href="${url}">${ru?'Открыть видео':'Open video'}</a></video><h4>${escape(video.title)}</h4><a class="video-original" href="${url}" target="_blank" rel="noopener noreferrer">${ru?'Оригинальное видео с сайта':'Original website video'} <span class="link-arrow" aria-hidden="true"></span></a></article>`;
 }
 
 function gallery(items){return items.length?`<div class="review-grid">${items.join('')}</div>`:'';}
 function section(id,title,videos,photos,files,ru,source){
  const videoCards=videos.map(id=>videoCard(id,titles[id],ru,source));
- const photoCards=photos.map(file=>{const url=imageUrl(file,source);return `<a class="review-photo" href="${url}" target="_blank" rel="noopener noreferrer"><img src="${url}" loading="lazy" width="480" height="360" alt="${escape(title)}: ${ru?'фотоотзыв':'photo testimonial'}"><span>${ru?'Открыть фотоотзыв':'Open photo testimonial'} <span aria-hidden="true">↗</span></span></a>`;});
+ const photoCards=photos.map(file=>{const url=imageUrl(file,source);return `<a class="review-photo" href="${url}" target="_blank" rel="noopener noreferrer"><img src="${url}" loading="lazy" width="480" height="360" alt="${escape(title)}: ${ru?'фотоотзыв':'photo testimonial'}"><span>${ru?'Открыть фотоотзыв':'Open photo testimonial'} <span class="link-arrow" aria-hidden="true"></span></span></a>`;});
  return `<section class="review-group" id="${id}"><h3>${title}</h3>${videos.length||files.length?`<h4 class="review-kind">${ru?'Видеоотзывы':'Video testimonials'}</h4>${gallery([...videoCards,...files.map(v=>nativeCard(v,ru,source))])}`:''}${photos.length?`<h4 class="review-kind">${ru?'Фотоотзывы':'Photo testimonials'}</h4>${gallery(photoCards)}`:''}</section>`;
 }
 

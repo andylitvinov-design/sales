@@ -1,10 +1,14 @@
 :root {
   --paper: #faf7f1;
   --ink: #283d35;
-  --muted: #5e665d;
+  --muted: #566057;
   --line: #d7d4c9;
   --soft: #efece3;
   --sand: #e6d9c4;
+  --parchment: #e9dfcb;
+  --clay: #744936;
+  --gold: #a9803f;
+  --stone: #d9d0be;
 }
 
 * {
@@ -47,6 +51,8 @@ h1 {
   line-height: 1.06;
   letter-spacing: -0.045em;
   text-wrap: balance;
+  overflow-wrap: anywhere;
+  hyphens: auto;
   }
 
 h2 {
@@ -1042,5 +1048,402 @@ summary {
   *, *::before, *::after {
   animation: none !important;
   transition: none !important;
+  }
+}
+
+/* Issue #18: editorial homepage rhythm. Shared arrows are CSS shapes, never emoji glyphs. */
+.link-arrow {
+  display: inline-block;
+  width: 0.52em;
+  height: 0.52em;
+  margin-left: 0.46em;
+  border-right: 0.12em solid currentcolor;
+  border-bottom: 0.12em solid currentcolor;
+  transform: translateY(-0.04em) rotate(-45deg);
+  vertical-align: 0.04em;
+}
+
+.link-arrow--down {
+  transform: translateY(-0.14em) rotate(45deg);
+}
+
+.hero--home {
+  background: linear-gradient(105deg, var(--soft) 0%, var(--soft) 62%, var(--parchment) 62%);
+}
+
+.hero--home .hero-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: clamp(34px, 6vw, 92px);
+  min-height: 620px;
+  padding: 42px 0 34px;
+}
+
+.hero--home .hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 34px 0 26px;
+}
+
+.hero--home .lead {
+  max-width: 27rem;
+  font-size: clamp(1.05rem, 1.35vw, 1.23rem);
+}
+
+.hero--home .small {
+  max-width: 21rem;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 550px;
+}
+
+.hero-portrait,
+.hero-atmosphere,
+.chapter-portrait,
+.chapter-archive {
+  margin: 0;
+}
+
+.hero-portrait {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 72%;
+  height: 530px;
+  border-top: 8px solid var(--gold);
+}
+
+.hero-portrait img,
+.hero-atmosphere img,
+.chapter-portrait img,
+.chapter-archive img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-portrait img {
+  object-position: center 25%;
+}
+
+.hero-atmosphere {
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  width: 52%;
+  height: 228px;
+  border: 9px solid var(--parchment);
+  border-right: 0;
+}
+
+.hero-atmosphere img {
+  object-position: 67% center;
+}
+
+.author-note {
+  display: grid;
+  grid-template-columns: minmax(0, 550px);
+  justify-content: end;
+  padding: 72px 7% 82px 0;
+  border-bottom: 1px solid var(--stone);
+}
+
+.author-note h2 {
+  margin-bottom: 15px;
+}
+
+.author-note p:not(.eyebrow) {
+  max-width: 38rem;
+  margin-bottom: 9px;
+}
+
+.journey-intro {
+  padding-bottom: 42px;
+}
+
+.journey-intro h2 {
+  max-width: 520px;
+}
+
+.path-chapter {
+  position: relative;
+}
+
+.path-chapter-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+  align-items: center;
+  gap: clamp(36px, 8vw, 118px);
+  padding: 86px 0;
+}
+
+.path-chapter-copy {
+  max-width: 610px;
+}
+
+.journey .path-chapter-copy > .chapter-title {
+  max-width: 540px;
+  font-size: clamp(2.1rem, 3vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.chapter-number,
+.path-chapter .path-subtitle {
+  margin-bottom: 12px;
+}
+
+.chapter-number {
+  color: var(--clay);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.path-chapter .path-subtitle {
+  color: var(--muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+}
+
+.path-chapter--consultations {
+  background: var(--soft);
+}
+
+.path-chapter--consultations .chapter-portrait {
+  height: 418px;
+  border-left: 1px solid var(--gold);
+  padding-left: 14px;
+}
+
+.path-chapter--consultations .chapter-portrait img {
+  object-position: center 21%;
+}
+
+.path-chapter--consultations .approach {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.7fr);
+  gap: clamp(36px, 7vw, 105px);
+  padding: 0 0 82px;
+}
+
+.journey .path-chapter--consultations .approach-title {
+  font-size: 1.9rem;
+}
+
+.path-chapter--training {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.path-chapter--training .path-chapter-layout {
+  grid-template-columns: minmax(270px, 0.75fr) minmax(0, 1fr);
+}
+
+.path-chapter--training .path-subtitle,
+.path-chapter--training .chapter-number,
+.path-chapter--training .small {
+  color: #e7ceb1;
+}
+
+.path-chapter--training .chapter-archive {
+  height: 306px;
+  align-self: end;
+  border-bottom: 6px solid var(--gold);
+}
+
+.path-chapter--training .chapter-archive img {
+  object-position: center;
+}
+
+.path-chapter--training .study-grid {
+  gap: 28px;
+  margin: 28px 0 18px;
+}
+
+.path-chapter--training .study-card {
+  border-color: #6e7b6e;
+}
+
+.path-chapter--training .study-card p {
+  color: #e5e8de;
+}
+
+.path-chapter--workshops {
+  background: var(--parchment);
+}
+
+.path-chapter--workshops .path-chapter-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+}
+
+.path-chapter--workshops .study-grid {
+  margin: 30px 0 20px;
+}
+
+.workshop-aside {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 280px;
+  padding: 32px;
+  border-left: 2px solid var(--clay);
+  background: #cf9b7d;
+  color: #24392f;
+}
+
+.journey .workshop-aside p {
+  max-width: 16rem;
+  font: 1.48rem/1.28 Georgia, 'Times New Roman', serif;
+}
+
+.reviews-section {
+  padding-top: 96px;
+}
+
+@media (max-width: 620px) {
+  .hero--home {
+    background: var(--soft);
+  }
+
+  .hero--home .hero-layout {
+    display: block;
+    min-height: 0;
+    padding: 31px 0 0;
+  }
+
+  .hero--home .hero-copy {
+    padding: 0;
+  }
+
+  .hero--home h1 {
+    max-width: 320px;
+    font-size: clamp(2.45rem, 12vw, 3.05rem);
+  }
+
+  .hero--home .button {
+    width: auto;
+    min-width: 218px;
+  }
+
+  .hero-visual {
+    min-height: 370px;
+    margin-top: 24px;
+  }
+
+  .hero-portrait {
+    width: 79%;
+    height: 340px;
+    border-top-width: 5px;
+  }
+
+  .hero-atmosphere {
+    bottom: 0;
+    width: 55%;
+    height: 122px;
+    border-width: 6px;
+    border-right: 0;
+  }
+
+  .author-note {
+    grid-template-columns: 1fr;
+    padding: 44px 0 52px 20px;
+    border-left: 2px solid var(--clay);
+    border-bottom: 0;
+  }
+
+  .author-note h2 {
+    font-size: 1.84rem;
+    margin-bottom: 8px;
+  }
+
+  .author-note .eyebrow {
+    margin-bottom: 8px;
+  }
+
+  .author-note p:not(.eyebrow) {
+    font-size: 0.91rem;
+    line-height: 1.55;
+  }
+
+  .journey-intro {
+    padding-bottom: 22px;
+  }
+
+  .path-chapter-layout,
+  .path-chapter--training .path-chapter-layout,
+  .path-chapter--workshops .path-chapter-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 52px 0;
+  }
+
+  .journey .path-chapter-copy > .chapter-title {
+    font-size: 2.12rem;
+  }
+
+  .path-chapter--consultations .chapter-portrait {
+    order: 2;
+    width: 82%;
+    height: 270px;
+    margin-left: auto;
+    padding-left: 9px;
+  }
+
+  .path-chapter--consultations .approach {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 0 54px;
+  }
+
+  .journey .path-chapter--consultations .approach-title {
+    font-size: 1.62rem;
+  }
+
+  .path-chapter--training .chapter-archive {
+    order: 2;
+    width: calc(100% + 20px);
+    height: 200px;
+    margin-left: -20px;
+  }
+
+  .path-chapter--training .study-grid,
+  .path-chapter--workshops .study-grid {
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .workshop-aside {
+    min-height: 0;
+    padding: 26px;
+  }
+
+  .journey .workshop-aside p {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+  }
+
+  .reviews-section {
+    padding-top: 58px;
+  }
+}
+
+@media (min-width: 621px) and (max-width: 900px) {
+  .hero--home .hero-layout {
+    grid-template-columns: 0.82fr 1.18fr;
+  }
+
+  .hero-visual {
+    min-height: 460px;
+  }
+
+  .hero-portrait {
+    height: 440px;
+  }
+
+  .path-chapter-layout,
+  .path-chapter--training .path-chapter-layout {
+    gap: 42px;
   }
 }
