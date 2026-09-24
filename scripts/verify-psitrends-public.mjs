@@ -12,7 +12,7 @@ for(const [platform,agent] of Object.entries(agents)){
   const response=await fetch(origin+route,{headers:{'user-agent':agent,'accept-language':lang}});
   const html=await response.text();
   assert.equal(response.status,200,route);
-  assert.match(html,/psitrends-client\.css\?v=4/);
+  assert.match(html,/psitrends-client\.css\?v=5/);
   assert.doesNotMatch(html,/templates\/tx_valley|GTM-K2KKDZD/);
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1,route);
   assert.equal((html.match(/class="menu-toggle"/g)||[]).length,1,route);
@@ -21,9 +21,10 @@ for(const [platform,agent] of Object.entries(agents)){
   assert.doesNotMatch(html,/<meta[^>]+name="robots"[^>]+noindex/);
   if(path==='/')assert.match(html,lang==='ru'?/Алхимия души/:/Alchemy of the Soul/);
   if(path==='/'){
-   assert.equal((html.match(/class="review-photo"/g)||[]).length,37);
-   assert.equal((html.match(/class="review-video"/g)||[]).length,42);
-   assert.equal((html.match(/<video /g)||[]).length,3);
+   assert.equal((html.match(/class="review-photo"/g)||[]).length,lang==='ru'?37:13);
+   assert.equal((html.match(/class="review-video"/g)||[]).length,lang==='ru'?41:21);
+   assert.equal((html.match(/class="video-thumbnail"/g)||[]).length,lang==='ru'?38:21);
+   assert.equal((html.match(/<video /g)||[]).length,lang==='ru'?3:0);
    assert.doesNotMatch(html,/<details class="review-more"/);
    assert.doesNotMatch(html,/<iframe/);
   }

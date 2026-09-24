@@ -26,6 +26,9 @@ try {
  demand(count($manifest['pages'])===12,'page_count');
  $files=['templates/psitrends_client/index.php'=>'template/index.php','templates/psitrends_client/pages.json'=>'template/pages.json'];
  foreach(['psitrends-client.css','psitrends-client.js','archway.webp'] as $name)$files['media/templates/site/psitrends_client/assets/'.$name]='template/media/assets/'.$name;
+ $thumbnails=glob($package.'/template/media/assets/review-thumbnails/*.webp'); demand(count($thumbnails)===38,'thumbnail_count');
+ foreach($thumbnails as $thumbnail){$name=basename($thumbnail);$files['media/templates/site/psitrends_client/assets/review-thumbnails/'.$name]='template/media/assets/review-thumbnails/'.$name;}
+ $thumbnailDirectory=$root.'/media/templates/site/psitrends_client/assets/review-thumbnails';
  $desired=[]; $rows=[];
  $select=$db->prepare('SELECT id,alias,language,state,checked_out,title,introtext,`fulltext`,metadesc FROM wfct4_content WHERE alias=?');
  foreach($manifest['pages'] as $p){
@@ -41,11 +44,12 @@ try {
  if($action==='capture'){
   demand(!file_exists($snapshotPath),'already_captured');$beforeFiles=[];
   foreach($files as $to=>$from)$beforeFiles[$to]=is_file($root.'/'.$to)?base64_encode(file_get_contents($root.'/'.$to)):null;
-  saveJson($snapshotPath,['scope'=>$scope,'package'=>$packageHash,'rows'=>$rows,'files'=>$beforeFiles]);
+  saveJson($snapshotPath,['scope'=>$scope,'package'=>$packageHash,'rows'=>$rows,'files'=>$beforeFiles,'thumbnailDirectoryExisted'=>is_dir($thumbnailDirectory)]);
   echo json_encode(['status'=>'CAPTURED','articles'=>count($rows),'files'=>count($files),'snapshot_sha256'=>hash_file('sha256',$snapshotPath)]).PHP_EOL;exit;
  }
  $snap=json_decode(file_get_contents($snapshotPath),true,512,JSON_THROW_ON_ERROR);
  demand($snap['scope']===$scope,'snapshot_scope');
+ demand(is_bool($snap['thumbnailDirectoryExisted']??null),'snapshot_thumbnail_directory');
  // Digest excludes before-field values except unchanged identity, so it remains stable after apply.
  demand($snap['package']===$packageHash,'package_changed');
  $target=$action==='apply'?$desired:$snap['rows'];
@@ -60,13 +64,18 @@ try {
  try {
   $update=$db->prepare('UPDATE wfct4_content SET title=?,introtext=?,`fulltext`=?,metadesc=? WHERE id=? AND title=? AND introtext=? AND `fulltext`=? AND metadesc=? AND (checked_out=0 OR checked_out IS NULL)');
   foreach($target as $key=>$r){$old=$rows[$key];$update->execute([$r['title'],$r['introtext'],$r['fulltext'],$r['metadesc'],$r['id'],$old['title'],$old['introtext'],$old['fulltext'],$old['metadesc']]);demand($update->rowCount()===1||$r===$old,'optimistic_guard');}
+  if($action==='apply'||$snap['thumbnailDirectoryExisted']){
+   if(!is_dir($thumbnailDirectory))demand(mkdir($thumbnailDirectory,0755,true),'thumbnail_directory');
+   demand(chmod($thumbnailDirectory,0755),'thumbnail_directory');
+  }
   foreach($files as $to=>$from){
    $bytes=$action==='apply'?file_get_contents($package.'/'.$from):($snap['files'][$to]===null?null:base64_decode($snap['files'][$to]));
    if($bytes===null){if(is_file($root.'/'.$to))demand(unlink($root.'/'.$to),'remove_new_asset');continue;}
    demand(file_put_contents($root.'/'.$to.'.next',$bytes)!==false,'file_write');chmod($root.'/'.$to.'.next',0644);demand(rename($root.'/'.$to.'.next',$root.'/'.$to),'file_rename');
   }
+  if($action==='rollback'&&!$snap['thumbnailDirectoryExisted']&&is_dir($thumbnailDirectory))demand(rmdir($thumbnailDirectory),'thumbnail_directory');
   $db->commit();
  } catch(Throwable $e){if($db->inTransaction())$db->rollBack();throw $e;}
  saveJson($private.'/journal.json',['phase'=>'complete','action'=>$action,'package'=>$packageHash]);
- echo json_encode(['status'=>strtoupper($action).'_COMPLETE','articles'=>12,'files'=>5,'routing_changed'=>false,'legacy_changed'=>false]).PHP_EOL;
+ echo json_encode(['status'=>strtoupper($action).'_COMPLETE','articles'=>12,'files'=>count($files),'routing_changed'=>false,'legacy_changed'=>false]).PHP_EOL;
 } catch(Throwable $e){fwrite(STDERR,json_encode(['status'=>'FAILED','reason'=>$e instanceof UpdateGuard?$e->getMessage():'runtime_error','recovery'=>'Inspect private journal; rollback uses optimistic before/after guards.']).PHP_EOL);exit(1);}

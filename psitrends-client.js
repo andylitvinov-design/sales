@@ -25,7 +25,7 @@ document.querySelectorAll('[data-video]').forEach(link=>{
     if(stage.querySelector('iframe'))return;
     const frame=document.createElement('iframe');
     frame.src=`https://www.youtube-nocookie.com/embed/${id}`;
-    frame.title=link.textContent.trim();
+    frame.title=link.getAttribute('aria-label')||'Video player';
     frame.allow='encrypted-media; picture-in-picture; fullscreen';
     frame.allowFullscreen=true;
     frame.referrerPolicy='strict-origin-when-cross-origin';

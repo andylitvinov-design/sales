@@ -55,6 +55,7 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
 <config><fields name="params"><fieldset name="client" label="Client page"><field name="page_key" type="list" label="Page content key" default="" required="true"><option value="">Select reviewed page</option>${options}</field><field name="release_mode" type="list" label="Release mode" default="preview"><option value="preview">Preview: noindex, analytics off</option><option value="production">Production: verified hostname and consent required</option></field></fieldset></fields></config>
 </extension>\n`);
  for(const [source,name] of [['psitrends-client.css','psitrends-client.css'],['psitrends-client.js','psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','andrey.jpg'],['integrations/psitrends-client/archway.webp','archway.webp']])await fs.copyFile(path.join(root,source),path.join(template,'media/assets',name));
+ await fs.cp(path.join(root,'integrations/psitrends-client/review-thumbnails'),path.join(template,'media/assets/review-thumbnails'),{recursive:true});
  await fs.writeFile(path.join(destination,'migration-plan.json'),JSON.stringify(plan,null,2)+'\n');
  if(zip){const archive=path.join(destination,'psitrends_client.zip');await fs.rm(archive,{force:true});await promisify(execFile)('/usr/bin/zip',['-q','-r',archive,'.'],{cwd:template});}
  return {pages:plan.pages.length,mode:'plan-only',package:zip?'psitrends_client.zip':'template/'};
