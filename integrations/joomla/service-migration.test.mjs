@@ -3,6 +3,11 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { readFileSync, existsSync } from 'node:fs';
 
+test('release flag activates only after first-party service acceptance', () => {
+  const migration = JSON.parse(readFileSync('integrations/joomla/service-migration.json', 'utf8'));
+  assert.equal(migration.enabled, true);
+});
+
 test('migration candidate replaces only service documents with exact permanent redirects', () => {
   try {
     execFileSync(process.execPath, ['scripts/build-toronto-public.mjs', '--migration-preview']);

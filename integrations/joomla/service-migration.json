@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "targetOrigin": "https://psitrends.com",
   "services": ["hypnotherapy-toronto", "systemic-constellations-toronto"]
 }
