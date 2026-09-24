@@ -30,4 +30,12 @@ Before production, run the established verified host backup service and record i
 
 Rollback uses the same runner and release directory with `rollback`. It restores the twelve homepage article fields and existing template assets under optimistic before/after guards. If the poster directory was created by this release, rollback removes all 38 release posters and then the empty directory. Do not use a broad Redis flush, Joomla extension update, routing update, or whole-site restore for this targeted rollback.
 
-Production acceptance is the public regression script plus anonymous RU/EN browser checks for poster delivery, locale composition, player creation/removal, source links and 390px/desktop no-overflow behavior. Add the exact backup, release and public-verification evidence here only after that application succeeds.
+## Production verification
+
+Applied on 2026-09-24 from `/var/lib/psitrends-releases/review-thumbnails-local-production-20260924` after a new completed backup manifest at `/var/backups/psitrends/scheduled/20260924T130053Z-b268d81d0ab14f4a9ff55ba882a6053d/manifest.json`. The production before snapshot SHA-256 is `e1cac67ef0f67ffdb22c64abb5cdd524f8e74d44f7d6b1bd31da6af467b137bc`.
+
+The guarded apply completed for 12 articles and 43 files, then the scoped cache helper purged 34 desktop/mobile presentation entries. The deployed poster directory is `0755`, contains exactly 38 WebP assets and has no AppleDouble sidecar files.
+
+`node scripts/verify-psitrends-public.mjs` passed its 24 EN/RU desktop/mobile route checks, six UTM redirects, sitemap and robots checks. A fresh public RU audit passed pa11y, linkinator, Lighthouse accessibility/best-practices/SEO (100/100/100), and desktop/mobile viewport checks.
+
+An anonymous public 390px browser test verified RU `41 video / 37 photo / 38 posters` and EN `21 video / 13 photo / 21 posters`; every first-party poster returned 200. Both pages began with zero frames, created the expected `youtube-nocookie.com/embed/...` frame after Play, removed it on Close, and had no horizontal overflow. The RU public DOM separately confirms 20 Russian videos before 21 English videos, followed by 24 Russian then 13 English photos; the EN public DOM contains no Cyrillic review material.
