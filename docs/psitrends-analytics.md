@@ -1,6 +1,14 @@
 # PsiTrends measurement
 
-Verified2026-09-22. Keep acquisition intent separate from actual business outcomes. No new GA4 property, ad account, CRM or paid measurement infrastructure was created.
+Updated 2026-09-24. Keep acquisition intent separate from actual business outcomes. No new GA4 property, ad account, CRM or paid measurement infrastructure was created.
+
+## Current first-party release
+
+The 12 native EN/RU client routes now use a single consent-gated GA4 loader, not the legacy GTM container. Public production verification on September 24 observed zero vendor requests before consent; explicit consent produced HTTP204 `page_view` and `contact_click` receipts for `G-Z4BGV9GP4N`. The contact event carried landing `/`, method `whatsapp`, source `google_maps`, and campaign `google / organic / gbp`. Consent withdrawal reloaded with no vendor scripts. Synthetic test traffic is not an enquiry or booking. Legacy pages retain their historical instrumentation; the client-template conclusion does not certify the entire archive.
+
+The first-party sitemap now returns 200 with 12 canonical EN/RU URLs, is declared in robots.txt, and was submitted through the existing Search Console property on September 24. Google reports successful sitemap processing with 12 discovered URLs. Homepage, Hypnotherapy and Constellations live inspections passed crawlability/indexability; all three recrawl requests were accepted. The two new services are discovered but not yet indexed: actual indexing is asynchronous. Public Maps still exposes the exact first-party homepage GBP UTM link, so no destination edit was required.
+
+See [release and rollback evidence](psitrends-three-pillars-release.md). The September 22 findings below are a historical baseline, superseded for these released client routes.
 
 ## Existing stack
 
@@ -15,7 +23,7 @@ Verified2026-09-22. Keep acquisition intent separate from actual business outcom
 
 Search Console ownership is now independently verified by a static Google HTML file on the production origin (2026-09-22). The exact body returned HTTP200 and Search Console explicitly reported successful HTML-file verification, alongside the existing GTM method. Preserve that existing `google*.html` file through deployments and restores; its exact token stays outside Git. The new client template may therefore omit the old GTM loader without depending on consent to retain ownership. Future Google authentication can require owner2FA; no Google cookies/passwords were exported.
 
-## Instrumentation and consent
+## September 22 instrumentation baseline (historical)
 
 The two Cloudflare Toronto pages use the existing consent-gated`toronto-ga4.js`. Analytics defaults off; ads denied; DNT and unexpected query-string guards retained. Existing attribution helper passes only`utm_source=google&utm_medium=organic&utm_campaign=gbp` through Joomla navigation. Keep the exact convention.
 
@@ -23,7 +31,7 @@ Public source sampled on EN home/RU home/English hypnotherapy shows one GTM load
 
 Use`contact_click` with the existing payload implementation; dimensions`landing_page`, `contact_method`, `acquisition_source` only when non-sensitive and validated. Do not rename fields without migrating reporting. No health history, names, free text, email, phone or arbitrary URL query parameters in analytics.
 
-## Baseline limits
+## September 22 baseline limits (historical)
 
 Search Console newly verified URL-prefix reports show “data processing; try again in approximately one day.” Clicks, impressions, indexing totals, query split, backlinks and field CWV are **unavailable**, not zero. No sitemap currently submitted; root`/sitemap.xml`404. Do not submit a nonexistent sitemap or blanket request indexing of legacy claim-risk pages.
 

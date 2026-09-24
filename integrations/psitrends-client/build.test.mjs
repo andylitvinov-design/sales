@@ -9,7 +9,7 @@ test('allowlisted bilingual build is preview-safe and production metadata is exp
   const built = spawnSync(process.execPath, ['scripts/build-psitrends-client.mjs'], {encoding:'utf8'});
   assert.equal(built.status,0,built.stderr);
   const manifest=JSON.parse(readFileSync('output/psitrends-client/manifest.json'));
-  assert.equal(manifest.routes.length,12);
+  assert.equal(manifest.routes.length,14);
   assert.equal(manifest.mode,'preview');
   for(const route of manifest.routes){
     const page=readFileSync(`output/psitrends-client/${route.file}`,'utf8');

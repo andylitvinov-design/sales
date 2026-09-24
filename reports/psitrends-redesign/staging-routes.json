@@ -1,0 +1,110 @@
+[
+  {
+    "analytics": "off",
+    "h1": "Alchemy of the Soul",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Hypnotherapy in Toronto.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/hypnotherapy-toronto",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Systemic & family constellations in Toronto.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/systemic-constellations-toronto",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Andrey Litvinov.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/about",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Ask about a session.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/contact",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "PsiTrends Academy.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/academy",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Алхимия души",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/ru/",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Гипноз и индивидуальная работа.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/ru/hypnotherapy-toronto",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Системные и семейные расстановки.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/ru/systemic-constellations-toronto",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Андрей Литвинов.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/ru/about",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Обсудить индивидуальную сессию.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/ru/contact",
+    "robots": "noindex, nofollow"
+  },
+  {
+    "analytics": "off",
+    "h1": "Академия PsiTrends.",
+    "headers": 1,
+    "menus": 1,
+    "overflow": false,
+    "path": "/ru/academy",
+    "robots": "noindex, nofollow"
+  }
+]

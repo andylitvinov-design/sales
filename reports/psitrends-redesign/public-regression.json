@@ -1,0 +1,213 @@
+{
+  "verifiedAt": "2026-09-24T06:04:22.735Z",
+  "routes": [
+    {
+      "platform": "desktop",
+      "route": "/",
+      "status": 200,
+      "canonical": "https://psitrends.com/",
+      "h1": "Alchemy of the Soul"
+    },
+    {
+      "platform": "desktop",
+      "route": "/hypnotherapy-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/hypnotherapy-toronto",
+      "h1": "Hypnotherapy in Toronto."
+    },
+    {
+      "platform": "desktop",
+      "route": "/systemic-constellations-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/systemic-constellations-toronto",
+      "h1": "Systemic &amp; family constellations in Toronto."
+    },
+    {
+      "platform": "desktop",
+      "route": "/about",
+      "status": 200,
+      "canonical": "https://psitrends.com/about",
+      "h1": "Andrey Litvinov."
+    },
+    {
+      "platform": "desktop",
+      "route": "/academy",
+      "status": 200,
+      "canonical": "https://psitrends.com/academy",
+      "h1": "PsiTrends Academy."
+    },
+    {
+      "platform": "desktop",
+      "route": "/contact",
+      "status": 200,
+      "canonical": "https://psitrends.com/contact",
+      "h1": "Ask about a session."
+    },
+    {
+      "platform": "desktop",
+      "route": "/ru/",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/",
+      "h1": "Алхимия души"
+    },
+    {
+      "platform": "desktop",
+      "route": "/ru/hypnotherapy-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/hypnotherapy-toronto",
+      "h1": "Гипноз и индивидуальная работа."
+    },
+    {
+      "platform": "desktop",
+      "route": "/ru/systemic-constellations-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/systemic-constellations-toronto",
+      "h1": "Системные и семейные расстановки."
+    },
+    {
+      "platform": "desktop",
+      "route": "/ru/about",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/about",
+      "h1": "Андрей Литвинов."
+    },
+    {
+      "platform": "desktop",
+      "route": "/ru/academy",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/academy",
+      "h1": "Академия PsiTrends."
+    },
+    {
+      "platform": "desktop",
+      "route": "/ru/contact",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/contact",
+      "h1": "Обсудить индивидуальную сессию."
+    },
+    {
+      "platform": "mobile",
+      "route": "/",
+      "status": 200,
+      "canonical": "https://psitrends.com/",
+      "h1": "Alchemy of the Soul"
+    },
+    {
+      "platform": "mobile",
+      "route": "/hypnotherapy-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/hypnotherapy-toronto",
+      "h1": "Hypnotherapy in Toronto."
+    },
+    {
+      "platform": "mobile",
+      "route": "/systemic-constellations-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/systemic-constellations-toronto",
+      "h1": "Systemic &amp; family constellations in Toronto."
+    },
+    {
+      "platform": "mobile",
+      "route": "/about",
+      "status": 200,
+      "canonical": "https://psitrends.com/about",
+      "h1": "Andrey Litvinov."
+    },
+    {
+      "platform": "mobile",
+      "route": "/academy",
+      "status": 200,
+      "canonical": "https://psitrends.com/academy",
+      "h1": "PsiTrends Academy."
+    },
+    {
+      "platform": "mobile",
+      "route": "/contact",
+      "status": 200,
+      "canonical": "https://psitrends.com/contact",
+      "h1": "Ask about a session."
+    },
+    {
+      "platform": "mobile",
+      "route": "/ru/",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/",
+      "h1": "Алхимия души"
+    },
+    {
+      "platform": "mobile",
+      "route": "/ru/hypnotherapy-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/hypnotherapy-toronto",
+      "h1": "Гипноз и индивидуальная работа."
+    },
+    {
+      "platform": "mobile",
+      "route": "/ru/systemic-constellations-toronto",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/systemic-constellations-toronto",
+      "h1": "Системные и семейные расстановки."
+    },
+    {
+      "platform": "mobile",
+      "route": "/ru/about",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/about",
+      "h1": "Андрей Литвинов."
+    },
+    {
+      "platform": "mobile",
+      "route": "/ru/academy",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/academy",
+      "h1": "Академия PsiTrends."
+    },
+    {
+      "platform": "mobile",
+      "route": "/ru/contact",
+      "status": 200,
+      "canonical": "https://psitrends.com/ru/contact",
+      "h1": "Обсудить индивидуальную сессию."
+    }
+  ],
+  "redirects": [
+    {
+      "source": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 301,
+      "target": "https://psitrends.com/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "finalStatus": 200
+    },
+    {
+      "source": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto/?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 301,
+      "target": "https://psitrends.com/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "finalStatus": 200
+    },
+    {
+      "source": "https://sales-bwa-photo.pages.dev/hypnotherapy-toronto.html?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 301,
+      "target": "https://psitrends.com/hypnotherapy-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "finalStatus": 200
+    },
+    {
+      "source": "https://sales-bwa-photo.pages.dev/systemic-constellations-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 301,
+      "target": "https://psitrends.com/systemic-constellations-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "finalStatus": 200
+    },
+    {
+      "source": "https://sales-bwa-photo.pages.dev/systemic-constellations-toronto/?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 301,
+      "target": "https://psitrends.com/systemic-constellations-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "finalStatus": 200
+    },
+    {
+      "source": "https://sales-bwa-photo.pages.dev/systemic-constellations-toronto.html?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "status": 301,
+      "target": "https://psitrends.com/systemic-constellations-toronto?utm_source=google&utm_medium=organic&utm_campaign=gbp",
+      "finalStatus": 200
+    }
+  ],
+  "sitemapUrls": 12,
+  "robots": 200
+}

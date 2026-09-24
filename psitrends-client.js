@@ -1,3 +1,42 @@
+/* One responsive menu; the navigation remains usable without JavaScript. */
+(() => {
+  const button=document.querySelector('.menu-toggle');
+  const nav=document.getElementById('primary-nav');
+  if(!button||!nav)return;
+  document.documentElement.classList.add('menu-ready');
+  const setOpen=open=>{
+    button.setAttribute('aria-expanded',String(open));
+    button.setAttribute('aria-label',document.documentElement.lang==='ru'?(open?'Закрыть меню':'Открыть меню'):(open?'Close menu':'Open menu'));
+    nav.classList.toggle('is-open',open);
+  };
+  button.addEventListener('click',()=>setOpen(button.getAttribute('aria-expanded')!=='true'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&button.getAttribute('aria-expanded')==='true'){setOpen(false);button.focus();}});
+  document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))setOpen(false);});
+})();
+
+/* Previously published videos: no player or third-party thumbnail before a click. */
+document.querySelectorAll('[data-video]').forEach(link=>{
+  link.addEventListener('click',event=>{
+    const id=link.dataset.video;
+    if(!/^[A-Za-z0-9_-]{11}$/.test(id)||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    const stage=link.closest('.video-stage');
+    if(stage.querySelector('iframe'))return;
+    const frame=document.createElement('iframe');
+    frame.src=`https://www.youtube-nocookie.com/embed/${id}`;
+    frame.title=link.getAttribute('aria-label')||'Video player';
+    frame.allow='encrypted-media; picture-in-picture; fullscreen';
+    frame.allowFullscreen=true;
+    frame.referrerPolicy='strict-origin-when-cross-origin';
+    const close=document.createElement('button');
+    close.type='button';close.className='video-close';
+    close.textContent=document.documentElement.lang==='ru'?'Закрыть видео':'Close video';
+    close.addEventListener('click',()=>{frame.remove();close.remove();link.hidden=false;link.focus();});
+    link.hidden=true;stage.append(frame,close);frame.focus();
+  });
+});
+
 /* Adapted from toronto-ga4.js: one optional GA4 collector, default denied.
    Static client shell replaces template instrumentation; never embed beside GTM. */
 (() => {
@@ -28,6 +67,9 @@
     const script = document.createElement('script'); script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`; document.head.append(script);
     status.textContent = ru ? 'Необязательная аналитика включена.' : 'Optional analytics is on.';
+    if (document.querySelector('[data-analytics-event="events_archive_view"]')) {
+      window.gtag('event','events_archive_view',{send_to:id,landing_page:new URL(document.querySelector('link[rel="canonical"]').href).pathname,service:'events'});
+    }
   };
   control.querySelector('[data-analytics="allow"]').addEventListener('click',()=>{ if(safe)save('granted'); enable(); });
   control.querySelector('[data-analytics="deny"]').addEventListener('click',()=>{
@@ -42,6 +84,9 @@
   document.querySelectorAll('[data-contact]').forEach(a=>a.addEventListener('click',()=>{
     if(!enabled)return;
     window.gtag('event','contact_click',{send_to:id,landing_page:new URL(document.querySelector('link[rel="canonical"]').href).pathname,service:document.body.dataset.page,contact_method:a.dataset.contact,acquisition_source:isGbp?'google_maps':'unattributed'});
+  }));
+  document.querySelectorAll('[data-analytics-event="event_gallery_open"]').forEach(item=>item.addEventListener('toggle',()=>{
+    if (item.open && enabled) window.gtag('event','event_gallery_open',{send_to:id,landing_page:new URL(document.querySelector('link[rel="canonical"]').href).pathname,service:'events'});
   }));
   try { if (safe && localStorage.getItem(key)==='granted')enable(); } catch { /* Default off. */ }
 })();

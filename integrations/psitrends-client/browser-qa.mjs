@@ -3,8 +3,7 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
 import {pages} from './content.mjs';
-import {sourceName} from './template.mjs';
-
+import {routeFor,sourceName} from './template.mjs';
 const baseUrl=process.env.PSITRENDS_BASE_URL??'http://127.0.0.1:8877';
 // QA inventory: 12 pages, EN/RU navigation, CTA presence, FAQ disclosure,
 // keyboard focus, 320/390/1440px overflow, preview denial, production consent,
@@ -12,6 +11,7 @@ const baseUrl=process.env.PSITRENDS_BASE_URL??'http://127.0.0.1:8877';
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const results=[];
 try{
+ assert.equal(spawnSync(process.execPath,['scripts/build-psitrends-client.mjs']).status,0);
  const context=await browser.newContext();
  const page=await context.newPage();
  const unexpected=[];
@@ -41,7 +41,7 @@ try{
    }else assert.ok(metrics.ctaBottom<844,`${name} CTA must be reachable in first screen`);
    if(width===1440)assert.ok(metrics.heroBottom<=900);
    results.push({name,width,...metrics});
-   if(width!==320)await page.screenshot({path:`reports/${name}-${width===1440?'desktop':'mobile'}-full.png`,fullPage:true});
+   if(width!==320)await page.screenshot({path:`reports/${name}-${width===1440?'desktop':`${width}-mobile`}-full.png`,fullPage:true});
   }
   await page.locator('#analytics-choice summary').click();
   await page.locator('[data-analytics="allow"]').click();
@@ -49,7 +49,7 @@ try{
   assert.equal(await page.evaluate(()=>localStorage.getItem('psitrends-analytics-consent')),null);
   const switchHref=await page.locator('.language').getAttribute('href');
   await page.locator('.language').click();
-  assert.ok(page.url().endsWith(switchHref));
+  assert.equal(new URL(page.url()).pathname.replace(/\/$/,''),new URL(switchHref,baseUrl).pathname.replace(/\/$/,''));
  }
  assert.deepEqual(unexpected,[],'preview must emit no external requests');
  await page.goto(`${baseUrl}/sales/psitrends-client-hypnotherapy.html`);

@@ -8,18 +8,18 @@ async function adapter() {
   assert.equal(await fs.access(script).then(()=>true,()=>false), true, 'Native adapter must exist');
   return import(script);
 }
-test('adapter emits twelve native article bodies and preserves home assignments', async()=>{
+test('adapter emits fourteen native article bodies and preserves home assignments', async()=>{
   const {build}=await adapter();
   const directory=await fs.mkdtemp(path.join(os.tmpdir(),'joomla-client-test-'));
   try {
     const result=await build({destination:directory,zip:false});
-    assert.equal(result.pages,12);
+    assert.equal(result.pages,14);
     const plan=JSON.parse(await fs.readFile(path.join(directory,'migration-plan.json'),'utf8'));
     assert.equal(plan.mode,'plan-only');
     assert.deepEqual(plan.preserveMenuIds,[101]);
     assert.equal(plan.pages.find(p=>p.key==='en:home').menu.reuseId,202);
     assert.equal(plan.pages.find(p=>p.key==='ru:home').menu.reuseId,204);
-    assert.equal(plan.pages.filter(p=>p.menu.action==='create-after-collision-check').length,10);
+    assert.equal(plan.pages.filter(p=>p.menu.action==='create-after-collision-check').length,12);
     for(const page of plan.pages){
       const body=await fs.readFile(path.join(directory,page.article.bodyFile),'utf8');
       assert.match(body,/<h1>/);
@@ -39,16 +39,22 @@ test('adapter emits twelve native article bodies and preserves home assignments'
     assert.match(entry,/<jdoc:include type="component"/);
     assert.doesNotMatch(entry,/GTM-|googletagmanager\.com|type="scripts"|type="head"/);
     const routes=JSON.parse(await fs.readFile(path.join(directory,'template/pages.json'),'utf8'));
-    assert.equal(Object.keys(routes).length,12);
+    assert.equal(Object.keys(routes).length,14);
     assert.match(routes['en:home'].before,/<header/);
     assert.match(routes['en:home'].after,/analytics-choice/);
     assert.match(routes['en:home'].before,/href="\/ru\/"/);
     assert.match(routes['ru:home'].before,/class="language" href="\/en\/"/);
     assert.match(routes['ru:about'].before,/class="language" href="\/en\/about"/);
+    assert.match(routes['ru:events'].before,/class="language" href="\/en\/events"/);
     assert.equal(routes['en:home'].canonical,'https://psitrends.com/');
     assert.match(routes['ru:home'].before,/class="brand" href="\/ru\/"/);
     assert.doesNotMatch(routes['en:home'].before,/<main/);
     assert.match(await fs.readFile(path.join(directory,'template/media/assets/psitrends-client.js'),'utf8'),/contact_click/);
+    assert.equal(await fs.access(path.join(directory,'template/media/assets/events/2014-magic-workshop/07.jpg')).then(()=>true,()=>false),true);
+    const append=JSON.parse(await fs.readFile(path.join(directory,'events-append/migration-plan.json'),'utf8'));
+    assert.equal(append.mode,'append-existing-template-plan-only');
+    assert.deepEqual(append.pages.map(page=>page.key),['en:events','ru:events']);
+    for(const page of append.pages)assert.equal(await fs.access(path.join(directory,'events-append',page.article.bodyFile)).then(()=>true,()=>false),true);
   } finally {await fs.rm(directory,{recursive:true,force:true});}
 });
 test('extractor rejects ambiguous or executable article markup', async()=>{
