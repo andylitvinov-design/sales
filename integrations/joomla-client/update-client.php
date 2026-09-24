@@ -78,6 +78,8 @@ try {
    $directory=dirname($root.'/'.$to);if(!is_dir($directory))demand(mkdir($directory,0755,true)||is_dir($directory),'asset_directory');
    demand(file_put_contents($root.'/'.$to.'.next',$bytes)!==false,'file_write');chmod($root.'/'.$to.'.next',0644);demand(rename($root.'/'.$to.'.next',$root.'/'.$to),'file_rename');
   }
+  $eventTarget=$root.'/media/templates/site/psitrends_client/assets/events';
+  if($action==='apply'&&is_dir($eventTarget))foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($eventTarget,FilesystemIterator::SKIP_DOTS),RecursiveIteratorIterator::SELF_FIRST) as $entry)if($entry->isDir())demand(chmod($entry->getPathname(),0755),'event_asset_directory');
   if($action==='rollback'&&!$snap['thumbnailDirectoryExisted']&&is_dir($thumbnailDirectory))demand(rmdir($thumbnailDirectory),'thumbnail_directory');
   $db->commit();
  } catch(Throwable $e){if($db->inTransaction())$db->rollBack();throw $e;}
