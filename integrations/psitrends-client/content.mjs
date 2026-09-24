@@ -60,25 +60,25 @@ export const authorProfiles = {
   ],
   studiesTitle:'Specializations / studies',
   studies:[
-   ['Dreams Alive Psychotherapy','Healing tensions, Inner child traumas through unconscious imagery.'],
-   ['Body-oriented Psychotherapy','Healing early Inner child traumas through conscious touch.'],
-   ['Temple Therapy','Activating business and personal goals through system constellations and temple archetypes.'],
-   ['Taoist Alchemy','Working with psychosomatics, hard complex symptoms through remedies, Psychic Homeopathy.']
+   ['Dreams Alive / Guided Imagery Work','Exploring tensions and Inner Child experiences through imagery and unconscious material.'],
+   ['Body-oriented Work','Exploring early developmental and Inner Child patterns through body awareness and conscious, consent-based touch.'],
+   ['Archetypal Temple Work','Exploring personal and business goals through systemic constellations and temple archetypes.'],
+   ['Taoist Alchemy','Exploring mind-body experiences through traditional energetic and symbolic models, including my educational framework of Psychic Homeopathy.']
   ],
   tantricTitle:'Tantric workshops',
   tantricIntro:'I did tantric workshops since 2004 in different schools and traditions worldwide, for 20 years. But the most fascinating and transformative for me, I would say, was the ISTA school approach.',
   psychotherapy:[
-   'Though my primary interest is psychotherapy.',
-   'My principal education in this field lies in Guided Affective Imagery (Hanscarl Leuner).',
-   'The method that creates a bridge between Jungian depth psychology and Freudian psychoanalysis.'
+   'Though my primary interest is depth-oriented personal work.',
+   'A central part of my studies has been Guided Affective Imagery (Hanscarl Leuner).',
+   'This approach creates a bridge between Jungian depth traditions and Freudian psychoanalytic approaches.'
   ],
-  bodywork:{intro:'As for the bodywork, my education was based in',schools:['European School of Body psychotherapy','Bodynamic Analysis approach']},
+  bodywork:{intro:'As for bodywork, my studies were influenced by',schools:['European body-oriented approaches','the Bodynamic Analysis approach']},
   narrative:[
-   'These schools beautifully connect the traumas of childhood with the body areas.',
+   'These approaches explore connections between early developmental experiences and patterns held in the body.',
    'But I would say one of the biggest influences for me was the Temple Studies. Initiations into the Greek Temple Mysteries. Mysteries of Dionysus, Demeter, etc. Egyptian Temple magic and mysteries.',
    'That is the experience that not only gives you the knowledge, but the sense of the field, archetypes, transpersonal flow.',
    'That I was studying and teaching worldwide for 20 years.',
-   'And a starting point to start feeling the flow for me were the series of Reiki Initiations and among them Tantra Reiki School, that is said to be coming from the Osho’s Tradition.'
+   'A starting point for learning to feel this flow for me was a series of Reiki initiations, including Tantra Reiki, a lineage described within its tradition as connected to Osho-inspired teachings.'
   ],
   reviewsTitle:'Testimonials', reviewsNote:'Public review images already shared on the PsiTrends home page.',
   exploreTitle:'Explore my work', explore:{sessions:'Individual Sessions',workshops:'Workshops',academy:'Studies / Academy',contact:'Contact'},
@@ -94,25 +94,25 @@ export const authorProfiles = {
   ],
   studiesTitle:'Специализации / обучение',
   studies:[
-   ['Психотерапия Dreams Alive','Работа с напряжениями и травмами внутреннего ребёнка через бессознательные образы.'],
-   ['Телесно-ориентированная психотерапия','Работа с ранними травмами внутреннего ребёнка через осознанное прикосновение.'],
-   ['Храмовая терапия','Активация бизнес- и личных целей через системные расстановки и храмовые архетипы.'],
-   ['Даосская алхимия','Работа с психосоматикой и сложными симптомами через средства, Psychic Homeopathy.']
+   ['Dreams Alive / работа с направленными образами','Исследование внутренних напряжений и опыта внутреннего ребёнка через образы и бессознательный материал.'],
+   ['Телесно-ориентированная работа','Исследование ранних паттернов развития и опыта внутреннего ребёнка через осознавание тела и осознанное прикосновение с согласия.'],
+   ['Архетипическая храмовая работа','Исследование личных и бизнес-целей через системные расстановки и храмовые архетипы.'],
+   ['Даосская алхимия','Исследование связи внутреннего опыта и телесных ощущений через традиционные энергетические и символические модели, включая мою образовательную концепцию Psychic Homeopathy.']
   ],
   tantricTitle:'Тантрические семинары',
   tantricIntro:'С 2004 года я веду тантрические семинары в разных школах и традициях по всему миру — уже 20 лет. Но самым увлекательным и трансформирующим для меня, я бы сказал, стал подход школы ISTA.',
   psychotherapy:[
-   'При этом мой главный интерес — психотерапия.',
-   'Моё основное образование в этой области — Guided Affective Imagery (Hanscarl Leuner).',
-   'Это метод, создающий мост между глубинной психологией Юнга и фрейдистским психоанализом.'
+   'При этом мой главный интерес — глубинная личная работа.',
+   'Одна из центральных частей моего обучения — Guided Affective Imagery (Hanscarl Leuner).',
+   'Этот подход создаёт мост между юнгианской глубинной традицией и фрейдистскими психоаналитическими подходами.'
   ],
-  bodywork:{intro:'Что касается телесной работы, моё образование основывалось на',schools:['European School of Body Psychotherapy','подходе Bodynamic Analysis']},
+  bodywork:{intro:'Что касается телесной работы, на моё обучение повлияли',schools:['европейские телесно-ориентированные подходы','подход Bodynamic Analysis']},
   narrative:[
-   'Эти школы красиво связывают травмы детства с зонами тела.',
+   'Эти подходы исследуют связи между ранним опытом развития и телесными паттернами.',
    'Но одним из самых больших влияний для меня стали Temple Studies. Посвящения в греческие храмовые мистерии. Мистерии Диониса, Деметры и другие. Египетская храмовая магия и мистерии.',
    'Этот опыт даёт не только знание, но и ощущение поля, архетипов, трансперсонального потока.',
    'Его я изучал и преподавал по всему миру 20 лет.',
-   'А началом, позволившим мне почувствовать поток, стали серии посвящений Рейки, среди которых Tantra Reiki School, о которой говорят, что она восходит к традиции Ошо.'
+   'А одной из отправных точек для ощущения этого потока стали серии посвящений Рейки, включая Tantra Reiki — направление, которое внутри этой традиции описывают как связанное с идеями Ошо.'
   ],
   reviewsTitle:'Отзывы', reviewsNote:'Публичные изображения отзывов, уже размещённые на главной странице PsiTrends.',
   exploreTitle:'Исследуйте мою работу', explore:{sessions:'Индивидуальные сессии',workshops:'Воркшопы',academy:'Обучение / Академия',contact:'Связаться'},
