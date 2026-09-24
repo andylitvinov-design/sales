@@ -20,7 +20,7 @@ for(const locale of ['en','ru'])for(const key of Object.keys(pages[locale])){
  await fs.writeFile(path.join(output,file),render(key,locale,{production}));
  manifest.routes.push({route,file,locale,source:`${name}.html`});
 }
-for(const [from,to] of [['psitrends-client.css','psitrends-client-assets/psitrends-client.css'],['psitrends-client.js','psitrends-client-assets/psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','psitrends-client-assets/andrey.jpg'],['integrations/psitrends-client/archway.webp','psitrends-client-assets/archway.webp']])await fs.copyFile(path.join(root,from),path.join(output,to));
+for(const [from,to] of [['psitrends-client.css','psitrends-client-assets/psitrends-client.css'],['psitrends-client.js','psitrends-client-assets/psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','psitrends-client-assets/andrey.jpg'],['integrations/psitrends-client/archway.webp','psitrends-client-assets/archway.webp'],['output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg','images/photo_2023-01-27_06-22-45.jpg']]){const target=path.join(output,to);await fs.mkdir(path.dirname(target),{recursive:true});await fs.copyFile(path.join(root,from),target);}
 await fs.writeFile(path.join(output,'robots.txt'),production?'User-agent: *\nAllow: /\nSitemap: https://psitrends.com/sitemap.xml\n':'User-agent: *\nDisallow: /\n');
 await fs.writeFile(path.join(output,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${production?manifest.routes.map(x=>`<url><loc>https://psitrends.com${x.route}</loc></url>`).join(''):''}</urlset>\n`);
 await fs.writeFile(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
