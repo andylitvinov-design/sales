@@ -135,10 +135,24 @@ h3 {
 .language, .current-language {
   font-size: 0.75rem;
   padding: 12px 3px;
+  text-decoration: none;
+  }
+
+a.language {
+  color: var(--muted);
+  }
+
+a.language:hover {
+  color: var(--ink);
+  text-decoration: underline;
   }
 
 .current-language {
-  color: var(--muted);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
   }
 
 .menu-toggle {
