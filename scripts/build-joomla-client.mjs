@@ -44,7 +44,7 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
   entries[key]={locale,page:name,title:page.title,description:page.description,canonical:`https://psitrends.com${route}`,alternates:{'en-GB':`https://psitrends.com${routeFor(name,'en')}`,'ru-RU':`https://psitrends.com${routeFor(name,'ru')}`},schema:schema?JSON.parse(schema):null,before:replaceAssets(split.before),after:replaceAssets(split.after)};
   plan.pages.push({key,route,canonical:entries[key].canonical,language:locale==='en'?'en-GB':'ru-RU',article:{action:'create-unpublished',title:page.title,alias:`psitrends-client-${locale}-${name}`,state:0,access:1,bodyFile,sha256:digest(article),metadesc:page.description,catid:'REQUIRE_REVIEWED_NATIVE_CATEGORY_ID'},style:{action:'create-from-installed-template',title:`PsiTrends Client ${key}`,params:{page_key:key,release_mode:'preview'},makeDefault:false},menu:{action:name==='home'?'update-existing-after-private-snapshot':'create-after-collision-check',reuseId:name==='home'?(locale==='en'?202:204):null,type:'component',link:'index.php?option=com_content&view=article&id=NEW_ARTICLE_ID',alias:name==='home'?'PRESERVE_EXISTING':route.split('/').filter(Boolean).at(-1),menutype:'PRESERVE_HOME_LANGUAGE_MENUTYPE',parent_id:name==='home'?'PRESERVE_EXISTING':1,home:name==='home'?'PRESERVE_EXISTING':0,template_style_id:'NEW_PAGE_STYLE_ID'}});
  }
- if(plan.pages.length!==12)throw new Error('Expected exactly twelve reviewed pages');
+ if(plan.pages.length!==14)throw new Error('Expected exactly fourteen reviewed pages');
  await fs.writeFile(path.join(template,'pages.json'),JSON.stringify(entries,null,2)+'\n');
  const options=Object.keys(entries).map(key=>`<option value="${escape(key)}">${escape(key)}</option>`).join('');
  await fs.writeFile(path.join(template,'templateDetails.xml'),`<?xml version="1.0" encoding="utf-8"?>
@@ -56,7 +56,18 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
 </extension>\n`);
  for(const [source,name] of [['psitrends-client.css','psitrends-client.css'],['psitrends-client.js','psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','andrey.jpg'],['integrations/psitrends-client/archway.webp','archway.webp']])await fs.copyFile(path.join(root,source),path.join(template,'media/assets',name));
  await fs.cp(path.join(root,'integrations/psitrends-client/review-thumbnails'),path.join(template,'media/assets/review-thumbnails'),{recursive:true});
+ await fs.cp(path.join(root,'integrations/psitrends-client/events-assets/events'),path.join(template,'media/assets/events'),{recursive:true});
+ const sitemapEntries=[];
+ for(const locale of ['en','ru'])for(const name of Object.keys(pages[locale]))sitemapEntries.push(`  <url>\n    <loc>https://psitrends.com${routeFor(name,locale)}</loc>\n    <xhtml:link rel="alternate" hreflang="en-GB" href="https://psitrends.com${routeFor(name,'en')}"/>\n    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://psitrends.com${routeFor(name,'ru')}"/>\n  </url>`);
+ await fs.writeFile(path.join(destination,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapEntries.join('\n')}\n</urlset>\n`);
  await fs.writeFile(path.join(destination,'migration-plan.json'),JSON.stringify(plan,null,2)+'\n');
+ const append=path.join(destination,'events-append');
+ const appendPlan={...plan,mode:'append-existing-template-plan-only',pages:plan.pages.filter(page=>page.key.endsWith(':events'))};
+ if(appendPlan.pages.length!==2)throw new Error('Expected exactly two event routes');
+ await fs.rm(append,{recursive:true,force:true});
+ await fs.mkdir(path.join(append,'articles'),{recursive:true});
+ for(const page of appendPlan.pages)await fs.copyFile(path.join(destination,page.article.bodyFile),path.join(append,page.article.bodyFile));
+ await fs.writeFile(path.join(append,'migration-plan.json'),JSON.stringify(appendPlan,null,2)+'\n');
  if(zip){const archive=path.join(destination,'psitrends_client.zip');await fs.rm(archive,{force:true});await promisify(execFile)('/usr/bin/zip',['-q','-r',archive,'.'],{cwd:template});}
  return {pages:plan.pages.length,mode:'plan-only',package:zip?'psitrends_client.zip':'template/'};
 }

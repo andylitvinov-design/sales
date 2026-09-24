@@ -126,6 +126,38 @@ h3 {
   text-decoration: underline;
   }
 
+.events-hero {
+  padding: 76px 0 56px;
+  background: linear-gradient(140deg, var(--soft), var(--paper));
+}
+
+.events-hero-layout, .archive-preview-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(280px, 0.94fr);
+  gap: clamp(32px, 7vw, 90px);
+  align-items: center;
+}
+
+.events-hero figure { margin: 0; }
+.events-hero img { display: block; width: 100%; height: auto; border-radius: 3px; box-shadow: 0 18px 40px rgb(40 61 53 / 15%); }
+.events-lead { margin: 0 0 8px; font: clamp(1.35rem, 2.5vw, 2rem)/1.25 Georgia, 'Times New Roman', serif; }
+.events-continuity { color: #926632; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.events-timeline { padding: 86px 0 108px; }
+.event-entry { display: grid; grid-template-columns: minmax(130px, 0.27fr) minmax(0, 0.73fr); gap: clamp(24px, 5vw, 72px); padding: 42px 0; border-top: 1px solid var(--line); }
+.event-entry-featured { padding: 64px 0; }
+.event-rail p { margin: 4px 0 0; color: #926632; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.09em; line-height: 1.45; text-transform: uppercase; }
+.event-copy > p:not(.eyebrow):not(.event-source) { max-width: 710px; }
+.event-entry-featured h2 { font-size: clamp(2.25rem, 4vw, 4rem); }
+.event-gallery { margin-top: 26px; }
+.event-gallery summary { display: inline-block; cursor: pointer; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
+.event-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+.event-gallery-grid img { display: block; width: 100%; height: 150px; object-fit: cover; background: var(--soft); }
+.event-source { margin-top: 20px; color: var(--muted); font-size: 0.9rem; }
+.archive-preview { padding: 78px 0; background: var(--soft); }
+.archive-preview-layout { align-items: start; }
+.archive-preview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.archive-preview-grid img { display: block; width: 100%; aspect-ratio: 1.25; object-fit: cover; }
+
 .header-controls {
   display: flex;
   align-items: center;
@@ -1038,6 +1070,15 @@ summary {
   .review-grid, .course-list { grid-template-columns: 1fr; }
   .reviews-section, .academy-catalog { padding-block: 48px; }
   .review-photo img { height: 300px; }
+  .events-hero { padding: 52px 0 34px; }
+  .events-hero-layout, .archive-preview-layout, .event-entry { grid-template-columns: 1fr; }
+  .events-hero-layout, .archive-preview-layout { gap: 28px; }
+  .events-timeline { padding: 54px 0 72px; }
+  .event-entry, .event-entry-featured { gap: 12px; padding: 34px 0; }
+  .event-entry-featured h2 { font-size: clamp(2rem, 10vw, 3rem); }
+  .event-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .event-gallery-grid img { height: 132px; }
+  .archive-preview { padding: 54px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

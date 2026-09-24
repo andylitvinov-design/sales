@@ -67,6 +67,9 @@ document.querySelectorAll('[data-video]').forEach(link=>{
     const script = document.createElement('script'); script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`; document.head.append(script);
     status.textContent = ru ? 'Необязательная аналитика включена.' : 'Optional analytics is on.';
+    if (document.querySelector('[data-analytics-event="events_archive_view"]')) {
+      window.gtag('event','events_archive_view',{send_to:id,landing_page:new URL(document.querySelector('link[rel="canonical"]').href).pathname,service:'events'});
+    }
   };
   control.querySelector('[data-analytics="allow"]').addEventListener('click',()=>{ if(safe)save('granted'); enable(); });
   control.querySelector('[data-analytics="deny"]').addEventListener('click',()=>{
@@ -81,6 +84,9 @@ document.querySelectorAll('[data-video]').forEach(link=>{
   document.querySelectorAll('[data-contact]').forEach(a=>a.addEventListener('click',()=>{
     if(!enabled)return;
     window.gtag('event','contact_click',{send_to:id,landing_page:new URL(document.querySelector('link[rel="canonical"]').href).pathname,service:document.body.dataset.page,contact_method:a.dataset.contact,acquisition_source:isGbp?'google_maps':'unattributed'});
+  }));
+  document.querySelectorAll('[data-analytics-event="event_gallery_open"]').forEach(item=>item.addEventListener('toggle',()=>{
+    if (item.open && enabled) window.gtag('event','event_gallery_open',{send_to:id,landing_page:new URL(document.querySelector('link[rel="canonical"]').href).pathname,service:'events'});
   }));
   try { if (safe && localStorage.getItem(key)==='granted')enable(); } catch { /* Default off. */ }
 })();
