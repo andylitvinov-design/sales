@@ -20,19 +20,23 @@ try {
  $lock=fopen($private.'/lock','c'); demand(flock($lock,LOCK_EX|LOCK_NB),'locked');
  require $root.'/configuration.php'; $c=new JConfig;
  demand($c->dbprefix==='wfct4_','prefix');
- demand($scope==='stage'?($c->host==='psitrends-client-releasecheck-db'&&$c->db==='psitrends_releasecheck'&&(int)$c->mailonline===0):($c->host==='mysql'&&$c->db==='psitrends'),'database_target');
+ demand($scope==='stage'?($c->host==='psitrends-client-releasecheck-db'&&in_array($c->db,['psitrends_releasecheck','psitrends_events20'],true)&&(int)$c->mailonline===0):($c->host==='mysql'&&$c->db==='psitrends'),'database_target');
  $db=new PDO('mysql:host='.$c->host.';dbname='.$c->db.';charset=utf8mb4',$c->user,$c->password,[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION]); unset($c);
  $manifest=json_decode(file_get_contents($package.'/migration-plan.json'),true,512,JSON_THROW_ON_ERROR);
- demand(count($manifest['pages'])===12,'page_count');
+ demand(count($manifest['pages'])===14,'page_count');
  $files=['templates/psitrends_client/index.php'=>'template/index.php','templates/psitrends_client/pages.json'=>'template/pages.json'];
+ $files['sitemap.xml']='sitemap.xml';
  foreach(['psitrends-client.css','psitrends-client.js','archway.webp'] as $name)$files['media/templates/site/psitrends_client/assets/'.$name]='template/media/assets/'.$name;
  $thumbnails=glob($package.'/template/media/assets/review-thumbnails/*.webp'); demand(count($thumbnails)===38,'thumbnail_count');
  foreach($thumbnails as $thumbnail){$name=basename($thumbnail);$files['media/templates/site/psitrends_client/assets/review-thumbnails/'.$name]='template/media/assets/review-thumbnails/'.$name;}
  $thumbnailDirectory=$root.'/media/templates/site/psitrends_client/assets/review-thumbnails';
+ $eventRoot=$package.'/template/media/assets/events'; demand(is_dir($eventRoot)&&!is_link($eventRoot),'event_assets_missing');
+ foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($eventRoot,FilesystemIterator::SKIP_DOTS)) as $file){demand($file->isFile()&&!$file->isLink(),'unsafe_event_asset');$relative=substr($file->getPathname(),strlen($eventRoot)+1);demand(preg_match('#^[a-z0-9-]+/[0-9]{2}\\.jpg$#D',$relative)===1,'event_asset_path');$files['media/templates/site/psitrends_client/assets/events/'.$relative]='template/media/assets/events/'.$relative;}
+ ksort($files,SORT_STRING);
  $desired=[]; $rows=[];
  $select=$db->prepare('SELECT id,alias,language,state,checked_out,title,introtext,`fulltext`,metadesc FROM wfct4_content WHERE alias=?');
  foreach($manifest['pages'] as $p){
-  demand(preg_match('/^(en|ru):(home|hypnotherapy|constellations|about|academy|contact)$/D',$p['key'])===1,'page_key');
+  demand(preg_match('/^(en|ru):(home|hypnotherapy|constellations|about|academy|contact|events)$/D',$p['key'])===1,'page_key');
   $select->execute([$p['article']['alias']]); $matches=$select->fetchAll(PDO::FETCH_ASSOC); demand(count($matches)===1,'unique_existing_article'); $r=$matches[0];
   demand($r['language']===$p['language']&&(int)$r['state']===1&&(int)$r['checked_out']===0,'article_not_public_or_checked_out');
   $body=file_get_contents($package.'/'.$p['article']['bodyFile']); demand(hash('sha256',$body)===$p['article']['sha256'],'article_digest');
@@ -71,11 +75,12 @@ try {
   foreach($files as $to=>$from){
    $bytes=$action==='apply'?file_get_contents($package.'/'.$from):($snap['files'][$to]===null?null:base64_decode($snap['files'][$to]));
    if($bytes===null){if(is_file($root.'/'.$to))demand(unlink($root.'/'.$to),'remove_new_asset');continue;}
+   $directory=dirname($root.'/'.$to);if(!is_dir($directory))demand(mkdir($directory,0755,true)||is_dir($directory),'asset_directory');
    demand(file_put_contents($root.'/'.$to.'.next',$bytes)!==false,'file_write');chmod($root.'/'.$to.'.next',0644);demand(rename($root.'/'.$to.'.next',$root.'/'.$to),'file_rename');
   }
   if($action==='rollback'&&!$snap['thumbnailDirectoryExisted']&&is_dir($thumbnailDirectory))demand(rmdir($thumbnailDirectory),'thumbnail_directory');
   $db->commit();
  } catch(Throwable $e){if($db->inTransaction())$db->rollBack();throw $e;}
  saveJson($private.'/journal.json',['phase'=>'complete','action'=>$action,'package'=>$packageHash]);
- echo json_encode(['status'=>strtoupper($action).'_COMPLETE','articles'=>12,'files'=>count($files),'routing_changed'=>false,'legacy_changed'=>false]).PHP_EOL;
+ echo json_encode(['status'=>strtoupper($action).'_COMPLETE','articles'=>14,'files'=>count($files),'routing_changed'=>false,'legacy_changed'=>false]).PHP_EOL;
 } catch(Throwable $e){fwrite(STDERR,json_encode(['status'=>'FAILED','reason'=>$e instanceof UpdateGuard?$e->getMessage():'runtime_error','recovery'=>'Inspect private journal; rollback uses optimistic before/after guards.']).PHP_EOL);exit(1);}
