@@ -3,6 +3,15 @@ import assert from 'node:assert/strict';
 import {render} from './template.mjs';
 
 for (const locale of ['en','ru']) {
+ test(`${locale} homepage is an editorial, human-led journey without emoji arrows`,()=>{
+  const html=render('home',locale);
+  assert.match(html,/class="hero-visual"/);
+  assert.match(html,/class="author-note\b/);
+  for(const chapter of ['consultations','training','workshops']) assert.match(html,new RegExp(`path-chapter--${chapter}`));
+  assert.match(html,/photo_2023-01-27_06-22-45\.jpg/);
+  assert.doesNotMatch(html,/[↗↓]/);
+  assert.ok((html.match(/class="link-arrow/g)||[]).length>=8);
+ });
  test(`${locale} homepage presents three distinct paths`,()=>{
   const html=render('home',locale);
   for(const id of ['consultations','training','workshops']) assert.ok(html.includes(`id="${id}"`),id);
