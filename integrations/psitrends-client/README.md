@@ -1,6 +1,6 @@
 # PsiTrends client layer
 
-Twelve source previews and an allowlisted static artifact, generated from `content.mjs` and `template.mjs`. EN/RU copy follows Issue #6 masterplan and `docs/psitrends-content-map.md`; the two existing Toronto pages provide service-copy and consent-model baselines. No pricing, credentials, testimonials or business results are invented.
+Fourteen source previews and an allowlisted static artifact, generated from `content.mjs` and `template.mjs`. EN/RU copy follows Issue #6 masterplan and `docs/psitrends-content-map.md`; the two existing Toronto pages provide service-copy and consent-model baselines. No pricing, credentials, testimonials or business results are invented.
 
 ## Build and review
 
@@ -21,6 +21,10 @@ Preview output never enables analytics, even after clicking Allow, and does not 
 
 The artifact's sitemap contains only its 12 client routes. It is an input to a combined first-party sitemap, not a replacement for the legacy sitemap. Preserve existing legacy robots/routing and content. Academy links point to the existing knowledge library. No redirects or legacy deletion are implemented here.
 
-Portrait: exact public source already used by the approved Toronto pages, `https://psitrends.com/images/photo_2024-08-04_22-52-52.jpg`; reused from existing local copy and processed by the project asset optimizer. No generated portrait or invented visual evidence.
+Portrait: the user-supplied library/desk photograph is stored as `andy-library-desk.png`, processed by the project asset optimizer, and used only on Home and About. The previous local portrait remains on the other client pages. No generated portrait or invented visual evidence is used.
+
+Reviews: About uses the same complete localized photo/video review renderer as Home, after the complete author biography. EN contains 21 video and 13 photo reviews; RU contains 41 video and 37 photo reviews. No testimonials are invented.
+
+Author-profile verification: `node integrations/psitrends-client/author-profile-qa.mjs` checks all 14 local pages at four widths. `--stage` checks Home/About in native staging Joomla; `--live` checks all 14 public routes. It verifies full biography text, review order/counts, portrait proportions, navigation and overflow.
 
 No dependency install or image generation is needed. Browser QA uses installed Chrome; js_repl is unavailable in this session, so equivalent reusable Playwright contexts and the repository audit were used.

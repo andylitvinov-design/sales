@@ -54,7 +54,8 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
 <media destination="templates/site/psitrends_client" folder="media"><folder>assets</folder></media>
 <config><fields name="params"><fieldset name="client" label="Client page"><field name="page_key" type="list" label="Page content key" default="" required="true"><option value="">Select reviewed page</option>${options}</field><field name="release_mode" type="list" label="Release mode" default="preview"><option value="preview">Preview: noindex, analytics off</option><option value="production">Production: verified hostname and consent required</option></field></fieldset></fields></config>
 </extension>\n`);
- for(const [source,name] of [['psitrends-client.css','psitrends-client.css'],['psitrends-client.js','psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','andrey.jpg'],['integrations/psitrends-client/archway.webp','archway.webp']])await fs.copyFile(path.join(root,source),path.join(template,'media/assets',name));
+ for(const [source,name] of [['psitrends-client.css','psitrends-client.css'],['psitrends-client.js','psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','andrey.jpg'],['integrations/psitrends-client/andy-library-desk.png','andy-library-desk.png'],['integrations/psitrends-client/archway.webp','archway.webp']])await fs.copyFile(path.join(root,source),path.join(template,'media/assets',name));
+ await fs.cp(path.join(root,'integrations/psitrends-client/reviews'),path.join(template,'media/assets/reviews'),{recursive:true});
  await fs.cp(path.join(root,'integrations/psitrends-client/review-thumbnails'),path.join(template,'media/assets/review-thumbnails'),{recursive:true});
  await fs.cp(path.join(root,'integrations/psitrends-client/events-assets/events'),path.join(template,'media/assets/events'),{recursive:true});
  const sitemapEntries=[];
