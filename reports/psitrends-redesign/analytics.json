@@ -1,0 +1,64 @@
+{
+  "defaultOffVendorRequests": 0,
+  "requests": [
+    {
+      "event": "page_view",
+      "measurement": "G-Z4BGV9GP4N",
+      "source": "google",
+      "medium": "organic",
+      "campaign": "gbp",
+      "method": "POST",
+      "landing": null,
+      "contact": null,
+      "attribution": null
+    },
+    {
+      "event": "scroll",
+      "measurement": "G-Z4BGV9GP4N",
+      "source": "google",
+      "medium": "organic",
+      "campaign": "gbp",
+      "method": "POST",
+      "landing": null,
+      "contact": null,
+      "attribution": null
+    },
+    {
+      "event": "contact_click",
+      "measurement": "G-Z4BGV9GP4N",
+      "source": "google",
+      "medium": "organic",
+      "campaign": "gbp",
+      "method": "POST",
+      "landing": "/",
+      "contact": "whatsapp",
+      "attribution": "google_maps"
+    },
+    {
+      "event": "click",
+      "measurement": "G-Z4BGV9GP4N",
+      "source": "google",
+      "medium": "organic",
+      "campaign": "gbp",
+      "method": "POST",
+      "landing": null,
+      "contact": null,
+      "attribution": null
+    }
+  ],
+  "responses": [
+    {
+      "status": 204
+    },
+    {
+      "status": 204
+    },
+    {
+      "status": 204
+    },
+    {
+      "status": 204
+    }
+  ],
+  "revoked": true
+}
