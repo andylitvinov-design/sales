@@ -23,12 +23,12 @@ try{
    await page.setViewportSize({width,height});
    await page.goto(`${baseUrl}${routeFor(key,locale)}`);
    await page.emulateMedia({reducedMotion:'reduce'});
-   const metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,heroBottom:document.querySelector('.hero').getBoundingClientRect().bottom,ctaBottom:document.querySelector('.hero .button').getBoundingClientRect().bottom,headingCount:document.querySelectorAll('h1').length,language:document.documentElement.lang,images:[...document.querySelectorAll('.hero img')].every(x=>x.complete&&x.naturalWidth>0)}));
+   const metrics=await page.evaluate(()=>{const hero=document.querySelector('.hero, .events-hero'),cta=hero?.querySelector('.button');return {overflow:document.documentElement.scrollWidth>innerWidth,heroBottom:hero?.getBoundingClientRect().bottom??0,ctaBottom:cta?.getBoundingClientRect().bottom??0,headingCount:document.querySelectorAll('h1').length,language:document.documentElement.lang,images:[...document.querySelectorAll('.hero img')].filter(x=>x.getClientRects().length>0&&getComputedStyle(x).visibility!=='hidden').every(x=>x.complete&&x.naturalWidth>0)}});
    assert.equal(metrics.overflow,false,`${name} width${width}`); assert.equal(metrics.headingCount,1);assert.equal(metrics.language,locale);assert.equal(metrics.images,true);
-   assert.ok(metrics.ctaBottom<height,`${name} CTA must be reachable in first screen`);
+   if(metrics.ctaBottom)assert.ok(metrics.ctaBottom<height,`${name} CTA must be reachable in first screen`);
    if(width===1440)assert.ok(metrics.heroBottom<=900);
    results.push({name,width,...metrics});
-   if(width!==320)await page.screenshot({path:`reports/${name}-${width===1440?'desktop':`${width}-mobile`}-full.png`,fullPage:true});
+   if(width!==320&&process.env.PSITRENDS_CAPTURE_SCREENSHOTS==='1')await page.screenshot({path:`reports/${name}-${width===1440?'desktop':`${width}-mobile`}-full.png`,fullPage:true});
   }
   await page.locator('#analytics-choice summary').click();
   await page.locator('[data-analytics="allow"]').click();

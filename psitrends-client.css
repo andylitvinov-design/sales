@@ -172,10 +172,6 @@ h3 {
   white-space: normal;
   }
 
-.nav-submenu a:last-child {
-  border-bottom: 0;
-  }
-
 .events-hero {
   padding: 76px 0 56px;
   background: linear-gradient(140deg, var(--soft), var(--paper));
@@ -1774,6 +1770,10 @@ summary {
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
 }
+
+.nav-submenu a:last-child {
+  border-bottom: 0;
+  }
 
 body[data-page="about"] .portrait img,
 body[data-page="home"] .hero-portrait img,

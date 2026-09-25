@@ -40,7 +40,8 @@ test('Russian events archive is a real counterpart with event navigation across 
   assert.match(html, /rel="canonical" href="https:\/\/psitrends\.com\/ru\/events"/);
   assert.match(html, /hreflang="en-GB" href="https:\/\/psitrends\.com\/events"/);
   assert.match(html, /class="language" href="\/events"/);
-  assert.match(html, />События<\/a>/);
+  assert.match(html, /class="nav-root" href="\/ru\/events" aria-current="page">Семинары<\/a>/);
+  assert.match(html, /Архив семинаров и мероприятий/);
   assert.match(render('about', 'ru'), /Архив мастерских и групповой практики/);
   assert.match(html, /Радомышль, Украина/);
 });
@@ -69,8 +70,8 @@ test('events timeline is newest-first and every published photo set exists local
   assert.equal(photoTotal, 37);
 });
 
-test('all client-first pages expose the locale-matched Events link and archive integrations', () => {
-  for (const [locale, label] of [['en', 'Events'], ['ru', 'События']]) {
+test('all client-first pages expose the locale-matched Workshops root link and archive integrations', () => {
+  for (const [locale, label] of [['en', 'Workshops'], ['ru', 'Семинары']]) {
     for (const key of ['home', 'hypnotherapy', 'constellations', 'about', 'academy', 'contact', 'events']) {
       const html = render(key, locale);
       assert.match(html, new RegExp(`href="${routeFor('events', locale)}"[^>]*>${label}<\\/a>`));
