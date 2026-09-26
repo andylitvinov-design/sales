@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {render} from './template.mjs';
 
 for (const locale of ['en','ru']) {
@@ -49,3 +50,13 @@ for (const locale of ['en','ru']) {
   assert.match(html,locale==='en'?/https:\/\/psitrends\.com\/studies/:/https:\/\/psitrends\.com\/ru\/cat-train-ru/);
  });
 }
+
+
+test('navigation assets are cache-busted and tablet fallback does not expose every submenu',()=>{
+ const html=render('home','en');
+ assert.match(html,/psitrends-client\.css\?v=7/);
+ assert.match(html,/psitrends-client\.js\?v=7/);
+ const css=readFileSync(new URL('../../psitrends-client.css',import.meta.url),'utf8');
+ assert.match(css,/\.menu-ready \.nav\.is-open \.nav-submenu \{\s*display: block;/);
+ assert.match(css,/@media \(max-width: 1050px\)[\s\S]*?\.nav-submenu \{[\s\S]*?display: none;/);
+});

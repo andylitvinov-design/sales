@@ -817,7 +817,7 @@ summary {
 
   .nav-submenu {
   position: static;
-  display: block;
+  display: none;
   min-width: 0;
   padding: 2px 0 0 14px;
   border: 0;
@@ -836,6 +836,10 @@ summary {
 
   .menu-ready .nav.is-open {
   display: flex;
+  }
+
+  .menu-ready .nav.is-open .nav-submenu {
+  display: block;
   }
 
   .hero-layout {
