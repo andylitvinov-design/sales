@@ -37,6 +37,8 @@ test('adapter emits fourteen native article bodies and preserves home assignment
     assert.match(xml,/default="preview"/);
     const entry=await fs.readFile(path.join(directory,'template/index.php'),'utf8');
     assert.match(entry,/<jdoc:include type="component"/);
+    assert.match(entry,/psitrends-client\.css\?v=7/);
+    assert.match(entry,/psitrends-client\.js\?v=7/);
     assert.doesNotMatch(entry,/GTM-|googletagmanager\.com|type="scripts"|type="head"/);
     const routes=JSON.parse(await fs.readFile(path.join(directory,'template/pages.json'),'utf8'));
     assert.equal(Object.keys(routes).length,14);
