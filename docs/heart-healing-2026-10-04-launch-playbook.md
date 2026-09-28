@@ -1218,3 +1218,299 @@ https://www.meetup.com/toronto-tantra-circle/
 ## 23. One-Sentence Strategy
 
 **Use the remaining six days to convert people who already have some trust in Andy/community, make Family Constellations immediately understandable to cold visitors, measure every channel, and scale only what produces registrations.**
+
+
+---
+
+## 24. Responsibility Split: Codex vs Andy
+
+This launch should not depend on Andy doing everything manually. Divide execution into three lanes.
+
+### A. Codex can do independently
+
+These are tasks Codex can usually complete directly in the repository or connected technical stack without requiring Andy to manually write or format anything.
+
+#### Website / landing / tracking work
+
+- Update landing-page copy in the `sales` repository.
+- Create a dedicated Oct 4 landing page if needed.
+- Add or improve CTA sections.
+- Add FAQ blocks.
+- Add consent / participation wording.
+- Add event schema / metadata if the page needs SEO support.
+- Add UTM conventions and tracking parameters.
+- Add GA4 / CTA tracking on first-party pages.
+- Check mobile/desktop layout.
+- Run HTML, accessibility, link and Lighthouse audits where the repo supports them.
+- Produce implementation notes / rollback notes.
+- Commit changes to GitHub.
+- Open or update issues / PRs where appropriate.
+
+#### Campaign infrastructure
+
+- Maintain this launch playbook.
+- Create a campaign tracking-link naming convention.
+- Prepare a simple campaign dashboard/spec in the repo.
+- Prepare copy variants for each channel.
+- Prepare Meta ad copy and creative briefs.
+- Prepare Meetup copy.
+- Prepare Telegram / WhatsApp / Instagram copy.
+- Prepare email copy.
+- Prepare partner / facilitator outreach text.
+- Prepare daily reporting templates.
+- Analyze campaign metrics that Andy exports or provides.
+- Recommend the next action based on actual conversion data.
+
+#### Content production
+
+- Write:
+  - Eventbrite title / summary / FAQ,
+  - Instagram captions,
+  - Reel scripts,
+  - Stories,
+  - email drafts,
+  - Meetup event descriptions,
+  - Telegram posts,
+  - WhatsApp posts,
+  - personal outreach templates,
+  - follow-up templates,
+  - Bring-a-Friend wording,
+  - community ticket wording.
+- Generate or edit promotional visual assets when requested.
+- Create shot lists for short videos.
+- Create a content calendar for each day.
+
+#### Research / QA
+
+- Re-check the public Eventbrite listing.
+- Check whether old event URLs are still live.
+- Review public Meetup listing.
+- Review public website pages.
+- Compare public competing event positioning.
+- Check titles / descriptions for clarity and consistency.
+- Flag legal / trust risks in public copy.
+- Verify that all public channels use the same date, time, address and event name.
+
+### B. Codex can prepare it, but Andy must authorize / click / publish
+
+These actions often involve a logged-in third-party account, payment, irreversible publication, or platform UI that may not be reliably writable from the repository.
+
+#### Eventbrite
+
+Codex can prepare the exact changes, but Andy may need to apply them in Eventbrite:
+
+- change event title,
+- change summary,
+- edit long description,
+- add FAQ,
+- change category / tags,
+- change cover image,
+- adjust ticket types,
+- create Bring-a-Friend ticket,
+- create promo code,
+- set promo-code expiry,
+- create Eventbrite tracking links,
+- adjust Eventbrite Ads objective,
+- adjust Eventbrite Ads radius,
+- change ad budget,
+- pause / resume ads,
+- check live sales dashboard.
+
+If an authenticated browser workflow is available and Andy explicitly asks Codex to execute these steps, Codex may be able to perform some of them. Do not assume it can; verify the authenticated session first.
+
+#### Meta / Instagram / Facebook
+
+Codex can prepare:
+
+- audience definition,
+- ad copy,
+- creative,
+- naming,
+- UTM parameters,
+- budget recommendation,
+- campaign structure.
+
+Andy normally needs to:
+
+- connect / confirm the correct Meta ad account,
+- approve spend,
+- publish the campaign,
+- handle any Meta identity / payment / policy prompts.
+
+If an authenticated browser session is available and Andy explicitly asks for execution, Codex may be able to help operate the UI. Spending changes should still be treated as user-authorized actions.
+
+#### Meetup
+
+Codex can prepare the full title, description, image and CTA.
+
+Andy may need to:
+
+- create / edit the event in the Meetup organizer account,
+- confirm venue,
+- publish,
+- message the Meetup group.
+
+If authenticated access is available and Andy explicitly asks Codex to make the changes, Codex can attempt the workflow.
+
+#### Email
+
+Codex can draft and segment the campaign logic.
+
+Andy should confirm:
+
+- which contacts have marketing consent,
+- which audience is appropriate.
+
+With a connected authorized Gmail account, ChatGPT can send an email only when Andy explicitly asks to send it. Codex should not infer permission to mass-message past attendees.
+
+### C. Only Andy should do personally
+
+These are the highest-value human tasks and should not be delegated to an automated system.
+
+#### Personal DMs
+
+Andy should personally send the warm outreach to:
+
+- prior participants,
+- people who previously asked about events,
+- people who expressed interest,
+- trusted community members,
+- potential referrals.
+
+Codex should write the template, but Andy should personalize the first line and decide who genuinely fits the event.
+
+Reason: the conversion value comes from actual relationship and trust, not from sending the same text at scale.
+
+#### Follow-up conversations
+
+Andy should personally answer:
+
+- “Is this right for me?”
+- “What happens in the workshop?”
+- “Do I need experience?”
+- “Will there be touch?”
+- “Can I come alone?”
+- “What is a constellation?”
+- concerns about price,
+- concerns about safety / boundaries.
+
+Codex can prepare suggested answers, but the final conversation should feel human.
+
+#### Facilitator relationship
+
+Andy should personally ask Ola and other partners to:
+
+- post a Story,
+- repost the Reel,
+- invite suitable people,
+- do a Friday reminder.
+
+Codex can prepare the message and partner kit.
+
+#### Real content capture
+
+Andy / the event team must:
+
+- record real short video,
+- take real venue photos,
+- capture setup,
+- record Andy speaking,
+- obtain participant photo/video consent,
+- decide which real workshop images are appropriate to publish.
+
+Codex can edit / crop / caption or generate derivative assets afterward.
+
+#### Community judgment
+
+Only Andy should decide:
+
+- who is suitable for the workshop,
+- whether a specific person should receive a private discount,
+- whether to open community-rate seats,
+- whether the group composition feels appropriate,
+- whether additional sales should stop even if seats technically remain.
+
+#### Day-of-event operations
+
+Andy/team must handle:
+
+- attendee check-in,
+- venue access,
+- participant communication,
+- consent / boundaries briefing,
+- room setup,
+- facilitator coordination,
+- any in-person safety decision,
+- late arrivals,
+- on-site ticket questions.
+
+---
+
+## 25. Best Delegation Model for This Week
+
+### Codex owns
+
+1. Strategy document.
+2. Copy.
+3. Website / repo work.
+4. Tracking architecture.
+5. Public-page QA.
+6. Creative briefs.
+7. Daily performance analysis.
+8. Recommendations.
+9. GitHub documentation.
+
+### Andy owns
+
+1. Eventbrite account changes if Codex cannot access the authenticated UI.
+2. Approving any paid-ad spend.
+3. Personal DMs.
+4. Human follow-up.
+5. Ola / facilitator coordination.
+6. Real video / photo capture.
+7. Day-of-event operations.
+8. Final judgment on pricing and group composition.
+
+### Shared workflow
+
+**Codex prepares → Andy approves/publishes → Codex reviews result → Andy handles personal responses → Codex analyzes numbers → next action is chosen.**
+
+This is the most efficient split. Andy should spend his limited time on trust, relationships and in-person decisions; Codex should absorb repetitive planning, copy, technical setup, QA and analysis.
+
+---
+
+## 26. Practical To-Do Board by Owner
+
+### CODEX — do first
+
+- [ ] Produce final Eventbrite copy package.
+- [ ] Produce exact Meetup listing copy.
+- [ ] Produce tracking-link naming sheet.
+- [ ] Produce 7-day content calendar.
+- [ ] Produce Reel scripts.
+- [ ] Produce Story sequence.
+- [ ] Produce Telegram / WhatsApp posts.
+- [ ] Produce partner kit for Ola.
+- [ ] Produce personal-DM templates.
+- [ ] Produce FAQ answers for inbound DMs.
+- [ ] Review all live links after Andy publishes changes.
+- [ ] Analyze daily registrations / source data.
+- [ ] Update this playbook as decisions change.
+
+### ANDY — do first
+
+- [ ] Apply / approve Eventbrite page edits.
+- [ ] Check Eventbrite Ads objective and radius.
+- [ ] Create promo / pair offer if using one.
+- [ ] Send 15–20 warm personal DMs.
+- [ ] Ask Ola to distribute.
+- [ ] Record one 20–30 sec face-to-camera Reel.
+- [ ] Confirm exact capacity C and current confirmed P.
+- [ ] Provide sales numbers for daily optimization.
+
+### ANDY + CODEX
+
+- [ ] Decide whether Meta should start Wednesday.
+- [ ] Decide Friday whether any community-rate tickets are needed.
+- [ ] Review which channel actually produces paid orders.
+- [ ] Shift budget only after reviewing conversion evidence.
