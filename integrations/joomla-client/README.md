@@ -1,6 +1,6 @@
 # Native Joomla client adapter
 
-Local package preparation only. No installer, clone or production mutation is performed by the build. Uses the reviewed twelve-page generator in `integrations/psitrends-client`; leaves its files/output untouched.
+Local package preparation only. No installer, clone or production mutation is performed by the build. Uses the reviewed eighteen-page generator in `integrations/psitrends-client`; leaves its files/output untouched.
 
 ```sh
 node --test integrations/joomla-client/build.test.mjs
@@ -10,12 +10,12 @@ node scripts/build-joomla-client.mjs
 Artifacts under ignored `integrations/joomla-client/generated/`:
 
 - `psitrends_client.zip`: native site-template installer package; `template/` is equivalent install-from-folder source.
-- `articles/*.html`: twelve editable article bodies with hashes in `migration-plan.json`.
+- `articles/*.html`: eighteen editable article bodies with hashes in `migration-plan.json`.
 - `migration-plan.json`: dry-run-only native article/style/menu field plan, with unresolved category/article/style IDs explicit.
 
 ## Architecture and ownership
 
-Install a separate `psitrends_client` template; never replace `tx_valley`, Helix, Quix or Joomla core. Create twelve page-specific styles from the new template, each with its `page_key` and preview release mode. Assign each style to exactly its native menu item; never make this template globally default. Twelve styles avoid undocumented menu-param edits and expose the page selection through Joomla's supported style UI.
+Install a separate `psitrends_client` template; never replace `tx_valley`, Helix, Quix or Joomla core. Create eighteen page-specific styles from the new template, each with its `page_key` and preview release mode. Assign each style to exactly its native menu item; never make this template globally default. Eighteen styles avoid undocumented menu-param edits and expose the page selection through Joomla's supported style UI.
 
 Native `com_content` stores the editable article body; template shell supplies header/footer, language links, metadata and assets. Article ACL is checked explicitly, and article alias must match the style page key. Native administrator editing is supported; frontend edit layouts deliberately fail closed because this minimal template does not include the editor's JavaScript dependencies. Use an editor/source mode and existing trusted-author permissions that preserve reviewed HTML, then verify a save/readback; do not globally weaken text filtering.
 
@@ -29,21 +29,23 @@ Only the generator's consent adapter loads analytics. No Helix custom code, modu
 
 Before any staged mutation, retain a protected full backup and exact private snapshots of menus 202, 204 and 101, including link/type, component ID, params, template style, language, menutype, parent/home/published/access and associations; relevant template styles; any matching aliases/routes; and the original Quix home records. Record newly allocated article/style/menu IDs in a private transaction ledger. Preserve all-language home 101 byte-for-byte. Never copy SQL/user/session records into this package.
 
-Resolve all twelve intended public routes against current menus/content before adding entries. A collision is a decision gate: no overwrite, deletion, redirect or alias reuse is implied. Preserve all legacy URLs. Reuse EN home menu 202 and RU home 204 only after verifying those are still the language-home assignments; retain their IDs, alias, language, menutype, parent and home flag. Only their component target and page style change. Original homepage Quix records remain intact.
+Resolve all eighteen intended public routes against current menus/content before adding entries. A collision is a decision gate: no overwrite, deletion, redirect or alias reuse is implied. Preserve all legacy URLs. Reuse EN home menu 202 and RU home 204 only after verifying those are still the language-home assignments; retain their IDs, alias, language, menutype, parent and home flag. Only their component target and page style change. Original homepage Quix records remain intact.
 
 ## Supported staged operations
 
 1. Joomla administrator **System → Install → Extensions → Upload Package File**: install `psitrends_client.zip`, or use Install from Folder with the unpacked `template/`. Installation must remain staging-only initially. Do not make the installed style the default.
 2. **Content → Articles → New**: for each plan entry create an unpublished native article in a reviewed public native category. Set exact title, alias, language, access Public, metadata description and full source HTML from `article.bodyFile` as introtext (no read-more split). Record allocated ID. Do not reuse a legacy article or Quix record.
 3. **System → Site Template Styles**: duplicate the new template style for every plan entry; set Page content key and `release_mode=preview`, with no global default. Record each style ID. Do not change existing tx_valley styles 17/21.
-4. **Menus**: create the ten non-home Single Article items only after route collision checks, in the corresponding home language's existing menutype, root parent, language and alias specified by the plan, selecting the new article/style. On the isolated clone, update existing home items 202/204 to Single Article and their corresponding new article/style. Keep all-language home101 untouched. Pair true EN/RU equivalents using Joomla's Associations tab without changing legacy associations.
+4. **Menus**: create the sixteen non-home Single Article items only after route collision checks, in the corresponding home language's existing menutype, root parent, language and alias specified by the plan, selecting the new article/style. On the isolated clone, update existing home items 202/204 to Single Article and their corresponding new article/style. Keep all-language home101 untouched. Pair true EN/RU equivalents using Joomla's Associations tab without changing legacy associations.
 5. Publish only these articles/menu items on the isolated clone for guest route QA. Confirm actual route paths equal the plan, including language-home selection. Joomla must route them normally; no nginx interception, blanket rewrite or `.htaccess` replacement belongs to this adapter.
 
 If the parent implements an authenticated Joomla API/model runner, the equivalent supported entry points are `Joomla\CMS\Installer\Installer::getInstance()->install($unpackedTemplatePath)` and `$app->bootComponent('com_content')->getMVCFactory()->createModel('Article', 'Administrator', ['ignore_request' => true])->save($articleData)`. Menus use the `com_menus` Administrator `Item` model's `save($menuData)`; styles use `com_templates` Administrator `Style` model's `save($styleData)`. Bootstrap the correct administrator application/authorized identity first, inspect each result/error, retain original values and verify IDs. These calls are implementation guidance, not a tested CLI migration or promise that wrapping them in a database transaction atomically rolls back filesystem/plugin side effects. The package builder provides no direct-SQL or automatic apply mode. A separate private operations runner implements guarded native-model execution; its clone rehearsal and release-candidate gates are recorded in that repository.
 
+For a production site where the client template already exists, use the generated `section-hubs-append/` plan to add only `consultations` and `projects` EN/RU article/style/menu records after collision checks. Do not rerun the initial-install path. After the native append, run the guarded updater so the shared `pages.json`, sitemap and navigation shell are synchronized across all eighteen existing client articles.
+
 ## Acceptance and rollback
 
-Parent must perform PHP lint with the actual Joomla/PHP runtime, installer/style/article save-readback, all twelve native routes, menu101 invariance, retained Quix records and sampled legacy routes. Verify desktop/mobile, native guest ACL, one H1, exact assets/nav/language switching, noindex in preview, production canonical/hreflang, actual consent/network behavior, contact intent without sending messages and existing GBP attribution. Test saved article editing and the original home restoration on staging.
+Parent must perform PHP lint with the actual Joomla/PHP runtime, installer/style/article save-readback, all eighteen native routes, menu101 invariance, retained Quix records and sampled legacy routes. Verify desktop/mobile, native guest ACL, one H1, exact assets/nav/language switching, noindex in preview, production canonical/hreflang, actual consent/network behavior, contact intent without sending messages and existing GBP attribution. Test saved article editing and the original home restoration on staging.
 
 Rollback each home by restoring its exact private menu/style before-state through supported Joomla operations, preserving original Quix records. Unpublish only the new non-home menus/articles and restore any new associations; uninstall the client template only after nothing references its styles. No legacy content deletion, automatic migration, production acceptance or Joomla upgrade is claimed.
 
@@ -53,4 +55,4 @@ References: [Joomla template manifest](https://manual.joomla.org/docs/next/build
 
 When a bare legacy article query inherits the new language-home style, the client override sends a local302 to the same query with existing all-language `Itemid=101`. It retains article ID and attribution, strips template override parameters to prevent loops, and lets Joomla apply the legacy template and normal ACL. Non-GET/HEAD mismatches remain404; no arbitrary external redirect is accepted. This also covers unrelated component requests reaching the new shell. The original article URL continues to resolve; it is not deleted or rewritten in the database.
 
-On the isolated clone, all seven bare article queries38–44 returned302→200 with legacy rendering after the separately reviewed background-data repair. Template-only native Installer refresh preserved exact menu/content/Quix snapshots. Twelve new native pages remain preview assignments. `fallback.test.php` checks query retention, all seven IDs, local destination and removal of template overrides.
+On the isolated clone, all seven bare article queries38–44 returned302→200 with legacy rendering after the separately reviewed background-data repair. Template-only native Installer refresh preserved exact menu/content/Quix snapshots. Eighteen native pages are represented by the full package; incremental append packages may contain only newly introduced routes. `fallback.test.php` checks query retention, all seven IDs, local destination and removal of template overrides.

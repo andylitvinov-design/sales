@@ -25,7 +25,7 @@ test('only six approved existing renders are registered, with faithful complete 
  assert.match(approvedVideos.en.homeopathy.transcript.at(-1),/does not replace medical diagnosis or treatment/);
  assert.match(approvedVideos.ru.homeopathy.transcript.at(-1),/не заменяет медицинскую диагностику или лечение/);
 });
-test('one appropriate same-language player on exactly eight pages, no media auto-load',()=>{
+test('one appropriate same-language player on exactly ten pages, no media auto-load',()=>{
  let count=0;
  for(const locale of ['en','ru'])for(const page of Object.keys(pages[locale])){
   const html=render(page,locale),body=splitPage(html).article;
@@ -47,7 +47,7 @@ test('one appropriate same-language player on exactly eight pages, no media auto
   }
   assert.ok(routeFor(page,locale).startsWith(locale==='en'?'/':'/ru/'));
  }
- assert.equal(count,8);
+ assert.equal(count,10);
 });
 test('real local posters match the archived 1.5-second frames',()=>{
  const directory=new URL('approved-video-posters/',import.meta.url);

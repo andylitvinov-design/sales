@@ -20,7 +20,7 @@ for (const locale of ['en','ru']) {
   assert.match(html,/Reiki Yggdrasil/);
  });
  test(`${locale} client pages have one accessible mobile menu and compact language switch`,()=>{
-  for(const key of ['home','hypnotherapy','constellations','about','academy','contact']) {
+  for(const key of ['home','consultations','hypnotherapy','constellations','about','academy','events','projects','contact']) {
    const html=render(key,locale);
    assert.equal((html.match(/class="menu-toggle"/g)||[]).length,1);
    assert.match(html,/aria-controls="primary-nav" aria-expanded="false"/);
@@ -33,15 +33,27 @@ for (const locale of ['en','ru']) {
 for (const locale of ['en','ru']) {
  test(`${locale} top navigation opens real sections instead of homepage-only anchors`,()=>{
   const html=render('home',locale);
+  const consultations=locale==='en'?'/consultations':'/ru/consultations';
   const academy=locale==='en'?'/academy':'/ru/academy';
   const events=locale==='en'?'/events':'/ru/events';
-  assert.match(html,new RegExp(`class="nav-root" href="${academy.replaceAll('/','\\/')}[^"]*"`));
-  assert.match(html,new RegExp(`class="nav-root" href="${events.replaceAll('/','\\/')}[^"]*"`));
+  const projects=locale==='en'?'/projects':'/ru/projects';
+  for(const route of [consultations,academy,events,projects]) assert.match(html,new RegExp(`class="nav-root" href="${route.replaceAll('/','\\/')}[^"]*"`));
   assert.match(html,/class="nav-submenu"/);
   assert.match(html,/Reiki Yggdrasil/);
   assert.match(html,locale==='en'?/Projects/:/Проекты/);
+  assert.doesNotMatch(html,/class="nav-root" href="#consultations"/);
   assert.doesNotMatch(html,/class="nav-root" href="#training"/);
   assert.doesNotMatch(html,/class="nav-root" href="#workshops"/);
+  assert.doesNotMatch(html,/class="nav-root" href="[^\"]*#projects"/);
+ });
+
+ test(`${locale} dedicated section hubs expose the expected destinations`,()=>{
+  const consultations=render('consultations',locale);
+  const projects=render('projects',locale);
+  assert.match(consultations,/hypnotherapy-toronto|psitrends-client-hypnotherapy/);
+  assert.match(consultations,/systemic-constellations-toronto|psitrends-client-constellations/);
+  assert.match(projects,locale==='en'?/https:\/\/psitrends\.com\/business/:/https:\/\/psitrends\.com\/ru\/biznes/);
+  assert.match(projects,locale==='en'?/https:\/\/psitrends\.com\/studies/:/https:\/\/psitrends\.com\/ru\/cat-train-ru/);
  });
  test(`${locale} Academy exposes courses and preserved project roots`,()=>{
   const html=render('academy',locale);

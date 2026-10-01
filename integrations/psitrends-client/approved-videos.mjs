@@ -78,7 +78,7 @@ export const approvedVideos = {
     }
   }
 };
-export const videoPlacements = Object.freeze({home:'home',hypnotherapy:'services',constellations:'services',about:'homeopathy'});
+export const videoPlacements = Object.freeze({home:'home',consultations:'services',hypnotherapy:'services',constellations:'services',about:'homeopathy'});
 const escape=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 export function renderApprovedVideo(page,locale,{asset}={}) {
  const kind=videoPlacements[page],video=approvedVideos[locale]?.[kind];

@@ -23,7 +23,7 @@ try {
  demand($scope==='stage'?($c->host==='psitrends-client-releasecheck-db'&&in_array($c->db,['psitrends_releasecheck','psitrends_events20'],true)&&(int)$c->mailonline===0):($c->host==='mysql'&&$c->db==='psitrends'),'database_target');
  $db=new PDO('mysql:host='.$c->host.';dbname='.$c->db.';charset=utf8mb4',$c->user,$c->password,[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION]); unset($c);
  $manifest=json_decode(file_get_contents($package.'/migration-plan.json'),true,512,JSON_THROW_ON_ERROR);
- demand(count($manifest['pages'])===14,'page_count');
+ demand(count($manifest['pages'])===18,'page_count');
  $files=['templates/psitrends_client/index.php'=>'template/index.php','templates/psitrends_client/pages.json'=>'template/pages.json'];
  $files['sitemap.xml']='sitemap.xml';
  foreach(['psitrends-client.css','psitrends-client.js','archway.webp'] as $name)$files['media/templates/site/psitrends_client/assets/'.$name]='template/media/assets/'.$name;
@@ -43,7 +43,7 @@ try {
  $desired=[]; $rows=[];
  $select=$db->prepare('SELECT id,alias,language,state,checked_out,title,introtext,`fulltext`,metadesc FROM wfct4_content WHERE alias=?');
  foreach($manifest['pages'] as $p){
-  demand(preg_match('/^(en|ru):(home|hypnotherapy|constellations|about|academy|contact|events)$/D',$p['key'])===1,'page_key');
+  demand(preg_match('/^(en|ru):(home|consultations|hypnotherapy|constellations|about|academy|contact|events|projects)$/D',$p['key'])===1,'page_key');
   $select->execute([$p['article']['alias']]); $matches=$select->fetchAll(PDO::FETCH_ASSOC); demand(count($matches)===1,'unique_existing_article'); $r=$matches[0];
   demand($r['language']===$p['language']&&(int)$r['state']===1&&(int)$r['checked_out']===0,'article_not_public_or_checked_out');
   $body=file_get_contents($package.'/'.$p['article']['bodyFile']); demand(hash('sha256',$body)===$p['article']['sha256'],'article_digest');
@@ -94,5 +94,5 @@ try {
   $db->commit();
  } catch(Throwable $e){if($db->inTransaction())$db->rollBack();throw $e;}
  saveJson($private.'/journal.json',['phase'=>'complete','action'=>$action,'package'=>$packageHash]);
- echo json_encode(['status'=>strtoupper($action).'_COMPLETE','articles'=>14,'files'=>count($files),'routing_changed'=>false,'legacy_changed'=>false]).PHP_EOL;
+ echo json_encode(['status'=>strtoupper($action).'_COMPLETE','articles'=>18,'files'=>count($files),'routing_changed'=>false,'legacy_changed'=>false]).PHP_EOL;
 } catch(Throwable $e){fwrite(STDERR,json_encode(['status'=>'FAILED','reason'=>$e instanceof UpdateGuard?$e->getMessage():'runtime_error','recovery'=>'Inspect private journal; rollback uses optimistic before/after guards.']).PHP_EOL);exit(1);}

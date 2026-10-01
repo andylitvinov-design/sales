@@ -1843,7 +1843,7 @@ body[data-page="home"] .hero-atmosphere {
   display: none;
 }
 
-.approved-video-play img,
+.approved-video .approved-video-play img,
 .approved-video-frame iframe {
   display: block;
   width: 100%;
@@ -1923,7 +1923,7 @@ body[data-page="home"] .hero-atmosphere {
   overflow-wrap: anywhere;
 }
 
-.approved-video-transcript p {
+.approved-video .approved-video-transcript p {
   font-size: 0.94rem;
   line-height: 1.65;
 }
