@@ -30,6 +30,9 @@ try {
  $thumbnails=glob($package.'/template/media/assets/review-thumbnails/*.webp'); demand(count($thumbnails)===38,'thumbnail_count');
  foreach($thumbnails as $thumbnail){$name=basename($thumbnail);$files['media/templates/site/psitrends_client/assets/review-thumbnails/'.$name]='template/media/assets/review-thumbnails/'.$name;}
  $thumbnailDirectory=$root.'/media/templates/site/psitrends_client/assets/review-thumbnails';
+ $pageVideoPosters=glob($package.'/template/media/assets/approved-video-posters/*.webp'); demand(count($pageVideoPosters)===8,'page_video_poster_count');
+ foreach($pageVideoPosters as $poster){$name=basename($poster);demand(preg_match('/^[a-z0-9-]+\\.webp$/D',$name)===1,'page_video_poster_path');$files['media/templates/site/psitrends_client/assets/approved-video-posters/'.$name]='template/media/assets/approved-video-posters/'.$name;}
+ $pageVideoPosterDirectory=$root.'/media/templates/site/psitrends_client/assets/approved-video-posters';
  $eventRoot=$package.'/template/media/assets/events'; demand(is_dir($eventRoot)&&!is_link($eventRoot),'event_assets_missing');
  foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($eventRoot,FilesystemIterator::SKIP_DOTS)) as $file){demand($file->isFile()&&!$file->isLink(),'unsafe_event_asset');$relative=substr($file->getPathname(),strlen($eventRoot)+1);demand(preg_match('#^[a-z0-9-]+/[0-9]{2}\\.jpg$#D',$relative)===1,'event_asset_path');$files['media/templates/site/psitrends_client/assets/events/'.$relative]='template/media/assets/events/'.$relative;}
  ksort($files,SORT_STRING);
@@ -48,12 +51,13 @@ try {
  if($action==='capture'){
   demand(!file_exists($snapshotPath),'already_captured');$beforeFiles=[];
   foreach($files as $to=>$from)$beforeFiles[$to]=is_file($root.'/'.$to)?base64_encode(file_get_contents($root.'/'.$to)):null;
-  saveJson($snapshotPath,['scope'=>$scope,'package'=>$packageHash,'rows'=>$rows,'files'=>$beforeFiles,'thumbnailDirectoryExisted'=>is_dir($thumbnailDirectory)]);
+  saveJson($snapshotPath,['scope'=>$scope,'package'=>$packageHash,'rows'=>$rows,'files'=>$beforeFiles,'thumbnailDirectoryExisted'=>is_dir($thumbnailDirectory),'pageVideoPosterDirectoryExisted'=>is_dir($pageVideoPosterDirectory)]);
   echo json_encode(['status'=>'CAPTURED','articles'=>count($rows),'files'=>count($files),'snapshot_sha256'=>hash_file('sha256',$snapshotPath)]).PHP_EOL;exit;
  }
  $snap=json_decode(file_get_contents($snapshotPath),true,512,JSON_THROW_ON_ERROR);
  demand($snap['scope']===$scope,'snapshot_scope');
  demand(is_bool($snap['thumbnailDirectoryExisted']??null),'snapshot_thumbnail_directory');
+ demand(is_bool($snap['pageVideoPosterDirectoryExisted']??null),'snapshot_page_video_poster_directory');
  // Digest excludes before-field values except unchanged identity, so it remains stable after apply.
  demand($snap['package']===$packageHash,'package_changed');
  $target=$action==='apply'?$desired:$snap['rows'];
@@ -72,6 +76,10 @@ try {
    if(!is_dir($thumbnailDirectory))demand(mkdir($thumbnailDirectory,0755,true),'thumbnail_directory');
    demand(chmod($thumbnailDirectory,0755),'thumbnail_directory');
   }
+  if($action==='apply'||$snap['pageVideoPosterDirectoryExisted']){
+   if(!is_dir($pageVideoPosterDirectory))demand(mkdir($pageVideoPosterDirectory,0755,true),'page_video_poster_directory');
+   demand(chmod($pageVideoPosterDirectory,0755),'page_video_poster_directory');
+  }
   foreach($files as $to=>$from){
    $bytes=$action==='apply'?file_get_contents($package.'/'.$from):($snap['files'][$to]===null?null:base64_decode($snap['files'][$to]));
    if($bytes===null){if(is_file($root.'/'.$to))demand(unlink($root.'/'.$to),'remove_new_asset');continue;}
@@ -81,6 +89,7 @@ try {
   $eventTarget=$root.'/media/templates/site/psitrends_client/assets/events';
   if($action==='apply'&&is_dir($eventTarget))foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($eventTarget,FilesystemIterator::SKIP_DOTS),RecursiveIteratorIterator::SELF_FIRST) as $entry)if($entry->isDir())demand(chmod($entry->getPathname(),0755),'event_asset_directory');
   if($action==='rollback'&&!$snap['thumbnailDirectoryExisted']&&is_dir($thumbnailDirectory))demand(rmdir($thumbnailDirectory),'thumbnail_directory');
+  if($action==='rollback'&&!$snap['pageVideoPosterDirectoryExisted']&&is_dir($pageVideoPosterDirectory))demand(rmdir($pageVideoPosterDirectory),'page_video_poster_directory');
   $db->commit();
  } catch(Throwable $e){if($db->inTransaction())$db->rollBack();throw $e;}
  saveJson($private.'/journal.json',['phase'=>'complete','action'=>$action,'package'=>$packageHash]);
