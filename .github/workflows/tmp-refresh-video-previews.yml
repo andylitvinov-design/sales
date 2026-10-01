@@ -1,0 +1,30 @@
+name: Refresh generated video preview markup
+on:
+  push:
+    branches: [codex/psitrends-approved-videos-2026-10-01]
+    paths: [.github/workflows/tmp-refresh-video-previews.yml]
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/psitrends-approved-videos-2026-10-01
+      - run: |
+          set -euo pipefail
+          node scripts/build-psitrends-client.mjs
+          python3 - <<'PY'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())
+          assert changed <= {'psitrends-client-about.html','psitrends-client-about-ru.html'},changed
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add psitrends-client-about.html psitrends-client-about-ru.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Regenerate EN/RU About previews with valid figure markup'
+            git push origin HEAD:codex/psitrends-approved-videos-2026-10-01
+          fi
