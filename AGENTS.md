@@ -94,3 +94,42 @@ Stop only with `STATUS: SUCCESS` or `STATUS: BLOCKED`.
 - Primary live URL: `https://sales-bwa-photo.pages.dev/` (production verified 2026-09-22 UTC).
 
 **Release verification:** Require a passing preview and repo checks before production; verify live routes and indexing before claiming release success. Never upload the repository root.
+
+
+---
+
+## PsiTrends Natural-Language Autopilot
+
+For any user request that targets **psitrends.com**, treat the user's plain-language request as the task specification. Do not require the user to rewrite it as a technical prompt.
+
+Before changing PsiTrends, read:
+- `.codex/LATEST.md`
+- GitHub Issue #6 (PsiTrends stewardship)
+- `docs/psitrends-production-access.md`
+- `docs/psitrends-backup-restore.md`
+- the most relevant current PsiTrends issue/runbook for the requested feature
+
+### Source and hosting boundaries
+
+- `andylitvinov-design/sales` owns safe client-facing source, integration code, route/content definitions and task records.
+- `andylitvinov-design/psitrends-ops` owns sanitized infrastructure, backup/migration tooling and production-operation evidence.
+- Production is **Joomla on Hetzner**, not Vercel and not a Git-deployed copy of this repository.
+- Never deploy the repository root over the Joomla document root.
+- Do not use the generic `/delivery` Cloudflare Pages adapter for PsiTrends production.
+
+### Default autonomous flow
+
+When the user gives a PsiTrends task in ordinary language:
+
+1. Convert the request into concrete acceptance criteria without asking the user to write a technical prompt.
+2. Inspect the latest canonical source, current open PRs/issues and live EN/RU behavior relevant to the task.
+3. Preserve unrelated work and use a focused `codex/` branch.
+4. Before any production write, confirm the established backup/rollback path and capture the exact pre-change object/state required by the runbook.
+5. Implement the smallest compatible source/integration change in the correct repository.
+6. Run the available repo checks plus desktop/mobile visual QA and EN/RU counterpart checks when the task affects public pages.
+7. Release only through the established Joomla/Hetzner production workflow and within the PsiTrends scope.
+8. Perform live readback after release. A commit, PR, successful save or successful build is not proof of production completion.
+9. Record the production result, verification, and rollback reference in the relevant issue/report.
+10. Finish with either `STATUS: SUCCESS` or `STATUS: BLOCKED`, and state the exact remaining owner action only when one is genuinely unavoidable.
+
+The intended user experience is: **plain-language request → agent plans → agent implements → agent verifies → agent reports the live result**.
