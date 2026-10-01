@@ -12,14 +12,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Collect tracked source and public routing evidence
+      - name: Collect tracked native source and public routing evidence
         run: |
           mkdir -p /tmp/psitrends-video-review
-          git archive HEAD integrations/psitrends-client scripts docs package.json package-lock.json psitrends-client.css psitrends-client.js SKILL.md AGENTS.md > /tmp/psitrends-video-review/source.tar
+          git archive HEAD > /tmp/psitrends-video-review/source.tar
           python3 - <<'PY'
           import json, urllib.request, pathlib
           root = pathlib.Path('/tmp/psitrends-video-review')
-          routes = ['/', '/ru/', '/first-session', '/ru/first-session', '/about', '/ru/about', '/hypnotherapy-toronto', '/ru/individual-work', '/systemic-constellations-toronto']
+          routes = ['/', '/ru/', '/about', '/ru/about', '/hypnotherapy-toronto', '/ru/hypnotherapy-toronto', '/systemic-constellations-toronto', '/ru/systemic-constellations-toronto']
           result=[]
           for i, route in enumerate(routes):
               try:
@@ -35,7 +35,7 @@ jobs:
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: psitrends-video-source-review
+          name: psitrends-video-native-review
           path: /tmp/psitrends-video-review/
           retention-days: 3
           if-no-files-found: error
