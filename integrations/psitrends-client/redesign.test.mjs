@@ -66,8 +66,8 @@ for (const locale of ['en','ru']) {
 
 test('navigation assets are cache-busted and tablet fallback does not expose every submenu',()=>{
  const html=render('home','en');
- assert.match(html,/psitrends-client\.css\?v=7/);
- assert.match(html,/psitrends-client\.js\?v=7/);
+ assert.match(html,/psitrends-client\.css\?v=8/);
+ assert.match(html,/psitrends-client\.js\?v=8/);
  const css=readFileSync(new URL('../../psitrends-client.css',import.meta.url),'utf8');
  assert.match(css,/\.menu-ready \.nav\.is-open \.nav-submenu \{\s*display: block;/);
  assert.match(css,/@media \(max-width: 1050px\)[\s\S]*?\.nav-submenu \{[\s\S]*?display: none;/);

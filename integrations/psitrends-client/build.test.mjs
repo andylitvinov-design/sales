@@ -27,6 +27,9 @@ test('allowlisted bilingual build is preview-safe and production metadata is exp
   assert.match(page,/hreflang="ru-RU" href="https:\/\/psitrends.com\/ru\/hypnotherapy-toronto"/);
   assert.doesNotMatch(page,/noindex/);
   // Return deployable working output to its safe default after checking opt-in.
+  for(const poster of ['home-en-v2.webp','home-ru-v1.webp','services-en-v2.webp','services-ru-v1.webp','homeopathy-en-v2.webp','homeopathy-ru-v1.webp','hypnotherapy-en-v1.webp','constellations-en-v1.webp']) {
+    assert.ok(existsSync(`output/psitrends-client/psitrends-client-assets/approved-video-posters/${poster}`), poster);
+  }
   assert.equal(spawnSync(process.execPath,['scripts/build-psitrends-client.mjs']).status,0);
 });
 
