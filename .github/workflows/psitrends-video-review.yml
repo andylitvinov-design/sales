@@ -1,41 +1,66 @@
-name: PsiTrends approved video review
+name: PsiTrends approved video preparation
 on:
   push:
     branches: [codex/psitrends-approved-videos-2026-10-01]
 permissions:
-  contents: read
+  contents: write
 jobs:
-  source-review:
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
-      - name: Collect tracked native source and public routing evidence
+          ref: codex/psitrends-approved-videos-2026-10-01
+      - name: Apply hash-guarded reviewed source edits and exact archived posters
         run: |
-          mkdir -p /tmp/psitrends-video-review
-          git archive HEAD > /tmp/psitrends-video-review/source.tar
+          set -euo pipefail
           python3 - <<'PY'
-          import json, urllib.request, pathlib
-          root = pathlib.Path('/tmp/psitrends-video-review')
-          routes = ['/', '/ru/', '/about', '/ru/about', '/hypnotherapy-toronto', '/ru/hypnotherapy-toronto', '/systemic-constellations-toronto', '/ru/systemic-constellations-toronto']
-          result=[]
-          for i, route in enumerate(routes):
-              try:
-                  req=urllib.request.Request('https://psitrends.com'+route, headers={'User-Agent':'PsiTrends-approved-video-QA/1.0'})
-                  with urllib.request.urlopen(req, timeout=30) as response:
-                      raw=response.read(2000000)
-                      (root/f'live-{i}.html').write_bytes(raw)
-                      result.append({'path':route,'status':response.status,'url':response.url,'bytes':len(raw)})
-              except Exception as e:
-                  result.append({'path':route,'error':str(e)})
-          (root/'routes.json').write_text(json.dumps(result, indent=2))
-          print(json.dumps(result, indent=2))
+          import pathlib, json, hashlib, gzip, base64, urllib.request
+          root=pathlib.Path('.')
+          parts=[(root/f'TEMP_video_update/{i}.txt').read_text().strip() for i in range(5)]
+          # Repair a known one-character transport typo before integrity checking.
+          parts[1]=parts[1].replace('MIGGXx8CY30','MIGGXxCY30')
+          expected=['f10fc10de38c98a12ab0aa796b385a08f39771e8','45adb3235dfe343e37ca5fc796cfa87defb05ac7','5a8eb5e8a23949c2742891b9bf4a9d4bfee4dea3','93f6212611c5b99a5a82555c2ba16639d8befc8d','e8528d1e6b78df32fd3110d1b8decbb0fd70ca38']
+          for text,sha in zip(parts,expected):
+              b=text.encode();assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==sha
+          edits=json.loads(gzip.decompress(base64.b64decode(''.join(parts))))
+          allowed={'integrations/joomla-client/template/index.php','integrations/joomla-client/update-client.php','integrations/psitrends-client/template.mjs','integrations/psitrends-client/redesign.test.mjs','psitrends-client.css','psitrends-client.js','scripts/build-joomla-client.mjs','scripts/build-psitrends-client.mjs','integrations/psitrends-client/approved-videos.mjs','integrations/psitrends-client/approved-videos.test.mjs','integrations/psitrends-client/approved-videos-browser.mjs','integrations/psitrends-client/approved-video-posters/sha256.json','docs/psitrends-approved-videos-release.md'}
+          assert {e['path'] for e in edits}==allowed and len(edits)==len(allowed)
+          for e in edits:
+              p=root/e['path'];old=p.read_text() if p.exists() else ''
+              assert hashlib.sha256(old.encode()).hexdigest()==e['before'],e['path']
+              new=old
+              for start,end,text in reversed(e['edits']):new=new[:start]+text+new[end:]
+              assert hashlib.sha256(new.encode()).hexdigest()==e['after'],e['path']
+              p.parent.mkdir(parents=True,exist_ok=True);p.write_text(new)
+          posters=root/'integrations/psitrends-client/approved-video-posters'
+          manifest=json.loads((posters/'sha256.json').read_text())
+          source='https://raw.githubusercontent.com/andylitvinov-design/books/518ea0a523bd1f956819def063a327a1f964b030/public/images/holistic-house/video-posters/'
+          for name,sha in manifest.items():
+              assert name in ['home-en-v2.webp','services-en-v2.webp','homeopathy-en-v2.webp','home-ru-v1.webp','services-ru-v1.webp','homeopathy-ru-v1.webp']
+              with urllib.request.urlopen(source+name,timeout=30) as response:raw=response.read(100000)
+              assert hashlib.sha256(raw).hexdigest()==sha,name
+              (posters/name).write_bytes(raw)
+          print('13 source edits and six exact archived posters validated')
           PY
+          node scripts/build-psitrends-client.mjs
+          node scripts/build-joomla-client.mjs
+          node --test integrations/psitrends-client/*.test.mjs integrations/joomla-client/*.test.mjs
+          php -l integrations/joomla-client/update-client.php
+          php -l integrations/joomla-client/template/index.php
+      - name: Commit reviewed generated source on this feature branch only
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -r TEMP_video_update
+          git add integrations/joomla-client/template/index.php integrations/joomla-client/update-client.php integrations/psitrends-client/approved-video-posters integrations/psitrends-client/approved-videos.mjs integrations/psitrends-client/approved-videos.test.mjs integrations/psitrends-client/approved-videos-browser.mjs integrations/psitrends-client/template.mjs integrations/psitrends-client/redesign.test.mjs psitrends-client.css psitrends-client.js psitrends-client-*.html psitrends-client-*.css scripts/build-joomla-client.mjs scripts/build-psitrends-client.mjs docs/psitrends-approved-videos-release.md
+          git commit -m 'Reuse six approved EN/RU videos in appropriate PsiTrends sections'
+          git push origin HEAD:codex/psitrends-approved-videos-2026-10-01
       - uses: actions/upload-artifact@v4
         with:
-          name: psitrends-video-native-review
-          path: /tmp/psitrends-video-review/
-          retention-days: 3
+          name: psitrends-approved-video-native-package
+          path: integrations/joomla-client/generated/
+          retention-days: 7
           if-no-files-found: error
