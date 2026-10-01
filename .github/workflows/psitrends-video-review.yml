@@ -1,7 +1,5 @@
 name: PsiTrends approved video verification
 on:
-  push:
-    branches: [codex/psitrends-approved-videos-2026-10-01]
   pull_request:
     paths:
       - 'integrations/psitrends-client/**'
@@ -43,7 +41,7 @@ jobs:
       - name: HTML and CSS validation
         run: |
           set -euo pipefail
-          npx --no-install html-validate psitrends-client-home.html psitrends-client-home-ru.html psitrends-client-hypnotherapy.html psitrends-client-hypnotherapy-ru.html psitrends-client-constellations.html psitrends-client-constellations-ru.html psitrends-client-about.html psitrends-client-about-ru.html 2>&1 | tee reports/approved-videos/html-validation.txt
+          npx --no-install html-validate psitrends-client-consultations.html psitrends-client-consultations-ru.html psitrends-client-home.html psitrends-client-home-ru.html psitrends-client-hypnotherapy.html psitrends-client-hypnotherapy-ru.html psitrends-client-constellations.html psitrends-client-constellations-ru.html psitrends-client-about.html psitrends-client-about-ru.html 2>&1 | tee reports/approved-videos/html-validation.txt
           npx --no-install stylelint psitrends-client.css 2>&1 | tee reports/approved-videos/style-validation.txt
       - name: Install isolated browser engines
         run: npx --no-install playwright install --with-deps chromium webkit
