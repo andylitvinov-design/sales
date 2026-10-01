@@ -1,5 +1,6 @@
 import {authorProfiles,pages,shared,routes} from './content.mjs';
 import {home,renderHome} from './home.mjs';
+import {renderApprovedVideo} from './approved-videos.mjs';
 import {renderReviews} from './reviews.mjs';
 import {renderAcademy} from './academy.mjs';
 import {renderArchivePreview,renderEvents} from './events.mjs';
@@ -12,8 +13,8 @@ export function render(key,locale,{source=false,production=false}={}){
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
  const asset=path=>source?`integrations/psitrends-client/${path.startsWith('events/')?'events-assets/':''}${path}`:`/psitrends-client-assets/${path}`;
  const portrait=asset(['home','about'].includes(key)?'andy-library-desk.png':'andrey.jpg');
- const css=source?`${sourceName(key,locale)}.css?v=7`:'/psitrends-client-assets/psitrends-client.css?v=7';
- const js=source?'psitrends-client.js?v=7':'/psitrends-client-assets/psitrends-client.js?v=7';
+ const css=source?`${sourceName(key,locale)}.css?v=8`:'/psitrends-client-assets/psitrends-client.css?v=8';
+ const js=source?'psitrends-client.js?v=8':'/psitrends-client-assets/psitrends-client.js?v=8';
  const atmosphere=asset('archway.webp');
  const heritage=source?'output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg':'/images/photo_2023-01-27_06-22-45.jpg';
  const arrow='<span class="link-arrow" aria-hidden="true"></span>';
@@ -68,16 +69,17 @@ export function render(key,locale,{source=false,production=false}={}){
  const cta=()=>`<a class="button" data-contact="whatsapp" href="https://wa.me/14376066502?text=${encodeURIComponent(message)}">${esc(s.cta)} ${arrow}</a>`;
  const section=(title,text,id='')=>`<section class="section shell"${id?` id="${id}"`:''}><div class="section-heading"><p class="eyebrow">${esc(s.labels[key])}</p><h2>${esc(title)}</h2></div><div class="section-copy"><p>${esc(text)}</p></div></section>`;
  const services=()=>`<div class="service-links">${['hypnotherapy','constellations'].map(k=>`<a class="service-link" href="${link(k)}"><span>${esc(s.labels[k])}</span>${arrow}</a>`).join('')}</div>`;
+ const pageVideo=()=>renderApprovedVideo(key,locale,{asset});
  const authorProfile=()=>{
   const profile=authorProfiles[locale];
-  return `<section class="author-profile shell" id="explore"><article class="reading-column"><section class="profile-chapter"><h2>${esc(profile.experienceTitle)}</h2><ol class="profile-list profile-experience">${profile.experience.map(item=>`<li>${esc(item)}</li>`).join('')}</ol></section><section class="profile-chapter"><h2>${esc(profile.studiesTitle)}</h2><ol class="profile-list profile-studies">${profile.studies.map(([title,text])=>`<li><h3>${esc(title)}</h3><p>${esc(text)}</p></li>`).join('')}</ol></section><section class="profile-chapter"><h2>${esc(profile.tantricTitle)}</h2><p>${esc(profile.tantricIntro)}</p>${profile.psychotherapy.map(paragraph=>`<p>${esc(paragraph)}</p>`).join('')}<p>${esc(profile.bodywork.intro)}</p><ul class="profile-bodywork">${profile.bodywork.schools.map(school=>`<li>${esc(school)}</li>`).join('')}</ul>${profile.narrative.map(paragraph=>`<p>${esc(paragraph)}</p>`).join('')}</section></article></section>${renderReviews(locale,{source})}<section class="author-explore shell" aria-labelledby="explore-work-title"><div><p class="eyebrow">PsiTrends</p><h2 id="explore-work-title">${esc(profile.exploreTitle)}</h2></div><nav class="author-explore-links" aria-label="${esc(profile.exploreTitle)}"><a href="${link('hypnotherapy')}">${esc(profile.explore.sessions)} <span aria-hidden="true">↗</span></a><a href="#contact">${esc(profile.explore.workshops)} <span aria-hidden="true">↗</span></a><a href="${link('academy')}">${esc(profile.explore.academy)} <span aria-hidden="true">↗</span></a></nav>${cta()}</section>`;
+  return `<section class="author-profile shell" id="explore"><article class="reading-column"><section class="profile-chapter"><h2>${esc(profile.experienceTitle)}</h2><ol class="profile-list profile-experience">${profile.experience.map(item=>`<li>${esc(item)}</li>`).join('')}</ol></section><section class="profile-chapter"><h2>${esc(profile.studiesTitle)}</h2><ol class="profile-list profile-studies">${profile.studies.map(([title,text])=>`<li><h3>${esc(title)}</h3><p>${esc(text)}</p>${['Taoist Alchemy','Даосская алхимия'].includes(title)?pageVideo():''}</li>`).join('')}</ol></section><section class="profile-chapter"><h2>${esc(profile.tantricTitle)}</h2><p>${esc(profile.tantricIntro)}</p>${profile.psychotherapy.map(paragraph=>`<p>${esc(paragraph)}</p>`).join('')}<p>${esc(profile.bodywork.intro)}</p><ul class="profile-bodywork">${profile.bodywork.schools.map(school=>`<li>${esc(school)}</li>`).join('')}</ul>${profile.narrative.map(paragraph=>`<p>${esc(paragraph)}</p>`).join('')}</section></article></section>${renderReviews(locale,{source})}<section class="author-explore shell" aria-labelledby="explore-work-title"><div><p class="eyebrow">PsiTrends</p><h2 id="explore-work-title">${esc(profile.exploreTitle)}</h2></div><nav class="author-explore-links" aria-label="${esc(profile.exploreTitle)}"><a href="${link('hypnotherapy')}">${esc(profile.explore.sessions)} <span aria-hidden="true">↗</span></a><a href="#contact">${esc(profile.explore.workshops)} <span aria-hidden="true">↗</span></a><a href="${link('academy')}">${esc(profile.explore.academy)} <span aria-hidden="true">↗</span></a></nav>${cta()}</section>`;
  };
  const hero=key==='about'?authorProfiles[locale].hero:c;
  let body=key==='about'?authorProfile():key==='events'?renderEvents(locale,{asset,escape:esc}):section(c.introTitle,c.intro,'explore');
  if(key==='home')body+=`<section class="section shell"><div class="section-heading"><p class="eyebrow">${locale==='en'?'Individual practice':'Индивидуальная практика'}</p><h2>${esc(c.serviceTitle)}</h2></div>${services()}</section>`;
  if(key==='consultations')body+=`<section class="section shell"><div class="section-heading"><p class="eyebrow">${locale==='en'?'Individual approaches':'Индивидуальные направления'}</p><h2>${locale==='en'?'Choose a way to explore your question.':'Выберите формат для вашего вопроса.'}</h2></div>${services()}</section>`;
  if(key!=='about'&&c.detail)body+=section(c.detailTitle,c.detail);
- if(['home','consultations','hypnotherapy','constellations'].includes(key))body+=`<section class="process-band" id="process"><div class="shell"><p class="eyebrow">${locale==='en'?'A shared process':'Совместная работа'}</p><h2>${esc(s.processTitle)}</h2><p class="intro">${esc(s.processIntro)}</p><ol class="process-list">${s.process.map(([title,text],i)=>`<li><span class="step-number" aria-hidden="true">0${i+1}</span><div><h3>${esc(title)}</h3><p>${esc(text)}</p></div></li>`).join('')}</ol></div></section>`;
+ if(['home','consultations','hypnotherapy','constellations'].includes(key))body+=`<section class="process-band" id="process"><div class="shell"><p class="eyebrow">${locale==='en'?'A shared process':'Совместная работа'}</p><h2>${esc(s.processTitle)}</h2><p class="intro">${esc(s.processIntro)}</p>${pageVideo()}<ol class="process-list">${s.process.map(([title,text],i)=>`<li><span class="step-number" aria-hidden="true">0${i+1}</span><div><h3>${esc(title)}</h3><p>${esc(text)}</p></div></li>`).join('')}</ol></div></section>`;
  if(c.business)body+=section(c.businessTitle,c.business,'business');
  if(key!=='about'&&c.support)body+=section(c.supportTitle,c.support);
  if(c.links)body+=`<section class="section shell"><div class="section-heading"><p class="eyebrow">${locale==='en'?'Learning archive':'Архив материалов'}</p><h2>${esc(c.libraryTitle)}</h2></div><div class="library-list">${c.links.map(([title,desc,path])=>`<a href="https://psitrends.com${path}"><h3>${esc(title)} ${arrow}</h3><p>${esc(desc)}</p></a>`).join('')}</div></section>`;
@@ -86,7 +88,7 @@ export function render(key,locale,{source=false,production=false}={}){
  if(key==='home')body+=`<section class="academy-band"><div class="shell"><p class="eyebrow">PsiTrends Academy</p><h2>${esc(c.academyTitle)}</h2><p>${esc(c.academyText)}</p><a class="text-link" href="${link('academy')}">${esc(s.labels.academy)} ${arrow}</a></div></section>`;
  if(key==='about')body+=renderArchivePreview(locale,{asset,escape:esc,href:link('events')});
  if(key==='academy')body+=`<section class="shell related"><h2>${locale==='en'?'Explore individual sessions.':'Индивидуальные сессии.'}</h2>${services()}</section>`;
- if(key==='home')body=renderHome(locale,{link,cta,assets:{portrait,atmosphere,heritage},escape:esc,services});
+ if(key==='home')body=`<div class="shell approved-video-home">${pageVideo()}</div>`+renderHome(locale,{link,cta,assets:{portrait,atmosphere,heritage},escape:esc,services});
  if(key==='home')body+=renderReviews(locale,{source});
  if(key==='academy')body=renderAcademy(locale,catalog,esc,{source})+body;
  return `<!DOCTYPE html>

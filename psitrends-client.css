@@ -1811,3 +1811,125 @@ body[data-page="home"] .hero-atmosphere {
   padding: 48px 0;
 }
 }
+
+/* Existing approved video introductions: local frame first, no heavy caption card. */
+.approved-video {
+  width: 100%;
+  max-width: 48rem;
+  margin: 2rem auto;
+}
+
+.approved-video-home {
+  padding-top: 2rem;
+}
+
+.approved-video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #302b26;
+  border: 1px solid var(--stone);
+  border-radius: 14px;
+}
+
+.approved-video-play {
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: #fff;
+}
+
+.approved-video-play[hidden] {
+  display: none;
+}
+
+.approved-video .approved-video-play img,
+.approved-video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  object-fit: cover;
+}
+
+.approved-video-play-icon,
+.approved-video-duration {
+  position: absolute;
+  bottom: 14px;
+  color: #fff;
+  background: rgb(38 29 24 / 90%);
+}
+
+.approved-video-play-icon {
+  left: 14px;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.approved-video-duration {
+  right: 14px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font: 500 13px/1.5 sans-serif;
+}
+
+.approved-video-play:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -6px;
+}
+
+.approved-video-caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 0 0;
+  font-size: 0.875rem;
+}
+
+.approved-video-caption details {
+  flex: 1 1 15rem;
+  min-width: 0;
+}
+
+.approved-video-caption summary,
+.approved-video-close {
+  cursor: pointer;
+  font: inherit;
+}
+
+.approved-video-disclosure {
+  color: #625a51;
+  font-size: 0.75rem;
+}
+
+.approved-video-close {
+  padding: 7px 10px;
+  color: #46372b;
+  background: transparent;
+  border: 1px solid currentcolor;
+  border-radius: 6px;
+}
+
+.approved-video-transcript {
+  padding-top: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.approved-video .approved-video-transcript p {
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.approved-video-context {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}

@@ -90,3 +90,26 @@ document.querySelectorAll('[data-video]').forEach(link=>{
   }));
   try { if (safe && localStorage.getItem(key)==='granted')enable(); } catch { /* Default off. */ }
 })();
+
+/* Reused, reviewed avatar introductions. Separate from the YouTube testimonials. */
+(() => {
+ const allowed=new Set(['ed202847a43a96b918308aa972177b34','48105a2f2228e7cb3a67391e97acaf8b','34df311e461509433b45929908a9097a','388a04b39ebf215ae656bcd22d0d0847','79c2845577865979cd95ac40a08fc01a','0f984780d06948b1e78166e6e553e4e9']);
+ document.querySelectorAll('[data-approved-video]').forEach(block=>{
+  const id=block.dataset.approvedVideo,link=block.querySelector('[data-approved-play]'),stage=block.querySelector('.approved-video-frame');
+  if(!allowed.has(id)||!link||!stage||link.getAttribute('href')!==`https://app.heygen.com/share/${id}`)return;
+  link.addEventListener('click',event=>{
+   if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+   event.preventDefault();if(stage.querySelector('iframe'))return;
+   const frame=document.createElement('iframe');
+   frame.src=`https://app.heygen.com/embeds/${id}`;
+   frame.title=block.getAttribute('aria-label');frame.loading='lazy';frame.tabIndex=0;
+   frame.allow='encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;
+   frame.referrerPolicy='strict-origin-when-cross-origin';
+   const close=document.createElement('button');close.type='button';close.className='approved-video-close';
+   close.textContent=block.dataset.approvedVideoLocale==='ru'?'Закрыть видео':'Close video';
+   const restore=()=>{frame.remove();close.remove();link.hidden=false;link.focus();};
+   close.addEventListener('click',restore);close.addEventListener('keydown',event=>{if(event.key==='Escape')restore();});
+   link.hidden=true;stage.append(frame);block.querySelector('.approved-video-caption').append(close);frame.focus();
+  });
+ });
+})();
