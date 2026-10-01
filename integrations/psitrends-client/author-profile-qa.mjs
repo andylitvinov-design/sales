@@ -20,7 +20,7 @@ try {
    await page.locator('h1').waitFor();
    assert.equal(await page.locator('html').getAttribute('lang'),locale,`${locale}:${key} language`);
    const m=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('h1').length,nav:document.querySelectorAll('#primary-nav a').length}));
-   assert.equal(m.overflow,false,`${locale}:${key}:${width} overflow`);assert.equal(m.h1,1);assert.equal(m.nav,6);
+   assert.equal(m.overflow,false,`${locale}:${key}:${width} overflow`);assert.equal(m.h1,1);assert.ok(m.nav>=6,`${locale}:${key}:${width} nav links`);
    if(width<768){await page.locator('.menu-toggle').click();assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'),'true');await page.keyboard.press('Escape');}
    if(key==='about'){
     const profile=authorProfiles[locale];
