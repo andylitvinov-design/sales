@@ -44,7 +44,7 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
   entries[key]={locale,page:name,title:page.title,description:page.description,canonical:`https://psitrends.com${route}`,alternates:{'en-GB':`https://psitrends.com${routeFor(name,'en')}`,'ru-RU':`https://psitrends.com${routeFor(name,'ru')}`},schema:schema?JSON.parse(schema):null,before:replaceAssets(split.before),after:replaceAssets(split.after)};
   plan.pages.push({key,route,canonical:entries[key].canonical,language:locale==='en'?'en-GB':'ru-RU',article:{action:'create-unpublished',title:page.title,alias:`psitrends-client-${locale}-${name}`,state:0,access:1,bodyFile,sha256:digest(article),metadesc:page.description,catid:'REQUIRE_REVIEWED_NATIVE_CATEGORY_ID'},style:{action:'create-from-installed-template',title:`PsiTrends Client ${key}`,params:{page_key:key,release_mode:'preview'},makeDefault:false},menu:{action:name==='home'?'update-existing-after-private-snapshot':'create-after-collision-check',reuseId:name==='home'?(locale==='en'?202:204):null,type:'component',link:'index.php?option=com_content&view=article&id=NEW_ARTICLE_ID',alias:name==='home'?'PRESERVE_EXISTING':route.split('/').filter(Boolean).at(-1),menutype:'PRESERVE_HOME_LANGUAGE_MENUTYPE',parent_id:name==='home'?'PRESERVE_EXISTING':1,home:name==='home'?'PRESERVE_EXISTING':0,template_style_id:'NEW_PAGE_STYLE_ID'}});
  }
- if(plan.pages.length!==14)throw new Error('Expected exactly fourteen reviewed pages');
+ if(plan.pages.length!==18)throw new Error('Expected exactly eighteen reviewed pages');
  await fs.writeFile(path.join(template,'pages.json'),JSON.stringify(entries,null,2)+'\n');
  const options=Object.keys(entries).map(key=>`<option value="${escape(key)}">${escape(key)}</option>`).join('');
  await fs.writeFile(path.join(template,'templateDetails.xml'),`<?xml version="1.0" encoding="utf-8"?>
@@ -69,6 +69,13 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
  await fs.mkdir(path.join(append,'articles'),{recursive:true});
  for(const page of appendPlan.pages)await fs.copyFile(path.join(destination,page.article.bodyFile),path.join(append,page.article.bodyFile));
  await fs.writeFile(path.join(append,'migration-plan.json'),JSON.stringify(appendPlan,null,2)+'\n');
+ const hubsAppend=path.join(destination,'section-hubs-append');
+ const hubsPlan={...plan,mode:'append-existing-template-plan-only',pages:plan.pages.filter(page=>/:(?:consultations|projects)$/.test(page.key))};
+ if(hubsPlan.pages.length!==4)throw new Error('Expected exactly four section-hub routes');
+ await fs.rm(hubsAppend,{recursive:true,force:true});
+ await fs.mkdir(path.join(hubsAppend,'articles'),{recursive:true});
+ for(const page of hubsPlan.pages)await fs.copyFile(path.join(destination,page.article.bodyFile),path.join(hubsAppend,page.article.bodyFile));
+ await fs.writeFile(path.join(hubsAppend,'migration-plan.json'),JSON.stringify(hubsPlan,null,2)+'\n');
  if(zip){const archive=path.join(destination,'psitrends_client.zip');await fs.rm(archive,{force:true});await promisify(execFile)('/usr/bin/zip',['-q','-r',archive,'.'],{cwd:template});}
  return {pages:plan.pages.length,mode:'plan-only',package:zip?'psitrends_client.zip':'template/'};
 }

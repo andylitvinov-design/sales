@@ -34,8 +34,8 @@ export function render(key,locale,{source=false,production=false}={}){
   studies:'https://psitrends.com/ru/cat-train-ru'
  };
  const navItems=[
-  {id:'consultations',label:locale==='en'?'Consultations':'Консультации',href:homeAnchor('consultations'),children:[
-   [locale==='en'?'Alchemy of the Soul':'Алхимия души',homeAnchor('consultations')],
+  {id:'consultations',label:locale==='en'?'Consultations':'Консультации',href:link('consultations'),children:[
+   [locale==='en'?'Alchemy of the Soul':'Алхимия души',link('consultations')],
    [s.labels.hypnotherapy,link('hypnotherapy')],
    [s.labels.constellations,link('constellations')]
   ]},
@@ -52,7 +52,7 @@ export function render(key,locale,{source=false,production=false}={}){
    [locale==='en'?'Systemic / Family Constellations':'Системные / семейные расстановки',link('constellations')],
    [locale==='en'?'Mysteries workshops':'Семинары по Мистериям',`${link('academy')}#mysteries`]
   ]},
-  {id:'projects',label:locale==='en'?'Projects':'Проекты',href:`${link('academy')}#projects`,children:[
+  {id:'projects',label:locale==='en'?'Projects':'Проекты',href:link('projects'),children:[
    [locale==='en'?'Business & consulting archive':'Бизнес и консалтинг',legacy.business],
    [locale==='en'?'Alchemy / personal development archive':'Алхимия души / развитие человека',legacy.therapy],
    [locale==='en'?'Mysteries':'Мистерии',legacy.mysteries],
@@ -61,7 +61,7 @@ export function render(key,locale,{source=false,production=false}={}){
    [locale==='en'?'Diagnostics archive':'Диагностика',legacy.diagnostics]
   ]}
  ];
- const navCurrent=id=>id==='training'?key==='academy':id==='workshops'?key==='events':id==='consultations'?['home','hypnotherapy','constellations'].includes(key):false;
+ const navCurrent=id=>id==='training'?key==='academy':id==='workshops'?key==='events':id==='consultations'?['consultations','hypnotherapy','constellations'].includes(key):id==='projects'?key==='projects':false;
  const navHtml=navItems.map(item=>`<div class="nav-group"><a class="nav-root" href="${item.href}"${navCurrent(item.id)?' aria-current="page"':''}>${esc(item.label)}</a><div class="nav-submenu" role="group" aria-label="${esc(item.label)}">${item.children.map(([label,href])=>`<a href="${href}">${esc(label)}</a>`).join('')}</div></div>`).join('');
  const canonical=`https://psitrends.com${routeFor(key,locale)}`;
  const message=locale==='ru'?'Здравствуйте, Андрей! Хочу обсудить индивидуальную сессию.':'Hi Andrey, I would like to ask about an individual session.';
@@ -75,13 +75,14 @@ export function render(key,locale,{source=false,production=false}={}){
  const hero=key==='about'?authorProfiles[locale].hero:c;
  let body=key==='about'?authorProfile():key==='events'?renderEvents(locale,{asset,escape:esc}):section(c.introTitle,c.intro,'explore');
  if(key==='home')body+=`<section class="section shell"><div class="section-heading"><p class="eyebrow">${locale==='en'?'Individual practice':'Индивидуальная практика'}</p><h2>${esc(c.serviceTitle)}</h2></div>${services()}</section>`;
+ if(key==='consultations')body+=`<section class="section shell"><div class="section-heading"><p class="eyebrow">${locale==='en'?'Individual approaches':'Индивидуальные направления'}</p><h2>${locale==='en'?'Choose a way to explore your question.':'Выберите формат для вашего вопроса.'}</h2></div>${services()}</section>`;
  if(key!=='about'&&c.detail)body+=section(c.detailTitle,c.detail);
- if(['home','hypnotherapy','constellations'].includes(key))body+=`<section class="process-band" id="process"><div class="shell"><p class="eyebrow">${locale==='en'?'A shared process':'Совместная работа'}</p><h2>${esc(s.processTitle)}</h2><p class="intro">${esc(s.processIntro)}</p><ol class="process-list">${s.process.map(([title,text],i)=>`<li><span class="step-number" aria-hidden="true">0${i+1}</span><div><h3>${esc(title)}</h3><p>${esc(text)}</p></div></li>`).join('')}</ol></div></section>`;
+ if(['home','consultations','hypnotherapy','constellations'].includes(key))body+=`<section class="process-band" id="process"><div class="shell"><p class="eyebrow">${locale==='en'?'A shared process':'Совместная работа'}</p><h2>${esc(s.processTitle)}</h2><p class="intro">${esc(s.processIntro)}</p><ol class="process-list">${s.process.map(([title,text],i)=>`<li><span class="step-number" aria-hidden="true">0${i+1}</span><div><h3>${esc(title)}</h3><p>${esc(text)}</p></div></li>`).join('')}</ol></div></section>`;
  if(c.business)body+=section(c.businessTitle,c.business,'business');
  if(key!=='about'&&c.support)body+=section(c.supportTitle,c.support);
  if(c.links)body+=`<section class="section shell"><div class="section-heading"><p class="eyebrow">${locale==='en'?'Learning archive':'Архив материалов'}</p><h2>${esc(c.libraryTitle)}</h2></div><div class="library-list">${c.links.map(([title,desc,path])=>`<a href="https://psitrends.com${path}"><h3>${esc(title)} ${arrow}</h3><p>${esc(desc)}</p></a>`).join('')}</div></section>`;
  if(c.faq)body+=`<section class="section shell"><div class="section-heading"><p class="eyebrow">${locale==='en'?'Before you decide':'Перед выбором'}</p><h2>${locale==='en'?'A few practical questions.':'Несколько практических вопросов.'}</h2></div><div class="faq">${c.faq.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div></section>`;
- if(key!=='academy'&&key!=='events'&&key!=='about')body+=section(s.expectationsTitle,s.expectations);
+ if(key!=='academy'&&key!=='events'&&key!=='about'&&key!=='projects')body+=section(s.expectationsTitle,s.expectations);
  if(key==='home')body+=`<section class="academy-band"><div class="shell"><p class="eyebrow">PsiTrends Academy</p><h2>${esc(c.academyTitle)}</h2><p>${esc(c.academyText)}</p><a class="text-link" href="${link('academy')}">${esc(s.labels.academy)} ${arrow}</a></div></section>`;
  if(key==='about')body+=renderArchivePreview(locale,{asset,escape:esc,href:link('events')});
  if(key==='academy')body+=`<section class="shell related"><h2>${locale==='en'?'Explore individual sessions.':'Индивидуальные сессии.'}</h2>${services()}</section>`;

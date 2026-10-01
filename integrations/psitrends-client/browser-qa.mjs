@@ -6,7 +6,7 @@ import {pages} from './content.mjs';
 import {routeFor,sourceName} from './template.mjs';
 const baseUrl=(process.env.PSITRENDS_BASE_URL||'http://127.0.0.1:8877/sales/output/psitrends-client').replace(/\/$/,'');
 
-// QA inventory: 12 pages, EN/RU navigation, CTA presence, FAQ disclosure,
+// QA inventory: 18 pages, EN/RU navigation, CTA presence, FAQ disclosure,
 // keyboard focus, 320/390/1440px overflow, preview denial, production consent,
 // unsafe URL attribution denial, withdrawal, and no outbound messages.
 const browser=await chromium.launch({channel:'chrome',headless:true});
