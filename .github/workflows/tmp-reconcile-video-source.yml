@@ -14,21 +14,44 @@ jobs:
         with:
           ref: codex/psitrends-approved-videos-2026-10-01
           fetch-depth: 0
-      - name: Merge without overwriting concurrent main changes
+      - name: Preserve both reviewed menu hubs and video process insertion
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git fetch origin codex/bootstrap-sales
           test "$(git rev-parse FETCH_HEAD)" = cad3a2c68e1e3c40a1afa6a71a48eb994a98c665
-          if ! git merge --no-commit --no-ff cad3a2c68e1e3c40a1afa6a71a48eb994a98c665; then
-            git diff --name-only --diff-filter=U
-            git diff --cc
-            exit 1
-          fi
+          git merge --no-commit --no-ff cad3a2c68e1e3c40a1afa6a71a48eb994a98c665 || true
+          python3 - <<'PY'
+          import pathlib,re,subprocess
+          conflicts=subprocess.check_output(['git','diff','--name-only','--diff-filter=U'],text=True).splitlines()
+          assert conflicts==['integrations/psitrends-client/template.mjs'],conflicts
+          p=pathlib.Path(conflicts[0]);s=p.read_text()
+          pat=r'<<<<<<< HEAD\n(.*?)=======\n(.*?)>>>>>>> cad3a2c68e1e3c40a1afa6a71a48eb994a98c665\n'
+          matches=list(re.finditer(pat,s,re.S));assert len(matches)==1
+          ours,theirs=matches[0].group(1,2)
+          merged=ours.replace("['home','hypnotherapy','constellations']","['home','consultations','hypnotherapy','constellations']")
+          assert merged!=ours and merged.replace('${pageVideo()}','').strip()==theirs.strip()
+          p.write_text(s[:matches[0].start()]+merged+s[matches[0].end():])
+          subprocess.run(['git','add',str(p)],check=True)
+          def replace(path,old,new):
+              p=pathlib.Path(path);s=p.read_text();assert s.count(old)==1,(path,old);p.write_text(s.replace(old,new))
+          replace('psitrends-client.css','.approved-video-play img,','.approved-video .approved-video-play img,')
+          replace('psitrends-client.css','.approved-video-transcript p {','.approved-video .approved-video-transcript p {')
+          replace('integrations/psitrends-client/approved-videos.mjs',"Object.freeze({home:'home',hypnotherapy:'services'","Object.freeze({home:'home',consultations:'services',hypnotherapy:'services'")
+          replace('integrations/psitrends-client/approved-videos.test.mjs','exactly eight pages','exactly ten pages')
+          replace('integrations/psitrends-client/approved-videos.test.mjs','assert.equal(count,8);','assert.equal(count,10);')
+          p=pathlib.Path('docs/psitrends-approved-videos-release.md');s=p.read_text().replace('eight placements','ten placements').replace('all eight video placements','all ten video placements').replace('all 14 existing routes','all 18 source routes').replace('all 14 existing modern articles','all 18 modern article aliases')
+          row='| Individual work / Hypnotherapy, How sessions work |'
+          assert s.count(row)==1
+          s=s.replace(row,'| Consultations section hub, How sessions work | `/consultations#process` | `/ru/consultations#process` | Services EN Final v2 / RU Final v1 |\n'+row)
+          s+='\n## Concurrent section-hub source preserved\n\nMain commit `cad3a2c68e1e3c40a1afa6a71a48eb994a98c665` added Consultations and Projects source routes while this task was prepared. It is retained, not reverted. The Services video also belongs on the Consultations hub; Projects remains without an unrelated intro. Before native release, establish whether the guarded section-hubs append has actually run. Do not invoke an 18-article updater on a 14-article live site or silently create routes; use the approved existing append/release process after collision/staging checks. Current GitHub source success is not evidence of native append or production video publication.\n'
+          p.write_text(s)
+          p=pathlib.Path('.github/workflows/psitrends-video-review.yml');s=p.read_text();s=s.replace('html-validate psitrends-client-home.html','html-validate psitrends-client-consultations.html psitrends-client-consultations-ru.html psitrends-client-home.html');p.write_text(s)
+          PY
           node --test integrations/psitrends-client/*.test.mjs integrations/joomla-client/*.test.mjs
           node scripts/build-psitrends-client.mjs
           node scripts/build-joomla-client.mjs
-          git add -- 'psitrends-client-*.html' 'psitrends-client-*.css'
-          git commit -m 'Preserve current bilingual section hubs when integrating approved videos'
+          git add -- 'psitrends-client-*.html' 'psitrends-client-*.css' psitrends-client.css integrations/psitrends-client/approved-videos.mjs integrations/psitrends-client/approved-videos.test.mjs docs/psitrends-approved-videos-release.md .github/workflows/psitrends-video-review.yml
+          git commit -m 'Preserve current section hubs and place Services video on Consultations'
           git push origin HEAD:codex/psitrends-approved-videos-2026-10-01
