@@ -57,6 +57,7 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
  for(const [source,name] of [['psitrends-client.css','psitrends-client.css'],['psitrends-client.js','psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','andrey.jpg'],['integrations/psitrends-client/andy-library-desk.png','andy-library-desk.png'],['integrations/psitrends-client/archway.webp','archway.webp']])await fs.copyFile(path.join(root,source),path.join(template,'media/assets',name));
  await fs.cp(path.join(root,'integrations/psitrends-client/reviews'),path.join(template,'media/assets/reviews'),{recursive:true});
  await fs.cp(path.join(root,'integrations/psitrends-client/review-thumbnails'),path.join(template,'media/assets/review-thumbnails'),{recursive:true});
+ await fs.cp(path.join(root,'integrations/psitrends-client/approved-video-posters'),path.join(template,'media/assets/approved-video-posters'),{recursive:true});
  await fs.cp(path.join(root,'integrations/psitrends-client/events-assets/events'),path.join(template,'media/assets/events'),{recursive:true});
  const sitemapEntries=[];
  for(const locale of ['en','ru'])for(const name of Object.keys(pages[locale]))sitemapEntries.push(`  <url>\n    <loc>https://psitrends.com${routeFor(name,locale)}</loc>\n    <xhtml:link rel="alternate" hreflang="en-GB" href="https://psitrends.com${routeFor(name,'en')}"/>\n    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://psitrends.com${routeFor(name,'ru')}"/>\n  </url>`);
