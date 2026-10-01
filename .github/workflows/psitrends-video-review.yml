@@ -1,0 +1,41 @@
+name: PsiTrends approved video review
+on:
+  push:
+    branches: [codex/psitrends-approved-videos-2026-10-01]
+permissions:
+  contents: read
+jobs:
+  source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Collect tracked source and public routing evidence
+        run: |
+          mkdir -p /tmp/psitrends-video-review
+          git archive HEAD integrations/psitrends-client scripts docs package.json package-lock.json psitrends-client.css psitrends-client.js SKILL.md AGENTS.md > /tmp/psitrends-video-review/source.tar
+          python3 - <<'PY'
+          import json, urllib.request, pathlib
+          root = pathlib.Path('/tmp/psitrends-video-review')
+          routes = ['/', '/ru/', '/first-session', '/ru/first-session', '/about', '/ru/about', '/hypnotherapy-toronto', '/ru/individual-work', '/systemic-constellations-toronto']
+          result=[]
+          for i, route in enumerate(routes):
+              try:
+                  req=urllib.request.Request('https://psitrends.com'+route, headers={'User-Agent':'PsiTrends-approved-video-QA/1.0'})
+                  with urllib.request.urlopen(req, timeout=30) as response:
+                      raw=response.read(2000000)
+                      (root/f'live-{i}.html').write_bytes(raw)
+                      result.append({'path':route,'status':response.status,'url':response.url,'bytes':len(raw)})
+              except Exception as e:
+                  result.append({'path':route,'error':str(e)})
+          (root/'routes.json').write_text(json.dumps(result, indent=2))
+          print(json.dumps(result, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: psitrends-video-source-review
+          path: /tmp/psitrends-video-review/
+          retention-days: 3
+          if-no-files-found: error
