@@ -47,11 +47,10 @@ jobs:
           s=s.replace(row,'| Consultations section hub, How sessions work | `/consultations#process` | `/ru/consultations#process` | Services EN Final v2 / RU Final v1 |\n'+row)
           s+='\n## Concurrent section-hub source preserved\n\nMain commit `cad3a2c68e1e3c40a1afa6a71a48eb994a98c665` added Consultations and Projects source routes while this task was prepared. It is retained, not reverted. The Services video also belongs on the Consultations hub; Projects remains without an unrelated intro. Before native release, establish whether the guarded section-hubs append has actually run. Do not invoke an 18-article updater on a 14-article live site or silently create routes; use the approved existing append/release process after collision/staging checks. Current GitHub source success is not evidence of native append or production video publication.\n'
           p.write_text(s)
-          p=pathlib.Path('.github/workflows/psitrends-video-review.yml');s=p.read_text();s=s.replace('html-validate psitrends-client-home.html','html-validate psitrends-client-consultations.html psitrends-client-consultations-ru.html psitrends-client-home.html');p.write_text(s)
           PY
           node --test integrations/psitrends-client/*.test.mjs integrations/joomla-client/*.test.mjs
           node scripts/build-psitrends-client.mjs
           node scripts/build-joomla-client.mjs
-          git add -- 'psitrends-client-*.html' 'psitrends-client-*.css' psitrends-client.css integrations/psitrends-client/approved-videos.mjs integrations/psitrends-client/approved-videos.test.mjs docs/psitrends-approved-videos-release.md .github/workflows/psitrends-video-review.yml
+          git add -- 'psitrends-client-*.html' 'psitrends-client-*.css' psitrends-client.css integrations/psitrends-client/approved-videos.mjs integrations/psitrends-client/approved-videos.test.mjs docs/psitrends-approved-videos-release.md
           git commit -m 'Preserve current section hubs and place Services video on Consultations'
           git push origin HEAD:codex/psitrends-approved-videos-2026-10-01
