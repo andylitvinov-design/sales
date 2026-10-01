@@ -1,0 +1,34 @@
+name: Reconcile video source with current section hubs
+on:
+  push:
+    branches: [codex/psitrends-approved-videos-2026-10-01]
+    paths: [.github/workflows/tmp-reconcile-video-source.yml]
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/psitrends-approved-videos-2026-10-01
+          fetch-depth: 0
+      - name: Merge without overwriting concurrent main changes
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin codex/bootstrap-sales
+          test "$(git rev-parse FETCH_HEAD)" = cad3a2c68e1e3c40a1afa6a71a48eb994a98c665
+          if ! git merge --no-commit --no-ff cad3a2c68e1e3c40a1afa6a71a48eb994a98c665; then
+            git diff --name-only --diff-filter=U
+            git diff --cc
+            exit 1
+          fi
+          node --test integrations/psitrends-client/*.test.mjs integrations/joomla-client/*.test.mjs
+          node scripts/build-psitrends-client.mjs
+          node scripts/build-joomla-client.mjs
+          git add -- 'psitrends-client-*.html' 'psitrends-client-*.css'
+          git commit -m 'Preserve current bilingual section hubs when integrating approved videos'
+          git push origin HEAD:codex/psitrends-approved-videos-2026-10-01
