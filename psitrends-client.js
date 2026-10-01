@@ -37,6 +37,55 @@ document.querySelectorAll('[data-video]').forEach(link=>{
   });
 });
 
+/* Approved Andy page videos: local poster first, HeyGen only after a deliberate click.
+   This selector is intentionally separate from testimonial [data-video] YouTube links. */
+(() => {
+  const approved = new Set([
+    'ed202847a43a96b918308aa972177b34',
+    '388a04b39ebf215ae656bcd22d0d0847',
+    '48105a2f2228e7cb3a67391e97acaf8b',
+    '79c2845577865979cd95ac40a08fc01a',
+    '34df311e461509433b45929908a9097a',
+    '0f984780d06948b1e78166e6e553e4e9',
+    '8c1634ce904434a91931429b6a7eefe1',
+    '7c6b243f048b9c0581ae29619a4a89fc',
+  ]);
+  const ru = document.documentElement.lang === 'ru';
+  document.querySelectorAll('[data-page-video-id]').forEach(button => {
+    if (button.dataset.pageVideoReady === 'true') return;
+    const id = button.dataset.pageVideoId;
+    const title = button.dataset.pageVideoTitle || (ru ? 'Видео Андрея' : 'Andy video');
+    if (!approved.has(id)) return;
+    button.dataset.pageVideoReady = 'true';
+    button.disabled = false;
+    button.setAttribute('aria-busy','false');
+    button.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const frameHost = button.closest('.page-video-frame');
+      if (!frameHost || frameHost.querySelector('iframe')) return;
+      const iframe = document.createElement('iframe');
+      iframe.className = 'page-video-iframe';
+      iframe.src = `https://app.heygen.com/embeds/${id}`;
+      iframe.title = title;
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.allowFullscreen = true;
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.tabIndex = 0;
+      const close = document.createElement('button');
+      close.type = 'button';
+      close.className = 'page-video-close';
+      close.textContent = ru ? 'Закрыть видео' : 'Close video';
+      close.addEventListener('click', () => {
+        iframe.remove(); close.remove(); button.hidden = false; button.focus();
+      });
+      button.hidden = true;
+      frameHost.append(iframe, close);
+      iframe.focus();
+    });
+  });
+})();
+
 /* Adapted from toronto-ga4.js: one optional GA4 collector, default denied.
    Static client shell replaces template instrumentation; never embed beside GTM. */
 (() => {
