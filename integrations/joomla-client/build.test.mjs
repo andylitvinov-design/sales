@@ -51,6 +51,7 @@ test('adapter emits eighteen native article bodies and preserves home assignment
     assert.doesNotMatch(routes['en:home'].before,/<main/);
     assert.match(await fs.readFile(path.join(directory,'template/media/assets/psitrends-client.js'),'utf8'),/contact_click/);
     assert.equal(await fs.access(path.join(directory,'template/media/assets/events/2014-magic-workshop/07.jpg')).then(()=>true,()=>false),true);
+    for(const poster of ['home-en-v2.webp','home-ru-v1.webp','services-en-v2.webp','services-ru-v1.webp','homeopathy-en-v2.webp','homeopathy-ru-v1.webp','hypnotherapy-en-v1.webp','constellations-en-v1.webp']) assert.equal(await fs.access(path.join(directory,'template/media/assets/approved-video-posters',poster)).then(()=>true,()=>false),true,poster);
     const append=JSON.parse(await fs.readFile(path.join(directory,'events-append/migration-plan.json'),'utf8'));
     assert.equal(append.mode,'append-existing-template-plan-only');
     assert.deepEqual(append.pages.map(page=>page.key),['en:events','ru:events']);
