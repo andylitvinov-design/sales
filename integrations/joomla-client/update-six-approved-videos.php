@@ -84,13 +84,15 @@ try{
     $q=$db->prepare('SELECT id,alias,language,state,access,catid,checked_out,title,introtext,`fulltext`,metadesc FROM wfct4_content WHERE alias=?');
     $rows=[];
     $desired=[];
-    foreach(array_merge($keys,array_keys($m['untouchedRows'])) as $key){
+    $allRows=[];
+    foreach($allKeys as $key){
         ok(preg_match('/^(en|ru):(home|consultations|hypnotherapy|constellations|about|academy|contact|events|projects)$/D',$key)===1,'page_key');
         [$locale,$kind]=explode(':',$key);
         $q->execute(['psitrends-client-'.$locale.'-'.$kind]);
         $hits=$q->fetchAll(PDO::FETCH_ASSOC);
         ok(count($hits)===1,'unique_existing_article');
         $r=$hits[0];
+        $allRows[$key]=$r;
         ok($r['language']===($locale==='en'?'en-GB':'ru-RU')&&(int)$r['state']===1&&(int)$r['access']===1&&(int)$r['checked_out']===0,'public_unlocked');
         if(!isset($pages[$key])){
             ok(digest($r)===$m['untouchedRows'][$key],'non_target_row_drift');
@@ -99,6 +101,7 @@ try{
         $p=$pages[$key];
         ok((int)$r['id']===$p['id']&&$r['alias']===$p['alias']&&(int)$r['catid']===$p['catid'],'row_identity');
         ok($p['bodyFile']==='articles/'.$locale.'-'.$kind.'.html','body_path');
+        ok(realpath(dirname($package.'/'.$p['bodyFile']))===dirname($package.'/'.$p['bodyFile']),'body_parent_containment');
         ok(regular($package.'/'.$p['bodyFile']),'body_type');
         $body=file_get_contents($package.'/'.$p['bodyFile']);
         ok(hash('sha256',$body)===$p['afterBody'],'body_digest');
@@ -129,13 +132,14 @@ try{
             echo encoded(['status'=>'PREFLIGHT_PASS','articles'=>6,'untouched_rows'=>12,'new_posters'=>6,'shared_updates'=>$withShared?3:0,'package'=>$packageHash]),PHP_EOL;
             exit;
         }
-        save($before,['scope'=>$scope,'package'=>$packageHash,'rows'=>$rows,'files'=>$files,'posterDirectoryMode'=>fileperms($posterDir)&0777]);
+        save($before,['scope'=>$scope,'package'=>$packageHash,'rows'=>$rows,'files'=>$files,'posterDirectoryMode'=>fileperms($posterDir)&0777,'newFileUid'=>fileowner($private.'/lock'),'newFileGid'=>filegroup($private.'/lock')]);
         echo encoded(['status'=>'CAPTURED','articles'=>6,'files'=>count($files),'snapshot_sha256'=>hash_file('sha256',$before)]),PHP_EOL;
         exit;
     }
     ok(regular($before),'snapshot_missing');
     $snap=json_decode(file_get_contents($before),true,512,JSON_THROW_ON_ERROR);
     ok($snap['scope']===$scope&&$snap['package']===$packageHash,'snapshot_scope_package');
+    ok((fileperms($posterDir)&0777)===$snap['posterDirectoryMode'],'concurrent_directory_mode');
     foreach($rows as $k=>$r){
         $expected=array_replace($snap['rows'][$k],['introtext'=>$desired[$k]['introtext']]);
         ok($r===$snap['rows'][$k]||$r===$expected,'concurrent_content_edit');
@@ -145,13 +149,24 @@ try{
         $now=$root.'/'.$to;
         $old=$snap['files'][$to];
         $matchesBefore=$old===null?!file_exists($now):(regular($now)&&file_get_contents($now)===base64_decode($old['bytes'],true)&&(fileperms($now)&0777)===$old['mode']&&fileowner($now)===$old['uid']&&filegroup($now)===$old['gid']);
-        ok($matchesBefore||(regular($now)&&hash_file('sha256',$now)===$f['sha256']),'concurrent_file_edit');
+        $afterMode=$old===null?0644:$old['mode'];
+        $afterUid=$old===null?$snap['newFileUid']:$old['uid'];
+        $afterGid=$old===null?$snap['newFileGid']:$old['gid'];
+        $matchesAfter=regular($now)&&hash_file('sha256',$now)===$f['sha256']&&(fileperms($now)&0777)===$afterMode&&fileowner($now)===$afterUid&&filegroup($now)===$afterGid;
+        ok($matchesBefore||$matchesAfter,'concurrent_file_edit');
     }
     $journal=['phase'=>'started','action'=>$action,'package'=>$packageHash,'completedFiles'=>[]];
     save($private.'/journal.json',$journal);
     $target=$action==='apply'?$desired:$snap['rows'];
     $db->beginTransaction();
     try{
+        // Lock all eighteen records in canonical order and recheck bytes after the preflight window.
+        $lockedSelect=$db->prepare('SELECT id,alias,language,state,access,catid,checked_out,title,introtext,`fulltext`,metadesc FROM wfct4_content WHERE alias=? FOR UPDATE');
+        foreach($allKeys as $key){
+            $lockedSelect->execute([$allRows[$key]['alias']]);
+            $lockedRows=$lockedSelect->fetchAll(PDO::FETCH_ASSOC);
+            ok(count($lockedRows)===1&&$lockedRows[0]===$allRows[$key],'concurrent_row_before_write');
+        }
         $u=$db->prepare('UPDATE wfct4_content SET introtext=? WHERE id=? AND introtext=? AND title=? AND `fulltext`=? AND metadesc=? AND alias=? AND language=? AND catid=? AND state=1 AND access=1 AND (checked_out=0 OR checked_out IS NULL)');
         foreach($target as $k=>$r){
             $old=$rows[$k];
@@ -169,10 +184,8 @@ try{
                 ok(!is_link($path.'.next'),'temporary_symlink');
                 ok(file_put_contents($path.'.next',$bytes)!==false,'file_write');
                 ok(chmod($path.'.next',$old===null?0644:$old['mode']),'file_mode');
-                if($old!==null){
-                    ok(chown($path.'.next',$old['uid']),'file_owner');
-                    ok(chgrp($path.'.next',$old['gid']),'file_group');
-                }
+                ok(chown($path.'.next',$old===null?$snap['newFileUid']:$old['uid']),'file_owner');
+                ok(chgrp($path.'.next',$old===null?$snap['newFileGid']:$old['gid']),'file_group');
                 ok(rename($path.'.next',$path),'file_rename');
             }
             $journal['completedFiles'][]=$to;

@@ -9,7 +9,11 @@ final class PDO{
  public array $rows;private bool $transaction=false;private array $before=[];
  function __construct(...$ignored){$this->rows=json_decode(file_get_contents('/update/mock-db.json'),true);}
  function prepare(string $sql):Statement{return new Statement($this,$sql);}
- function beginTransaction():void{$this->before=$this->rows;$this->transaction=true;}
+ function beginTransaction():void{
+  $race=getenv('PSITRENDS_SYNTHETIC_RACE')?:'';
+  if($race!==''){$key=$race==='non_target'?'en:academy':'en:home';$this->rows[$key]['title']=strtolower($this->rows[$key]['title']);file_put_contents('/update/mock-db.json',json_encode($this->rows));}
+  $this->before=$this->rows;$this->transaction=true;
+ }
  function inTransaction():bool{return $this->transaction;}
  function rollBack():void{$this->rows=$this->before;$this->transaction=false;}
  function commit():void{file_put_contents('/update/mock-db.json',json_encode($this->rows));$this->transaction=false;}
