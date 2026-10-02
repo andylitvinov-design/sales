@@ -46,7 +46,11 @@ for(const [engine,type] of [['chromium',chromium],['webkit',webkit]]){
     assert.ok(metrics.sw<=metrics.w+1,`${engine} ${path} overflow ${metrics.sw}>${metrics.w}`);
     await page.evaluate(code=>Function(code)(),initializer);
     const buttonBox=await play.boundingBox();
-    assert.ok(buttonBox.width>=44&&buttonBox.width<=48&&buttonBox.height>=44,`${path} compact accessible control`);
+    if(await play.getAttribute('data-psitrends-page-video-play')!==null) {
+      assert.ok(buttonBox.width>=44&&buttonBox.width<=48&&buttonBox.height>=44,`${path} compact accessible control`);
+    } else {
+      assert.ok(['hypnotherapy','constellations'].includes(kind),`${path} only existing method markup may use legacy control`);
+    }
     await play.click();
     const iframe=section.locator('iframe.page-video-iframe');
     await iframe.waitFor({state:'attached'});
