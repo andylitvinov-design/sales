@@ -113,6 +113,14 @@ const records = {
 };
 export const APPROVED_PAGE_VIDEOS = Object.freeze(records);
 
+const pageForKind = {home:'home', services:'consultations', homeopathy:'about', hypnotherapy:'hypnotherapy', constellations:'constellations'};
+export const browserApprovedPageVideoTuples = Object.freeze(Object.entries(records).flatMap(([kind, localized]) =>
+  Object.entries(localized).map(([locale, video]) => Object.freeze({
+    page:pageForKind[kind], kind, locale, id:video.heygenId, title:video.title,
+    embed:`https://app.heygen.com/embeds/${video.heygenId}`,
+  }))));
+export const approvedPageVideoBootstrap = `window.PsiTrendsApprovedPageVideos=${JSON.stringify(browserApprovedPageVideoTuples).replaceAll('<','\\u003c')};\n`;
+
 const copy = {
   en: { play:'Watch video', transcript:'Transcript', open:'Open video', close:'Close video', ai:'AI-assisted video using Andy’s digital twin and voice.' },
   ru: { play:'Смотреть видео', transcript:'Текст видео', open:'Открыть видео', close:'Закрыть видео', ai:'Видео с цифровым двойником и голосом Андрея, созданное с помощью ИИ.' },
@@ -130,5 +138,9 @@ export function renderApprovedPageVideo(kind, locale, {asset, escape, context} =
   const t = copy[locale];
   const paragraphs = video.transcript.split('\n\n').map(p=>`<p class="page-video-transcript-paragraph">${escape(p)}</p>`).join('');
   const contextHtml = context ? `<div class="page-video-context"><h2>${escape(context.title)}</h2><p class="page-video-context-copy">${escape(context.text)}</p><a class="text-link" href="${escape(context.href)}">${escape(context.linkLabel)} <span class="link-arrow" aria-hidden="true"></span></a></div>` : '';
-  return `<section class="page-video-section shell" data-page-video-kind="${kind}" data-page-video-locale="${locale}">${contextHtml}<figure class="page-video" aria-label="${escape(video.title)}"><div class="page-video-frame"><button class="page-video-play" type="button" disabled aria-busy="true" data-page-video-id="${video.heygenId}" data-page-video-title="${escape(video.title)}" aria-label="${escape(t.play)}: ${escape(video.title)}"><img class="page-video-poster" src="${asset(`approved-video-posters/${video.poster}`)}" alt="" width="1280" height="720" loading="lazy"><span class="page-video-shade" aria-hidden="true"></span><span class="page-video-play-icon" aria-hidden="true">▶</span><span class="page-video-duration" aria-hidden="true">${video.durationLabel}</span></button></div><figcaption class="page-video-caption"><details class="page-video-transcript"><summary>${escape(t.transcript)}</summary><div class="page-video-transcript-copy">${paragraphs}</div></details><span class="page-video-ai">${escape(t.ai)}</span><a class="page-video-fallback" href="https://app.heygen.com/share/${video.heygenId}" target="_blank" rel="noopener noreferrer">${escape(t.open)}</a></figcaption></figure></section>`;
+  const page = pageForKind[kind];
+  const newTab = locale === 'ru' ? ' (откроется в новой вкладке)' : ' (opens in a new tab)';
+  const fallback = locale === 'ru' ? 'Видео не открывается? Открыть отдельно' : 'Video not opening? Open separately';
+  const watch = `<a class="page-video-fallback" href="https://app.heygen.com/share/${video.heygenId}" target="_blank" rel="noopener noreferrer">${escape(fallback)}<span class="sr-only">${newTab}</span></a>`;
+  return `<section class="page-video-section shell" data-page-video-kind="${kind}" data-page-video-locale="${locale}">${contextHtml}<figure class="page-video" data-psitrends-page-video data-page-purpose="${page}" data-kind="${kind}" data-locale="${locale}" data-heygen-id="${video.heygenId}" aria-label="${escape(video.title)}"><div class="page-video-frame"><img class="page-video-poster" src="${asset(`approved-video-posters/${video.poster}`)}" alt="" width="1280" height="720" loading="lazy"><span class="page-video-placeholder" hidden>${escape(video.title)}</span><button class="page-video-play" type="button" disabled aria-busy="true" data-psitrends-page-video-play data-page-video-id="${video.heygenId}" data-page-video-title="${escape(video.title)}" aria-label="${escape(t.play)}: ${escape(video.title)}"><span class="page-video-play-icon" aria-hidden="true">▶</span></button><span class="page-video-duration" aria-hidden="true">${video.durationLabel}</span></div><figcaption class="page-video-caption"><details class="page-video-transcript"><summary>${escape(t.transcript)}</summary><div class="page-video-transcript-copy">${paragraphs}</div>${watch}</details><span class="page-video-ai">${escape(t.ai)}</span>${watch}<noscript><p>${locale === 'ru' ? 'Для встроенного видео нужен JavaScript. Прочитайте текст или откройте видео отдельно.' : 'Embedded video requires JavaScript. Read the transcript or open the video separately.'}</p>${watch}</noscript></figcaption></figure></section>`;
 }

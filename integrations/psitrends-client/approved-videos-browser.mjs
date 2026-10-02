@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {chromium,webkit} from 'playwright';
+const runtime=readFileSync(new URL('../../psitrends-client.js',import.meta.url),'utf8');
+const initializer=runtime.slice(runtime.indexOf('/* Approved page videos'),runtime.indexOf('\n})();',runtime.indexOf('/* Approved page videos'))+6);
 
 const base=(process.env.PSITRENDS_BASE_URL||'http://127.0.0.1:8877/output/psitrends-client').replace(/\/$/,'');
 const cases=[
@@ -35,22 +38,63 @@ for(const [engine,type] of [['chromium',chromium],['webkit',webkit]]){
     await page.waitForFunction(el=>!el.disabled,await play.elementHandle());
     assert.equal(await section.locator('iframe').count(),0,`${path} eager iframe`);
     assert.equal(heygenBefore,0,`${path} external provider before click`);
-    const poster=await play.locator('img.page-video-poster').getAttribute('src');
+    const poster=await section.locator('img.page-video-poster').getAttribute('src');
     assert.match(poster,/approved-video-posters\/[^/]+\.webp$/);
     const metrics=await page.evaluate(()=>({w:innerWidth,sw:document.documentElement.scrollWidth}));
     assert.ok(metrics.sw<=metrics.w+1,`${engine} ${path} overflow ${metrics.sw}>${metrics.w}`);
+    await page.evaluate(code=>Function(code)(),initializer);
+    const buttonBox=await play.boundingBox();
+    assert.ok(buttonBox.width>=44&&buttonBox.width<=48&&buttonBox.height>=44,`${path} compact accessible control`);
     await play.click();
     const iframe=section.locator('iframe.page-video-iframe');
     await iframe.waitFor({state:'attached'});
     assert.equal(await iframe.getAttribute('src'),`https://app.heygen.com/embeds/${id}`);
     assert.equal(await section.locator('iframe').count(),1);
+    assert.equal(await play.isVisible(),false,`${path} hidden play must not cover iframe`);
+    const visibleFrame=await iframe.evaluate(el=>{
+      const r=el.getBoundingClientRect(),host=el.parentElement.getBoundingClientRect();
+      return {width:r.width,height:r.height,hostWidth:host.width,hostHeight:host.height,top:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)===el};
+    });
+    assert.ok(Math.abs(visibleFrame.width-visibleFrame.hostWidth)<=2&&Math.abs(visibleFrame.height-visibleFrame.hostHeight)<=2,`${path} iframe fills frame`);
+    assert.equal(visibleFrame.top,true,`${path} iframe is visible above poster`);
+    await play.evaluate(el=>el.click());
+    assert.equal(await section.locator('iframe').count(),1,`${path} repeated click`);
     await section.locator('button.page-video-close').click();
     assert.equal(await section.locator('iframe').count(),0);
+    assert.equal(await play.evaluate(el=>document.activeElement===el),true,`${path} focus restored`);
+    const valid=await section.evaluate(el=>el.outerHTML);
+    await section.evaluate(el=>{
+      const copy=el.cloneNode(true),button=copy.querySelector('[data-page-video-id]');
+      button.disabled=true;
+      delete button.dataset.pageVideoReady;
+      copy.dataset.pageVideoLocale=copy.dataset.pageVideoLocale==='en'?'ru':'en';
+      el.replaceWith(copy);
+    });
+    await page.evaluate(code=>Function(code)(),initializer);
+    assert.equal(await page.locator('[data-page-video-id]').isDisabled(),true,`${path} wrong tuple fails closed`);
+    await page.locator('[data-page-video-kind]').evaluate((el,html)=>{el.outerHTML=html;},valid);
     page.off('request',listener);
    }
   }
   assert.deepEqual(errors,[],`${engine} page errors`);
   await context.close();
+  const noJs=await browser.newContext({javaScriptEnabled:false});
+  const passive=await noJs.newPage();
+  await passive.goto(base+'/about');
+  assert.equal(await passive.locator('[data-page-video-id]').isDisabled(),true);
+  assert.equal(await passive.locator('.page-video iframe').count(),0);
+  await passive.locator('.page-video-transcript summary').click();
+  assert.equal(await passive.locator('.page-video-transcript a[href^="https://app.heygen.com/share/"]').isVisible(),true);
+  assert.equal(await passive.locator('.page-video noscript').isVisible(),true);
+  await noJs.close();
+  const failed=await browser.newContext();
+  const fallback=await failed.newPage();
+  await fallback.route('**/approved-video-posters/**',route=>route.abort());
+  await fallback.goto(base+'/about');
+  await fallback.locator('.page-video').scrollIntoViewIfNeeded();
+  await fallback.locator('.page-video-placeholder').waitFor({state:'visible'});
+  assert.equal(await fallback.locator('[data-page-video-id]').isEnabled(),true);
+  await failed.close();
  } finally {await browser.close();}
 }
 console.log(JSON.stringify({ok:true,engines:['chromium','webkit'],videos:cases.length,widths:[390,1440]}));

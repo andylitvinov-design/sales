@@ -1,3 +1,4 @@
+import {approvedPageVideoBootstrap} from '../integrations/psitrends-client/approved-videos.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -14,13 +15,14 @@ const manifest={mode:production?'production':'preview',analytics:production?'con
 for(const locale of ['en','ru'])for(const key of Object.keys(pages[locale])){
  const name=sourceName(key,locale);
  await fs.writeFile(path.join(root,`${name}.html`),render(key,locale,{source:true}));
- await fs.writeFile(path.join(root,`${name}.css`),'@import url("psitrends-client.css?v=8");\n');
+ await fs.writeFile(path.join(root,`${name}.css`),'@import url("psitrends-client.css?v=9");\n');
  const route=routeFor(key,locale),file=route==='/'?'index.html':`${route.replace(/^\//,'').replace(/\/$/,'')}/index.html`;
  await fs.mkdir(path.dirname(path.join(output,file)),{recursive:true});
  await fs.writeFile(path.join(output,file),render(key,locale,{production}));
  manifest.routes.push({route,file,locale,source:`${name}.html`});
 }
 for(const [from,to] of [['psitrends-client.css','psitrends-client-assets/psitrends-client.css'],['psitrends-client.js','psitrends-client-assets/psitrends-client.js'],['integrations/psitrends-client/andrey.jpg','psitrends-client-assets/andrey.jpg'],['integrations/psitrends-client/andy-library-desk.png','psitrends-client-assets/andy-library-desk.png'],['integrations/psitrends-client/archway.webp','psitrends-client-assets/archway.webp'],['output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg','images/photo_2023-01-27_06-22-45.jpg']]){const target=path.join(output,to);await fs.mkdir(path.dirname(target),{recursive:true});await fs.copyFile(path.join(root,from),target);}
+await fs.writeFile(path.join(output,'psitrends-client-assets/psitrends-client.js'),approvedPageVideoBootstrap+await fs.readFile(path.join(root,'psitrends-client.js'),'utf8'));
 await fs.cp(path.join(root,'integrations/psitrends-client/reviews'),path.join(output,'psitrends-client-assets/reviews'),{recursive:true});
 await fs.cp(path.join(root,'integrations/psitrends-client/review-thumbnails'),path.join(output,'psitrends-client-assets/review-thumbnails'),{recursive:true});
 await fs.cp(path.join(root,'integrations/psitrends-client/approved-video-posters'),path.join(output,'psitrends-client-assets/approved-video-posters'),{recursive:true});

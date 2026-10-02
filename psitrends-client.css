@@ -1916,6 +1916,8 @@ body[data-page="home"] .hero-atmosphere {
 }
 
 .page-video-iframe {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -1923,16 +1925,45 @@ body[data-page="home"] .hero-atmosphere {
 }
 
 .page-video-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  min-height: 40px;
+  position: static;
+  min-height: 44px;
   border: 1px solid rgba(255,255,255,.6);
   border-radius: 999px;
   background: rgba(31,24,19,.78);
   padding: 8px 12px;
   color: #fff;
   cursor: pointer;
+}
+
+.page-video [hidden],
+.page-video-playing > .page-video-poster,
+.page-video-playing > .page-video-placeholder,
+.page-video-playing > .page-video-duration {
+  display: none;
+}
+
+.page-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+  color: #574537;
+  background: #e9dfd2;
+  text-align: center;
+}
+
+[data-psitrends-page-video-play] {
+  inset: auto auto 16px 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+[data-psitrends-page-video-play] .page-video-play-icon {
+  position: static;
+  width: 44px;
+  height: 44px;
 }
 
 .page-video-caption {
@@ -1951,7 +1982,7 @@ body[data-page="home"] .hero-atmosphere {
 
 .page-video-transcript summary {
   display: inline-flex;
-  min-height: 40px;
+  min-height: 44px;
   align-items: center;
   color: #7d4a31;
   font-weight: 600;
@@ -1976,7 +2007,7 @@ body[data-page="home"] .hero-atmosphere {
 
 .page-video-fallback {
   display: inline-flex;
-  min-height: 40px;
+  min-height: 44px;
   align-items: center;
   color: #7d4a31;
   font-weight: 600;
