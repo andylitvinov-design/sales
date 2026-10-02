@@ -1,0 +1,170 @@
+{
+  "generatedAt": "2026-10-02T17:15:54.112Z",
+  "scope": "Live six-page HTML/CSS/JS/poster checks and screenshots. Provider iframe response intercepted only for controls; not evidence of real provider playback.",
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "check": "published-asset-sha256",
+      "asset": "runtime",
+      "status": "pass",
+      "sha256": "6000baba759e6baad4b974a5712e799e93a0cfdef668392f329c8b32028bc313"
+    },
+    {
+      "check": "published-asset-sha256",
+      "asset": "styles",
+      "status": "pass",
+      "sha256": "ba9c1f79fc18526889c25fbc006a378fe8d0d5d8d2e29cd3ca875c7ebcc1cafd"
+    },
+    {
+      "check": "published-poster-sha256",
+      "route": "/",
+      "poster": "home-en-v2.webp",
+      "status": "pass",
+      "sha256": "8f1ae79ad0764324cbf6023db4761a8ff4e9c55c0a085259beccd671cae4da04"
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/",
+      "width": 390,
+      "status": "pass",
+      "screenshot": "chromium-home-en-390.png",
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/",
+      "width": 1440,
+      "status": "pass",
+      "screenshot": "chromium-home-en-1440.png",
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "check": "published-poster-sha256",
+      "route": "/ru/",
+      "poster": "home-ru-v1.webp",
+      "status": "pass",
+      "sha256": "2d17a8df9b325272d4c1049cb7757733a00fbafed652b49ffdd0bdf68bc8b794"
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/ru/",
+      "width": 390,
+      "status": "pass",
+      "screenshot": "chromium-home-ru-390.png",
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/ru/",
+      "width": 1440,
+      "status": "pass",
+      "screenshot": "chromium-home-ru-1440.png",
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "check": "published-poster-sha256",
+      "route": "/consultations",
+      "poster": "services-en-v2.webp",
+      "status": "pass",
+      "sha256": "eba5a152b8fba5293b6046f8569205cafb641c852709f284893308b6846fdad6"
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/consultations",
+      "width": 390,
+      "status": "pass",
+      "screenshot": "chromium-services-en-390.png",
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/consultations",
+      "width": 1440,
+      "status": "pass",
+      "screenshot": "chromium-services-en-1440.png",
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "check": "published-poster-sha256",
+      "route": "/ru/consultations",
+      "poster": "services-ru-v1.webp",
+      "status": "pass",
+      "sha256": "b0c25264bd03966fea4a07e2b654a5d12dc2066dd4fe91845facc06352257819"
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/ru/consultations",
+      "width": 390,
+      "status": "pass",
+      "screenshot": "chromium-services-ru-390.png",
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/ru/consultations",
+      "width": 1440,
+      "status": "pass",
+      "screenshot": "chromium-services-ru-1440.png",
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "check": "published-poster-sha256",
+      "route": "/about",
+      "poster": "homeopathy-en-v2.webp",
+      "status": "pass",
+      "sha256": "9b2386a700b110249f285ff14d01c692e315a312083b46eab59b99930b0c6261"
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/about",
+      "width": 390,
+      "status": "pass",
+      "screenshot": "chromium-homeopathy-en-390.png",
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/about",
+      "width": 1440,
+      "status": "pass",
+      "screenshot": "chromium-homeopathy-en-1440.png",
+      "viewport": 1440,
+      "scroll": 1440
+    },
+    {
+      "check": "published-poster-sha256",
+      "route": "/ru/about",
+      "poster": "homeopathy-ru-v1.webp",
+      "status": "pass",
+      "sha256": "9c186803e5bfed18f3eecac5c4be3cf8fb90c24a1821b1315ab6adf67f31f335"
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/ru/about",
+      "width": 390,
+      "status": "pass",
+      "screenshot": "chromium-homeopathy-ru-390.png",
+      "viewport": 390,
+      "scroll": 390
+    },
+    {
+      "check": "live-layout-and-synthetic-controls",
+      "route": "/ru/about",
+      "width": 1440,
+      "status": "pass",
+      "screenshot": "chromium-homeopathy-ru-1440.png",
+      "viewport": 1440,
+      "scroll": 1440
+    }
+  ]
+}

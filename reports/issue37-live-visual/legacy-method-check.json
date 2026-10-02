@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-10-02T17:18:41.874Z",
+  "results": [
+    {
+      "route": "/hypnotherapy-toronto",
+      "status": "pass",
+      "poster": {
+        "src": "/media/templates/site/psitrends_client/assets/approved-video-posters/hypnotherapy-en-v1.webp",
+        "width": 1280,
+        "hidden": false
+      },
+      "nativeStatus": 200,
+      "controlScope": "Synthetic iframe; actual public markup and assets"
+    },
+    {
+      "route": "/systemic-constellations-toronto",
+      "status": "pass",
+      "poster": {
+        "src": "/media/templates/site/psitrends_client/assets/approved-video-posters/constellations-en-v1.webp",
+        "width": 1280,
+        "hidden": false
+      },
+      "nativeStatus": 200,
+      "controlScope": "Synthetic iframe; actual public markup and assets"
+    },
+    {
+      "check": "static-fixture-path-on-native-site",
+      "status": 404,
+      "meaning": "Wrong test fixture asset base triggers fallback placeholder"
+    }
+  ]
+}

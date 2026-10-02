@@ -1,0 +1,701 @@
+{
+  "base": "https://psitrends.com",
+  "results": [
+    {
+      "engine": "chromium",
+      "path": "/",
+      "id": "ed202847a43a96b918308aa972177b34",
+      "checkedAt": "2026-10-02T17:13:13.857Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.010013,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 30
+      },
+      "advancing": {
+        "currentTime": 3.52761,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 93
+      },
+      "completion": {
+        "currentTime": 29.44,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 736
+      }
+    },
+    {
+      "engine": "chromium",
+      "path": "/ru/",
+      "id": "388a04b39ebf215ae656bcd22d0d0847",
+      "checkedAt": "2026-10-02T17:13:45.970Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 31.445,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.022398,
+        "duration": 31.445,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 30
+      },
+      "advancing": {
+        "currentTime": 3.538652,
+        "duration": 31.445,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 93
+      },
+      "completion": {
+        "currentTime": 31.445,
+        "duration": 31.445,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 786
+      }
+    },
+    {
+      "engine": "chromium",
+      "path": "/consultations",
+      "id": "48105a2f2228e7cb3a67391e97acaf8b",
+      "checkedAt": "2026-10-02T17:14:19.820Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.024678,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 30
+      },
+      "advancing": {
+        "currentTime": 3.537095,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 93
+      },
+      "completion": {
+        "currentTime": 29.12,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 728
+      }
+    },
+    {
+      "engine": "chromium",
+      "path": "/ru/consultations",
+      "id": "79c2845577865979cd95ac40a08fc01a",
+      "checkedAt": "2026-10-02T17:14:51.543Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 33.45,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.027624,
+        "duration": 33.45,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 30
+      },
+      "advancing": {
+        "currentTime": 3.539793,
+        "duration": 33.45,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 92
+      },
+      "completion": {
+        "currentTime": 33.45,
+        "duration": 33.45,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 836
+      }
+    },
+    {
+      "engine": "chromium",
+      "path": "/about",
+      "id": "34df311e461509433b45929908a9097a",
+      "checkedAt": "2026-10-02T17:15:27.217Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.012182,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 30
+      },
+      "advancing": {
+        "currentTime": 3.528316,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 93
+      },
+      "completion": {
+        "currentTime": 30.72,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 768
+      }
+    },
+    {
+      "engine": "chromium",
+      "path": "/ru/about",
+      "id": "0f984780d06948b1e78166e6e553e4e9",
+      "checkedAt": "2026-10-02T17:16:00.285Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.018573,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 30
+      },
+      "advancing": {
+        "currentTime": 3.532926,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 93
+      },
+      "completion": {
+        "currentTime": 31.96,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 799
+      }
+    },
+    {
+      "engine": "webkit",
+      "path": "/",
+      "id": "ed202847a43a96b918308aa972177b34",
+      "checkedAt": "2026-10-02T17:16:35.615Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.112904535,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 28
+      },
+      "advancing": {
+        "currentTime": 3.627779713,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 91
+      },
+      "completion": {
+        "currentTime": 29.44,
+        "duration": 29.44,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 735
+      }
+    },
+    {
+      "engine": "webkit",
+      "path": "/ru/",
+      "id": "388a04b39ebf215ae656bcd22d0d0847",
+      "checkedAt": "2026-10-02T17:17:12.745Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 31.446,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.074714893,
+        "duration": 31.446,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 27
+      },
+      "advancing": {
+        "currentTime": 3.583389501,
+        "duration": 31.446,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 90
+      },
+      "completion": {
+        "currentTime": 31.446,
+        "duration": 31.446,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 786
+      }
+    },
+    {
+      "engine": "webkit",
+      "path": "/consultations",
+      "id": "48105a2f2228e7cb3a67391e97acaf8b",
+      "checkedAt": "2026-10-02T17:17:50.857Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.070975432,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 27
+      },
+      "advancing": {
+        "currentTime": 3.585024924,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 90
+      },
+      "completion": {
+        "currentTime": 29.12,
+        "duration": 29.12,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 727
+      }
+    },
+    {
+      "engine": "webkit",
+      "path": "/ru/consultations",
+      "id": "79c2845577865979cd95ac40a08fc01a",
+      "checkedAt": "2026-10-02T17:18:26.009Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 33.451,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.071348559,
+        "duration": 33.451,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 27
+      },
+      "advancing": {
+        "currentTime": 3.583047494,
+        "duration": 33.451,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 90
+      },
+      "completion": {
+        "currentTime": 33.451,
+        "duration": 33.451,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 836
+      }
+    },
+    {
+      "engine": "webkit",
+      "path": "/about",
+      "id": "34df311e461509433b45929908a9097a",
+      "checkedAt": "2026-10-02T17:19:05.316Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.038457047,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 26
+      },
+      "advancing": {
+        "currentTime": 3.54673171,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 89
+      },
+      "completion": {
+        "currentTime": 30.72,
+        "duration": 30.72,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 767
+      }
+    },
+    {
+      "engine": "webkit",
+      "path": "/ru/about",
+      "id": "0f984780d06948b1e78166e6e553e4e9",
+      "checkedAt": "2026-10-02T17:19:41.800Z",
+      "status": "verified-natural-completion",
+      "initial": {
+        "currentTime": 0,
+        "duration": null,
+        "width": 0,
+        "height": 0,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "ready": {
+        "currentTime": 0,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 0
+      },
+      "providerGesture": true,
+      "started": {
+        "currentTime": 1.068340064,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 27
+      },
+      "advancing": {
+        "currentTime": 3.581917076,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": false,
+        "ended": false,
+        "error": null,
+        "decodedFrames": 90
+      },
+      "completion": {
+        "currentTime": 31.96,
+        "duration": 31.96,
+        "width": 1280,
+        "height": 720,
+        "paused": true,
+        "ended": true,
+        "error": null,
+        "decodedFrames": 799
+      }
+    }
+  ]
+}
