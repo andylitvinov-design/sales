@@ -82,3 +82,28 @@ Commit `9767c2e7e23bbcbb75de70f553c280daaa14adf5` changes only placeholder inser
 v10 built JS: `0ece7049496e24cf71d14cef3ae08352107304a50518979825ed19d886481c30`; native index: `f7466f4ffd6593400a8bffe804b93378dfdf83ce9ff64186b5ec75cca70bec9a`; CSS bytes remain `ba9c1f79fc18526889c25fbc006a378fe8d0d5d8d2e29cd3ca875c7ebcc1cafd`. All article insertions, media IDs, transcripts and posters remain identical.
 
 The existing runner deliberately requires new poster paths at capture. It is not weakened for this follow-up: use its guarded v9 rollback to the exact v8 B1, then capture/apply a new immutable v10 package. Rehearse v10 apply → rollback → reapply on native stage before repeating that bounded transition on production. Preserve both release packages and checkpoints.
+
+
+## v10 final production acceptance — 2026-10-02
+
+**STATUS: SUCCESS.** PR #43 merged as `140535d91e54fb484fcdd9e6fbe2da4ef69ab554`; tested/merged tree `df97362fd117e68331170983d65621d4cc4cbfbc`. Runtime media, transcripts, article insertions and posters are unchanged from the approved six-video release; v10 changes the failed-poster paint order and cache references only.
+
+- Final native stage release: `/var/lib/psitrends-releases/six-approved-videos-v10-final-stage-20261002T2132Z`.
+- Stage package `8396e3d3df4fb40bed33f678dae745041a257e2f12769d82e0e02034a82c0e10`; B1 `c803f1171b642a647ef6b68fdf98e8f8d0857904e8a1d723914cafe154a5d8f0`; final journal `8d6c36c1b713d5c4a82d0d812352ee409b4ed1c8e62084b9a111c27f68b4f8c2`.
+- Stage completed v10 apply → scoped purge → exact after verification → rollback → scoped purge → exact B1 verification → reapply → exact after verification. Eighteen rows, nine mutable files and two invariant method posters passed.
+- Fresh production backup: `20261002T214135Z-86d732b7a7e4436e8e24409ae64c3e65`, completed 21:42:17Z, 104 tables; manifest SHA-256 `43ab6687539b761f0f2748a1436a47ccc47b9e5450d09a3511c7d1939a84fb97`.
+- Backup DB `6c9e5e5a67a689441e794aef8e1a077e5740f69912148858580ea5ad850e6d33`; files `d282711e610ffef2fc90c6989cd8bc0940b0268e5a2b9a0e47ea56c28791c9e8`; gzip and tar integrity passed.
+- Production v9 rollback journal was already complete at B1; a scoped purge removed 34 desktop/mobile entries and exact B1 verification passed before v10 capture.
+- Final production release: `/var/lib/psitrends-releases/six-approved-videos-v10-final-production-20261002T2132Z`.
+- Production package `59887575ebe20a22652bf8e55da95f4d24d076cf5229fdd11e6d51fbb0f147e2`; B1 `0421a9b75c2c42f74d987905bf60c00e0903e0b9bcd94337feeac4514bda8cb5`; final journal `ce857486e2914de5f7678d6721bc37521ac7a479b66b8987cfc488621b77f7fc`.
+- Production preflight/capture/apply passed; exact after verification confirmed all eighteen guarded rows, nine mutable files and two invariant posters. The post-apply scoped purge ran and had no remaining matching cache entries.
+- All six exact pages return HTTP 200 with `psitrends-client.css?v=10` / `psitrends-client.js?v=10`; live JS SHA-256 `0ece7049496e24cf71d14cef3ae08352107304a50518979825ed19d886481c30`, CSS `ba9c1f79fc18526889c25fbc006a378fe8d0d5d8d2e29cd3ca875c7ebcc1cafd`.
+- All eight local poster files (six release + two retained method posters) were fetched anonymously and matched exact expected SHA-256 values. Both EN/RU About bridge links are present.
+- Public baseline comparison passed 72/72 checks: 18 routes × desktop/mobile × cold/warm, preserving title, canonical/hreflang, H1, navigation, testimonial video IDs and testimonial photo order.
+- Live control acceptance passed 144/144 checks in Chromium/WebKit. Actual served-runtime failed-poster pointer click/close/focus regression passed in both engines.
+- Real HeyGen playback passed 12/12: six pages × Chromium/WebKit, decoded 1280×720, advancing currentTime, expected ~29–34s duration, natural completion and no media errors. Provider Play required one explicit in-frame gesture.
+- WebKit playback QA now sets explicit EN/RU locale because an unqualified iPhone context inherited the operator Mac's Russian system locale and legitimately redirected `/` to `/ru/`; this was a test-environment issue, not a site defect.
+- Sanitized playback evidence: `reports/issue37-production-v10-real-playback.json`.
+- Rollback remains the same guarded B1 contract in the final production release directory, followed by the scoped cache runner; no full-site restore is required.
+
+For the v10 completion: **0 HeyGen generation calls / 0 new renders / 0 render credits / 0 Drive writes / 0 duplicate masters**.

@@ -20,7 +20,8 @@ for(const [name,type] of [['chromium',chromium],['webkit',webkit]]) {
   const browser=await type.launch({headless:true,...name==='chromium'&&process.env.PSITRENDS_BROWSER_CHANNEL?{channel:process.env.PSITRENDS_BROWSER_CHANNEL}:{}});
   try {
     for(const [path,id] of cases) {
-      const context=await browser.newContext(name==='webkit'?{...devices['iPhone 13']}:{viewport:{width:1440,height:1000}});
+      const locale=path.startsWith('/ru')?'ru-RU':'en-CA';
+      const context=await browser.newContext(name==='webkit'?{...devices['iPhone 13'],locale}:{viewport:{width:1440,height:1000},locale});
       const page=await context.newPage();
       const result={engine:name,path,id,checkedAt:new Date().toISOString(),status:'unverified'};
       try {
