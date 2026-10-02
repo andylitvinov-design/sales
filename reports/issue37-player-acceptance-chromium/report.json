@@ -1,0 +1,695 @@
+{
+  "generatedAt": "2026-10-02T16:57:25.601Z",
+  "scope": "Static candidate UI acceptance only; synthetic embeds; no provider playback or submissions",
+  "engines": [
+    "chromium"
+  ],
+  "passed": 72,
+  "failed": 0,
+  "results": [
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/",
+      "status": "pass",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 280,
+      "frameHeight": 157.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/",
+      "status": "pass",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 280,
+      "frameHeight": 157.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/consultations",
+      "status": "pass",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 280,
+      "frameHeight": 157.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 280,
+      "frameHeight": 157.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/about",
+      "status": "pass",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 280,
+      "frameHeight": 157.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/about",
+      "status": "pass",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 280,
+      "frameHeight": 157.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/",
+      "status": "pass",
+      "width": 430,
+      "viewport": 430,
+      "scroll": 430,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 390,
+      "frameHeight": 219.375
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/",
+      "status": "pass",
+      "width": 430,
+      "viewport": 430,
+      "scroll": 430,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 390,
+      "frameHeight": 219.375
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/consultations",
+      "status": "pass",
+      "width": 430,
+      "viewport": 430,
+      "scroll": 430,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 390,
+      "frameHeight": 219.375
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "width": 430,
+      "viewport": 430,
+      "scroll": 430,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 390,
+      "frameHeight": 219.375
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/about",
+      "status": "pass",
+      "width": 430,
+      "viewport": 430,
+      "scroll": 430,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 390,
+      "frameHeight": 219.375
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/about",
+      "status": "pass",
+      "width": 430,
+      "viewport": 430,
+      "scroll": 430,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 390,
+      "frameHeight": 219.375
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/",
+      "status": "pass",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 720,
+      "frameHeight": 405
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/",
+      "status": "pass",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 720,
+      "frameHeight": 405
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/consultations",
+      "status": "pass",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 720,
+      "frameHeight": 405
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 720,
+      "frameHeight": 405
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/about",
+      "status": "pass",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 720,
+      "frameHeight": 405
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/about",
+      "status": "pass",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 720,
+      "frameHeight": 405
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/",
+      "status": "pass",
+      "width": 1024,
+      "viewport": 1024,
+      "scroll": 1024,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 960,
+      "frameHeight": 540
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/",
+      "status": "pass",
+      "width": 1024,
+      "viewport": 1024,
+      "scroll": 1024,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 960,
+      "frameHeight": 540
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/consultations",
+      "status": "pass",
+      "width": 1024,
+      "viewport": 1024,
+      "scroll": 1024,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 960,
+      "frameHeight": 540
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "width": 1024,
+      "viewport": 1024,
+      "scroll": 1024,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 960,
+      "frameHeight": 540
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/about",
+      "status": "pass",
+      "width": 1024,
+      "viewport": 1024,
+      "scroll": 1024,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 768,
+      "frameHeight": 432
+    },
+    {
+      "engine": "chromium",
+      "scenario": "layout-poster-only",
+      "route": "/ru/about",
+      "status": "pass",
+      "width": 1024,
+      "viewport": 1024,
+      "scroll": 1024,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 768,
+      "frameHeight": 432
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/",
+      "status": "pass",
+      "key": "Enter"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/",
+      "status": "pass",
+      "key": "Space"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-transcript",
+      "route": "/",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "zoom-equivalent-reflow",
+      "route": "/",
+      "status": "pass",
+      "method": "1024x900 physical / 512x450 CSS viewport, deviceScaleFactor 2; not browser UI zoom",
+      "viewport": 512,
+      "scroll": 512,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 472,
+      "frameHeight": 265.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/",
+      "status": "pass",
+      "width": 390,
+      "file": "chromium-home-en-390.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/",
+      "status": "pass",
+      "width": 1440,
+      "file": "chromium-home-en-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/ru/",
+      "status": "pass",
+      "key": "Enter"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/ru/",
+      "status": "pass",
+      "key": "Space"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-transcript",
+      "route": "/ru/",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "zoom-equivalent-reflow",
+      "route": "/ru/",
+      "status": "pass",
+      "method": "1024x900 physical / 512x450 CSS viewport, deviceScaleFactor 2; not browser UI zoom",
+      "viewport": 512,
+      "scroll": 512,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 472,
+      "frameHeight": 265.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/ru/",
+      "status": "pass",
+      "width": 390,
+      "file": "chromium-home-ru-390.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/ru/",
+      "status": "pass",
+      "width": 1440,
+      "file": "chromium-home-ru-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/consultations",
+      "status": "pass",
+      "key": "Enter"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/consultations",
+      "status": "pass",
+      "key": "Space"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-transcript",
+      "route": "/consultations",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "zoom-equivalent-reflow",
+      "route": "/consultations",
+      "status": "pass",
+      "method": "1024x900 physical / 512x450 CSS viewport, deviceScaleFactor 2; not browser UI zoom",
+      "viewport": 512,
+      "scroll": 512,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 472,
+      "frameHeight": 265.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/consultations",
+      "status": "pass",
+      "width": 390,
+      "file": "chromium-services-en-390.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/consultations",
+      "status": "pass",
+      "width": 1440,
+      "file": "chromium-services-en-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "key": "Enter"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "key": "Space"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-transcript",
+      "route": "/ru/consultations",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "zoom-equivalent-reflow",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "method": "1024x900 physical / 512x450 CSS viewport, deviceScaleFactor 2; not browser UI zoom",
+      "viewport": 512,
+      "scroll": 512,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 472,
+      "frameHeight": 265.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "width": 390,
+      "file": "chromium-services-ru-390.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "width": 1440,
+      "file": "chromium-services-ru-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/about",
+      "status": "pass",
+      "key": "Enter"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/about",
+      "status": "pass",
+      "key": "Space"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-transcript",
+      "route": "/about",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "zoom-equivalent-reflow",
+      "route": "/about",
+      "status": "pass",
+      "method": "1024x900 physical / 512x450 CSS viewport, deviceScaleFactor 2; not browser UI zoom",
+      "viewport": 512,
+      "scroll": 512,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 472,
+      "frameHeight": 265.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/about",
+      "status": "pass",
+      "width": 390,
+      "file": "chromium-homeopathy-en-390.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/about",
+      "status": "pass",
+      "width": 1440,
+      "file": "chromium-homeopathy-en-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/ru/about",
+      "status": "pass",
+      "key": "Enter"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-play-close",
+      "route": "/ru/about",
+      "status": "pass",
+      "key": "Space"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "keyboard-transcript",
+      "route": "/ru/about",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "zoom-equivalent-reflow",
+      "route": "/ru/about",
+      "status": "pass",
+      "method": "1024x900 physical / 512x450 CSS viewport, deviceScaleFactor 2; not browser UI zoom",
+      "viewport": 512,
+      "scroll": 512,
+      "buttonWidth": 44,
+      "buttonHeight": 44,
+      "frameWidth": 472,
+      "frameHeight": 265.5
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/ru/about",
+      "status": "pass",
+      "width": 390,
+      "file": "chromium-homeopathy-ru-390.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "screenshot",
+      "route": "/ru/about",
+      "status": "pass",
+      "width": 1440,
+      "file": "chromium-homeopathy-ru-1440.png"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "cold-delayed-js-first-click",
+      "route": "/",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "blocked-embed-share-navigation",
+      "route": "/",
+      "status": "pass",
+      "providerAvailability": "not tested; share destination intercepted"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "cold-delayed-js-first-click",
+      "route": "/ru/",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "blocked-embed-share-navigation",
+      "route": "/ru/",
+      "status": "pass",
+      "providerAvailability": "not tested; share destination intercepted"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "cold-delayed-js-first-click",
+      "route": "/consultations",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "blocked-embed-share-navigation",
+      "route": "/consultations",
+      "status": "pass",
+      "providerAvailability": "not tested; share destination intercepted"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "cold-delayed-js-first-click",
+      "route": "/ru/consultations",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "blocked-embed-share-navigation",
+      "route": "/ru/consultations",
+      "status": "pass",
+      "providerAvailability": "not tested; share destination intercepted"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "cold-delayed-js-first-click",
+      "route": "/about",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "blocked-embed-share-navigation",
+      "route": "/about",
+      "status": "pass",
+      "providerAvailability": "not tested; share destination intercepted"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "cold-delayed-js-first-click",
+      "route": "/ru/about",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "scenario": "blocked-embed-share-navigation",
+      "route": "/ru/about",
+      "status": "pass",
+      "providerAvailability": "not tested; share destination intercepted"
+    }
+  ]
+}
