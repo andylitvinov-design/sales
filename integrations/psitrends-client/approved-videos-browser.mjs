@@ -84,8 +84,14 @@ for(const [engine,type] of [['chromium',chromium],['webkit',webkit]]){
   }
   // The six-page release retains the two live method articles with their v8 markup.
   await page.goto(base+'/hypnotherapy-toronto');
-  await page.locator('[data-page-video-kind]').evaluate((section,html)=>{section.outerHTML=html;},legacyMethod);
+  // Only the asset root differs between static and native Joomla delivery.
+  const legacyPosterSrc=await page.locator('.page-video-poster').getAttribute('src');
+  assert.match(legacyPosterSrc,/\/approved-video-posters\/hypnotherapy-en-v1\.webp$/);
+  const resolvedLegacyMethod=legacyMethod.replace('src="/psitrends-client-assets/approved-video-posters/hypnotherapy-en-v1.webp"',`src="${legacyPosterSrc}"`);
+  await page.locator('[data-page-video-kind]').evaluate((section,html)=>{section.outerHTML=html;},resolvedLegacyMethod);
   await page.evaluate(code=>Function(code)(),initializer);
+  await page.locator('.page-video-poster').scrollIntoViewIfNeeded();
+  await page.waitForFunction(()=>{const poster=document.querySelector('.page-video-poster');return poster?.complete&&poster.naturalWidth>0;});
   const legacyGeometry=await page.locator('.page-video-poster').evaluate(img=>({poster:img.getBoundingClientRect().width,frame:img.closest('.page-video-frame').getBoundingClientRect().width}));
   assert.ok(Math.abs(legacyGeometry.poster-legacyGeometry.frame)<=2,`${engine} retained method poster fills frame`);
   await page.locator('[data-page-video-id]').click();
