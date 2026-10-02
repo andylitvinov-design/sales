@@ -76,6 +76,25 @@ for(const [engine,type] of [['chromium',chromium],['webkit',webkit]]){
     page.off('request',listener);
    }
   }
+  // The six-page release retains the two live method articles with their v8 markup.
+  await page.goto(base+'/hypnotherapy-toronto');
+  await page.locator('[data-page-video-kind]').evaluate(section=>{
+    const copy=section.cloneNode(true),figure=copy.querySelector('figure'),button=copy.querySelector('[data-page-video-id]');
+    for(const attr of ['data-psitrends-page-video','data-page-purpose','data-kind','data-locale','data-heygen-id'])figure.removeAttribute(attr);
+    button.removeAttribute('data-psitrends-page-video-play');
+    delete button.dataset.pageVideoReady;
+    button.disabled=true;
+    button.prepend(copy.querySelector('.page-video-poster'));
+    button.append(copy.querySelector('.page-video-duration'));
+    copy.querySelector('.page-video-placeholder').remove();
+    section.replaceWith(copy);
+  });
+  await page.evaluate(code=>Function(code)(),initializer);
+  await page.locator('[data-page-video-id]').click();
+  assert.equal(await page.locator('.page-video iframe').getAttribute('src'),'https://app.heygen.com/embeds/8c1634ce904434a91931429b6a7eefe1');
+  assert.equal(await page.locator('[data-page-video-id]').isVisible(),false,`${engine} legacy method poster hidden`);
+  await page.locator('.page-video-close').click();
+  assert.equal(await page.locator('[data-page-video-id]').evaluate(el=>document.activeElement===el),true);
   assert.deepEqual(errors,[],`${engine} page errors`);
   await context.close();
   const noJs=await browser.newContext({javaScriptEnabled:false});
