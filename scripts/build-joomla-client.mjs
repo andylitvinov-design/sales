@@ -1,4 +1,4 @@
-import {approvedPageVideoBootstrap} from '../integrations/psitrends-client/approved-videos.mjs';
+import {approvedPageVideoBootstrap, approvedPageVideoPosters} from '../integrations/psitrends-client/approved-videos.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -59,7 +59,11 @@ export async function build({destination=path.join(owned,'generated'),zip=true}=
  await fs.writeFile(path.join(template,'media/assets/psitrends-client.js'),approvedPageVideoBootstrap+await fs.readFile(path.join(root,'psitrends-client.js'),'utf8'));
  await fs.cp(path.join(root,'integrations/psitrends-client/reviews'),path.join(template,'media/assets/reviews'),{recursive:true});
  await fs.cp(path.join(root,'integrations/psitrends-client/review-thumbnails'),path.join(template,'media/assets/review-thumbnails'),{recursive:true});
- await fs.cp(path.join(root,'integrations/psitrends-client/approved-video-posters'),path.join(template,'media/assets/approved-video-posters'),{recursive:true});
+ const posterOutput=path.join(template,'media/assets/approved-video-posters');
+ // This generated asset directory must not retain unapproved files from a prior build.
+ await fs.rm(posterOutput,{recursive:true,force:true});
+ await fs.mkdir(posterOutput,{recursive:true});
+ for(const poster of approvedPageVideoPosters)await fs.copyFile(path.join(root,'integrations/psitrends-client/approved-video-posters',poster),path.join(posterOutput,poster));
  await fs.cp(path.join(root,'integrations/psitrends-client/events-assets/events'),path.join(template,'media/assets/events'),{recursive:true});
  const sitemapEntries=[];
  for(const locale of ['en','ru'])for(const name of Object.keys(pages[locale]))sitemapEntries.push(`  <url>\n    <loc>https://psitrends.com${routeFor(name,locale)}</loc>\n    <xhtml:link rel="alternate" hreflang="en-GB" href="https://psitrends.com${routeFor(name,'en')}"/>\n    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://psitrends.com${routeFor(name,'ru')}"/>\n  </url>`);

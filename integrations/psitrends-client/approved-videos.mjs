@@ -112,6 +112,7 @@ const records = {
   },
 };
 export const APPROVED_PAGE_VIDEOS = Object.freeze(records);
+export const approvedPageVideoPosters = Object.freeze(Object.values(records).flatMap(localized => Object.values(localized).map(video => video.poster)));
 
 const pageForKind = {home:'home', services:'consultations', homeopathy:'about', hypnotherapy:'hypnotherapy', constellations:'constellations'};
 export const browserApprovedPageVideoTuples = Object.freeze(Object.entries(records).flatMap(([kind, localized]) =>

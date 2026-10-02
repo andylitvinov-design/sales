@@ -1,4 +1,4 @@
-import {approvedPageVideoBootstrap} from '../integrations/psitrends-client/approved-videos.mjs';
+import {approvedPageVideoBootstrap, approvedPageVideoPosters} from '../integrations/psitrends-client/approved-videos.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -25,7 +25,9 @@ for(const [from,to] of [['psitrends-client.css','psitrends-client-assets/psitren
 await fs.writeFile(path.join(output,'psitrends-client-assets/psitrends-client.js'),approvedPageVideoBootstrap+await fs.readFile(path.join(root,'psitrends-client.js'),'utf8'));
 await fs.cp(path.join(root,'integrations/psitrends-client/reviews'),path.join(output,'psitrends-client-assets/reviews'),{recursive:true});
 await fs.cp(path.join(root,'integrations/psitrends-client/review-thumbnails'),path.join(output,'psitrends-client-assets/review-thumbnails'),{recursive:true});
-await fs.cp(path.join(root,'integrations/psitrends-client/approved-video-posters'),path.join(output,'psitrends-client-assets/approved-video-posters'),{recursive:true});
+const posterOutput=path.join(output,'psitrends-client-assets/approved-video-posters');
+await fs.mkdir(posterOutput,{recursive:true});
+for(const poster of approvedPageVideoPosters)await fs.copyFile(path.join(root,'integrations/psitrends-client/approved-video-posters',poster),path.join(posterOutput,poster));
 await fs.cp(path.join(root,'integrations/psitrends-client/events-assets/events'),path.join(output,'psitrends-client-assets/events'),{recursive:true});
 await fs.writeFile(path.join(output,'robots.txt'),production?'User-agent: *\nAllow: /\nSitemap: https://psitrends.com/sitemap.xml\n':'User-agent: *\nDisallow: /\n');
 await fs.writeFile(path.join(output,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${production?manifest.routes.map(x=>`<url><loc>https://psitrends.com${x.route}</loc></url>`).join(''):''}</urlset>\n`);
