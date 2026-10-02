@@ -4,7 +4,7 @@ import {renderReviews} from './reviews.mjs';
 import {renderAcademy} from './academy.mjs';
 import {renderArchivePreview,renderEvents} from './events.mjs';
 import catalog from './academy-catalog.json' with {type:'json'};
-import {renderApprovedPageVideo} from './approved-videos.mjs';
+import {renderApprovedPageVideo, approvedPageVideoBootstrap} from './approved-videos.mjs';
 export const sourceName=(key,locale)=>`psitrends-client-${key}${locale==='ru'?'-ru':''}`;
 export const routeFor=(key,locale)=>locale==='ru'?`/ru${routes[key]}`:routes[key];
 const esc=x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -13,8 +13,8 @@ export function render(key,locale,{source=false,production=false}={}){
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
  const asset=path=>source?`integrations/psitrends-client/${path.startsWith('events/')?'events-assets/':''}${path}`:`/psitrends-client-assets/${path}`;
  const portrait=asset(['home','about'].includes(key)?'andy-library-desk.png':'andrey.jpg');
- const css=source?`${sourceName(key,locale)}.css?v=8`:'/psitrends-client-assets/psitrends-client.css?v=8';
- const js=source?'psitrends-client.js?v=8':'/psitrends-client-assets/psitrends-client.js?v=8';
+ const css=source?`${sourceName(key,locale)}.css?v=9`:'/psitrends-client-assets/psitrends-client.css?v=9';
+ const js=source?'psitrends-client.js?v=9':'/psitrends-client-assets/psitrends-client.js?v=9';
  const atmosphere=asset('archway.webp');
  const heritage=source?'output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg':'/images/photo_2023-01-27_06-22-45.jpg';
  const arrow='<span class="link-arrow" aria-hidden="true"></span>';
@@ -116,6 +116,7 @@ ${production?`<link rel="canonical" href="${canonical}">
 <meta property="og:type" content="website">
 ${production?`<meta property="og:url" content="${canonical}">`:""}
 <link rel="stylesheet" href="${css}">
+${source?`<script>${approvedPageVideoBootstrap}</script>`:''}
 <script src="${js}" defer></script>
 ${production?`<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':['hypnotherapy','constellations'].includes(key)?'Service':'WebPage',name:c.title,url:canonical,inLanguage:locale,...(['hypnotherapy','constellations'].includes(key)?{provider:{'@type':'Person',name:'Andrey Litvinov',url:'https://psitrends.com/about'},areaServed:{'@type':'City',name:'Toronto'}}:{})})}</script>`:''}
 </head>

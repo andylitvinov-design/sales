@@ -3,6 +3,10 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import {render} from './template.mjs';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import {APPROVED_PAGE_VIDEOS} from './approved-videos.mjs';
 
 test('allowlisted bilingual build is preview-safe and production metadata is explicit', () => {
   assert.ok(existsSync('scripts/build-psitrends-client.mjs'), 'builder must exist');
@@ -31,6 +35,25 @@ test('allowlisted bilingual build is preview-safe and production metadata is exp
     assert.ok(existsSync(`output/psitrends-client/psitrends-client-assets/approved-video-posters/${poster}`), poster);
   }
   assert.equal(spawnSync(process.execPath,['scripts/build-psitrends-client.mjs']).status,0);
+});
+
+test('both builders publish only manifest posters when an unrelated source file is present', async () => {
+  const unexpected=new URL(`./approved-video-posters/unexpected-public-artifact-${process.pid}.txt`,import.meta.url);
+  const directory=await fs.mkdtemp(path.join(os.tmpdir(),'psitrends-poster-allowlist-'));
+  const expected=Object.values(APPROVED_PAGE_VIDEOS).flatMap(localized=>Object.values(localized).map(video=>video.poster)).sort();
+  try {
+    await fs.writeFile(unexpected,'This non-manifest file must never be published.',{flag:'wx'});
+    const staticBuild=spawnSync(process.execPath,['scripts/build-psitrends-client.mjs'],{encoding:'utf8'});
+    assert.equal(staticBuild.status,0,staticBuild.stderr);
+    const {build}=await import('../../scripts/build-joomla-client.mjs');
+    await build({destination:directory,zip:false});
+    const staticPosters=await fs.readdir('output/psitrends-client/psitrends-client-assets/approved-video-posters');
+    const nativePosters=await fs.readdir(path.join(directory,'template/media/assets/approved-video-posters'));
+    assert.deepEqual({static:staticPosters.sort(),native:nativePosters.sort()},{static:expected,native:expected});
+  } finally {
+    await fs.unlink(unexpected);
+    await fs.rm(directory,{recursive:true,force:true});
+  }
 });
 
 test('author profile keeps the supplied biography, portrait and reviews in reading order', () => {

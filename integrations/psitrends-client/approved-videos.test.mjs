@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {APPROVED_PAGE_VIDEOS, getApprovedPageVideo, renderApprovedPageVideo} from './approved-videos.mjs';
+import * as videoModule from './approved-videos.mjs';
 import {render} from './template.mjs';
 
 const expected = [
@@ -77,10 +78,26 @@ test('about homeopathy context occurs after Taoist Alchemy and before Tantric wo
   }
 });
 
-test('page-video JS stays separate from legacy testimonial selector and allowlists all eight IDs',()=>{
+test('page-video JS stays separate from legacy testimonials and uses source-derived page tuples',()=>{
   const js=readFileSync(new URL('../../psitrends-client.js',import.meta.url),'utf8');
-  assert.match(js,/querySelectorAll\('\[data-page-video-id\]'\)/);
   assert.match(js,/querySelectorAll\('\[data-video\]'\)/);
-  for(const [, ,id] of expected)assert.ok(js.includes(id),id);
-  assert.match(js,/https:\/\/app\.heygen\.com\/embeds\//);
+  assert.equal(videoModule.browserApprovedPageVideoTuples?.length,8);
+  for(const [kind,locale,id] of expected){
+    const tuple=videoModule.browserApprovedPageVideoTuples.find(v=>v.kind===kind&&v.locale===locale);
+    assert.equal(tuple.id,id);
+    assert.equal(tuple.page,({services:'consultations',homeopathy:'about'})[kind]||kind);
+    assert.equal(tuple.embed,`https://app.heygen.com/embeds/${id}`);
+  }
+  assert.match(js,/PsiTrendsApprovedPageVideos/);
+});
+
+test('v3 controls have namespaced identity, passive fallback, and exact About context',()=>{
+  const html=render('about','en');
+  assert.match(html,/data-psitrends-page-video/);
+  assert.match(html,/data-page-purpose="about"/);
+  assert.match(html,/data-psitrends-page-video-play/);
+  assert.match(html,/<noscript>/);
+  assert.match(html,/<details[^>]*>[\s\S]*app\.heygen\.com\/share\//);
+  assert.match(html,/opens in a new tab/);
+  assert.match(html,/This video refers to the educational remedy library on Holistic House\./);
 });
