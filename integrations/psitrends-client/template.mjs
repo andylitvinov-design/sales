@@ -13,8 +13,8 @@ export function render(key,locale,{source=false,production=false}={}){
  const link=(k,l=locale)=>source?`${sourceName(k,l)}.html`:routeFor(k,l);
  const asset=path=>source?`integrations/psitrends-client/${path.startsWith('events/')?'events-assets/':''}${path}`:`/psitrends-client-assets/${path}`;
  const portrait=asset(['home','about'].includes(key)?'andy-library-desk.png':'andrey.jpg');
- const css=source?`${sourceName(key,locale)}.css?v=9`:'/psitrends-client-assets/psitrends-client.css?v=9';
- const js=source?'psitrends-client.js?v=9':'/psitrends-client-assets/psitrends-client.js?v=9';
+ const css=source?`${sourceName(key,locale)}.css?v=10`:'/psitrends-client-assets/psitrends-client.css?v=10';
+ const js=source?'psitrends-client.js?v=10':'/psitrends-client-assets/psitrends-client.js?v=10';
  const atmosphere=asset('archway.webp');
  const heritage=source?'output/psitrends-local-copy-assets/photo_2023-01-27_06-22-45.jpg':'/images/photo_2023-01-27_06-22-45.jpg';
  const arrow='<span class="link-arrow" aria-hidden="true"></span>';

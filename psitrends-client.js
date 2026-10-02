@@ -63,7 +63,7 @@ document.querySelectorAll('[data-video]').forEach(link=>{
         placeholder.className = 'page-video-placeholder';
         placeholder.textContent = video.title;
         placeholder.hidden = true;
-        frame.append(placeholder);
+        play.before(placeholder);
       }
       const posterFailed = () => {
         poster.hidden = true;

@@ -41,3 +41,44 @@ Private package, snapshots and journals remain under `/var/lib/psitrends-release
 The owner separately authorized both languages on `@shamanic_academy`. All six were published through Metricool using checksum-identical original streams, then verified anonymously through natural playback. This does not change PsiTrends' required HeyGen embeds. [Books PR 77](https://github.com/andylitvinov-design/books/pull/77) contains the merged reusable bilingual operator policy and publication ledger; [Brain runtime record](https://github.com/andylitvinov-design/ai-projects-brain/issues/219#issuecomment-5957059531) lists exact reusable YouTube IDs.
 
 For this task: **0 generation calls / 0 new renders / 0 task render credits / 0 duplicate Drive masters**.
+
+## Production checkpoint
+
+Source PR #42 merged as `fd723c68fb4de328c19eb9317d2c00d67dc743b1`; its runtime tree matches the stage-tested package. The later stage evidence commit changes only the report.
+
+Fresh paired backup `20261002T170436Z-cf05305c2c254a7ea89fddcff51946cf` completed at `2026-10-02T17:05:18Z`, with 104 database tables. Both SHA-256 values and gzip integrity were independently checked; private directory/files are 0700/0600. This fresh bundle was integrity-checked, not fully restored anew.
+
+- `database.sql.gz`: 13,173,296 bytes; `f59cc9c1a017fb2bb085f0c7ec0ed4f339e619d5ca56d63227b636d59ba3f422`.
+- `project.tar.gz`: 596,421,368 bytes; `db715e45d2b399d9831b93543e632830a00431da773025c39518cef0fc7b9ea9`.
+- Private release/checkpoint: `/var/lib/psitrends-releases/six-approved-videos-v9-production-20261002T164340Z`.
+- B1 snapshot SHA-256: `0881bb5f48851cd22a380063645fe97d0ae05e250cf5087a931538be1e7968eb`.
+- Apply completed at `2026-10-02T17:12:20Z`; complete/apply journal SHA-256: `59a05382df83e74f00a2eeb7401412c5614919b1e3042727bdb2a64d9737e937`.
+- Guarded preflight, capture and apply returned success: six article bodies and nine files; metadata/routing unchanged.
+- Scoped purge removed 44 desktop/mobile presentation-cache entries. Strict after-state verified 18 rows, nine mutable files and two invariant method posters.
+- Public post-release comparison passed all 72 checks (18 routes × desktop/mobile × cold/warm), including v9, exact eight placements and preserved title/canonical/hreflang/H1/navigation/review ordering.
+- Separate live Chrome desktop/iPhone-emulation regression confirmed native language clearing/switches, direct EN routes after RU, Projects links and unchanged testimonial iframe/close/focus behavior. Analytics/contact writes were blocked during QA.
+
+Recovery uses the same frozen private package and `update-six-approved-videos.php rollback` with `PSITRENDS_UPDATE_SCOPE=production`, the established Joomla webroot and shared `/release-lock` mount, followed by the scoped cache runner. Never use a full-site restore for this insertion-only rollback or bypass a before/after conflict.
+
+### Immutable production mapping
+
+Poster paths below are relative to `/media/templates/site/psitrends_client/assets/approved-video-posters/`. Transcripts remain the approved manifest text.
+
+| Live page | Exact HeyGen ID | Local poster | Poster SHA-256 |
+| --- | --- | --- | --- |
+| https://psitrends.com/ | `ed202847a43a96b918308aa972177b34` | `home-en-v2.webp` | `8f1ae79ad0764324cbf6023db4761a8ff4e9c55c0a085259beccd671cae4da04` |
+| https://psitrends.com/ru/ | `388a04b39ebf215ae656bcd22d0d0847` | `home-ru-v1.webp` | `2d17a8df9b325272d4c1049cb7757733a00fbafed652b49ffdd0bdf68bc8b794` |
+| https://psitrends.com/consultations | `48105a2f2228e7cb3a67391e97acaf8b` | `services-en-v2.webp` | `eba5a152b8fba5293b6046f8569205cafb641c852709f284893308b6846fdad6` |
+| https://psitrends.com/ru/consultations | `79c2845577865979cd95ac40a08fc01a` | `services-ru-v1.webp` | `b0c25264bd03966fea4a07e2b654a5d12dc2066dd4fe91845facc06352257819` |
+| https://psitrends.com/about | `34df311e461509433b45929908a9097a` | `homeopathy-en-v2.webp` | `9b2386a700b110249f285ff14d01c692e315a312083b46eab59b99930b0c6261` |
+| https://psitrends.com/ru/about | `0f984780d06948b1e78166e6e553e4e9` | `homeopathy-ru-v1.webp` | `9c186803e5bfed18f3eecac5c4be3cf8fb90c24a1821b1315ab6adf67f31f335` |
+
+## v10 follow-up: failed legacy poster
+
+The first v9 production candidate passed all twelve real HeyGen playbacks, all six live poster hashes, 72 public comparisons, and six native accessibility/link/Lighthouse audits. A further synthetic legacy-fixture test exposed a separate failure path: a missing old-method poster caused its dynamically appended placeholder to cover the full-frame Play button. Both actual method posters were healthy; this was a reproducible fallback regression, not provider failure.
+
+Commit `9767c2e7e23bbcbb75de70f553c280daaa14adf5` changes only placeholder insertion order (`play.before(placeholder)`), plus coherent v10 cache references and regression tests. The old fixture test now resolves its native poster path instead of using a static-only root. A dedicated failed-poster test was red before the one-line fix and green afterward. Its `PSITRENDS_LIVE_RUNTIME=1` mode checks served markup/runtime without injecting the local initializer. Independent review approved the change.
+
+v10 built JS: `0ece7049496e24cf71d14cef3ae08352107304a50518979825ed19d886481c30`; native index: `f7466f4ffd6593400a8bffe804b93378dfdf83ce9ff64186b5ec75cca70bec9a`; CSS bytes remain `ba9c1f79fc18526889c25fbc006a378fe8d0d5d8d2e29cd3ca875c7ebcc1cafd`. All article insertions, media IDs, transcripts and posters remain identical.
+
+The existing runner deliberately requires new poster paths at capture. It is not weakened for this follow-up: use its guarded v9 rollback to the exact v8 B1, then capture/apply a new immutable v10 package. Rehearse v10 apply → rollback → reapply on native stage before repeating that bounded transition on production. Preserve both release packages and checkpoints.

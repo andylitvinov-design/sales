@@ -1,0 +1,374 @@
+{
+  "status": "PASS",
+  "baselineBehaviorIdentical": true,
+  "allRoutesV9": true,
+  "note": "Chrome desktop and Chrome iPhone13 emulation. Non-GET/HEAD, analytics hosts, and testimonial iframe requests blocked; no contact interactions.",
+  "results": [
+    {
+      "phase": "production-v9",
+      "checkedAt": "2026-10-02T17:13:05.642Z",
+      "browser": "Chrome desktop",
+      "results": [
+        {
+          "label": "fresh EN",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN to RU native switch",
+          "path": "/ru/",
+          "lang": "ru",
+          "heading": "Алхимия души",
+          "switchHref": "/en/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "RU to EN native switch",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN explicit-clear then direct /",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch RU /",
+          "path": "/ru/",
+          "lang": "ru",
+          "heading": "Алхимия души",
+          "switchHref": "/en/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch EN /",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN explicit-clear then direct /consultations",
+          "path": "/consultations",
+          "lang": "en",
+          "heading": "Personal consultations.",
+          "switchHref": "/ru/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch RU /consultations",
+          "path": "/ru/consultations",
+          "lang": "ru",
+          "heading": "Индивидуальные консультации.",
+          "switchHref": "/en/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch EN /consultations",
+          "path": "/consultations",
+          "lang": "en",
+          "heading": "Personal consultations.",
+          "switchHref": "/ru/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN explicit-clear then direct /about",
+          "path": "/about",
+          "lang": "en",
+          "heading": "Let me introduce myself.",
+          "switchHref": "/ru/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch RU /about",
+          "path": "/ru/about",
+          "lang": "ru",
+          "heading": "Позвольте представиться.",
+          "switchHref": "/en/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch EN /about",
+          "path": "/about",
+          "lang": "en",
+          "heading": "Let me introduce myself.",
+          "switchHref": "/ru/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "direct native after RU /consultations",
+          "path": "/consultations",
+          "lang": "en",
+          "heading": "Personal consultations.",
+          "switchHref": "/ru/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "direct native after RU /about",
+          "path": "/about",
+          "lang": "en",
+          "heading": "Let me introduce myself.",
+          "switchHref": "/ru/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "direct native after RU /projects",
+          "path": "/projects",
+          "lang": "en",
+          "heading": "Projects & archive.",
+          "switchHref": "/ru/projects",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "Projects actual navigation",
+          "path": "/projects",
+          "lang": "en",
+          "heading": "Projects & archive.",
+          "switchHref": "/ru/projects",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        }
+      ],
+      "testimonial": {
+        "id": "Dk0LBmOivQo",
+        "iframe": "https://www.youtube-nocookie.com/embed/Dk0LBmOivQo",
+        "exact": true,
+        "iframeRemoved": true,
+        "focusRestored": true
+      },
+      "blockedRequests": 1
+    },
+    {
+      "phase": "production-v9",
+      "browser": "Chrome desktop",
+      "freshRU": {
+        "path": "/ru/",
+        "lang": "ru"
+      }
+    },
+    {
+      "phase": "production-v9",
+      "checkedAt": "2026-10-02T17:13:22.773Z",
+      "browser": "Chrome iPhone13 emulation",
+      "results": [
+        {
+          "label": "fresh EN",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN to RU native switch",
+          "path": "/ru/",
+          "lang": "ru",
+          "heading": "Алхимия души",
+          "switchHref": "/en/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "RU to EN native switch",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN explicit-clear then direct /",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch RU /",
+          "path": "/ru/",
+          "lang": "ru",
+          "heading": "Алхимия души",
+          "switchHref": "/en/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch EN /",
+          "path": "/",
+          "lang": "en",
+          "heading": "Alchemy of the Soul",
+          "switchHref": "/ru/",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN explicit-clear then direct /consultations",
+          "path": "/consultations",
+          "lang": "en",
+          "heading": "Personal consultations.",
+          "switchHref": "/ru/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch RU /consultations",
+          "path": "/ru/consultations",
+          "lang": "ru",
+          "heading": "Индивидуальные консультации.",
+          "switchHref": "/en/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch EN /consultations",
+          "path": "/consultations",
+          "lang": "en",
+          "heading": "Personal consultations.",
+          "switchHref": "/ru/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "EN explicit-clear then direct /about",
+          "path": "/about",
+          "lang": "en",
+          "heading": "Let me introduce myself.",
+          "switchHref": "/ru/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch RU /about",
+          "path": "/ru/about",
+          "lang": "ru",
+          "heading": "Позвольте представиться.",
+          "switchHref": "/en/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "native switch EN /about",
+          "path": "/about",
+          "lang": "en",
+          "heading": "Let me introduce myself.",
+          "switchHref": "/ru/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "direct native after RU /consultations",
+          "path": "/consultations",
+          "lang": "en",
+          "heading": "Personal consultations.",
+          "switchHref": "/ru/consultations",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "direct native after RU /about",
+          "path": "/about",
+          "lang": "en",
+          "heading": "Let me introduce myself.",
+          "switchHref": "/ru/about",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "direct native after RU /projects",
+          "path": "/projects",
+          "lang": "en",
+          "heading": "Projects & archive.",
+          "switchHref": "/ru/projects",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        },
+        {
+          "label": "Projects actual navigation",
+          "path": "/projects",
+          "lang": "en",
+          "heading": "Projects & archive.",
+          "switchHref": "/ru/projects",
+          "scripts": [
+            "/media/templates/site/psitrends_client/assets/psitrends-client.js?v=9"
+          ]
+        }
+      ],
+      "testimonial": {
+        "id": "Dk0LBmOivQo",
+        "iframe": "https://www.youtube-nocookie.com/embed/Dk0LBmOivQo",
+        "exact": true,
+        "iframeRemoved": true,
+        "focusRestored": true
+      },
+      "blockedRequests": 1
+    },
+    {
+      "phase": "production-v9",
+      "browser": "Chrome iPhone13 emulation",
+      "freshRU": {
+        "path": "/ru/",
+        "lang": "ru"
+      }
+    }
+  ]
+}

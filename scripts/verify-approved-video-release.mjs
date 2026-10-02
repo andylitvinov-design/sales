@@ -37,7 +37,7 @@ for(const [platform,agent] of Object.entries(agents))for(const locale of ['en','
       const prior=baseline.results.find(r=>r.platform===platform&&r.path===path&&r.temperature===temperature);
       assert.ok(prior,`baseline ${path}`);
       for(const field of ['title','canonical','hreflang','h1','reviewIds','reviewPhotos','nav'])assert.deepEqual(entry[field],prior[field],`${path} preserved ${field}`);
-      assert.deepEqual(entry.versions,['9','9'],`${path} ${platform} ${temperature} v9`);
+      assert.deepEqual(entry.versions,['10','10'],`${path} ${platform} ${temperature} v10`);
       const video=browserApprovedPageVideoTuples.find(v=>v.page===key&&v.locale===locale);
       assert.deepEqual(entry.videos,video?[video.id]:[],`${path} exact instance`);
     }
