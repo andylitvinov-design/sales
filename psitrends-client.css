@@ -1935,13 +1935,6 @@ body[data-page="home"] .hero-atmosphere {
   cursor: pointer;
 }
 
-.page-video [hidden],
-.page-video-playing > .page-video-poster,
-.page-video-playing > .page-video-placeholder,
-.page-video-playing > .page-video-duration {
-  display: none;
-}
-
 .page-video-placeholder {
   position: absolute;
   inset: 0;
@@ -1951,6 +1944,13 @@ body[data-page="home"] .hero-atmosphere {
   color: #574537;
   background: #e9dfd2;
   text-align: center;
+}
+
+.page-video [hidden],
+.page-video-playing > .page-video-poster,
+.page-video-playing > .page-video-placeholder,
+.page-video-playing > .page-video-duration {
+  display: none;
 }
 
 [data-psitrends-page-video-play] {
